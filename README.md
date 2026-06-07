@@ -8,7 +8,7 @@
 <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 py-12">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="flex justify-center items-center gap-3 mb-6">
+            <div class="flex justify-center items-center gap-6 mb-8">
                 <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
                 <span class="text-2xl font-bold text-black">MATERIALS insider</span>
             </div>
