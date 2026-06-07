@@ -3,17 +3,17 @@
 <h2 style="text-align:center; font-size:50px;">Welcome</h2>
 
 <div style="text-align:center; font-size:20px; margin-top:40px">
-    <a style="padding-right:45px;" href="/Home">Home </a>
-    <a style="padding-right:45px;" href="/About">About </a>
-    <a style="padding-right:45px;" href="/Subscribe">Subscribe </a>
+    <a style="padding-right:75px;" href="/Home">Home </a>
+    <a style="padding-right:75px;" href="/About">About </a>
+    <a style="padding-right:75px;" href="/Subscribe">Subscribe </a>
 </div>
-<P style="text-align:center; font-size:30px; line-height:40px;">Materials Insider brings you the latest insights, data, and trends in materials science, advanced engineering materials, sustainability, and industry innovations. From metals and Polymers to Composites and Nanomaterials <br>stay informed with expert analysis and resources.</P>
-<div style="text-align:center; magin-top:30px;"> <img width="784" height="1168" alt="58eacdf0-58a6-4c67-bd8d-fb9627652aa3" src="https://github.com/user-attachments/assets/a9ecbd14-6d69-4c96-9ab5-57d4a1ce9950" /></div>
+<P style="text-align:center; font-size:30px; line-height:40px; magin-top:40px;">Materials Insider brings you the latest insights, data, and trends in materials science, advanced engineering materials, sustainability, and industry innovations. From metals and Polymers to Composites and Nanomaterials <br>stay informed with expert analysis and resources.</P>
+<div style="text-align:center;"> <img width="784" height="1168" alt="58eacdf0-58a6-4c67-bd8d-fb9627652aa3" src="https://github.com/user-attachments/assets/a9ecbd14-6d69-4c96-9ab5-57d4a1ce9950" /></div>
 
 <body>
 <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 py-12">
-        <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="max-w-7xl mx-auto px-5 text-center">
             <div class="flex justify-center items-center gap-6 mb-8">
                 <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
                 <span class="text-2xl font-bold text-black mb-8">MATERIALS insider</span>
