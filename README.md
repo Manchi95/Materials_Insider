@@ -12,9 +12,7 @@
                 <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
                 <span class="text-2xl font-bold text-white">MATERIALS insider</span>
             </div>
-            <p class="mb-8">Educational Platform for Materials Science • Made for curious minds</p>
-            <p class="mb-8">•</p>
-            <p class="mb-8">Made for curious minds</p>
+            <p class="mb-8">Educational Platform for Materials Science  •  Made for curious minds</p>
             <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
         </div>
     </footer>
