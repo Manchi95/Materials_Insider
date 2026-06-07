@@ -1,2 +1,0 @@
-# MATERIALS insider
-## Welcome
