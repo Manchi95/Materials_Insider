@@ -10,7 +10,7 @@
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="flex justify-center items-center gap-3 mb-6">
                 <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
-                <span class="text-2xl font-bold text-white">MATERIALS insider</span>
+                <span class="text-2xl font-bold text-black">MATERIALS insider</span>
             </div>
             <p class="mb-8">Educational Platform for Materials Science  •  Made for curious minds</p>
             <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
