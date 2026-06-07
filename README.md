@@ -1,5 +1,5 @@
 <h1 style="text-align:center; font-size:80px;"> MATERIALS insider </h1>
-<hr>
+<hr> 
 <h2 style="text-align:center; font-size:50px;">Welcome</h2>
 
 <div style="text-align:center; font-size:20px; margin-top:40px">
