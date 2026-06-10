@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Research - Materials Insider</title>
+    <title>Article Title - Materials Insider</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="bg-gray-50">
 
-    <!-- Reuse the same Navigation -->
+    <!-- Navigation (same as other pages) -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
@@ -17,33 +17,61 @@
                 <h1 class="text-2xl font-bold text-gray-800">Materials Insider</h1>
             </div>
             <div class="hidden md:flex space-x-8 text-gray-700">
-                <a href="index.html" class="hover:text-indigo-600">Home</a>
-                <a href="developments.html" class="hover:text-indigo-600">Developments</a>
-                <a href="research.html" class="hover:text-indigo-600 font-medium text-indigo-600">Research</a>
-                <a href="technologies.html" class="hover:text-indigo-600">Technologies</a>
-                <a href="failures.html" class="hover:text-indigo-600">Failures</a>
-                <a href="articles.html" class="hover:text-indigo-600">Articles</a>
+                <a href="../index.html" class="hover:text-indigo-600">Home</a>
+                <a href="../research.html" class="hover:text-indigo-600">Research</a>
+                <a href="../developments.html" class="hover:text-indigo-600">Developments</a>
+                <a href="../failures.html" class="hover:text-indigo-600">Failures</a>
             </div>
-            <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg text-sm font-medium">
-                Subscribe
-            </button>
         </div>
     </nav>
 
-    <!-- Page Content -->
-    <div class="max-w-7xl mx-auto px-6 py-16">
-        <h1 class="text-4xl font-bold text-center mb-12">New Research Highlights</h1>
-        
-        <!-- Add your research articles here -->
-        <div class="grid md:grid-cols-2 gap-8">
-            <!-- Example cards... -->
-        </div>
-    </div>
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        <!-- Article Header -->
+        <header class="mb-12">
+            <span class="text-indigo-600 font-medium">June 10, 2026 • Research Highlight</span>
+            <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">
+                Self-Healing Materials : The Future of Sustainable Infrastructure
+            </h1>
+            <p class="text-xl text-gray-600 mt-6">
+                How bacteria-based materials could revolutionize construction and reduce maintenance costs dramatically.
+            </p>
+            <div class="flex items-center gap-4 mt-8 text-sm text-gray-500">
+                <span>By Dr. Elena Vargas</span>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <span>12 min read</span>
+            </div>
+        </header>
 
-    <!-- Reuse Footer -->
+        <!-- Featured Image -->
+        <img src="../images/articles/self-healing-concrete.jpg" 
+             alt="Self-healing Materials" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none text-gray-700">
+            <h2>Introduction</h2>
+            <p>Write your content here...</p>
+            
+            <h2>What is Self-Healing Concrete?</h2>
+            <p>Explanation with clear language...</p>
+
+            <!-- Add images, bullet points, etc. -->
+        </div>
+
+        <!-- Share Buttons -->
+        <div class="mt-16 border-t border-gray-200 pt-8">
+            <p class="font-medium mb-4">Share this article:</p>
+            <div class="flex gap-4">
+                <button class="bg-gray-100 hover:bg-gray-200 px-6 py-3 rounded-xl">Twitter</button>
+                <button class="bg-gray-100 hover:bg-gray-200 px-6 py-3 rounded-xl">LinkedIn</button>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 py-12">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <p>© 2026 Materials Insider</p>
+            <p>© 2026 Materials Insider • Educational Materials Science Platform</p>
         </div>
     </footer>
 
