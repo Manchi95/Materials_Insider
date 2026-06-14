@@ -9,35 +9,61 @@
 </head>
 <body class="bg-gray-50">
 
-    <!-- Navigation (same as other pages) -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- Navigation -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
             <div class="flex items-center space-x-3">
                 <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
                 <h1 class="text-2xl font-bold text-gray-800">Materials Insider</h1>
             </div>
-            <div class="hidden md:flex space-x-8 text-gray-700">
-                <ul>
-                    <li><a href="../index.html" class="hover:text-indigo-600 font-medium">Home</a></li>                     
-                </ul>
-                <ul>
-                    <li><a href="../development.html" class="hover:text-indigo-600 font-medium">Developments</a></li>
-                </ul>
 
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Research</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Technologies</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Failures</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Resources</a></ul>
-                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 text-gray-700">
+                <a href="index.html" class="hover:text-indigo-600 font-medium">Home</a>
+                <a href="developments.html" class="hover:text-indigo-600 font-medium">Developments</a>
+                <a href="research.html" class="hover:text-indigo-600 font-medium">Research</a>
+                <a href="technologies.html" class="hover:text-indigo-600 font-medium">Technologies</a>
+                <a href="failures.html" class="hover:text-indigo-600 font-medium">Failures</a>
+                <a href="articles.html" class="hover:text-indigo-600 font-medium">Articles</a>
             </div>
-            <div>
+
+            <!-- Subscribe Button (Desktop) -->
+            <div class="hidden md:block">
                 <button onclick="alert('Newsletter signup coming soon!')" 
                         class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg text-sm font-medium">
                     Subscribe
                 </button>
             </div>
+
+            <!-- Hamburger Button (Mobile) -->
+            <button id="mobile-menu-button"
+                    class="md:hidden text-3xl text-gray-700 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
-    </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t">
+            <div class="flex flex-col space-y-4 text-gray-700 text-lg">
+                <a href="index.html" class="hover:text-indigo-600 py-2">Home</a>
+                <a href="developments.html" class="hover:text-indigo-600 py-2">Developments</a>
+                <a href="research.html" class="hover:text-indigo-600 py-2">Research</a>
+                <a href="technologies.html" class="hover:text-indigo-600 py-2">Technologies</a>
+                <a href="failures.html" class="hover:text-indigo-600 py-2">Failures</a>
+                <a href="articles.html" class="hover:text-indigo-600 py-2">Articles</a>
+                
+                <div class="pt-4 border-t">
+                    <button onclick="alert('Newsletter signup coming soon!')" 
+                            class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg font-medium">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
 
     <article class="max-w-4xl mx-auto px-6 py-12">
         <!-- Article Header -->
