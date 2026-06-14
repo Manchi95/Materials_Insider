@@ -3,49 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>MATERIALS insider | Educational Materials Science</title>
+    <title>Self-Healing Materials - Materials Insider</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        .hero-bg {
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/id/1015/1920/1080');
-            background-size: cover;
-            background-position: center;
-        }
+        .prose img { max-width: 100%; height: auto; }
     </style>
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-gray-50">
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (hamburger && mobileMenu) {
+            let isOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                isOpen = !isOpen;
+                
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        }
+    });
+</script>
     <!-- Navigation -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
-                <h1 class="text-2xl font-bold text-gray-800">Materials Insider</h1>
-            </div>
+<nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
+                    <h1 class="text-2xl font-bold text-gray-800">Materials Insider</h1>
+                </div>
+
+            <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-8 text-gray-700">
                 <ul>
                     <li><a href="../index.html" class="hover:text-indigo-600 font-medium">Home</a></li>                     
                 </ul>
                 <ul>
-                    <li><a href="development.html" class="hover:text-indigo-600 font-medium">Developments</a></li>
+                    <li><a href="../development.html" class="hover:text-indigo-600 font-medium">Developments</a></li>
                 </ul>
 
                 <ul><a href="#" class="hover:text-indigo-600 font-medium">Research</a></ul>
                 <ul><a href="#" class="hover:text-indigo-600 font-medium">Technologies</a></ul>
                 <ul><a href="#" class="hover:text-indigo-600 font-medium">Failures</a></ul>
                 <ul><a href="#" class="hover:text-indigo-600 font-medium">Resources</a></ul>
-                <ul><a href="articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
             </div>
-            <div>
+
+            <!-- Subscribe Button (Desktop) -->
+            <div class="hidden md:block">
                 <button onclick="alert('Newsletter signup coming soon!')" 
                         class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg text-sm font-medium">
                     Subscribe
                 </button>
             </div>
+
+            <!-- Hamburger Button (Mobile) -->
+            <button id="hamburger"
+                    class="md:hidden text-3xl text-gray-700 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
-    </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200">
+            <div class="flex flex-col space-y-5 text-gray-700">
+                <ul>
+                    <li><a href="../index.html" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul>
+                    <li><a href="../development.html" class="hover:text-indigo-600 font-medium">Developments</a></li>
+                </ul>
+
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Research</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Technologies</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Failures</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                
+            </div>
+        </div>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <header class="hero-bg text-white py-32">
