@@ -14,7 +14,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors">
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -39,19 +39,20 @@
     });
 </script>
     <!-- Navigation -->
-<nav class="bg-white shadow-md sticky top-0 z-50">
+<nav class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-3">
-                    <a href="https://www.materialinsider.com"
-                        class="flex items-center space-x-3 hover:opacity-80 transition no-underlines">
-                        <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
-                        <h1 class="text-2xl font-bold text-gray-800">MATERIALS Insider</h1>
-                    </a>
+                    <!-- Clickable Logo -->
+                <a href="https://www.materialsinsider.com" 
+                   class="flex items-center space-x-3 hover:opacity-80 transition no-underline">
+                    <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
+                    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Materials Insider</h1>
+                </a>
                 </div>
 
             <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8 text-gray-700">
+            <div class="hidden md:flex space-x-8 text-gray-700 dark:text-gray-300">
                 <ul>
                     <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
                 </ul>
@@ -74,15 +75,19 @@
             </div>
 
             <!-- Hamburger Button (Mobile) -->
-            <button id="hamburger"
-                    class="md:hidden text-3xl text-gray-700 focus:outline-none">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <div class="flex items-center gap-4">
+                    <button id="theme-toggle" class="text-2xl text-gray-700 dark:text-gray-300 hover:scale-110 transition">
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
+                    <button id="hamburger" class="md:hidden text-3xl text-gray-700 dark:text-gray-300">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200">
-            <div class="flex flex-col space-y-5 text-gray-700">
+        <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200 dark:border-gray-700">
+            <div class="flex flex-col space-y-5 text-gray-700 dark:text-gray-300">
                 <ul>
                     <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
                 </ul>
