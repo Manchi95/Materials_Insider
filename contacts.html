@@ -215,48 +215,34 @@
     </script>
    
     <!-- Scripts -->
-    <script>
-        // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
+    <button id="theme-toggle" class="text-2xl text-gray-700 dark:text-gray-300 hover:scale-110 transition">
+          <i class="fa-solid fa-sun"></i>
+    </button>
 
-        function setTheme(isDark) {
-            if (isDark) {
-                html.classList.add('dark');
-                themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                html.classList.remove('dark');
-                themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-                localStorage.setItem('theme', 'light');
-            }
-        }
+<script>
 
-        // Load saved preference
-        if (localStorage.getItem('theme') === 'dark' || 
-            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            setTheme(true);
-        }
+const body = document.body;
+const icon = document.querySelector("#theme-toggle i");
+const savedTheme = localStorage.getItem('theme');
 
-        themeToggle.addEventListener('click', () => {
-            setTheme(!html.classList.contains('dark'));
-        });
+if (savedTheme === 'dark') {
+  body.classList.add('dark-mode');
+  icon.classList.replace('fa-sun', 'fa-moon');
+}
 
-        // Mobile Menu
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        let isOpen = false;
 
-        hamburger.addEventListener('click', () => {
-            isOpen = !isOpen;
-            if (isOpen) {
-                mobileMenu.classList.remove('hidden');
-                hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-            } else {
-                mobileMenu.classList.add('hidden');
-                hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-            }
-        });
-    </script>
+function myFunction() {
+   body.classList.toggle("dark-mode");
+   icon.classList.toggle("fa-sun");
+   icon.classList.toggle("fa-moon");
+   
+   
+   const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+   localStorage.setItem('theme', currentTheme);
+}
+
+
+document.getElementById('theme-toggle').addEventListener('click', myFunction);
+</script>
 </body>
 </html>
