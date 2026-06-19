@@ -3,89 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Self-Healing Materials - Materials Insider</title>
+    <title>Articles - MATERIALS insider</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        .prose img { max-width: 100%; height: auto; }
+        .article-card {
+            transition: all 0.3s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
     </style>
 </head>
-<body class="bg-gray-50">
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (hamburger && mobileMenu) {
-            let isOpen = false;
+<body class="bg-black font-sans text-gray-100 transition-colors">
 
-            hamburger.addEventListener('click', function() {
-                isOpen = !isOpen;
-                
-                if (isOpen) {
-                    mobileMenu.classList.remove('hidden');
-                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-                } else {
-                    mobileMenu.classList.add('hidden');
-                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-                }
-            });
-        }
-    });
-</script>
     <!-- Navigation -->
-<nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+    <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
+                <div class="flex items-center space-x-2">
+                <!-- Clickable Logo -->
                 <a href="https://www.materialinsider.com" 
-                   class="flex items-center space-x-3 hover:opacity-80 transition no-underline">
+                   class="flex items-center space-x-3 hover:opacity-40 transition no-underline">
                     <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
-                    <h1 class="text-2xl font-bold text-gray-800">Materials Insider</h1>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white">MATERIALS insider</h1>
                 </a>
-                </div>
+		</div>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8 text-gray-700">
+                <!-- Desktop Menu -->
+		<div class="hidden md:flex space-x-12 text-white">
                 <ul>
-                    <li><a href="../" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
                 </ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Story</a></ul>
                 <ul><a href="#" class="hover:text-indigo-600 font-medium">Research</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Technologies</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Failures</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Resources</a></ul>
-                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
+                <ul><a href="articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
                 <ul>
-                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                    <li><a href="contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
                 </ul>
             </div>
 
             <!-- Subscribe Button (Desktop) -->
             <div class="hidden md:block">
                 <button onclick="alert('Newsletter signup coming soon!')" 
-                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg text-sm font-medium">
-                    Subscribe
+                        class="bg-indigo-600 hover:bg-red-800 text-white hover:text-black px-5 py-2 rounded-lg text-sm font-medium">
+                    SUBSCRIBE
                 </button>
             </div>
-
+	    
             <!-- Hamburger Button (Mobile) -->
             <button id="hamburger"
-                    class="md:hidden text-3xl text-gray-700 focus:outline-none">
+                    class="md:hidden text-3xl text-gray-400 focus:outline-none">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200">
-            <div class="flex flex-col space-y-5 text-gray-700">
+            <div class="flex flex-col space-y-5 text-white">
                 <ul>
-                    <li><a href="../" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
                 </ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Story</a></ul>
                 <ul><a href="#" class="hover:text-indigo-600 font-medium">Research</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Technologies</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Failures</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
                 <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
                 <ul>
                     <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
@@ -95,11 +83,12 @@
     </div>
 </nav>
 
+
     <!-- Page Header -->
-    <header class="bg-white py-16 border-b">
+    <header class="bg-gray-800 py-12 border-b">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h1 class="text-5xl font-bold text-gray-800 mb-4">All Articles</h1>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h1 class="text-5xl font-bold text-gray-500 mb-8">All Articles</h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto">
                 Weekly educational deep-dives into materials science: new research, emerging technologies, historical failures, and more.
             </p>
         </div>
@@ -110,101 +99,119 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             <!-- Article 1 -->
-            <div class="article-card bg-white rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
                 <img src="../images/260611-self-healing-materials/123049_self-healing-gel_410_tcm18-210062.jpg" 
                      alt="Self-Healing Materials-grid" 
                      class="w-full h-52 object-cover">
                 <div class="p-6">
-                    <div class="flex justify-between text-xs text-gray-500 mb-3">
+                    <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>June 10, 2026</span>
-                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">Research</span>
+                        <span class="bg-red-100 text-green-700 px-3 py-1 rounded-full">Research</span>
                     </div>
                     <h3 class="font-bold text-xl leading-tight mb-3">
                         Self-Healing Materials : The Future of Sustainable & Self Sustainable Materials
                     </h3>
-                    <p class="text-gray-600 text-sm line-clamp-4 mb-6">
+                    <p class="text-gray-500 text-sm line-clamp-4 mb-6">
                        A cracked smartphone screen that repairs itself overnight, or a bridge that can automatically fix tiny fractures before they become dangerous. This is not science fiction—these are examples of self-healing materials.
                     </p>
-                    <a href="articles/260611-self-healing-materials.html" 
-                       class="text-indigo-600 hover:text-indigo-700 font-medium inline-flex items-center gap-2">
+                    <a href="articles/2026-05-27-solid-state-batteries.html" 
+                       class="text-indigo-700 hover:text-red-900 font-medium inline-flex items-center gap-2">
                         Read Full Article →
                     </a>
                 </div>
             </div>
 
             <!-- Article 2 -->
-            <div class="article-card bg-white rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
                 <img src="../images/260615-diamond-batteries/https___cms-image-bucket-productionv3-ap-northeast-1-a7d2.s3.ap-northeast-1.amazonaws.com_images_4_7_9_2_32592974-1-eng-GB_20210221 Diamond battery img.png" 
                      alt="Diamond Batteries-grid" 
                      class="w-full h-52 object-cover">
                 <div class="p-6">
-                    <div class="flex justify-between text-xs text-gray-500 mb-3">
+                    <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>June 15, 2026</span>
                         <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">Reaseach</span>
                     </div>
                     <h3 class="font-bold text-xl leading-tight mb-3">
                         Next-Gen Self-Sustain Electrical Batteries
                     </h3>
-                    <p class="text-gray-600 text-sm line-clamp-3 mb-6">
+                    <p class="text-gray-500 text-sm line-clamp-3 mb-6">
                         Use synthetic diamond to convert the beta decay of radioactive carbon-14 (¹⁴C) into a steady trickle of electricity
                     </p>
-                    <a href="articles/260615-diamond-batteries.html" 
-                       class="text-indigo-600 hover:text-indigo-700 font-medium inline-flex items-center gap-2">
+                    <a href="articles/2026-05-27-solid-state-batteries.html" 
+                       class="text-indigo-700 hover:text-red-900 font-medium inline-flex items-center gap-2">
                         Read Full Article →
                     </a>
                 </div>
             </div>
 
             <!-- Article 3 -->
-            <div class="article-card bg-white rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
                 <img src="https://picsum.photos/id/180/600/400" 
                      alt="Battery" 
                      class="w-full h-52 object-cover">
                 <div class="p-6">
-                    <div class="flex justify-between text-xs text-gray-500 mb-3">
-                        <span>May 27, 2026</span>
+                    <div class="flex justify-between text-xs text-gray-300 mb-3">
+                        <span>June 22, 2026</span>
                         <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full">Technology</span>
                     </div>
                     <h3 class="font-bold text-xl leading-tight mb-3">
                         Solid-State Batteries: Why They Will Change Everything
                     </h3>
-                    <p class="text-gray-600 text-sm line-clamp-3 mb-6">
+                    <p class="text-gray-500 text-sm line-clamp-3 mb-6">
                         A deep look at the materials challenges solved and the remaining hurdles before they power the next generation of EVs.
                     </p>
                     <a href="articles/2026-05-27-solid-state-batteries.html" 
-                       class="text-indigo-600 hover:text-indigo-700 font-medium inline-flex items-center gap-2">
+                       class="text-indigo-700 hover:text-red-900 font-medium inline-flex items-center gap-2">
                         Read Full Article →
                     </a>
                 </div>
             </div>
-
-            <!-- Add more article cards here as you publish new ones -->
-
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Call to Action -->
-    <div class="bg-indigo-700 text-white py-16">
+    <div class="bg-gray-800 text-white py-6">
         <div class="max-w-4xl mx-auto text-center px-6">
             <h2 class="text-3xl font-bold mb-4">Never Miss a New Article</h2>
             <p class="mb-8">Get weekly materials science insights delivered to your inbox.</p>
             <button onclick="alert('Newsletter signup will come soon. Stay tuned!')" 
-                    class="bg-white text-indigo-700 px-10 py-4 rounded-2xl text-lg font-semibold hover:bg-gray-100">
+                    class="bg-indigo-300 text-indigo-700 px-10 py-4 rounded-2xl text-lg font-semibold hover:bg-red-800 hover:text-black">
                 Subscribe to Weekly Digest
             </button>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12">
+</section>
+<!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="flex justify-center items-center gap-3 mb-6">
                 <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
-                <span class="text-2xl font-bold text-white">Materials Insider</span>
+                <span class="text-3xl font-bold text-white">MATERIALS insider</span>
             </div>
-            <p class="mb-8">Educational platform for Materials Science • Made for curious minds</p>
+	    <p class="mb-4">Educational platform for Materials Science • Made for curious minds</p>
             <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
