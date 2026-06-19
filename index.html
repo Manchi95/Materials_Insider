@@ -12,6 +12,13 @@
             background-size: cover;
             background-position: center;
         }
+       .article-card {
+            transition: all 0.3s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
     </style>
 </head>
 <body class="bg-gray-900 font-sans text-gray-100 transition-colors">
@@ -116,37 +123,74 @@
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-12 text-white">Recent Developments in Materials Science</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
-                    <img src="../gif/self-healing-materials.gif">
-                    <div class="p-6">
-                        <span class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">2026 June 10</span>
-                        <h3 class="font-semibold mt-4 mb-2">Self-Healing Materials : The Future of Sustainable & Self Sustainable Materials</h3>
-                        <p class="text-gray-600 text-sm">A cracked smartphone screen that repairs itself overnight, or a bridge that can automatically fix tiny fractures before they become dangerous. This is not science fiction</p>
-                        <a href="articles/260611-self-healing-materials.html" class="text-indigo-600 hover:text-indigo-700 font-medium inline-flex items-center gap-2">
-                        Read Full Article →</a>
+ <!-- Article 1 -->
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+                <img src="../gif/self-healing-materials.gif" 
+                     alt="Self-Healing Materials-grid" 
+                     class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between text-xs text-gray-300 mb-3">
+                        <span>June 10, 2026</span>
+                        <span class="bg-red-100 text-green-700 px-3 py-1 rounded-full">Research</span>
                     </div>
-                </div>
-                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
-                    <img src="../gif/diamond-battery.gif">
-                    <div class="p-6">
-                        <span class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">2026 June 15</span>
-                        <h3 class="font-semibold mt-4 mb-2">Next-Gen Self-Sustain Electrical Batteries</h3>
-                        <p class="text-gray-600 text-sm">Use synthetic diamond to convert the beta decay of radioactive carbon-14 (¹⁴C) into a steady trickle of electricity</p>
-                        <a href="articles/260615-diamond-batteries.html" 
-                       class="text-indigo-600 hover:text-indigo-700 font-medium inline-flex items-center gap-2">
-                        Read Full Article →</a>
-                    </div>
-                </div>
-                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
-                    <img src="https://picsum.photos/id/180/600/400" alt="Battery" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <span class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">2026</span>
-                        <h3 class="font-semibold mt-4 mb-2">Solid-State Battery Revolution</h3>
-                        <p class="text-gray-600 text-sm">Safer, higher-capacity batteries that could transform electric vehicles.</p>
-                    </div>
+                    <h3 class="font-bold text-xl leading-tight mb-3">
+                        Self-Healing Materials : The Future of Sustainable & Self Sustainable Materials
+                    </h3>
+                    <p class="text-gray-500 text-sm line-clamp-4 mb-6">
+                       A cracked smartphone screen that repairs itself overnight, or a bridge that can automatically fix tiny fractures before they become dangerous. This is not science fiction—these are examples of self-healing materials.
+                    </p>
+                    <a href="articles/2026-05-27-solid-state-batteries.html" 
+                       class="text-indigo-700 hover:text-red-900 font-medium inline-flex items-center gap-2">
+                        Read Full Article →
+                    </a>
                 </div>
             </div>
-        </div>
+                <!-- Article 2 -->
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+                <img src="../gif/diamond-battery.gif" 
+                     alt="Diamond Batteries-grid" 
+                     class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between text-xs text-gray-300 mb-3">
+                        <span>June 15, 2026</span>
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">Reaseach</span>
+                    </div>
+                    <h3 class="font-bold text-xl leading-tight mb-3">
+                        Next-Gen Self-Sustain Electrical Batteries
+                    </h3>
+                    <p class="text-gray-500 text-sm line-clamp-3 mb-6">
+                        Use synthetic diamond to convert the beta decay of radioactive carbon-14 (¹⁴C) into a steady trickle of electricity
+                    </p>
+                    <a href="articles/2026-05-27-solid-state-batteries.html" 
+                       class="text-indigo-700 hover:text-red-900 font-medium inline-flex items-center gap-2">
+                        Read Full Article →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+                <img src="https://picsum.photos/id/180/600/400" 
+                     alt="Battery" 
+                     class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between text-xs text-gray-300 mb-3">
+                        <span>June 22, 2026</span>
+                        <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full">Technology</span>
+                    </div>
+                    <h3 class="font-bold text-xl leading-tight mb-3">
+                        Solid-State Batteries: Why They Will Change Everything
+                    </h3>
+                    <p class="text-gray-500 text-sm line-clamp-3 mb-6">
+                        A deep look at the materials challenges solved and the remaining hurdles before they power the next generation of EVs.
+                    </p>
+                    <a href="articles/2026-05-27-solid-state-batteries.html" 
+                       class="text-indigo-700 hover:text-red-900 font-medium inline-flex items-center gap-2">
+                        Read Full Article →
+                    </a>
+                </div>
+            </div>
+
     </section>
 
     <!-- New Research -->
@@ -201,34 +245,49 @@
     </section>
 
     <!-- Lessons from Failures -->
-    <section id="failures" class="bg-red-50 py-16">
+    <section id="failures" class="bg-black-700 py-12">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">Lessons from Past Failures</h2>
-            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4 text-white">Lessons from Past Failures</h2>
+            <p class="text-center text-gray-500 mb-12 max-w-2xl mx-auto">
                 Understanding what went wrong is one of the best ways to innovate safely.
             </p>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-3xl shadow-sm">
-                    <h3 class="font-semibold text-xl mb-3">Tacoma Narrows Bridge Collapse (1940)</h3>
-                    <p class="text-gray-600">Aeroelastic flutter caused the bridge to oscillate wildly and collapse. <strong>Lesson:</strong> Materials and structures must account for dynamic forces, not just static loads.</p>
+
+<!-- Article 4 -->
+	<div class="grid md:grid-cols-2 gap-8">
+            <div class="article-card bg-gray-700 rounded-3xl overflow-hidden shadow-sm">
+                <div class="p-6">
+                    <h3 class="text-white font-semibold text-xl mb-3">Tacoma Narrows Bridge Collapse (1940)</h3>
+                    <p class="text-gray-300">Aeroelastic flutter caused the bridge to oscillate wildly and collapse. <strong>Lesson:</strong> Materials and structures must account for dynamic forces, not just static loads.</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl shadow-sm">
+                    <a href="" 
+                       class="text-indigo-700 hover:text-black font-medium inline-flex items-center gap-2">
+                        Read Full Article →
+                    </a>
+            </div>
+<!-- Article 5 -->
+            <div class="article-card bg-gray-700 rounded-3xl overflow-hidden shadow-sm">
+                <div class="p-6">
                     <h3 class="font-semibold text-xl mb-3">Space Shuttle Challenger Disaster (1986)</h3>
-                    <p class="text-gray-600">O-ring seals lost elasticity in cold temperatures, leading to catastrophic failure. <strong>Lesson:</strong> Material performance under extreme environmental conditions is critical.</p>
+                    <p class="text-gray-300">O-ring seals lost elasticity in cold temperatures, leading to catastrophic failure. <strong>Lesson:</strong> Material performance under extreme environmental conditions is critical.</p>
                 </div>
+                    <a href="" 
+                       class="text-indigo-700 hover:text-black font-medium inline-flex items-center gap-2">
+                        Read Full Article →
+                    </a>
             </div>
         </div>
+
     </section>
 
     <!-- Call to Action -->
-    <div class="bg-gray-600 text-white py-16">
+    <div class="bg-gray-800 text-white py-6">
         <div class="max-w-4xl mx-auto text-center px-6">
-            <h2 class="text-4xl font-bold mb-6">Start Learning Today</h2>
-            <p class="text-xl mb-10">Join thousands of students and professionals exploring materials science.</p>
-            <button onclick="alert('Thank you! This is under developing. Courses & newsletters will come soon!')" 
-                    class="bg-gray-400 text-indigo-600 px-10 py-4 rounded-2xl text-lg font-semibold hover:bg-gray-200">
-                Browse All Topics →
+            <h2 class="text-3xl font-bold mb-4">Never Miss a New Article</h2>
+            <p class="mb-8">Get weekly materials science insights delivered to your inbox.</p>
+            <button onclick="alert('Newsletter signup will come soon. Stay tuned!')" 
+                    class="bg-indigo-300 text-indigo-700 px-10 py-4 rounded-2xl text-lg font-semibold hover:bg-red-800 hover:text-black">
+                Subscribe to Weekly Digest
             </button>
         </div>
     </div>
