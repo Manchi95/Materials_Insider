@@ -75,16 +75,48 @@
             </div>
 
             <!-- Hamburger Button (Mobile) -->
-            <div class="flex items-center gap-4">
-                    <button id="theme-toggle" class="text-2xl text-gray-700 dark:text-gray-300 hover:scale-110 transition">
-                        <i class="fa-solid fa-sun"></i>
-                    </button>
-                    <button id="hamburger" class="md:hidden text-3xl text-gray-700 dark:text-gray-300">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
-        </div>
+            <!-- Add this button anywhere -->
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+<button onclick="myFunction()" id="themeBtn">
+    <i class="fa-solid fa-moon" id="themeIcon"></i>
+</button>
+
+<style>
+body {
+    padding: 25px;
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+#themeBtn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 24px;
+}
+</style>
+
+<script>
+function myFunction() {
+    document.body.classList.toggle("dark-mode");
+
+    let icon = document.getElementById("themeIcon");
+
+    if (document.body.classList.contains("dark-mode")) {
+        icon.className = "fa-solid fa-sun";
+    } else {
+        icon.className = "fa-solid fa-moon";
+    }
+}
+</script>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200 dark:border-gray-700">
             <div class="flex flex-col space-y-5 text-gray-700 dark:text-gray-300">
@@ -111,7 +143,7 @@
             <p class="text-gray-600 text-lg dark:text-white">Have questions, suggestions, or want to collaborate? We'd love to hear from you.</p>
         </div>
 
-        <div class="bg-white rounded-3xl shadow-sm p-8 md:p-10 dark:bg-gray-900">
+        <div class="bg-white rounded-3xl shadow-sm p-8 md:p-12 dark:bg-gray-900">
             <div class="space-y-8">
 
                 <!-- Email -->
@@ -172,12 +204,12 @@
             <p style="margin-top:35px"><strong> • Disclaimer: </strong>We only communicate through the official channels above and do not ask for any payments for article submissions. We are not responsible for communications from other sources.</p>
         </div>
     </div>
-    <div class="dark:bg-gray-700 text-white py-16">
+    <div class="bg-indigo-700 text-white py-16 dark:bg-gray-900">
         <div class="max-w-4xl mx-auto text-center px-6">
             <h2 class="text-3xl font-bold mb-4">Never Miss a New Article</h2>
             <p class="mb-8">Get weekly materials science insights delivered to your inbox.</p>
             <button onclick="alert('Newsletter signup will come soon. Stay tuned!')" 
-                    class="bg-gray-900 text-indigo-700 px-10 py-4 rounded-2xl text-lg font-semibold hover:bg-gray-750">
+                    class="bg-white text-indigo-700 px-10 py-4 rounded-2xl text-lg font-semibold hover:bg-gray-900">
                 Subscribe to Weekly Digest
             </button>
         </div>
@@ -214,54 +246,6 @@
         });
     </script>
    
-    <!-- Scripts -->
-    <button id="theme-toggle" class="text-2xl text-gray-700 dark:text-gray-300 hover:scale-110 transition">
-          <i class="fa-solid fa-sun"></i>
-    </button>
-
-    <!-- Scripts -->
-    <script>
-        // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-
-        function setTheme(isDark) {
-            if (isDark) {
-                html.classList.add('dark');
-                themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                html.classList.remove('dark');
-                themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
-        // Load saved preference
-        if (localStorage.getItem('theme') === 'dark' || 
-            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            setTheme(true);
-        }
-
-        themeToggle.addEventListener('click', () => {
-            setTheme(!html.classList.contains('dark'));
-        });
-
-        // Mobile Menu
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        let isOpen = false;
-
-        hamburger.addEventListener('click', () => {
-            isOpen = !isOpen;
-            if (isOpen) {
-                mobileMenu.classList.remove('hidden');
-                hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-            } else {
-                mobileMenu.classList.add('hidden');
-                hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-            }
-        });
-    </script>
+   
 </body>
 </html>
