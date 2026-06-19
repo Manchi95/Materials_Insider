@@ -12,6 +12,28 @@
 </head>
 <body class="bg-gray-900 text-gray-100 transition-colors">
 
+<!-- Hamburger load -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (hamburger && mobileMenu) {
+            let isOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                isOpen = !isOpen;
+                
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        }
+    });
     <!-- Navigation -->
     <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
         <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
@@ -153,24 +175,5 @@
             <p class="text-sm">© 2026 Materials Insider • Educational Materials Science Platform</p>
         </div>
     </footer>
-	 <!-- Mobile Menu Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.getElementById('hamburger');
-            const mobileMenu = document.getElementById('mobile-menu');
-            let isOpen = false;
-
-            hamburger.addEventListener('click', function() {
-                isOpen = !isOpen;
-                if (isOpen) {
-                    mobileMenu.classList.remove('hidden');
-                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-                } else {
-                    mobileMenu.classList.add('hidden');
-                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
