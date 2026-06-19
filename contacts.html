@@ -3,190 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materials Insider | Educational Materials Science</title>
+    <title>Contact Us - Materials Insider</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .prose img { max-width: 100%; height: auto; }
+    </style>
 </head>
-    
-<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors">
+<body class="bg-gray-900 text-gray-100 transition-colors">
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (hamburger && mobileMenu) {
-            let isOpen = false;
-
-            hamburger.addEventListener('click', function() {
-                isOpen = !isOpen;
-                
-                if (isOpen) {
-                    mobileMenu.classList.remove('hidden');
-                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-                } else {
-                    mobileMenu.classList.add('hidden');
-                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-                }
-            });
-        }
-    });
-</script>
     <!-- Navigation -->
-<nav class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+    <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <!-- Clickable Logo -->
+                <div class="flex items-center space-x-2">
+                <!-- Clickable Logo -->
                 <a href="https://www.materialinsider.com" 
-                   class="flex items-center space-x-3 hover:opacity-80 transition no-underline">
+                   class="flex items-center space-x-3 hover:opacity-40 transition no-underline">
                     <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
-                    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Materials Insider</h1>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white">MATERIALS insider</h1>
                 </a>
-                </div>
+		</div>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8 text-gray-700 dark:text-gray-300">
+                <!-- Desktop Menu -->
+		<div class="hidden md:flex space-x-12 text-white">
                 <ul>
                     <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
                 </ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Story</a></ul>
                 <ul><a href="#" class="hover:text-indigo-600 font-medium">Research</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Technologies</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Failures</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Events</a></ul>
                 <ul><a href="#" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Disclaimer</a></ul>
                 <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
                 <ul>
                     <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
                 </ul>
-            </div>
+		
+		<!-- hamburger button -->
+		<button id="hamburger" class="md:hidden text-3xl text-gray-700">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
 
+            </div>
             <!-- Subscribe Button (Desktop) -->
             <div class="hidden md:block">
                 <button onclick="alert('Newsletter signup coming soon!')" 
-                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg text-sm font-medium">
-                    Subscribe
+                        class="bg-indigo-600 hover:bg-red-800 text-white hover:text-black px-5 py-2 rounded-lg text-sm font-medium">
+                    SUBSCRIBE
                 </button>
             </div>
 
-            <!-- Hamburger Button (Mobile) -->
-
-<!-- Font Awesome -->
-<!-- Theme Toggle Button -->
-        <button id="theme-toggle" class="text-3xl p-3 rounded-2xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
-                <i class="fa-solid fa-sun"></i>
-        </button>
-
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200 dark:border-gray-700">
-            <div class="flex flex-col space-y-5 text-gray-700 dark:text-gray-300">
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                <div class="flex flex-col space-y-5 text-lg text-gray-700 dark:text-gray-300">
                 <ul>
                     <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
                 </ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Story</a></ul>
                 <ul><a href="#" class="hover:text-indigo-600 font-medium">Research</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Technologies</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Failures</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Events</a></ul>
                 <ul><a href="#" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Disclaimer</a></ul>
                 <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
                 <ul>
                     <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
                 </ul>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- Contact Page Content -->
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-16 dark:text-gray-100 transition-colors">
-        <div class="text-center mb-12 dark:bg-gray-950">
-            <h1 class="text-4xl font-bold text-gray-800 mb-4 dark:text-white">Get in Touch</h1>
-            <p class="text-gray-600 text-lg dark:text-white">Have questions, suggestions, or want to collaborate? We'd love to hear from you.</p>
+    <!-- Contact Content -->
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-16">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">Get in Touch</h1>
+            <p class="text-gray-600 dark:text-gray-400 text-lg">
+                Have questions, suggestions, or want to collaborate? Reach out anytime.
+            </p>
         </div>
 
-        <div class="bg-white rounded-3xl shadow-sm p-8 md:p-12 dark:bg-gray-900">
-            <div class="space-y-8">
-
-                <!-- Email -->
-                <div class="flex items-start gap-6 dark:bg-gray-900">
-                    <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">
-                        ✉️
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-xl">Email</h3>
-                        <a href="materials.insider.info@gmail.com" arget="_blank"
-                           class="text-indigo-600 hover:underline text-lg">materials.insider.info@gmail.com</a>
-                        <p class="text-gray-500 mt-1">We'll reply within 48 hours.</p>
-                    </div>
+        <div class="bg-black rounded-3xl shadow-sm p-8 md:p-12 space-y-10">
+            
+            <!-- Email -->
+            <div class="flex items-start gap-6">
+                <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">
+                    ✉️
                 </div>
-
-                <!-- X (Twitter) -->
-                <div class="flex items-start gap-6 dark:bg-gray-900">
-                    <div class="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-3xl text-white flex-shrink-0">
-                        <i class="fa-brands fa-x-twitter"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-xl">X (Twitter)</h3>
-                        <a href="https://x.com/materialsinside" target="_blank" 
-                           class="text-indigo-600 hover:underline text-lg">@materialsinside</a>
-                    </div>
+                <div>
+                    <h3 class="font-semibold text-xl mb-1">Email</h3>
+                    <a href="materials.insider.info@gmail.com" 
+                       class="text-indigo-600 dark:text-indigo-400 hover:underline text-lg">
+                        materials.insider.info@gmail.com
+                    </a>
+                    <p class="text-gray-400 mt-1">We'll reply within 48 hours.</p>
                 </div>
-
-                <!-- LinkedIn -->
-                <div class="flex items-start gap-6 dark:bg-gray-900">
-                    <div class="w-12 h-12 bg-blue-700 rounded-2xl flex items-center justify-center text-3xl text-white flex-shrink-0">
-                        <i class="fa-brands fa-linkedin"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-xl">LinkedIn</h3>
-                        <a href="https://linkedin.com/in/materials-insider" target="_blank" 
-                           class="text-indigo-600 hover:underline text-lg">linkedin.com/in/materials-insider</a>
-                    </div>
-                </div>
-
-                <!-- Telegram -->
-                <div class="flex items-start gap-6 dark:bg-gray-900">
-                    <div class="w-12 h-12 bg-sky-500 rounded-2xl flex items-center justify-center text-3xl text-white flex-shrink-0">
-                        <i class="fa-brands fa-telegram"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-xl">Telegram</h3>
-                        <a href="https://t.me/materialsinsider" target="_blank" 
-                           class="text-indigo-600 hover:underline text-lg">@materialsinsider</a>
-                    </div>
-                </div>
-
             </div>
-        </div>
 
-        <div class="text-center mt-12 dark:text-white">
-            <p>Or just send us a message on any platform above 👆</p>
+            <!-- X (Twitter) -->
+            <div class="flex items-start gap-6">
+                <div class="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-3xl text-white flex-shrink-0">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-xl mb-1">X (Twitter)</h3>
+                    <a href="https://x.com/materialsinside" target="_blank" 
+                       class="text-indigo-600 dark:text-indigo-400 hover:underline text-lg">
+                        @materialsinside
+                    </a>
+                </div>
+            </div>
 
-            <p style="margin-top:35px"><strong> • Disclaimer: </strong>We only communicate through the official channels above and do not ask for any payments for article submissions. We are not responsible for communications from other sources.</p>
+            <!-- LinkedIn -->
+            <div class="flex items-start gap-6">
+                <div class="w-12 h-12 bg-blue-700 rounded-2xl flex items-center justify-center text-3xl text-white flex-shrink-0">
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-xl mb-1">LinkedIn</h3>
+                    <a href="https://linkedin.com/in/materials-insider" target="_blank" 
+                       class="text-indigo-600 dark:text-indigo-400 hover:underline text-lg">
+                        https://in/materials-insider
+                    </a>
+                </div>
+            </div>
+
+            <!-- Telegram -->
+            <div class="flex items-start gap-6">
+                <div class="w-12 h-12 bg-sky-500 rounded-2xl flex items-center justify-center text-3xl text-white flex-shrink-0">
+                    <i class="fa-brands fa-telegram"></i>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-xl mb-1">Telegram</h3>
+                    <a href="https://t.me/materialsinsider" target="_blank" 
+                       class="text-indigo-600 dark:text-indigo-400 hover:underline text-lg">
+                        @materialsinsider
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
-    <div class="bg-indigo-700 text-white py-16 dark:bg-gray-900">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h2 class="text-3xl font-bold mb-4">Never Miss a New Article</h2>
-            <p class="mb-8">Get weekly materials science insights delivered to your inbox.</p>
-            <button onclick="alert('Newsletter signup will come soon. Stay tuned!')" 
-                    class="bg-white text-indigo-700 px-10 py-4 rounded-2xl text-lg font-semibold hover:bg-gray-900">
-                Subscribe to Weekly Digest
-            </button>
-        </div>
-    </div>
+
     <!-- Footer -->
-     <footer class="bg-gray-900 text-gray-400 py-12">
+    <footer class="bg-black text-gray-400 py-12">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="flex justify-center items-center gap-3 mb-6">
                 <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
                 <span class="text-2xl font-bold text-white">Materials Insider</span>
             </div>
-            <p class="mb-8">Educational platform for Materials Science • Made for curious minds</p>
-            <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
+            <p class="text-sm">© 2026 Materials Insider • Educational Materials Science Platform</p>
         </div>
     </footer>
-
-    <!-- Mobile Menu Script -->
+	 <!-- Mobile Menu Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.getElementById('hamburger');
@@ -205,31 +173,5 @@
             });
         });
     </script>
-   
-    <!-- Theme Toggle Script -->
-    <script>
-        const toggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-
-        function switchTheme() {
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                toggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-                localStorage.setItem('theme', 'light');
-            } else {
-                html.classList.add('dark');
-                toggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-                localStorage.setItem('theme', 'dark');
-            }
-        }
-
-        // Default = Dark
-        html.classList.add('dark');
-        toggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-
-        toggle.addEventListener('click', switchTheme);
-    </script>
-
-   
 </body>
 </html>
