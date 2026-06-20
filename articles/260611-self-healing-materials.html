@@ -104,22 +104,32 @@
     		</style>
 
     <!-- Count Script -->
-    		<script>
- 
-        // Total Reads Count
+
+ <script>
+
         		const countElement = document.getElementById('total-reads');
         		let total = parseInt(localStorage.getItem('selfhealingmaterials') || '0');
         		countElement.textContent = total.toLocaleString();
 
-        		if (!sessionStorage.getItem('totalReadCounted')) {
-            		setTimeout(() => {
-                		total += 1;
-                		localStorage.setItem('selfhealingmaterials', total);
-                		countElement.textContent = total.toLocaleString();
-                		sessionStorage.setItem('totalReadCounted', 'true');
-            		}, 60000);
-        		}
-    		</script>
+    // Count after 1 minute stay (Mobile-friendly)
+    if (!sessionStorage.getItem('totalReadCounted')) {
+        let timeSpent = 0;
+        
+        const timer = setInterval(() => {
+            timeSpent += 10;   // Check every 10 seconds
+
+            if (timeSpent >= 60) {   // 60 seconds = 1 minute
+                clearInterval(timer);
+                
+                total += 1;
+                localStorage.setItem('selfhealingmaterials', total);
+                countElement.textContent = total.toLocaleString();
+                
+                sessionStorage.setItem('selfhealingmaterials', 'true');
+            }
+        }, 10000); // Check every 10 seconds (better for mobile)
+    }
+</script>
 
 
 
