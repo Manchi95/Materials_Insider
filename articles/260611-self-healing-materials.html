@@ -116,7 +116,7 @@
         let timeSpent = 0;
         
         const timer = setInterval(() => {
-            timeSpent += 10;   // Check every 10 seconds
+            timeSpent += 1;   // Check every 10 seconds
 
             if (timeSpent >= 60) {   // 60 seconds = 1 minute
                 clearInterval(timer);
@@ -127,7 +127,7 @@
                 
                 sessionStorage.setItem('selfhealingmaterials', 'true');
             }
-        }, 10000); // Check every 10 seconds (better for mobile)
+        }, 1000); // Check every 1 seconds (better for mobile)
     }
 </script>
 
@@ -246,6 +246,7 @@ The goal is simple: increase durability, reduce maintenance costs, and improve s
             <p class="font-medium mb-4">Share this article:</p>
             <div class="flex gap-4">
 
+		<div class="grid grid-cols-3 md:flex md:justify-center gap-3">
                 <button onclick="window.open('https://x.com/intent/tweet?url=https://materialinsider.com/articles/260611-self-healing-materials.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">X</button>
 
                 <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://materialinsider.com/articles/260611-self-healing-materials.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">LinkedIn</button>
@@ -276,6 +277,7 @@ The goal is simple: increase durability, reduce maintenance costs, and improve s
         		});
     			}
 		</script>
+		</div>
             </div>
         </div>
     </article>

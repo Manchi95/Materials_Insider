@@ -115,18 +115,18 @@
         let timeSpent = 0;
         
         const timer = setInterval(() => {
-            timeSpent += 10;   // Check every 10 seconds
+            timeSpent += 1;   // Check every 1 seconds
 
             if (timeSpent >= 60) {   // 60 seconds = 1 minute
                 clearInterval(timer);
                 
                 total += 1;
-                localStorage.setItem('diamondbattery', total);
+                localStorage.setItem('diamondabattery', total);
                 countElement.textContent = total.toLocaleString();
                 
-                sessionStorage.setItem('diamondbattery', 'true');
+                sessionStorage.setItem('diamondabattery', 'true');
             }
-        }, 10000); // Check every 10 seconds (better for mobile)
+        }, 1000); // Check every 1 seconds (better for mobile)
     }
 </script>
 
@@ -186,6 +186,7 @@
             <p class="font-medium mb-4">Share this article:</p>
             <div class="flex gap-4">
 
+		<div class="grid grid-cols-3 md:flex md:justify-center gap-3">
                 <button onclick="window.open('https://x.com/intent/tweet?url=https://materialinsider.com/articles/260615-diamond-batteries.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">X</button>
 
                 <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://materialinsider.com/articles/260615-diamond-batteries.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">LinkedIn</button>
@@ -216,6 +217,7 @@
         		});
     			}
 		</script>
+		</div>
             </div>
         </div>
     </article>
