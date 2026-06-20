@@ -3,95 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Self-Healing Materials - Materials Insider</title>
+    <title>Self Healing Materials - MATERIALS insider</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        .prose img { max-width: 100%; height: auto; }
-    </style>
 </head>
-<body class="bg-gray-50">
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (hamburger && mobileMenu) {
-            let isOpen = false;
+<body class="bg-gray-900 font-sans text-gray-100 transition-colors">
 
-            hamburger.addEventListener('click', function() {
-                isOpen = !isOpen;
-                
-                if (isOpen) {
-                    mobileMenu.classList.remove('hidden');
-                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-                } else {
-                    mobileMenu.classList.add('hidden');
-                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-                }
-            });
-        }
-    });
-</script>
     <!-- Navigation -->
-<nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+    <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
+                <div class="flex items-center space-x-2">
+                <!-- Clickable Logo -->
                 <a href="https://www.materialinsider.com" 
-                   class="flex items-center space-x-3 hover:opacity-80 transition no-underline">
+                   class="flex items-center space-x-3 hover:opacity-40 transition no-underline">
                     <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
-                    <h1 class="text-2xl font-bold text-gray-800">Materials Insider</h1>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white">MATERIALS insider</h1>
                 </a>
-                </div>
+		</div>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8 text-gray-700">
+                <!-- Desktop Menu -->
+		<div class="hidden md:flex space-x-12 text-white">
                 <ul>
-                    <li><a href="../" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
                 </ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Story</a></ul>
                 <ul><a href="#" class="hover:text-indigo-600 font-medium">Research</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Technologies</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Failures</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Resources</a></ul>
-                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
+                <ul><a href="articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
                 <ul>
-                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                    <li><a href="contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
                 </ul>
-
             </div>
 
             <!-- Subscribe Button (Desktop) -->
             <div class="hidden md:block">
                 <button onclick="alert('Newsletter signup coming soon!')" 
-                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg text-sm font-medium">
-                    Subscribe
+                        class="bg-indigo-600 hover:bg-red-800 text-white hover:text-black px-5 py-2 rounded-lg text-sm font-medium">
+                    SUBSCRIBE
                 </button>
             </div>
-
+	    
             <!-- Hamburger Button (Mobile) -->
             <button id="hamburger"
-                    class="md:hidden text-3xl text-gray-700 focus:outline-none">
+                    class="md:hidden text-3xl text-gray-400 focus:outline-none">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200">
-            <div class="flex flex-col space-y-5 text-gray-700">
+            <div class="flex flex-col space-y-5 text-white">
                 <ul>
-                    <li><a href="../" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
                 </ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Story</a></ul>
                 <ul><a href="#" class="hover:text-indigo-600 font-medium">Research</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Technologies</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Failures</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
                 <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
                 <ul>
-                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                    <li><a href="contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
                 </ul>
-                
             </div>
         </div>
     </div>
@@ -104,14 +81,49 @@
             <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">
                 Self-Healing Materials : The Future of Sustainable & Self Sustainable Materials
             </h1>
-            <p class="text-xl text-gray-600 mt-6">
+            <p class="text-xl text-gray-400 mt-6">
                 Imagine a cracked smartphone screen that repairs itself overnight, or a bridge that can automatically fix tiny fractures before they become dangerous. This is not science fiction—these are examples of self-healing materials, a rapidly advancing field in materials science designed to extend the life and safety of products and structures.
             </p>
-            <div class="flex items-center gap-4 mt-8 text-sm text-gray-500">
+            <div class="flex items-center gap-4 mt-8 text-sm text-white">
                 <span>By Arush</span>
                 <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
                 <span>5 min read</span>
             </div>
+
+
+
+<!-- Readers Count with Blinking Eye -->
+		<div class="flex justify-end mb-6">
+    		<span id="eye" class="text-xl animate-blink">👁️  </span>
+    		<span id="total-reads" class="font-semibold text-white"></span>
+		</div>
+
+    		<style>
+        		@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        		.animate-blink { animation: blink 1.5s infinite; }
+    		</style>
+
+    <!-- Count Script -->
+    		<script>
+ 
+        // Total Reads Count
+        		const countElement = document.getElementById('total-reads');
+        		let total = parseInt(localStorage.getItem('selfhealingmaterials') || '0');
+        		countElement.textContent = total.toLocaleString();
+
+        		if (!sessionStorage.getItem('totalReadCounted')) {
+            		setTimeout(() => {
+                		total += 1;
+                		localStorage.setItem('selfhealingmaterials', total);
+                		countElement.textContent = total.toLocaleString();
+                		sessionStorage.setItem('totalReadCounted', 'true');
+            		}, 60000);
+        		}
+    		</script>
+
+
+
+
         </header>
 
         <!-- Featured Image -->
@@ -120,7 +132,7 @@
              class="w-full rounded-2xl shadow-md mb-12">
 
         <!-- Article Content -->
-        <div class="prose prose-lg max-w-none text-gray-700">
+        <div class="prose prose-lg max-w-none text-gray-400 align-justify">
             <h2><strong>What Are Self-Healing Materials?</strong></h2>
             <p style="margin-bottom:35px">Self-healing materials are specially engineered substances that can repair damage automatically or with minimal external intervention. Just like human skin heals after a cut, these materials can restore their functionality after being scratched, cracked, or otherwise damaged.
 The goal is simple: increase durability, reduce maintenance costs, and improve safety.</p>
@@ -128,30 +140,43 @@ The goal is simple: increase durability, reduce maintenance costs, and improve s
             <h2x"><strong>1. Microcapsule-Based Healing</strong></h2>
             <p>In this method, tiny capsules filled with a healing agent are embedded in the material. When a crack forms, it breaks these capsules, releasing the liquid inside. This liquid then hardens and seals the crack.</p>
 
-            <p style="white-space: pre; tab-size: 4;">&#9; <strong>•Example: </strong> Self-healing coatings used in automotive paint.</p>
-            <p style="white-space: pre; tab-size: 4;">&#9; <strong>•Advantage: </strong>Simple design and effective for small damages.</p>
-            <p style="white-space: pre; tab-size: 4; margin-bottom:35px;">&#9; <strong>•Limitation: </Strong>Healing works only once per location because capsules are consumed.</p>
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+		<li><strong>Example: </strong> Self-healing coatings used in automotive paint.</li>
+    		<li><strong>Advantage: </strong>Simple design and effective for small damages.</li>
+    		<li><strong>Limitation: </Strong>Healing works only once per location because capsules are consumed.</li>
+		</ul>
 
-            <h2><strong>2. Vascular Systems</strong></h2>
-            <p>•Inspired by biological systems, this method uses microchannels inside the material that continuously supply healing agents; Similar to blood vessels in the human body.</p>
-            <p style="white-space: pre; tab-size: 4;">&#9;> •Can provide repeated healing because the healing agent can be replenished.</p>
-            <p style="white-space: pre; tab-size: 4; margin-bottom:35px">&#9;> •Often used in advanced composites and aerospace materials.</p>
+            <h2 style="margin-top:35px"><strong>2. Vascular Systems</strong></h2>
+            <p>Inspired by biological systems, this method uses microchannels inside the material that continuously supply healing agents; Similar to blood vessels in the human body.</p>
+            
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+		<li>Can provide repeated healing because the healing agent can be replenished.</li>
+    		<li>Often used in advanced composites and aerospace materials.</li>
+		</ul>
 
-            <h2><strong>3. Intrinsic (Autonomous) Healing</strong></h2>
+            <h2 style="margin-top:35px"><strong>3. Intrinsic (Autonomous) Healing</strong></h2>
             <p>These materials rely on their own molecular structure to repair damage. When triggered by heat, light, or pressure, the material's chemical bonds can re-form. Common in polymers with reversible bonds.</p>    
-            <p style="white-space: pre; tab-size: 4;">&#9; <strong>•Advantage: </strong>Can heal multiple times without adding external substances.</p>
-            <p style="white-space: pre; tab-size: 4;  margin-bottom:35px"">&#9; <strong>•Limitation: </strong>Often requires specific conditions like heating.</p>
+            
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+		<li><strong>Advantage: </strong>Can heal multiple times without adding external substances.</li>
+    		<li><strong>Limitation: </strong>Often requires specific conditions like heating.</li>
+		</ul>
+		<p style="margin-bottom:35px"></p>
             <img src="../images/260611-self-healing-materials/20190214-self-healing-material-RIKEN.jpg" 
              alt="Self-Healing Materials? 2" 
              class="w-full rounded-2xl shadow-md mb-12">
-            <h2><strong>4. Types of Materials</strong></h2>
+            
+	    <h2 style="margin-top:35px"><strong>4. Types of Materials</strong></h2>
             <p>Self-healing behavior has been developed in a wide range of materials:
-            <p style="white-space: pre; tab-size: 4;">&#9; <strong>•Polymers (plastics and rubbers): </strong>Most common, used in coatings and electronics.</p>
-            <p style="white-space: pre; tab-size: 4;">&#9; <strong>•Concrete: </strong>Contains bacteria or chemicals that produce limestone when cracks appear.</p>
-            <p style="white-space: pre; tab-size: 4;">&#9; <strong>•Metals: </strong>Early-stage research shows metals can heal microscopic defects under certain conditions.</p>
-            <p style="white-space: pre; tab-size: 4;  margin-bottom:35px"">&#9; <strong>•Ceramics and composites: </strong>Used in aerospace and high-temperature applications.</p>
 
-            <h2><strong>5. Real-World Applications</strong></h2>
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+		<li><strong>Polymers (plastics and rubbers): </strong>Most common, used in coatings and electronics.</li>
+    		<li><strong>Concrete: </strong>Contains bacteria or chemicals that produce limestone when cracks appear.</li>
+    		<li><strong>Metals: </strong>Early-stage research shows metals can heal microscopic defects under certain conditions.</li>
+		<li><strong>Ceramics and composites: </strong>Used in aerospace and high-temperature applications.</li>
+		</ul>
+
+            <h2 style="margin-top:35px"><strong>5. Real-World Applications</strong></h2>
             <p style="margin-bottom:35px">Self-healing materials are already making an impact across multiple industries:</p>
 
             <h3><strong>-Construction-</strong></h3>
@@ -172,52 +197,112 @@ The goal is simple: increase durability, reduce maintenance costs, and improve s
             <h2><strong>-Benefits-</strong></h2>
             <p>Self-healing materials offer several important advantages:
 
-            <p style="white-space: pre; tab-size: 4;">&#9; 1. Longer lifespan of products and infrastructure</p>
-            <p style="white-space: pre; tab-size: 4;">&#9; 2. Reduced maintenance and repair costs</p>
-            <p style="white-space: pre; tab-size: 4;">&#9; 3. Improved safety by preventing failure</p>
-            <p style="white-space: pre; tab-size: 4; margin-bottom:35px">&#9; 4. Environmental benefits (less waste, fewer replacements)</p>
-        
-            <h2><strong>-Challenges-</strong></h2>
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+		<li>1. Longer lifespan of products and infrastructure</li>
+    		<li>2. Reduced maintenance and repair costs</li>
+    		<li>3. Improved safety by preventing failure</li>
+		<li>4. Environmental benefits (less waste, fewer replacements)</li>
+		</ul>
+
+            <h2 style="margin-top:35px"><strong>-Challenges-</strong></h2>
             <p>Despite their promise, there are still challenges to overcome:
 
-            <p style="white-space: pre; tab-size: 4;">&#9; <strong>•Cost: </strong>Advanced self-healing systems can be expensive to produce.</p>
-            <p style="white-space: pre; tab-size: 4;">&#9; <strong>•Scalability: </strong>Producing these materials in large quantities is still difficult.</p>
-            <p style="white-space: pre; tab-size: 4;">&#9; <strong>•Performance trade-offs: </strong>Some materials may sacrifice strength for healing capability.</p>
-            <p style="white-space: pre; tab-size: 4; margin-bottom:35px">&#9; <strong>•Limited healing capacity: </strong>Some systems can only heal a limited number of times.</p>
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+		<li>Cost: </strong>Advanced self-healing systems can be expensive to produce.</li>
+    		<li>Scalability: </strong>Producing these materials in large quantities is still difficult.</li>
+    		<li>Performance trade-offs: </strong>Some materials may sacrifice strength for healing capability.</li>
+		<li>Limited healing capacity: </strong>Some systems can only heal a limited number of times.</li>
+		</ul>
            
-            <h2><strong>-The Future of Self-Healing Materials-</strong></h2>
+            <h2 style="margin-top:35px"><strong>-The Future of Self-Healing Materials-</strong></h2>
             <p>Research in this field is growing rapidly. Scientists are exploring nanotechnology, bio-inspired systems, and smart materials that can respond to environmental changes. In the future, we may see:
 
-            <p style="white-space: pre; tab-size: 4;">&#9; >Fully autonomous materials that repair large-scale damage</p>
-            <p style="white-space: pre; tab-size: 4;">&#9; >Self-healing infrastructure in smart cities</p>
-            <p style="white-space: pre; tab-size: 4; margin-bottom:35px">&#9; >Advanced medical implants that heal inside the human body</p>
-                
-            <h2><strong>-Conclusion-</strong></h2>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+		<li>Fully autonomous materials that repair large-scale damage</li>
+    		<li>Self-healing infrastructure in smart cities</li>
+    		<li>Advanced medical implants that heal inside the human body</li>
+		</ul>
+   
+            <h2 style="margin-top:35px"><strong>-Conclusion-</strong></h2>
             <p style="margin-bottom:35px">Self-healing materials represent a major step forward in engineering and sustainability. By mimicking natural healing processes, they offer smarter, more resilient solutions across industries. Although still developing, these materials are set to play a crucial role in shaping the future of technology and infrastructure.</p>
             
             <!-- Add images, bullet points, etc. -->
         </div>
 
-        <!-- Share Buttons -->
+
+<!-- Share Buttons -->
         <div class="mt-16 border-t border-gray-200 pt-8">
             <p class="font-medium mb-4">Share this article:</p>
             <div class="flex gap-4">
-                <button class="bg-gray-100 hover:bg-gray-200 px-6 py-3 rounded-xl">Twitter</button>
-                <button class="bg-gray-100 hover:bg-gray-200 px-6 py-3 rounded-xl">LinkedIn</button>
+
+                <button onclick="window.open('https://x.com/intent/tweet?url=https://materialinsider.com/articles/260611-self-healing-materials.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">X</button>
+
+                <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://materialinsider.com/articles/260611-self-healing-materials.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">LinkedIn</button>
+
+                <button onclick="window.open('https://wa.me/?text=Self-Healing%20Materials%20-%20Check%20this%20out:%20https://materialinsider.com/articles/260611-self-healing-materials.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">WhatsApp</button>
+
+                <button onclick="window.open('mailto:?subject=Self-Healing%20Materials&body=Check%20this%20interesting%20article%3A%20https://materialinsider.com/articles/260611-self-healing-materials.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">E-Mail</button>
+
+                <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://materialinsider.com/articles/260611-self-healing-materials.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">FaceBook</button>
+
+                <button onclick="copyArticleLink()" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">
+    		<span id="copy-text">Direct Link</span>
+		</button>
+
+		<script>
+    		function copyArticleLink() {
+        		const url = "https://materialinsider.com/articles/260611-self-healing-materials.html";  // article URL
+        
+        		navigator.clipboard.writeText(url).then(() => {
+            			const copyText = document.getElementById('copy-text');
+            			const originalText = copyText.textContent;
+            
+            			copyText.textContent = "✅ Copied!";
+            
+            			setTimeout(() => {
+                			copyText.textContent = originalText;
+            			}, 2000); // Back to "Copy Link" after 2 seconds
+        		});
+    			}
+		</script>
             </div>
         </div>
     </article>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12">
+<!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="flex justify-center items-center gap-3 mb-6">
                 <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
-                <span class="text-2xl font-bold text-white">Materials Insider</span>
+                <span class="text-3xl font-bold text-white">MATERIALS insider</span>
             </div>
-            <p class="mb-8">Educational platform for Materials Science • Made for curious minds</p>
+	    <p class="mb-4">Educational platform for Materials Science • Made for curious minds</p>
             <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+
+
+
 </body>
 </html>

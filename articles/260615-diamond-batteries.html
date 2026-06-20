@@ -3,116 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diamond Batteries - Materials Insider</title>
+    <title>Diamond Batteries - MATERIALS insider</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        .prose img { max-width: 100%; height: auto; }
-    </style>
 </head>
-<body class="bg-gray-50">
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (hamburger && mobileMenu) {
-            let isOpen = false;
+<body class="bg-gray-900 font-sans text-gray-100 transition-colors">
 
-            hamburger.addEventListener('click', function() {
-                isOpen = !isOpen;
-                
-                if (isOpen) {
-                    mobileMenu.classList.remove('hidden');
-                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-                } else {
-                    mobileMenu.classList.add('hidden');
-                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-                }
-            });
-        }
-    });
-</script>
     <!-- Navigation -->
-<nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+    <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
+                <div class="flex items-center space-x-2">
+                <!-- Clickable Logo -->
                 <a href="https://www.materialinsider.com" 
-                   class="flex items-center space-x-3 hover:opacity-80 transition no-underline">
+                   class="flex items-center space-x-3 hover:opacity-40 transition no-underline">
                     <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
-                    <h1 class="text-2xl font-bold text-gray-800">Materials Insider</h1>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white">MATERIALS insider</h1>
                 </a>
-                
-                </div>
+		</div>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8 text-gray-700">
+                <!-- Desktop Menu -->
+		<div class="hidden md:flex space-x-12 text-white">
                 <ul>
-                    <li><a href="../" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
                 </ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Story</a></ul>
                 <ul><a href="#" class="hover:text-indigo-600 font-medium">Research</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Technologies</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Failures</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Resources</a></ul>
-                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
+                <ul><a href="articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
                 <ul>
-                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                    <li><a href="contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
                 </ul>
-
             </div>
 
             <!-- Subscribe Button (Desktop) -->
             <div class="hidden md:block">
                 <button onclick="alert('Newsletter signup coming soon!')" 
-                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg text-sm font-medium">
-                    Subscribe
+                        class="bg-indigo-600 hover:bg-red-800 text-white hover:text-black px-5 py-2 rounded-lg text-sm font-medium">
+                    SUBSCRIBE
                 </button>
             </div>
-
+	    
             <!-- Hamburger Button (Mobile) -->
             <button id="hamburger"
-                    class="md:hidden text-3xl text-gray-700 focus:outline-none">
+                    class="md:hidden text-3xl text-gray-400 focus:outline-none">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200">
-            <div class="flex flex-col space-y-5 text-gray-700">
+            <div class="flex flex-col space-y-5 text-white">
                 <ul>
-                    <li><a href="../" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
                 </ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Story</a></ul>
                 <ul><a href="#" class="hover:text-indigo-600 font-medium">Research</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Technologies</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Failures</a></ul>
-                <ul><a href="#" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="#" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
                 <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
-                 <ul>
-                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                <ul>
+                    <li><a href="contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
                 </ul>
-               
             </div>
         </div>
     </div>
 </nav>
 
+
+
     <article class="max-w-4xl mx-auto px-6 py-12">
         <!-- Article Header -->
         <header class="mb-12">
-            <span class="text-indigo-600 font-medium">June 15, 2026 • Research Highlight</span>
+            <span class="text-indigo-600 font-medium">June 11, 2026 • Research Highlight</span>
             <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">
                 Diamond Batteries : Harnessing Nuclear Waste Through Advanced Materials Science
             </h1>
-            <p class="text-xl text-gray-600 mt-6">
+            <p class="text-xl text-gray-400 mt-6">
                 In the realm of materials science, few innovations bridge nuclear waste management and energy generation as elegantly as diamond batteries. These betavoltaic devices, pioneered by researchers at the University of Bristol and the UK Atomic Energy Authority (UKAEA), use synthetic diamond to convert the beta decay of radioactive carbon-14 (¹⁴C) into a steady trickle of electricity. Recent breakthroughs, including the world’s first ¹⁴C diamond battery announced in late 2024, highlight the unique properties of diamond as both a semiconductor and a radiation shield.
             </p>
-            <div class="flex items-center gap-4 mt-8 text-sm text-gray-500">
+            <div class="flex items-center gap-4 mt-8 text-sm text-white">
                 <span>By Arush</span>
                 <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
                 <span>3 min read</span>
             </div>
+
+<!-- Readers Count with Blinking Eye -->
+		<div class="flex justify-end mb-6">
+    		<span id="eye" class="text-xl animate-blink">👁️  </span>
+    		<span id="total-reads" class="font-semibold text-white"></span>
+		</div>
+
+    		<style>
+        		@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        		.animate-blink { animation: blink 1.5s infinite; }
+    		</style>
+
+    <!-- Count Script -->
+    		<script>
+ 
+        // Total Reads Count
+        		const countElement = document.getElementById('total-reads');
+        		let total = parseInt(localStorage.getItem('selfhealingmaterials') || '0');
+        		countElement.textContent = total.toLocaleString();
+
+        		if (!sessionStorage.getItem('totalReadCounted')) {
+            		setTimeout(() => {
+                		total += 1;
+                		localStorage.setItem('selfhealingmaterials', total);
+                		countElement.textContent = total.toLocaleString();
+                		sessionStorage.setItem('totalReadCounted', 'true');
+            		}, 60000);
+        		}
+    		</script>
+
         </header>
 
         <!-- Featured Image -->
@@ -121,10 +129,10 @@
              class="w-full rounded-2xl shadow-md mb-12">
 
         <!-- Article Content -->
-        <div class="prose prose-lg max-w-none text-gray-700">
+        <div class="prose prose-lg max-w-none text-gray-400 align-justify">
             <h2><strong>The Core Materials: Why Diamond?</strong></h2>
             <p style="margin-bottom:35px">Diamond stands out due to its exceptional properties: it is the hardest known natural material, possesses the highest thermal conductivity, and features a wide bandgap (~5.5 eV) that makes it an outstanding semiconductor for harsh environments. Unlike silicon, diamond is highly radiation-hard, resisting degradation from particle bombardment.</p>
-            
+
 
             <p style="margin-bottom:35px">In these batteries, synthetic diamonds are grown via <strong>Chemical Vapor Deposition (CVD)</strong>. Radioactive ¹⁴C, extracted from irradiated graphite moderator blocks in nuclear reactors, is incorporated into the diamond lattice. The process often uses ¹⁴CH₄ (methane) as a feedstock in a specialized plasma deposition rig under low-pressure, high-temperature conditions. Layers of non-radioactive ¹²C diamond encapsulate the active material, forming a p-n junction or Schottky barrier for efficient charge separation.</p>
             <p style="margin-bottom:35px"><strong>¹⁴C</strong> decays via beta emission (emitting electrons) with a half-life of approximately 5,730 years, transforming into stable nitrogen-14. The beta particles interact with the diamond lattice, generating electron-hole pairs that produce electrical current—similar to how photons work in solar cells, but powered by nuclear decay.</p>
@@ -132,12 +140,16 @@
             alt="Diamond battery?"  
             class="w-full rounded-2xl shadow-md mb-12">
             <h2  style="margin-top:35px"><strong>Key advantages of the diamond matrix:</strong></h2>
-            <p style="white-space: pre; tab-size: 4;">&#9; <strong>•Radiation containment: </strong>Short-range beta particles are fully absorbed within the diamond; nothing escapes, making the device safe to handle.</p>
-            <p style="white-space: pre; tab-size: 4;">&#9; <strong>•Durability: </strong>No chemical degradation, no moving parts, and extreme resistance to temperature, pressure, and radiation.</p>
-            <p style="white-space: pre; tab-size: 4;  margin-bottom:35px"">&#9; <strong>•Efficiency: </strong>Near-100% source efficiency for ¹⁴C in some designs, as the isotope is atomically integrated rather than layered separately.</p>
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li><strong>Radiation containment:</strong> Short-range beta particles are fully absorbed within the diamond; nothing escapes, making the device safe to handle.</li>
+    
+    		<li><strong>Durability:</strong> No chemical degradation, no moving parts, and extreme resistance to temperature, pressure, and radiation.</li>
+    
+    		<li><strong>Efficiency:</strong> Near-100% source efficiency for ¹⁴C in some designs, as the isotope is atomically integrated rather than layered separately.</li>
+		</ul>
 
             
-            <h2><strong>From Nuclear Waste to Power Source:</strong></h2>
+            <h2 style="margin-top:35px"><strong>From Nuclear Waste to Power Source:</strong></h2>
             <p style="margin-bottom:35px">Nuclear reactors produce vast quantities of radioactive graphite (nearly 95,000 tonnes in the UK alone). Much of the ¹⁴C concentrates near the surface of these blocks. Researchers heat or process the graphite to extract it as gas, significantly reducing the waste’s hazard level before growing it into diamond. This dual benefit—waste remediation and energy generation—makes the technology compelling for materials scientists focused on sustainability.</p>
 
             <p style="margin-bottom:35px">Early prototypes used nickel-63 (⁶³Ni), but ¹⁴C offers longer lifespan and better integration into the carbon-based diamond structure. Power output remains low (microwatts or less, e.g., ~15 joules per day for a 1g ¹⁴C cell), ideal for niche applications like pacemakers, spacecraft sensors, remote environmental monitors, or military devices—where replacing batteries is impractical.</p>
@@ -160,26 +172,79 @@
             <!-- Add images, bullet points, etc. -->
         </div>
 
-        <!-- Share Buttons -->
+<!-- Share Buttons -->
         <div class="mt-16 border-t border-gray-200 pt-8">
             <p class="font-medium mb-4">Share this article:</p>
             <div class="flex gap-4">
-                <button class="bg-gray-100 hover:bg-gray-200 px-6 py-3 rounded-xl">Twitter</button>
-                <button class="bg-gray-100 hover:bg-gray-200 px-6 py-3 rounded-xl">LinkedIn</button>
+
+                <button onclick="window.open('https://x.com/intent/tweet?url=https://materialinsider.com/articles/260615-diamond-batteries.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">X</button>
+
+                <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://materialinsider.com/articles/260615-diamond-batteries.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">LinkedIn</button>
+
+                <button onclick="window.open('https://wa.me/?text=Self-Healing%20Materials%20-%20Check%20this%20out:%20https://materialinsider.com/articles/260615-diamond-batteries.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">WhatsApp</button>
+
+                <button onclick="window.open('mailto:?subject=Self-Healing%20Materials&body=Check%20this%20interesting%20article%3A%20https://materialinsider.com/articles/260615-diamond-batteries.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">E-Mail</button>
+
+                <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://materialinsider.com/articles/260615-diamond-batteries.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">FaceBook</button>
+
+                <button onclick="copyArticleLink()" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">
+    		<span id="copy-text">Direct Link</span>
+		</button>
+
+		<script>
+    		function copyArticleLink() {
+        		const url = "https://materialinsider.com/articles/260615-diamond-batteries.html";  // article URL
+        
+        		navigator.clipboard.writeText(url).then(() => {
+            			const copyText = document.getElementById('copy-text');
+            			const originalText = copyText.textContent;
+            
+            			copyText.textContent = "✅ Copied!";
+            
+            			setTimeout(() => {
+                			copyText.textContent = originalText;
+            			}, 2000); // Back to "Copy Link" after 2 seconds
+        		});
+    			}
+		</script>
             </div>
         </div>
     </article>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12">
+<!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="flex justify-center items-center gap-3 mb-6">
                 <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
-                <span class="text-2xl font-bold text-white">Materials Insider</span>
+                <span class="text-3xl font-bold text-white">MATERIALS insider</span>
             </div>
-            <p class="mb-8">Educational platform for Materials Science • Made for curious minds</p>
+	    <p class="mb-4">Educational platform for Materials Science • Made for curious minds</p>
             <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+
+
+
 </body>
 </html>
+
