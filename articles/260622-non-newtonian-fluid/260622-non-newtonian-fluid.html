@@ -1,1 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Newtonian Fluid | MATERIALS insider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="icon" href="../images/logo2.jpeg" type="image/png">
+</head>
 
+<body class="bg-gray-900 font-sans text-gray-100 transition-colors">
+
+    <!-- Navigation -->
+    <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                
+<!-- Clickable Logo -->
+                <a href="https://www.materialinsider.com" 
+                   class="flex items-center space-x-3 hover:opacity-40 transition no-underline">
+                    <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white">MATERIALS insider</h1>
+                </a>
+		</div>
+
+                <!-- Desktop Menu -->
+		<div class="hidden md:flex space-x-12 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../research.html" class="hover:text-indigo-600 font-medium">Research</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe Button (Desktop) -->
+            <div class="hidden md:block">
+                <button onclick="alert('Newsletter signup coming soon!')" 
+                        class="bg-indigo-600 hover:bg-red-800 text-white hover:text-black px-5 py-2 rounded-lg text-sm font-medium">
+                    SUBSCRIBE
+                </button>
+            </div>
+	    
+            <!-- Hamburger Button (Mobile) -->
+            <button id="hamburger"
+                    class="md:hidden text-3xl text-gray-400 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200">
+            <div class="flex flex-col space-y-5 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../research.html" class="hover:text-indigo-600 font-medium">Research</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        <!-- Article Header -->
+        <header class="mb-12">
+            <span class="text-indigo-600 font-medium">June 22, 2026 • Properties of Materials</span>
+            <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">
+                Non-Newtonian Fluid : A substance that does not follow Isaac Newton’s laws
+            </h1>
+            <p class="text-xl text-gray-400 text-align-justify mt-6">
+                Most of us think of fluids like water or air as predictable: they flow easily, and their "thickness" (viscosity) stays constant no matter how fast you stir them. These are Newtonian fluids, but many real-world some substances break these rules. They are non-Newtonian fluids—their viscosity changes depending on the applied stress, time, or other conditions.
+            </p>
+            <div class="flex items-center gap-4 mt-8 text-sm text-white">
+                <span>By Arush</span>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <span>4 min read</span>
+            </div>
+
+<!-- Readers Count with Blinking Eye -->
+		<div class="flex justify-end mb-6">
+    		<span id="eye" class="text-xl animate-blink">👁️  </span>
+    		<span id="total-reads" class="font-semibold text-white"></span>
+		</div>
+
+    		<style>
+        		@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        		.animate-blink { animation: blink 1.5s infinite; }
+    		</style>
+
+    <!-- Count Script -->
+ <script>
+
+        		const countElement = document.getElementById('total-reads');
+        		let total = parseInt(localStorage.getItem('nonnewtonianfluida') || '0');
+        		countElement.textContent = total.toLocaleString();
+
+    // Count after 1 minute stay (Mobile-friendly)
+    if (!sessionStorage.getItem('totalReadCounted')) {
+        let timeSpent = 0;
+        
+        const timer = setInterval(() => {
+            timeSpent += 1;   // Check every 1 seconds
+
+            if (timeSpent >= 60) {   // 60 seconds = 1 minute
+                clearInterval(timer);
+                
+                total += 1;
+                localStorage.setItem('nonnewtonianfluida', total);
+                countElement.textContent = total.toLocaleString();
+                
+                sessionStorage.setItem('nonnewtonianfluida', 'true');
+            }
+        }, 1000); // Check every 1 seconds (better for mobile)
+    }
+</script>
+
+        </header>
+
+        <!-- Featured Image -->
+        <img src="../images/260622-non-newtonian-fluid/non-newtonian-fluid1.jpeg"
+             alt="non-newtonian-fluid1" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none text-gray-400">
+
+            <p style="margin-bottom:35px; margin-top:35px; font-size:18px; text-align: justify;">This fascinating behavior arises from the microscopic structure and interations (bondings and forces) between particles or molecules, making non-Newtonian fluids a key topic in materials science, rheology (the study pf flow), and everyday applications</p>
+            <h2 style="font-size:20px;"><strong>Type of Non-Newtonian Behavior:</strong></h2>
+
+            <p style="margin-bottom:25px; margin-top:25px; font-size:18px;">Non-Newtonian fluids are classified by how they resposnd to stress:</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li><strong>Shear-Thinning (Pseudoplastic): </strong> Viscosity decreases as shear rate increases. Stir or pour faster, and if flows more easily. At rest, tangled polymer chains or particles resist flow; under stress, they align or disentangle, reducing resistance. Example: ketchup, paints, blood and yoghurt. </li>
+    
+    		<li><strong>Shear-Thickening (Dilatant): </strong> The opposite~viscosity increases with the shear rate. Slow movement keeps it liquid-like sudden force makes it solid-like. Example: <strong>Oobleck</strong> (cornstarch + water)</li>
+    
+    		<li><strong>Thiixotropic: </strong> Viscosity decreases over time under constant stress (time-dependent shear-thinning). Stirring honey or paints make it runnier the longer you go.</li>
+    		<li><strong>Rheopectic: </strong> Viscosity increases over time under stress (rare). Whipped cream thickens as you beat it.</li>
+    		<li><strong>Bingham Plastics: </strong> Act like solids until a yeild stress is exceeded, then flow like liquids. Examples: Toothpaste, mayonnaise</li>
+		</ul>
+
+            <p style="margin-bottom:35px; margin-top:35px; font-size:18px; text-align: justify;">Other behaviors include viscoelasticity (combining viscous flow and elastic rebound, like Silly Putty. Let's go deep one by one in the future but today lets deep dive in to the <strong>OOBLECK.</strong></p>
+
+
+            <img src="../images/260622-non-newtonian-fluid/non-newtonian-fluid2.jpeg"
+            alt="Non-Newtonian-fluid2"  
+            class="w-full rounded-2xl shadow-md mb-12">
+
+            <h2 style="font-size:20px;"><strong>Materials Bonding and Forces: The Microscopic Explanation -></strong></h2>
+
+            <p style="margin-bottom:35px; margin-top:15px; font-size:18px; text-align: justify;">The magic lies in *intermolecular and interparticle forces*, not simple covalent bonds within molecules, but weaker interactions that govern how components organize under stress.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px; font-size:18px; text-align: justify;">In <strong>oobleck</strong> (a suspension, not a true solution):</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li>Cornstarch particles (long, rough, irregularly shaped starch polymers, ~1-10 microns) are suspended in water.</li>
+    		<li>At low shear (slow stirring), particles slide past each other easily. Water acts as a lubricant, and weak hydrogen bonds or van der Waals forces allow flow. The mixture behaves like a liquid.</li>
+    		<li>At high shear (punching or rapid stirring), particles jam together. Hydrodynamic forces push them into close contact, forming temporary "force networks" or clusters. Water gets trapped, and friction/repulsive forces between particles create a rigid structure. It feels solid. Release the stress, and particles relax, flowing again.</li>
+		</ul>
+
+           
+            <p style="margin-bottom:15px; margin-top:35px; font-size:18px; text-align: justify;">This is driven by:</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li><strong>Hydrodynamic lubrication forces</strong> and particle collisions.</li>
+    		<li><strong>Attractive forces</strong> (e.g., van der Waals) dominating at rest or low shear.</li>
+    		<li><strong>Contact and frictional forces</strong> surging under rapid deformation.</li>
+		</ul>
+
+
+            <p style="margin-bottom:15px; margin-top:35px; font-size:18px; text-align: justify;">In <strong>polymer-based shear-thinning fluids</strong> (like paints or blood):</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li>Long-chain molecules or polymers are entangled at rest (high viscosity due to entanglement and hydrogen bonding).</li>
+    		<li>Shear aligns chains in the flow direction, reducing entanglements and effective viscosity.</li>
+		</ul>
+
+            <p style="margin-bottom:35px; margin-top:35px; font-size:18px; text-align: justify;">In <strong>colloidal suspensions</strong> or emulsions, particle size, shape, concentration, and surface chemistry dictate behavior. High concentrations favor dilatancy as particles crowd.</p>
+            
+            <p style="margin-bottom:35px; margin-top:15px; font-size:18px; text-align: justify;"><strong>Bonding perspective: </strong> These aren't permanent chemical bonds breaking/forming but dynamic rearrangements of weaker forces—hydrogen bonds, ionic interactions, van der Waals attractions, steric repulsion, and electrostatics. External stress disrupts equilibrium structures, leading to emergent properties.</p>
+
+
+	<h2 style="font-size:20px; margin-bottom:25px;"><strong>Everyday Examples and Applications -></strong></h2>
+
+            <img src="../images/260622-non-newtonian-fluid/non-newtonian-fluid3.jpeg" 
+             alt="Diamon Batttery??" 
+             class="w-full rounded-2xl shadow-md mb-12">
+            
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li><strong>Ketchup: </strong>Shear-thinning—hard to pour until shaken.</li>
+    		<li><strong>Blood: </strong>Shear-thins in arteries for efficient flow.</li>
+    		<li><strong>Quicksand: </strong>Can behave dilatantly.</li>
+    		<li><strong>Industrial uses: </strong>Drilling muds (thixotropic for stability), 3D printing inks, body armor (shear-thickening fluids harden on impact), and food processing.</li>
+		</ul>
+
+            <p style="margin-bottom:35px; margin-top:35px; font-size:18px; text-align: justify;">Non-Newtonian fluids power smart materials, from self-healing coatings to adaptive damping in vehicles.</p>
+
+	<h2 style="font-size:20px;"><strong>Why It Matters in Materials Science -></strong></h2>
+
+
+            <p style="margin-bottom:35px; margin-top:15px; font-size:18px; text-align: justify;">Understanding these behaviors allows engineers to design better products—tailoring particle interactions, polymer lengths, or additives to control flow precisely. Advances in rheology and nanotechnology continue to unlock new applications, like tunable fluids for robotics or medicine.</p>
+
+
+	<h2 style="font-size:20px;"><strong>How to make your own Non-Newtonian Fluid at home -></strong></h2>
+            <p style="margin-bottom:35px; margin-top:15px; font-size:18px; text-align: justify;">Non-Newtonian fluids remind us that matter isn't always straightforward. Mix cornstarch and water at home (roughly 2:1 ratio by volume) and experiment—you'll see (and feel) the science firsthand. Their study bridges chemistry, physics, and engineering, revealing how subtle molecular forces create surprising macroscopic effects.</p>
+            
+            <!-- Add images, bullet points, etc. -->
+        </div>
+
+<!-- Share Buttons -->
+        <div class="mt-16 border-t border-gray-200 pt-8">
+            <p class="font-medium mb-4">Share this article:</p>
+            <div class="flex gap-4">
+
+		<div class="grid grid-cols-3 md:flex md:justify-center gap-3">
+                <button onclick="window.open('https://x.com/intent/tweet?url=https://materialinsider.com/articles/260622-non-newtonian-fluid.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">X</button>
+
+                <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://materialinsider.com/articles/260622-non-newtonian-fluid.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">LinkedIn</button>
+
+                <button onclick="window.open('https://wa.me/?text=Self-Healing%20Materials%20-%20Check%20this%20out:%20https://materialinsider.com/articles/260622-non-newtonian-fluid.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">WhatsApp</button>
+
+                <button onclick="window.open('mailto:?subject=Self-Healing%20Materials&body=Check%20this%20interesting%20article%3A%20https://materialinsider.com/articles/260622-non-newtonian-fluid.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">E-Mail</button>
+
+                <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://materialinsider.com/articles/260622-non-newtonian-fluid.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">FaceBook</button>
+
+                <button onclick="copyArticleLink()" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">
+    		<span id="copy-text">Direct Link</span>
+		</button>
+
+		<script>
+    		function copyArticleLink() {
+        		const url = "https://materialinsider.com/articles/260622-non-newtonian-fluid.html";  // article URL
+        
+        		navigator.clipboard.writeText(url).then(() => {
+            			const copyText = document.getElementById('copy-text');
+            			const originalText = copyText.textContent;
+            
+            			copyText.textContent = "✅ Copied!";
+            
+            			setTimeout(() => {
+                			copyText.textContent = originalText;
+            			}, 2000); // Back to "Copy Link" after 2 seconds
+        		});
+    			}
+		</script>
+		</div>
+            </div>
+        </div>
+    </article>
+
+<!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
+                <span class="text-3xl font-bold text-white">MATERIALS insider</span>
+            </div>
+	    <p class="mb-4">Educational platform for Materials Science • Made for curious minds</p>
+            <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
