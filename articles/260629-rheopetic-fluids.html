@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rheopectic Fluids - MATERIALS insider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="icon" href="../images/logo2.jpeg" type="image/png">
+</head>
+
+<body class="bg-gray-900 font-sans text-gray-100 transition-colors">
+
+    <!-- Navigation -->
+    <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                
+<!-- Clickable Logo -->
+                <a href="https://www.materialinsider.com" 
+                   class="flex items-center space-x-3 hover:opacity-40 transition no-underline">
+                    <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white">MATERIALS insider</h1>
+                </a>
+		</div>
+
+                <!-- Desktop Menu -->
+		<div class="hidden md:flex space-x-12 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../research.html" class="hover:text-indigo-600 font-medium">Research</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe Button (Desktop) -->
+            <div class="hidden md:block">
+                <button onclick="alert('Newsletter signup coming soon!')" 
+                        class="bg-indigo-600 hover:bg-red-800 text-white hover:text-black px-5 py-2 rounded-lg text-sm font-medium">
+                    SUBSCRIBE
+                </button>
+            </div>
+	    
+            <!-- Hamburger Button (Mobile) -->
+            <button id="hamburger"
+                    class="md:hidden text-3xl text-gray-400 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200">
+            <div class="flex flex-col space-y-5 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../research.html" class="hover:text-indigo-600 font-medium">Research</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        <!-- Article Header -->
+        <header class="mb-12">
+            <span class="text-indigo-600 font-medium">June 29, 2026 • Research Highlight</span>
+            <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">
+                Rheopectic Fluids: Time-Dependent Thickening Under Stress
+            </h1>
+            <p class="text-xl text-gray-400 mt-6">
+                While many non-Newtonian fluids grab headlines for instant transformations—like oobleck hardening on impact—<strong>rheopectic fluids</strong> (also called rheopectic or anti-thixotropic) offer a subtler, time-dependent drama. These rare materials gradually increase in viscosity (become thicker) the longer they experience sustained shear stress. Unlike instantaneous shear-thickening (dilatant) behavior, rheopecty requires prolonged agitation: the more you stir or shake (within limits), the more resistant to flow the fluid becomes.
+            </p>
+            <div class="flex items-center gap-4 mt-8 text-sm text-white">
+                <span>By Arush</span>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <span>4 min read</span>
+            </div>
+
+<!-- Readers Count with Blinking Eye -->
+		<div class="flex justify-end mb-6">
+    		<span id="eye" class="text-xl animate-blink">👁️  </span>
+    		<span id="total-reads" class="font-semibold text-white"></span>
+		</div>
+
+    		<style>
+        		@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        		.animate-blink { animation: blink 1.5s infinite; }
+    		</style>
+
+    <!-- Count Script -->
+ <script>
+
+        		const countElement = document.getElementById('total-reads');
+        		let total = parseInt(localStorage.getItem('rheopecticfluid') || '0');
+        		countElement.textContent = total.toLocaleString();
+
+    // Count after 1 minute stay (Mobile-friendly)
+    if (!sessionStorage.getItem('totalReadCounted')) {
+        let timeSpent = 0;
+        
+        const timer = setInterval(() => {
+            timeSpent += 1;   // Check every 1 seconds
+
+            if (timeSpent >= 60) {   // 60 seconds = 1 minute
+                clearInterval(timer);
+                
+                total += 1;
+                localStorage.setItem('rheopecticfluid', total);
+                countElement.textContent = total.toLocaleString();
+                
+                sessionStorage.setItem('rheopecticfluid', 'true');
+            }
+        }, 1000); // Check every 1 seconds (better for mobile)
+    }
+</script>
+
+        </header>
+
+        <!-- Featured Image -->
+        <img src="../images/260629-rheopetic-fluids/rheopetic-fluids3.jpeg"
+             alt="rheopectic-fluid?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none text-gray-400 align-justify">
+            
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;">This contrasts with the far more common <strong>thixotropic</strong> fluids (e.g., paint or yogurt), which thin out over time under constant shear as structures break down. Rheopectic fluids build up structure instead.</p>
+	<h2 style="font-size:20px;"><strong>Real-World Examples:</strong></h2>
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li><strong>Whipped cream or certain dairy products: </strong>Prolonged beating aligns fats and proteins, thickening it into peaks.</li>
+    		<li><strong>Printer inks and some lubricants: </strong>Designed to thicken under printing shear for better control.</li>
+    		<li><strong>Gypsum pastes and certain clay suspensions: </strong>Used in construction or industrial processes.</li>
+    		<li><strong>Synovial fluid </strong>in human joints: Provides lubrication that adapts under sustained movement.</li>
+		</ul>
+
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;">True rheopectic behavior is uncommon and often appears in complex colloidal or polymeric systems rather than simple household mixtures.</p>
+
+
+            <img src="../images/260629-rheopetic-fluids/rheopetic-fluids2.jpeg"
+            alt="rheopectic-fluid2"  
+            class="w-full rounded-2xl shadow-md mb-12">
+            <h2  style="margin-top:35px;font-size:20px;"><strong>Atomic and Molecular Mechanisms:</strong></h2>
+
+            <p style="margin-bottom:35px;font-size:18px;">At the atomic/molecular level, rheopecty stems from <strong>dynamic microstructural rearrangements</strong> driven by intermolecular forces and particle interactions under sustained shear. Unlike equilibrium Newtonian fluids, these systems are out of equilibrium; shear supplies energy that promotes ordering or bonding.</p>
+
+            <h2 style="margin-top:15px; margin-top:35px;font-size:20px;"><strong>Key processes:</strong></h2>
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li><strong>Particle alignment and aggregation: In suspensions (e.g., gypsum or clays), plate-like or irregular particles tumble randomly at rest. Sustained shear aligns them or brings them into repeated contact. This allows weak forces—van der Waals attractions </strong>, electrostatic interactions, or hydrogen bonding—to form larger clusters, networks, or "hydroclusters." Over time, these grow, trapping solvent and increasing resistance to flow.</li>
+    		<li><strong>Polymer or macromolecule entanglement and induced structuring: </strong>In solutions with long-chain molecules (e.g., certain inks or creams), shear stretches chains and increases collision frequency. This can promote temporary cross-links, crystallization nuclei, or fibril formation via hydrophobic interactions or ionic bridges. The longer the shear, the more extensive the network—raising effective viscosity. Hydrogen bonds and dipole-dipole forces play key roles in stabilizing these assemblies.</li>
+    		<li><strong>Colloidal forces balance: </strong>Shear disrupts solvation layers or lubrication films initially but, with time, enables attractive forces to dominate. In some cases, shear-induced desorption of stabilizers or exposure of binding sites leads to flocculation. Atomic-level vibrations and Brownian motion compete with these effects; sustained energy input tips the balance toward buildup.</li>
+		</ul>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;">These changes are often reversible: when shear stops, thermal motion and relaxation slowly dismantle the structures, returning the fluid toward its original state (though full recovery can take time).</p>
+            
+	    <img src="../images/260629-rheopetic-fluids/rheopetic-fluids1.jpeg"
+            alt="rheopectic-fluid2"  
+            class="w-full rounded-2xl shadow-md mb-12">
+
+            <p style="margin-bottom:35px;font-size:18px;">Rheopecty is rarer because most systems tend toward breakdown (thixotropy) under shear—energy input usually disrupts weak bonds first. Building structure requires specific chemistries where shear actively favors assembly, such as in systems with shear-activated bonding or jamming transitions that evolve slowly.</p>
+
+            <h2 style="margin-top:15px; margin-top:35px; font-size:20px;"><strong>Applications and Importance:</strong></h2>
+            
+            <p style="margin-bottom:35px;font-size:18px;">Rheopectic fluids are valuable in controlled thickening scenarios: industrial mixing, coatings that stabilize after application, or biomedical lubricants that adapt to movement. Understanding them at the atomic scale aids in designing smart materials, from adaptive inks to joint replacements.</p>
+            
+            <p style="margin-bottom:35px;font-size:18px;">Research continues with advanced rheometers, microscopy, and simulations to map exact force networks and molecular dynamics. While less flashy than dilatant fluids, rheopectic materials highlight how time, force, and nanoscale interactions create tunable macroscopic behavior—core to modern materials science.</p>
+
+            <img src="../images/260629-rheopetic-fluids/rheopetic-fluids4.jpeg"
+             alt="Diamon Batttery??" 
+             class="w-full rounded-2xl shadow-md mb-12">
+            
+        </div>
+
+<!-- Share Buttons -->
+        <div class="mt-16 border-t border-gray-200 pt-8">
+            <p class="font-medium mb-4">Share this article:</p>
+            <div class="flex gap-4">
+
+		<div class="grid grid-cols-3 md:flex md:justify-center gap-3">
+                <button onclick="window.open('https://x.com/intent/tweet?url=https://materialinsider.com/articles/260615-diamond-batteries.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">X</button>
+
+                <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://materialinsider.com/articles/260615-diamond-batteries.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">LinkedIn</button>
+
+                <button onclick="window.open('https://wa.me/?text=Self-Healing%20Materials%20-%20Check%20this%20out:%20https://materialinsider.com/articles/260615-diamond-batteries.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">WhatsApp</button>
+
+                <button onclick="window.open('mailto:?subject=Self-Healing%20Materials&body=Check%20this%20interesting%20article%3A%20https://materialinsider.com/articles/260615-diamond-batteries.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">E-Mail</button>
+
+                <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://materialinsider.com/articles/260615-diamond-batteries.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">FaceBook</button>
+
+                <button onclick="copyArticleLink()" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">
+    		<span id="copy-text">Direct Link</span>
+		</button>
+
+		<script>
+    		function copyArticleLink() {
+        		const url = "https://materialinsider.com/articles/260615-diamond-batteries.html";  // article URL
+        
+        		navigator.clipboard.writeText(url).then(() => {
+            			const copyText = document.getElementById('copy-text');
+            			const originalText = copyText.textContent;
+            
+            			copyText.textContent = "✅ Copied!";
+            
+            			setTimeout(() => {
+                			copyText.textContent = originalText;
+            			}, 2000); // Back to "Copy Link" after 2 seconds
+        		});
+    			}
+		</script>
+		</div>
+            </div>
+        </div>
+    </article>
+
+<!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
+                <span class="text-3xl font-bold text-white">MATERIALS insider</span>
+            </div>
+	    <p class="mb-4">Educational platform for Materials Science • Made for curious minds</p>
+            <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
