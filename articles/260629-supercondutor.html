@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superconductors - MATERIALS insider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="icon" href="../images/logo2.jpeg" type="image/png">
+</head>
+
+<body class="bg-gray-900 font-sans text-gray-100 transition-colors">
+
+    <!-- Navigation -->
+    <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                
+<!-- Clickable Logo -->
+                <a href="https://www.materialinsider.com" 
+                   class="flex items-center space-x-3 hover:opacity-40 transition no-underline">
+                    <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white">MATERIALS insider</h1>
+                </a>
+		</div>
+
+                <!-- Desktop Menu -->
+		<div class="hidden md:flex space-x-12 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../research.html" class="hover:text-indigo-600 font-medium">Research</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe Button (Desktop) -->
+            <div class="hidden md:block">
+                <button onclick="alert('Newsletter signup coming soon!')" 
+                        class="bg-indigo-600 hover:bg-red-800 text-white hover:text-black px-5 py-2 rounded-lg text-sm font-medium">
+                    SUBSCRIBE
+                </button>
+            </div>
+	    
+            <!-- Hamburger Button (Mobile) -->
+            <button id="hamburger"
+                    class="md:hidden text-3xl text-gray-400 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200">
+            <div class="flex flex-col space-y-5 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../research.html" class="hover:text-indigo-600 font-medium">Research</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        <!-- Article Header -->
+        <header class="mb-12">
+	    <span id="eye" class="bg-red-200 text-red-800 px-3 py-1 rounded-full animate-blink">June 29, 2026 • New Break-through </span>
+            <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">
+                Superconductors: China’s Record-Breaking Superconducting Magnet with Unlimited Clean Energy
+            </h1>
+            <p class="text-xl text-gray-400 mt-6">
+                On June 27, 2026, scientists and engineers in Hefei, Anhui Province, announced a historic milestone: the completion and successful testing of the <strong>world’s largest superconducting magnet</strong> ever built for a fusion reactor. 
+            </p>
+            <div class="flex items-center gap-4 mt-8 text-sm text-white">
+                <span>By MATERIALS insider</span>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <span>5 min read</span>
+            </div>
+
+<!-- Readers Count with Blinking Eye -->
+		<div class="flex justify-end mb-6">
+    		<span id="eye" class="text-xl animate-blink">👁️  </span>
+    		<span id="total-reads" class="font-semibold text-white"></span>
+		</div>
+
+    		<style>
+        		@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        		.animate-blink { animation: blink 1.5s infinite; }
+    		</style>
+
+    <!-- Count Script -->
+ <script>
+
+        		const countElement = document.getElementById('total-reads');
+        		let total = parseInt(localStorage.getItem('superconductor') || '0');
+        		countElement.textContent = total.toLocaleString();
+
+    // Count after 1 minute stay (Mobile-friendly)
+    if (!sessionStorage.getItem('totalReadCounted')) {
+        let timeSpent = 0;
+        
+        const timer = setInterval(() => {
+            timeSpent += 1;   // Check every 1 seconds
+
+            if (timeSpent >= 60) {   // 60 seconds = 1 minute
+                clearInterval(timer);
+                
+                total += 1;
+                localStorage.setItem('superconductor', total);
+                countElement.textContent = total.toLocaleString();
+                
+                sessionStorage.setItem('superconductor', 'true');
+            }
+        }, 1000); // Check every 1 seconds (better for mobile)
+    }
+</script>
+
+        </header>
+
+        <!-- Featured Image -->
+        <img src="../images/260629-superconductors/superconductors1.jpeg"
+             alt="superconductor?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none text-gray-400 align-justify">
+            
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;">This 582-tonne toroidal field (TF) magnet — measuring 21 meters long, 12 meters wide, and 3.3 meters high — has officially become the largest of its kind. It stores three times more energy than the TF magnets designed for the international ITER project and has 1.3 times the volume. Developed under China’s Comprehensive Research Facility for Fusion Technology (CRAFT) “artificial sun” program by the Institute of Plasma Physics, Chinese Academy of Sciences (ASIPP), the magnet passed expert review after six years of design, research, and testing. It achieved full domestic production with 47 authorized patents and 14 new technical standards.</p>
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;">A second breakthrough — a high-temperature superconducting (HTS) central solenoid coil operating at a stable 60 kA with 6.03 MJ energy storage — also completed full-condition testing at world-leading performance levels.</p>
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;">These achievements dramatically strengthen China’s independent fusion engineering capabilities and bring commercial fusion power one step closer.</p>
+
+	<h2 style="font-size:20px;"><strong>The Massive Scale of the Achievement:</strong></h2>
+		
+            <p style="margin-bottom:35px;font-size:18px;">Imagine a D-shaped coil so enormous that it dwarfs heavy machinery and requires specialized cleanroom facilities and cranes. This is not science fiction — it is the new reality in Hefei. The magnet will generate the powerful, steady magnetic fields needed to confine plasma at temperatures exceeding 100 million °C (far hotter than the Sun’s core) inside a tokamak fusion device.</p>
+
+            <p style="margin-bottom:35px;font-size:18px;">Without such magnets, the superheated plasma would touch the reactor walls and cool instantly, ending the fusion reaction. The toroidal field coils create the “magnetic bottle” that keeps everything suspended in a vacuum.</p>
+
+            <h2 style="margin-top:15px; margin-top:35px;font-size:20px;"><strong>How Superconductors Work at the Atomic Scale:</strong></h2>
+
+            <p style="margin-bottom:35px;font-size:18px;">To understand why this magnet is possible, we must zoom into the atomic world.</p>
+
+            <p style="margin-bottom:35px;font-size:18px;">In ordinary metals (copper, aluminum, etc.), electric current flows when free electrons move through the crystal lattice. However, these electrons constantly collide with vibrating atoms (phonons) and impurities, losing energy as heat — this is <strong>electrical resistance</strong>.</p>
+
+
+            <p style="margin-bottom:35px;font-size:18px;">Below a critical temperature (<strong>Tc</strong>), certain materials undergo a dramatic quantum phase transition. The resistance drops abruptly to <strong>zero</strong>. Not nearly zero, but absolutely zero!</p>
+
+            <h2 style="margin-top:15px; margin-top:35px;font-size:20px;"><strong>The key mechanism: Cooper pairs --> </strong></h2>
+
+            <p style="margin-bottom:35px;font-size:18px;">According to the celebrated BCS theory (Bardeen–Cooper–Schrieffer, 1957), electrons in conventional superconductors do not travel alone. An electron moving through the positively charged ion lattice slightly distorts it, creating a region of higher positive charge density. This attracts a second electron with opposite momentum and spin, forming a <strong>Cooper pair</strong>.</p>
+
+
+            <img src="../images/260629-superconductors/superconductors2.jpeg"
+            alt="superconductors"  
+            class="w-full rounded-2xl shadow-md mb-12">
+
+            <p style="margin-bottom:35px;font-size:18px;">These pairs behave as <strong>bosons</strong> (integer spin) rather than fermions. At low enough temperatures, they condense into a single macroscopic quantum state — a Bose-Einstein condensate of pairs. Because all pairs occupy the same quantum state, they can flow coherently without scattering. There are no available energy states for individual electrons to scatter into, hence <strong>zero resistance</strong>.</p>
+            <p style="margin-bottom:35px;font-size:18px;">A second miraculous property appears: the <strong>Meissner effect</strong>. Superconductors expel magnetic fields from their interior (below a critical field strength). Persistent screening currents on the surface perfectly cancel external fields, enabling magnetic levitation.</p>
+
+
+            <img src="../images/260629-superconductors/superconductors3.jpeg"
+            alt="superconductors"  
+            class="w-full rounded-2xl shadow-md mb-12">
+
+
+            <h2 style="margin-top:15px; margin-top:35px;font-size:20px;"><strong>Type I vs Type II superconductors:</strong></h2>
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li><strong>Type I</strong> (pure metals like lead, mercury): abrupt transition, low critical fields — unsuitable for high-field magnets.</li>
+    		<li><strong>Type II</strong> (alloys and compounds like Nb-Ti, Nb₃Sn, and high-temperature cuprates/REBCO): allow magnetic flux to penetrate in quantized vortices above a lower critical field but remain superconducting up to a much higher upper critical field (<strong>Bc2</strong>). This makes them ideal for powerful magnets.</li>
+		</ul>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;">Fusion magnets typically use <strong>low-temperature superconductors</strong> (LTS) such as Nb₃Sn for the highest fields, cooled by liquid helium at ~4 K. The new Chinese central solenoid uses <strong>high-temperature superconductors</strong> (HTS), which can operate at higher temperatures (20–77 K) with liquid nitrogen or cryocoolers, offering potential advantages in efficiency and field strength.</p>
+            
+            <h2 style="margin-top:15px; margin-top:35px;font-size:20px;"><strong>Why Tokamaks Need These Giant Magnets:</strong></h2>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;">A tokamak is a donut-shaped (toroidal) device. The <strong>toroidal field (TF) coils</strong> — exactly the type just completed in China — produce a strong magnetic field that twists around the torus like a ring. This field, combined with the poloidal field generated by the plasma current itself, creates helical field lines that stabilize the plasma.</p>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;">The <strong>central solenoid</strong> acts like the primary winding of a transformer. By ramping current through it, it induces a massive toroidal current in the plasma (up to millions of amperes). This plasma current both heats the plasma through ohmic heating and helps shape and position it.</p>
+
+
+	    <img src="../images/260629-superconductors/superconductors4.jpeg"
+            alt="superconductors3"  
+            class="w-full rounded-2xl shadow-md mb-12">
+
+            <p style="margin-bottom:35px;font-size:18px;">The Chinese TF magnet’s enormous energy storage capacity (three times ITER’s) means it can sustain stronger, more stable fields for longer pulses — critical for steady-state or long-pulse operation needed in future power plants.</p>
+
+            <h2 style="margin-top:15px; margin-top:35px; font-size:20px;"><strong>Real-World Applications of Superconducting Magnets:</strong></h2>
+            
+            <p style="margin-bottom:35px;font-size:18px;">Superconducting magnets are already transforming multiple industries:</p>
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li><strong>Medical Imaging :</strong> MRI scanners (the largest commercial market) use Nb-Ti magnets to create uniform fields of 1.5–7 T or higher.</li>
+    		<li><strong>Particle Physics :</strong> The Large Hadron Collider (LHC) at CERN relies on thousands of Nb-Ti and Nb₃Sn magnets to steer protons at nearly light speed.</li>
+    		<li><strong>Magnetic Levitation (Maglev) :</strong> Japan’s SCMaglev and China’s high-speed maglev trains use superconducting magnets for frictionless, ultra-fast travel.</li>
+    		<li><strong>Scientific Instruments :</strong> Nuclear magnetic resonance (NMR) spectrometers and ion cyclotron resonance mass spectrometers.</li>
+    		<li><strong>Energy Storage :</strong> Superconducting Magnetic Energy Storage (SMES) systems can release stored energy in milliseconds for grid stabilization.</li>
+    		<li><strong>Fusion Energy :</strong> The ultimate application — the magnets you just read about.</li>
+		</ul>
+            
+            <p style="margin-bottom:35px;font-size:18px;">Emerging uses include compact fusion devices from private companies and advanced quantum sensors.</p>
+  
+            <h2 style="margin-top:15px; margin-top:35px; font-size:20px;"><strong>The Bigger Picture: China’s Fusion Ambitions and Global Context:</strong></h2>
+
+            <p style="margin-bottom:35px;font-size:18px;">This magnet is a cornerstone of the <strong>CRAFT</strong> project, which develops and qualifies key technologies for the China Fusion Engineering Test Reactor (CFETR) — China’s planned next-step device after EAST (the Experimental Advanced Superconducting Tokamak, also in Hefei).</p>
+            <p style="margin-bottom:35px;font-size:18px;">China has pursued a clear roadmap: EAST has already achieved record plasma durations; CRAFT validates full-scale components; CFETR will demonstrate tritium breeding and high-duty-cycle operation; ultimately leading to commercial DEMO reactors.</p>
+            <p style="margin-bottom:35px;font-size:18px;">While ITER (the international project in France) remains the largest collaborative effort, delays have opened space for national programs. Private ventures worldwide are also racing ahead using high-temperature superconductors for more compact, higher-field designs.</p>
+            <p style="margin-bottom:35px;font-size:18px;">China’s achievement of <strong>100% domestic production</strong> for these critical components reduces supply-chain risks and demonstrates mastery of some of the most demanding materials engineering challenges: winding brittle Nb₃Sn conductors into precise geometries, managing enormous electromagnetic forces, ensuring reliable superconducting joints, and protecting against “quenches” (sudden loss of superconductivity).</p>
+
+
+            <h2 style="margin-top:15px; margin-top:35px; font-size:20px;"><strong>Looking Ahead:</strong></h2>
+
+            <p style="margin-bottom:35px;font-size:18px;">The successful testing of both the record-breaking TF magnet and the advanced HTS central solenoid marks more than a technical milestone — it is a statement of intent. Materials science sits at the heart of the fusion dream. Every improvement in superconductor performance, cryogenic systems, structural materials, and manufacturing precision brings us closer to a world powered by the same process that lights the stars.</p>
+            <p style="margin-bottom:35px;font-size:18px;">Fusion promises virtually unlimited clean energy with no long-lived radioactive waste and no meltdown risk. The road is still long and expensive, but milestones like this one in Hefei show the path is being paved — literally with some of the largest and most sophisticated pieces of technology humanity has ever built.</p>
+
+            <img src="../images/260629-superconductors/superconductors5.jpeg"
+             alt="superconductors?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+
+            <h2 style="margin-top:15px; margin-top:35px; font-size:20px;"><strong>Credits & Sources:</strong></h2>
+            <p style="margin-bottom:35px;font-size:18px;">Primary reporting based on CGTN coverage (June 27, 2026) and supporting details from the Institute of Plasma Physics, Chinese Academy of Sciences (ASIPP) via CRAFT project documentation. Additional context drawn from peer-reviewed literature on fusion magnet technology and international fusion programs. All explanatory diagrams and illustrative images created specifically for this article to aid understanding.</p>
+
+            <p style="margin-bottom:35px;font-size:18px;"><strong>Share it with fellow materials enthusiasts, engineers, and anyone excited about the future of clean energy.</strong></p>
+
+            
+        </div>
+
+<!-- Share Buttons -->
+        <div class="mt-16 border-t border-gray-200 pt-8">
+            <p class="font-medium mb-4">Share this article:</p>
+            <div class="flex gap-4">
+
+		<div class="grid grid-cols-3 md:flex md:justify-center gap-3">
+                <button onclick="window.open('https://x.com/intent/tweet?url=https://materialinsider.com/articles/260629-supercondutor.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">X</button>
+
+                <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://materialinsider.com/articles/260629-supercondutor.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">LinkedIn</button>
+
+                <button onclick="window.open('https://wa.me/?text=Self-Healing%20Materials%20-%20Check%20this%20out:%20https://materialinsider.com/articles/260629-supercondutor.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">WhatsApp</button>
+
+                <button onclick="window.open('mailto:?subject=Self-Healing%20Materials&body=Check%20this%20interesting%20article%3A%20https://materialinsider.com/articles/260629-supercondutor.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">E-Mail</button>
+
+                <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://materialinsider.com/articles/260629-supercondutor.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">FaceBook</button>
+
+                <button onclick="copyArticleLink()" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">
+    		<span id="copy-text">Direct Link</span>
+		</button>
+
+		<script>
+    		function copyArticleLink() {
+        		const url = "https://materialinsider.com/articles/260629-supercondutor.html";  // article URL
+        
+        		navigator.clipboard.writeText(url).then(() => {
+            			const copyText = document.getElementById('copy-text');
+            			const originalText = copyText.textContent;
+            
+            			copyText.textContent = "✅ Copied!";
+            
+            			setTimeout(() => {
+                			copyText.textContent = originalText;
+            			}, 2000); // Back to "Copy Link" after 2 seconds
+        		});
+    			}
+		</script>
+		</div>
+            </div>
+        </div>
+    </article>
+
+<!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
+                <span class="text-3xl font-bold text-white">MATERIALS insider</span>
+            </div>
+	    <p class="mb-4">Educational platform for Materials Science • Made for curious minds</p>
+            <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
