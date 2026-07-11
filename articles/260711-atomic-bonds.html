@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atomic Bonds - MATERIALS insider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="icon" href="../images/logo2.jpeg" type="image/png">
+</head>
+
+<body class="bg-gray-900 font-sans text-gray-100 transition-colors">
+
+    <!-- Navigation -->
+    <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                
+<!-- Clickable Logo -->
+                <a href="https://www.materialinsider.com" 
+                   class="flex items-center space-x-3 hover:opacity-40 transition no-underline">
+                    <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white">MATERIALS insider</h1>
+                </a>
+		</div>
+
+                <!-- Desktop Menu -->
+		<div class="hidden md:flex space-x-12 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../research.html" class="hover:text-indigo-600 font-medium">Research</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe Button (Desktop) -->
+            <div class="hidden md:block">
+                <button onclick="alert('Newsletter signup coming soon!')" 
+                        class="bg-indigo-600 hover:bg-red-800 text-white hover:text-black px-5 py-2 rounded-lg text-sm font-medium">
+                    SUBSCRIBE
+                </button>
+            </div>
+	    
+            <!-- Hamburger Button (Mobile) -->
+            <button id="hamburger"
+                    class="md:hidden text-3xl text-gray-400 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200">
+            <div class="flex flex-col space-y-5 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../research.html" class="hover:text-indigo-600 font-medium">Research</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        <!-- Article Header -->
+        <header class="mb-12">
+	    <span class="text-indigo-600 font-medium">July 07, 2026 • Science </span>
+            <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">
+                The Illusion of Touch at the Atomic Scale: Interatomic Distances and Forces in Materials Science
+            </h1>
+            <p class="text-xl text-gray-400 mt-6">
+                Solids feel rigid and surfaces appear to make contact, yet atoms never truly touch in the classical sense. Instead, what we perceive as touch arises from the balance of attractive and repulsive forces between electron clouds.
+            </p>
+            <div class="flex items-center gap-4 mt-8 text-sm text-white">
+                <span>By MATERIALS insider</span>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <span>4 min read</span>
+            </div>
+
+<!-- Readers Count with Blinking Eye -->
+		<div class="flex justify-end mb-6">
+    		<span id="eye" class="text-xl animate-blink">👁️  </span>
+    		<span id="total-reads" class="font-semibold text-white"></span>
+		</div>
+
+    		<style>
+        		@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        		.animate-blink { animation: blink 1.5s infinite; }
+    		</style>
+
+    <!-- Count Script -->
+ <script>
+
+        		const countElement = document.getElementById('total-reads');
+        		let total = parseInt(localStorage.getItem('atomicbond') || '0');
+        		countElement.textContent = total.toLocaleString();
+
+    // Count after 1 minute stay (Mobile-friendly)
+    if (!sessionStorage.getItem('totalReadCounted')) {
+        let timeSpent = 0;
+        
+        const timer = setInterval(() => {
+            timeSpent += 1;   // Check every 1 seconds
+
+            if (timeSpent >= 60) {   // 60 seconds = 1 minute
+                clearInterval(timer);
+                
+                total += 1;
+                localStorage.setItem('atomicbond', total);
+                countElement.textContent = total.toLocaleString();
+                
+                sessionStorage.setItem('atomicbond', 'true');
+            }
+        }, 1000); // Check every 1 seconds (better for mobile)
+    }
+</script>
+
+        </header>
+
+        <!-- Featured Image -->
+
+
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none text-gray-400 align-justify">
+            
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;text-align: justify;">For materials science students, the everyday notion of “touch” quickly breaks down when examined at the atomic level. Solids feel rigid and surfaces appear to make contact, yet atoms never truly touch in the classical sense. Instead, what we perceive as touch arises from the balance of attractive and repulsive forces between electron clouds. Understanding these distances and interactions is essential for explaining mechanical properties, designing nanomaterials, and performing accurate simulations.</p>
+        <img src="../images/260707-atomic-bonds/atomic-bonds1.jpeg"
+             alt="atomicbonds?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;text-align: justify;">Atoms consist of a dense, positively charged nucleus surrounded by a probabilistic electron cloud. When two atoms approach, their electron clouds begin to overlap at separations of a few angstroms (1 Å = 10<sup>-10</sup>m). This overlap triggers powerful repulsion dominated by the <strong>Pauli exclusion principle</strong> (electrons cannot occupy the same quantum state) and electrostatic repulsion between negatively charged electrons. The result is a steep “repulsive wall” that prevents nuclei from getting arbitrarily close.</p>
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;text-align: justify;"><strong>Non-bonded “contact”</strong> typically occurs near the sum of van der Waals radii (roughly 3–4 Å for many elements). In contrast, when atoms form chemical bonds, electron sharing or transfer allows much closer approach—usually 1–2.5 Å—defined by covalent, ionic, or metallic radii.</p>
+
+	<h2 style="font-size:20px;"><strong>Interatomic Distances in Real Materials:</strong></h2>
+		
+            <p style="margin-bottom:35px;font-size:18px;">These characteristic lengths directly govern material behavior:</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li><strong>Metals (e.g., copper in FCC structure): </strong>Nearest-neighbor distance ≈ 2.56 Å. Metallic bonding at this scale enables high electrical conductivity, ductility, and packing efficiency.</li>
+    		<li><strong>Ionic ceramics (e.g., NaCl): </strong> Na–Cl distance ≈ 2.82 Å, producing strong, directional ionic bonds and brittleness.</li>
+    		<li><strong>Layered materials (e.g., graphite): </strong>Strong in-plane C–C covalent bonds (~1.42 Å), but weak interlayer van der Waals spacing of 3.35 Å. This anisotropy makes graphite an excellent solid lubricant.</li>
+    		<li><strong>Polymers: </strong> Polymer chains pack via van der Waals forces at ~3.5–4 Å between chains, explaining low melting points, flexibility, and creep behavior compared to metals or ceramics.</li>
+
+		</ul>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">These distances determine atomic packing factor, density, and bonding energy, which in turn control hardness, elastic modulus, and thermal expansion.</p>
+
+            <img src="../images/260707-atomic-bonds/atomic-bonds3.jpg"
+            alt="superconductors"  
+            class="w-full rounded-2xl shadow-md mb-12">  
+
+            <h2 style="margin-bottom:25px; margin-top:35px;font-size:20px;"><strong>Modeling Atomic Interactions: The Lennard-Jones Potential</strong></h2>
+
+
+            <p style="margin-bottom:35px;font-size:18px;text-align: justify;">Materials scientists rarely treat atoms as hard spheres. Instead, they use empirical interatomic potentials. The classic <strong>Lennard-Jones (LJ) potential</strong> approximates van der Waals interactions:</p>
+
+            <p style="margin-bottom:35px;font-size:26px;text-align: center"><strong>U(r) = 4ε [(σ/r)<sup>12</sup> − (σ/r)<sup>6</sup>]</strong></p>
+
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">Here, (r) is the interatomic separation, (ε) is the depth of the attractive well (related to bond strength), and (σ) is the finite distance at which the potential is zero (roughly the atomic diameter). The (r<sup>-12</sup>) term creates the steep repulsive wall at short range; the (r<sup>6</sup>) term describes longer-range attraction.</p>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">This simple yet powerful model is the foundation of many molecular dynamics (MD) simulations used to predict diffusion, phase transformations, mechanical deformation, and surface phenomena in materials. More sophisticated potentials (Embedded Atom Method for metals, ReaxFF for reactive systems) extend the concept for greater accuracy across different bonding types.</p>
+
+
+            <img src="../images/260707-atomic-bonds/atomic-bonds2.jpeg"
+            alt="superconductors"  
+            class="w-full rounded-2xl shadow-md mb-12">
+
+
+            <h2 style="margin-top:15px; margin-top:35px; font-size:20px;"><strong>Experimental Access: Atomic Force Microscopy (AFM):</strong></h2>
+            
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">Theory is validated experimentally with <strong>Atomic Force Microscopy. A sharp tip mounted on a flexible cantilever raster-scans (or approaches) the sample surface. Far away, attractive van der Waals and capillary forces pull the cantilever downward. As the tip nears atomic contact, repulsive forces dominate, deflecting the cantilever upward. A laser reflected off the cantilever detects these tiny deflections, producing both topographic images at atomic resolution and quantitative **force–distance curves.</strong></p>
+
+            <p style="margin-bottom:35px;font-size:18px;text-align: justify;">AFM is indispensable in materials labs for measuring nanoscale adhesion, elasticity, friction, and even individual bond strengths—directly probing the same interatomic forces discussed above.</p>
+
+            <img src="../images/260707-atomic-bonds/atomic-bonds4.jpeg"
+            alt="superconductors"  
+            class="w-full rounded-2xl shadow-md mb-12">  
+
+            <h2 style="margin-top:15px; margin-top:35px; font-size:20px;"><strong>Why These Concepts Matter in Materials Science:</strong></h2>
+
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">The steep repulsive potential explains why condensed matter resists compression. Weak van der Waals forces in molecular solids or between graphene layers enable easy shear and low hardness. In nanotechnology and surface engineering, precise control of these distances enables self-assembly, tailored interfaces in composites, thin-film adhesion, and molecular-scale devices. MD simulations built on these potentials allow virtual testing of new alloys, polymers, and nanomaterials long before synthesis.</p>
+            <p style="margin-bottom:35px;font-size:18px;text-align: justify;">In short, “touch” at the atomic scale is a delicate, quantifiable balance of forces occurring over distances measured in angstroms. Mastering these concepts equips materials scientists to design stronger, smarter, and more functional materials—from everyday steels to next-generation 2D materials and beyond.</p>
+            <p style="margin-bottom:35px;font-size:18px;text-align: justify;">Sources: louis.pressbooks.pub ---> lattice-structures-in-crystalline-solids</p>
+
+
+        </div>
+
+<!-- Share Buttons -->
+        <div class="mt-16 border-t border-gray-200 pt-8">
+            <p class="font-medium mb-4">Share this article:</p>
+            <div class="flex gap-4">
+
+		<div class="grid grid-cols-3 md:flex md:justify-center gap-3">
+                <button onclick="window.open('https://x.com/intent/tweet?url=https://materialinsider.com/articles/260711-atomic-bonds.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">X</button>
+
+                <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://materialinsider.com/articles/260711-atomic-bonds.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">LinkedIn</button>
+
+                <button onclick="window.open('https://wa.me/?text=Self-Healing%20Materials%20-%20Check%20this%20out:%20https://materialinsider.com/articles/260711-atomic-bonds.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">WhatsApp</button>
+
+                <button onclick="window.open('mailto:?subject=Self-Healing%20Materials&body=Check%20this%20interesting%20article%3A%20https://materialinsider.com/articles/260711-atomic-bonds.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">E-Mail</button>
+
+                <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://materialinsider.com/articles/260711-atomic-bonds.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">FaceBook</button>
+
+                <button onclick="copyArticleLink()" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">
+    		<span id="copy-text">Direct Link</span>
+		</button>
+
+		<script>
+    		function copyArticleLink() {
+        		const url = "https://materialinsider.com/articles/260711-atomic-bonds.html";  // article URL
+        
+        		navigator.clipboard.writeText(url).then(() => {
+            			const copyText = document.getElementById('copy-text');
+            			const originalText = copyText.textContent;
+            
+            			copyText.textContent = "✅ Copied!";
+            
+            			setTimeout(() => {
+                			copyText.textContent = originalText;
+            			}, 2000); // Back to "Copy Link" after 2 seconds
+        		});
+    			}
+		</script>
+		</div>
+            </div>
+        </div>
+    </article>
+
+<!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
+                <span class="text-3xl font-bold text-white">MATERIALS insider</span>
+            </div>
+	    <p class="mb-4">Educational platform for Materials Science • Made for curious minds</p>
+            <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
