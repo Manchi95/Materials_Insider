@@ -109,7 +109,7 @@
  <script>
 
         		const countElement = document.getElementById('total-reads');
-        		let total = parseInt(localStorage.getItem('atomicbond') || '0');
+        		let total = parseInt(localStorage.getItem('fermisea') || '0');
         		countElement.textContent = total.toLocaleString();
 
     // Count after 1 minute stay (Mobile-friendly)
@@ -123,10 +123,10 @@
                 clearInterval(timer);
                 
                 total += 1;
-                localStorage.setItem('atomicbond', total);
+                localStorage.setItem('fermisea', total);
                 countElement.textContent = total.toLocaleString();
                 
-                sessionStorage.setItem('atomicbond', 'true');
+                sessionStorage.setItem('fermisea', 'true');
             }
         }, 1000); // Check every 1 seconds (better for mobile)
     }
