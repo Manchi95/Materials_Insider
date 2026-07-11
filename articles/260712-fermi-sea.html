@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fermi Sea - MATERIALS insider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="icon" href="../images/logo2.jpeg" type="image/png">
+</head>
+
+<body class="bg-gray-900 font-sans text-gray-100 transition-colors">
+
+    <!-- Navigation -->
+    <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                
+<!-- Clickable Logo -->
+                <a href="https://www.materialinsider.com" 
+                   class="flex items-center space-x-3 hover:opacity-40 transition no-underline">
+                    <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white">MATERIALS insider</h1>
+                </a>
+		</div>
+
+                <!-- Desktop Menu -->
+		<div class="hidden md:flex space-x-12 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../research.html" class="hover:text-indigo-600 font-medium">Research</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe Button (Desktop) -->
+            <div class="hidden md:block">
+                <button onclick="alert('Newsletter signup coming soon!')" 
+                        class="bg-indigo-600 hover:bg-red-800 text-white hover:text-black px-5 py-2 rounded-lg text-sm font-medium">
+                    SUBSCRIBE
+                </button>
+            </div>
+	    
+            <!-- Hamburger Button (Mobile) -->
+            <button id="hamburger"
+                    class="md:hidden text-3xl text-gray-400 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200">
+            <div class="flex flex-col space-y-5 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../research.html" class="hover:text-indigo-600 font-medium">Research</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        <!-- Article Header -->
+        <header class="mb-12">
+	    <span class="text-indigo-600 font-medium">July 12, 2026 • Science </span>
+            <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">
+                Fractional Fermi Seas at the Atomic Scale: Physicists Engineer a Strange New Quantum State
+            </h1>
+            <p class="text-xl text-gray-400 mt-6">
+                Researchers have created an entirely new type of quantum matter called a <strong>fractional Fermi sea</strong> using ultracold cesium atoms confined to one dimension in June 2026.
+            </p>
+            <div class="flex items-center gap-4 mt-8 text-sm text-white">
+                <span>By Arush</span>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <span>4 min read</span>
+            </div>
+
+<!-- Readers Count with Blinking Eye -->
+		<div class="flex justify-end mb-6">
+    		<span id="eye" class="text-xl animate-blink">👁️  </span>
+    		<span id="total-reads" class="font-semibold text-white"></span>
+		</div>
+
+    		<style>
+        		@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        		.animate-blink { animation: blink 1.5s infinite; }
+    		</style>
+
+    <!-- Count Script -->
+ <script>
+
+        		const countElement = document.getElementById('total-reads');
+        		let total = parseInt(localStorage.getItem('atomicbond') || '0');
+        		countElement.textContent = total.toLocaleString();
+
+    // Count after 1 minute stay (Mobile-friendly)
+    if (!sessionStorage.getItem('totalReadCounted')) {
+        let timeSpent = 0;
+        
+        const timer = setInterval(() => {
+            timeSpent += 1;   // Check every 1 seconds
+
+            if (timeSpent >= 60) {   // 60 seconds = 1 minute
+                clearInterval(timer);
+                
+                total += 1;
+                localStorage.setItem('atomicbond', total);
+                countElement.textContent = total.toLocaleString();
+                
+                sessionStorage.setItem('atomicbond', 'true');
+            }
+        }, 1000); // Check every 1 seconds (better for mobile)
+    }
+</script>
+
+        </header>
+
+        <!-- Featured Image -->
+
+
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none text-gray-400 align-justify">
+            
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;text-align: justify;">In a landmark achievement reported in June 2026, researchers have created an entirely new type of quantum matter called a <strong>fractional Fermi sea</strong> using ultracold cesium atoms confined to one dimension. This highly excited yet remarkably ordered nonequilibrium state features particles that appear to obey a “reduced occupancy rule” in momentum space — something never before realized in the lab.</p>
+
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;text-align: justify;">The work, led by the Nägerl group at the University of Innsbruck in collaboration with theorist Alvise Bastianello, opens fresh pathways in quantum simulation, exotic statistics, and potentially quantum technologies. For materials scientists and quantum technologists, it represents a powerful new tool for engineering quantum states at the atomic scale that go far beyond equilibrium paradigms.</p>
+
+        <img src="../images/260712-fermi-sea/fermi-sea1.jpeg"
+             alt="fermisea?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	<h2 style="margin-bottom:15px; margin-top:35px;font-size:20px;"><strong>What Is a Fermi Sea — and Why “Fractional”?</strong></h2>
+		
+            <p style="margin-bottom:35px;font-size:18px;">In ordinary quantum mechanics, fermions (like electrons) obey the *Pauli exclusion principle: no two can occupy the same quantum state. At low temperatures, they fill the lowest available energy states up to a sharp cutoff called the **Fermi energy*, forming a “Fermi sea” in momentum space. The occupation number jumps from 1 (filled) to 0 (empty) at the Fermi momentum k<sub>F</sub>.</p>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">Bosons, by contrast, can all pile into the ground state (Bose-Einstein condensation). But what if particles could occupy momentum states with fractional probabilities — say ½ or ¼ — uniformly across a range of momenta?</p>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">This is exactly what <strong>fractional Fermi seas (FFS)</strong> are. Predicted theoretically through extensions of Pauli statistics (notably Haldane’s generalized exclusion statistics), an FFS features a momentum distribution with uniform but fractional occupancy. Instead of a full step of height 1, you get a shorter step — particles behaving as if they partially “share” states in a new, exotic way.</p>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">Until now, these states existed only in theory. The Innsbruck team has now brought them into the laboratory.</p>
+
+	<h2 style="margin-bottom:15px; margin-top:35px;font-size:20px;"><strong>How They Did It: Atomic-Scale Engineering with Light and Interaction Cycles:</strong></h2>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">The platform is a quantum simulator made of ultracold cesium atoms trapped in an array of one-dimensional tubes. A 2D optical lattice — created by intersecting laser beams — slices the atoms into thousands of independent 1D quantum wires.</p>
+
+        <img src="../images/260712-fermi-sea/fermi-sea2.jpeg"
+             alt="fermisea?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">In these 1D tubes, the atoms behave as a <strong>Bose gas</strong> whose interactions can be precisely tuned using a magnetic Feshbach resonance. The key innovation is not cooling further or adding disorder, but repeatedly cycling the interaction strength g<sub>1D</sub> through extreme regimes:</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li>From finite repulsive interactions</li>
+    		<li>Through the infinite-repulsion <strong>Tonks-Girardeau</strong> regime    <span style="font-size:20px;">  (g<sub>1D</sub> → +∞)</span></li>
+    		<li>Into the attractive regime</li>
+    		<li>Through infinite attraction    <span style="font-size:20px;">  (g<sub>1D</sub> → -∞)</span></li>
+    		<li>Back through the non-interacting point    <span style="font-size:20px;">  (g<sub>1D</sub> = 0)</span></li>
+		</ul>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">These closed “<strong>holonomy cycles</strong>” in parameter space act like a quantum pump. Each cycle reorganizes the many-body state without simply heating the gas. After several cycles, the system settles into a long-lived excited state whose momentum distribution matches the predicted fractional Fermi sea.</p>
+
+            <img src="../images/260712-fermi-sea/fermi-sea3.jpeg"
+            alt="fermisea"  
+            class="w-full rounded-2xl shadow-md mb-12">  
+
+            <h2 style="margin-bottom:15px; margin-top:35px;font-size:20px;"><strong>Theory Behind the Magic: Generalized Hydrodynamics and Hidden Order:</strong></h2>
+
+
+            <p style="margin-bottom:35px;font-size:18px;text-align: justify;">The experiments are guided by <strong>generalized hydrodynamics (GHD)</strong>, a powerful framework for nearly integrable 1D quantum systems. The cyclic driving induces a topological-like effect in the space of interaction strengths, resulting in the fractional filling of momentum states.</p>
+
+            <p style="margin-bottom:35px;font-size:18px;text-align: justify;">Crucially, the resulting state is <em>not</em> a conventional Tomonaga-Luttinger liquid (the standard description of 1D quantum matter). It exhibits <strong>Friedel oscillations</strong> — characteristic ripples in the density or correlation functions with wavevector 2k<sub>F</sub> — that serve as smoking-gun evidence of an underlying Fermi surface, even though the particles are bosons in a highly excited state.</p>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">The state carries “hidden order” visible only in correlations, not in simple density profiles. Researchers have even playfully suggested the quasiparticles might deserve a new name, such as “super-Fermions.”</p>
+
+            <h2 style="margin-bottom:15px; margin-top:15px;font-size:20px;"><strong>Why This Matters: Applications and Broader Impact:</strong></h2>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">This discovery is more than a curiosity. It demonstrates that cold-atom quantum simulators can now access entirely new classes of quantum critical phases that do not exist in equilibrium. Potential implications include:</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li><strong><em>Quantum thermodynamics out of equilibrium</em></strong> — understanding how exotic statistics affect energy flow and irreversibility.</li>
+    		<li>Strong><em>Quantum information and sensing</em></strong> — states with protected correlations or fractional statistics could inspire new qubit encodings or ultra-sensitive detectors.</li>
+    		<li><stron><em>Materials science inspiration</em></strong> — analogous physics may appear in solid-state systems (certain quantum wires, fractional quantum Hall edges, or engineered moiré materials) once we learn how to stabilize similar states.</li>
+    		<li><strong><em>Fundamental physics</em></strong> — a new window into generalized exclusion statistics and the limits of conventional many-body theory.</li>
+		</ul>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">Because the states are stable enough to measure yet far from equilibrium, they offer a controlled playground for exploring physics “beyond the usual equilibrium paradigms,” as lead author Yi Zeng noted.</p>
+
+            <h2 style="margin-bottom:15px; margin-top:35px;font-size:20px;"><strong>Credits and Context:</strong></h2>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:15px;text-align: justify;">This breakthrough rests on two closely related 2026 works:</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li><strong>Bastianello et al., “Exotic critical states as fractional Fermi seas in the one-dimensional Bose gas,” Physical Review Letters 136</strong>, 230402 (2026). DOI: [10.1103/j3s5-gjpf]                    <a href="(https://journals.aps.org/prl/abstract/10.1103/j3s5-gjpf)" 
+                       class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2">
+                        (https://doi.org/10.1103/j3s5-gjpf)
+                    </a></li>
+    		<li>Strong>Zeng et al.</strong>, “Realization of fractional Fermi seas,” arXiv:2602.17657 (submitted Feb 2026, revised May 2026)</li>
+ 		</ul>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">Key contributors:</p>
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">		
+		<li>Experimental team (University of Innsbruck): Yi Zeng, Sudipta Dhar, Zekui Wang, Xudong Yu, Milena Horvath, Yanliang Guo, Hanns-Christoph Nägerl, Manuele Landini</li>
+    		<li>Theory lead: Alvise Bastianello (CNRS & Université Paris-Dauphine), with Grigori E. Astrakharchik</li>
+		</ul>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">The research builds on decades of progress in ultracold atoms, integrable systems, and generalized hydrodynamics, now pushed into genuinely new territory.</p>
+
+            <h2 style="margin-bottom:15px; margin-top:35px;font-size:20px;"><strong>The Bottom Line</strong></h2>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:15px;text-align: justify;">By cycling interactions in a precisely engineered 1D atomic gas, physicists have created a fractional Fermi sea — a quantum state with fractional momentum occupancies and hidden order that defies conventional classification. It is a striking example of atomic-scale quantum engineering and a reminder that the universe still holds surprises when we drive quantum matter far from equilibrium.</p>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">For anyone working in quantum materials, atomic physics, or quantum simulation, this is a development worth watching closely. The fractional Fermi sea may be the first of many new states we can now deliberately design at the atomic scale.</p>
+
+            <p style="margin-bottom:15px;font-size:18px;margin-top:35px;text-align: justify;"><strong>Further reading</strong></p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">		
+		<li>EOriginal PRL paper and arXiv preprint (linked above)</li>
+    		<li>University of Innsbruck press release (June 2026)</li>
+    		<li>Phys.org coverage of the discovery</li>
+		</ul>
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">This article was written for <strong><em>MATERIALSinsider</em></strong> based on validated peer-reviewed sources and recent experimental reports from June 2026. All technical details have been cross-checked against the primary publications.</p>
+
+
+        </div>
+
+<!-- Share Buttons -->
+        <div class="mt-16 border-t border-gray-200 pt-8">
+            <p class="font-medium mb-4">Share this article:</p>
+            <div class="flex gap-4">
+
+		<div class="grid grid-cols-3 md:flex md:justify-center gap-3">
+                <button onclick="window.open('https://x.com/intent/tweet?url=https://materialinsider.com/articles/260712-fermi-sea.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">X</button>
+
+                <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://materialinsider.com/articles/260712-fermi-sea.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">LinkedIn</button>
+
+                <button onclick="window.open('https://wa.me/?text=Self-Healing%20Materials%20-%20Check%20this%20out:%20https://materialinsider.com/articles/260712-fermi-sea.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">WhatsApp</button>
+
+                <button onclick="window.open('mailto:?subject=Self-Healing%20Materials&body=Check%20this%20interesting%20article%3A%20https://materialinsider.com/articles/260712-fermi-sea.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">E-Mail</button>
+
+                <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://materialinsider.com/articles/260712-fermi-sea.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">FaceBook</button>
+
+                <button onclick="copyArticleLink()" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">
+    		<span id="copy-text">Direct Link</span>
+		</button>
+
+		<script>
+    		function copyArticleLink() {
+        		const url = "https://materialinsider.com/articles/260712-fermi-sea.html";  // article URL
+        
+        		navigator.clipboard.writeText(url).then(() => {
+            			const copyText = document.getElementById('copy-text');
+            			const originalText = copyText.textContent;
+            
+            			copyText.textContent = "✅ Copied!";
+            
+            			setTimeout(() => {
+                			copyText.textContent = originalText;
+            			}, 2000); // Back to "Copy Link" after 2 seconds
+        		});
+    			}
+		</script>
+		</div>
+            </div>
+        </div>
+    </article>
+
+<!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
+                <span class="text-3xl font-bold text-white">MATERIALS insider</span>
+            </div>
+	    <p class="mb-4">Educational platform for Materials Science • Made for curious minds</p>
+            <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
