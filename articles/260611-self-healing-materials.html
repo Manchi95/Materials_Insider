@@ -114,7 +114,7 @@
     async function initCounter() {
         try {
             // Single API call only
-            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materials_insider_shape_memory_alloy");
+            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materials_insider_self-healing-materials");
             if (res.ok) {
                 const data = await res.json();
                 originalApiValue = data.value || 0;
