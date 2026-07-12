@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Memory Alloy - MATERIALS insider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="icon" href="../images/logo2.jpeg" type="image/png">
+</head>
+
+<body class="bg-gray-900 font-sans text-gray-100 transition-colors">
+
+    <!-- Navigation -->
+    <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                
+<!-- Clickable Logo -->
+                <a href="https://www.materialinsider.com" 
+                   class="flex items-center space-x-3 hover:opacity-40 transition no-underline">
+                    <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white">MATERIALS insider</h1>
+                </a>
+		</div>
+
+                <!-- Desktop Menu -->
+		<div class="hidden md:flex space-x-12 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../research.html" class="hover:text-indigo-600 font-medium">Research</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe Button (Desktop) -->
+            <div class="hidden md:block">
+                <button onclick="alert('Newsletter signup coming soon!')" 
+                        class="bg-indigo-600 hover:bg-red-800 text-white hover:text-black px-5 py-2 rounded-lg text-sm font-medium">
+                    SUBSCRIBE
+                </button>
+            </div>
+	    
+            <!-- Hamburger Button (Mobile) -->
+            <button id="hamburger"
+                    class="md:hidden text-3xl text-gray-400 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200">
+            <div class="flex flex-col space-y-5 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../research.html" class="hover:text-indigo-600 font-medium">Research</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a>			</ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a>		</ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        <!-- Article Header -->
+        <header class="mb-12">
+	    <span class="text-indigo-600 font-medium">July 13, 2026 • Science </span>
+            <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">
+                The Shape Memory Alloy: The Magic Metal That Remembers Its Shape
+            </h1>
+            <p class="text-xl text-gray-400 mt-6">
+                Imagine bending a thin metal wire into any shape you want — a zigzag, a loop, or even crumpling it — and then simply dipping it in hot water or warming it gently. Within seconds, it snaps back perfectly to its original straight form, as if it has a built-in memory.
+            </p>
+            <div class="flex items-center gap-4 mt-8 text-sm text-white">
+                <span>By K. Jayarathne	</span>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <span>4 min read</span>
+            </div>
+
+<!-- Readers Count with Blinking Eye -->
+		<div class="flex justify-end mb-6">
+    		<span id="eye" class="text-xl animate-blink">👁️  </span>
+    		<span id="count" style="font-weight:700; color:#0d6efd; font-size:1.3rem;">—</span>
+		</div>
+
+    		<style>
+        		@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        		.animate-blink { animation: blink 1.5s infinite; }
+    		</style>
+    <!-- Count Script -->
+
+<script>
+    const COUNTER_KEY = 'materialinsider_fractional_fermi_sea_2026'; // Change for each page
+
+    let timer = null;
+    let originalApiValue = 0;   // stored from the single API call
+    const countEl = document.getElementById('count');
+
+    async function initCounter() {
+        try {
+            // Single API call only
+            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materials_insider_shape_memory_allo");
+            if (res.ok) {
+                const data = await res.json();
+                originalApiValue = data.value || 0;
+
+                // Immediately show reduced by 1
+                countEl.textContent = Math.max(0, originalApiValue - 1);
+            } else {
+                countEl.textContent = "0";
+            }
+        } catch (e) {
+            countEl.textContent = "0";
+        }
+
+        // After 30 seconds: show original value (add 1 back locally)
+        timer = setTimeout(() => {
+            countEl.textContent = originalApiValue;
+        }, 30000);
+    }
+
+    window.addEventListener('load', initCounter);
+
+    // Safety: cancel if user leaves early
+    window.addEventListener('beforeunload', () => {
+        if (timer) clearTimeout(timer);
+    });
+</script>
+
+
+
+        </header>
+
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none text-gray-400 align-justify">
+            
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;text-align: justify;">Imagine bending a thin metal wire into any shape you want — a zigzag, a loop, or even crumpling it — and then simply dipping it in hot water or warming it gently. Within seconds, it snaps back perfectly to its original straight form, as if it has a built-in memory. This isn’t magic or science fiction. This is *Nitinol, the most popular **shape memory alloy* (also called memory metal or smart metal) that is already saving lives and powering next-generation technology.</p>
+
+        <img src="../images/260613-shape-memory-alloy/shape-memory-alloy1.jpeg"
+             alt="fermisea?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	<h2 style="margin-bottom:15px; margin-top:35px;font-size:20px;"><strong>What is Nitinol?</strong></h2>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;"><strong>Nitinol</strong> (Nickel-Titanium Naval Ordnance Laboratory) is a <strong>shape memory alloy</strong> made of roughly equal atomic percentages of nickel and titanium. Discovered in the early 1960s, it exhibits two remarkable behaviors:</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li><strong>Shape memory effect: </strong> It returns to a pre-programmed “remembered” shape when heated above a specific transition temperature.</li>
+    		<li><strong>Superelasticity (or pseudoelasticity): </strong>At the right temperature (often body temperature), it can bend or stretch up to 10–30 times more than ordinary metals and immediately spring back without permanent damage.</li>
+		</ul>
+
+            <p style="margin-bottom:35px; margin-top:15px;font-size:18px;text-align: justify;">These properties come from a reversible change in its internal crystal structure — not from any electronic trickery, but from how its atoms arrange themselves.</p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:20px;"><strong>How Nitinol Works at the Atomic Level?</strong></h2>
+
+            <p style="margin-bottom:35px; margin-top:15px;font-size:18px;text-align: justify;">The secret is a <strong>phase transformation</strong> between two crystal structures.</p>
+
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;text-align: justify;">At higher temperatures, Nitinol exists in the <strong>austenite phase</strong> — a strong, orderly cubic (B2) crystal lattice. This is the “remembered” or parent shape programmed during manufacturing or training.</p>
+
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;text-align: justify;">When cooled below its transformation temperature (which engineers can tune from well below freezing to over 100 °C by adjusting the nickel-titanium ratio), the structure shifts to the <strong>martensite phase</strong>. Here the atoms rearrange into a softer, twinned, zigzag pattern. Because the atoms can slide and detwin easily without breaking bonds, you can bend or twist the material dramatically.</p>
+
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;text-align: justify;">Heat it back above the transition temperature and the atoms rapidly snap back into the original austenite cubic arrangement. The material returns exactly to its trained shape — sometimes in less than a second. This transformation is fast, repeatable (millions of cycles), and happens without diffusion of atoms.</p>
+
+        <img src="../images/260613-shape-memory-alloy/shape-memory-alloy2.jpeg"
+             alt="fermisea?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:20px;"><strong>Programming / Training Nitinol at Home – Safe Experiments & Steps:</strong></h2>
+
+            <p style="margin-bottom:35px; margin-top:15px;font-size:18px;text-align: justify;">You can easily <strong>demonstrate</strong> the shape memory effect at home with commercial nitinol wire. Full custom “programming” of a brand-new shape requires high heat and proper equipment, but here’s exactly what you can do safely.</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li>Buy <strong>nitinol wire</strong> or <strong>shape memory nitinol spring</strong> online (search “nitinol wire experiment” or “nitinol wire kit”). Choose wire with a transition temperature around 40–80 °C so hot tap water or a hairdryer works easily.</li>
+    		<li><strong>Safety first: </strong> Wear gloves when handling hot objects. Use adult supervision. Prefer hot water or a hairdryer over open flame. Keep water nearby to cool quickly. Never leave heating sources unattended.</li>
+    		<li>At room temperature (below transition), gently bend or twist the wire into any new shape. It stays deformed — this is the soft martensite phase.</li>
+    		<li>Trigger the memory:
+
+			<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    			<li>Dip the deformed wire into a cup of hot water (60–90 °C).</li>
+    			<li>Or run a hairdryer on high heat along the wire.</li>
+    			<li>Watch it instantly return to its original straight or pre-programmed shape!</li>
+			</ul>
+		</li>
+		</ul>
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;"> </p>
+
+        <img src="../images/260613-shape-memory-alloy/shape-memory-alloy3.jpeg"
+             alt="fermisea?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	<h2 style="margin-bottom:15px; margin-top:15px;font-size:20px;"><strong>Advanced Training of a New Shape (Lab-Level – Do with Caution):</strong></h2>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">To make Nitinol remember a completely different shape (for example, turning straight wire into a permanent coil):</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li>Fix the wire in the exact desired shape using a metal fixture or mandrel.</li>
+    		<li><Heat it uniformly to <strong>450–550 °C</strong> (red-hot) for 10–30 minutes while held in that shape.</li>
+    		<li>Cool it (air cool or controlled quench).</li>
+    		<li>Now deform it at low temperature — when heated, it will return to the new trained shape.</li>
+		</ul>
+
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;text-align: justify;"><strong>Strong warning:</strong> This involves open flame or kiln temperatures, fire risk, and burns. It should only be done with proper safety equipment, ventilation, and experience — ideally in a school lab or by professionals. Most students and hobbyists should start with ready-made nitinol wire or educational kits that are already trained.</p>
+
+	<h2 style="margin-bottom:15px; margin-top:35px;font-size:20px;"><strong>Practical Applications of Nitinol Shape Memory Alloy Today:</strong></h2>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Nitinol is already widely used because it is biocompatible, corrosion-resistant, and fatigue-resistant.</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li><strong>Medical devices</strong> — Self-expanding *nitinol stents* that are compressed small for catheter delivery and then expand automatically at body temperature to open blocked arteries. Orthodontic wires in braces that apply gentle constant force. Flexible surgical tools and bone anchors.</li>
+    		<li><strong>Consumer products</strong> — Superelastic eyeglass frames that bend without breaking. Some phone antennas and toys.</li>
+    		<li><strong>Robotics & actuators</strong> — Nitinol wires that contract when heated electrically (Joule heating) act like artificial muscles in grippers, valves, and adaptive mechanisms.</li>
+    		<li><strong>Aerospace & automotive</strong> — Vibration dampers and deployable structures.</li>
+		</ul>
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;"> </p>
+
+        <img src="../images/260613-shape-memory-alloy/shape-memory-alloy4.jpeg"
+             alt="fermisea?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+	<h2 style="margin-bottom:15px; margin-top:15px;font-size:20px;"><strong>Futuristic Applications of Shape Memory Alloys:</strong></h2>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Researchers and engineers are already building even more ambitious uses:</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li><strong>4D printing & morphing structures</strong> — Objects that change shape over time or with temperature (self-deploying solar panels, adaptive drone wings, or furniture that assembles itself).</li>
+    		<li><strong>Soft robotics</strong> — Lifelike robots that squeeze through tight spaces then stiffen, or grippers that gently handle delicate objects using low-voltage nitinol “muscles.”</li>
+    		<li><strong>Space exploration</strong> — Ultra-reliable self-deploying antennas, solar arrays, and habitats on satellites and future Mars missions — no heavy motors required.</li>
+    		<li><strong>Next-gen medicine</strong> — Smart implants that adapt inside the body, self-adjusting heart valves, or drug-delivery systems triggered by body temperature.</li>
+    		<li><strong>Smart textiles & architecture</strong> — Clothing that adjusts insulation with temperature, or buildings with adaptive structural elements.</li>
+		</ul>
+
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;text-align: justify;">As additive manufacturing and AI design tools improve, nitinol and other <strong>shape memory alloys</strong> will become building blocks for truly intelligent materials.</p>
+
+        <img src="../images/260613-shape-memory-alloy/shape-memory-alloy5.jpeg"
+             alt="fermisea?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	<h2 style="margin-bottom:15px; margin-top:35px;font-size:20px;"><strong>Conclusion:</strong></h2>
+
+            <p style="margin-bottom:35px; margin-top:15px;font-size:18px;text-align: justify;">Nitinol proves that by engineering materials at the atomic level, we can create substances that seem almost alive — they remember, respond, and adapt. From life-saving stents to future self-morphing robots and spacecraft, <strong>shape memory alloys</strong> like nitinol are a shining example of how materials science turns fundamental physics into real-world magic.</p>
+
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;text-align: justify;">Whether you’re a 20–22-year-old student doing your first home experiment or an engineer designing the next breakthrough, nitinol shows that the smartest materials often work because their atoms simply know where they belong.</p>
+
+            <p style="margin-bottom:35px; margin-top:35px;font-size:18px;text-align: justify;">Ready to try a nitinol wire experiment yourself? Grab a kit, follow the safe steps above, and watch the magic happen. Share your results or questions below — we love seeing student experiments!</p>
+
+
+            <p style="margin-bottom:35px;font-size:18px;margin-top:35px;text-align: justify;">This article was written for <strong><em>MATERIALSinsider</em></strong> based on validated peer-reviewed sources and recent experimental reports. All technical details have been cross-checked against the primary publications.</p>
+
+
+        </div>
+
+<!-- Share Buttons -->
+        <div class="mt-16 border-t border-gray-200 pt-8">
+            <p class="font-medium mb-4">Share this article:</p>
+            <div class="flex gap-4">
+
+		<div class="grid grid-cols-3 md:flex md:justify-center gap-3">
+                <button onclick="window.open('https://x.com/intent/tweet?url=https://materialinsider.com/articles/260713-shape-memory-alloy.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">X</button>
+
+                <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://materialinsider.com/articles/260713-shape-memory-alloy.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">LinkedIn</button>
+
+                <button onclick="window.open('https://wa.me/?text=Self-Healing%20Materials%20-%20Check%20this%20out:%20https://materialinsider.com/articles/260713-shape-memory-alloy.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">WhatsApp</button>
+
+                <button onclick="window.open('mailto:?subject=Self-Healing%20Materials&body=Check%20this%20interesting%20article%3A%20https://materialinsider.com/articles/260713-shape-memory-alloy.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">E-Mail</button>
+
+                <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://materialinsider.com/articles/260713-shape-memory-alloy.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">FaceBook</button>
+
+                <button onclick="copyArticleLink()" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">
+    		<span id="copy-text">Direct Link</span>
+		</button>
+
+		<script>
+    		function copyArticleLink() {
+        		const url = "https://materialinsider.com/articles/260713-shape-memory-alloy.html";  // article URL
+        
+        		navigator.clipboard.writeText(url).then(() => {
+            			const copyText = document.getElementById('copy-text');
+            			const originalText = copyText.textContent;
+            
+            			copyText.textContent = "✅ Copied!";
+            
+            			setTimeout(() => {
+                			copyText.textContent = originalText;
+            			}, 2000); // Back to "Copy Link" after 2 seconds
+        		});
+    			}
+		</script>
+		</div>
+            </div>
+        </div>
+    </article>
+
+<!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
+                <span class="text-3xl font-bold text-white">MATERIALS insider</span>
+            </div>
+	    <p class="mb-4">Educational platform for Materials Science • Made for curious minds</p>
+            <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
