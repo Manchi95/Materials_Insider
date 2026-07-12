@@ -92,6 +92,7 @@
             </div>
 
 
+
 <!-- Readers Count with Blinking Eye -->
 		<div class="flex justify-end mb-6">
     		<span id="eye" class="text-xl animate-blink">👁️  </span>
@@ -105,7 +106,7 @@
     <!-- Count Script -->
 
 <script>
-    const COUNTER_KEY = 'materialinsider_fractional_fermi_sea_2026'; // Change for each page
+    const COUNTER_KEY = 'materialinsider_self_healing_materials'; // Change for each page
 
     let timer = null;
     let originalApiValue = 0;   // stored from the single API call
@@ -114,7 +115,7 @@
     async function initCounter() {
         try {
             // Single API call only
-            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materials_insider_self-healing-materials");
+            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materials_insider_self_healing_materials");
             if (res.ok) {
                 const data = await res.json();
                 originalApiValue = data.value || 0;
@@ -141,6 +142,8 @@
         if (timer) clearTimeout(timer);
     });
 </script>
+
+
 
 
         </header>
