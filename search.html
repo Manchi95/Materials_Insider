@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - MATERIALS insider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="icon" href="images/logo2.jpeg" type="image/png">
+  <style>
+    .result-card {
+      transition: all 0.3s ease;
+      animation: fadeInUp 0.45s ease forwards;
+      opacity: 0;
+    }
+    .result-card:hover {
+      transform: translateY(-5px);
+      border-color: #6366f1 !important;
+      box-shadow: 0 10px 25px -5px rgb(99 102 241 / 0.15);
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    mark {
+      background-color: #fbbf24;
+      color: #000;
+      padding: 1px 3px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-gray-100 min-h-screen font-sans">
+
+  <!-- Navigation -->
+  <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
+  	<div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                <!-- Clickable Logo -->
+                <a href="https://www.materialinsider.com" 
+                   class="flex items-center space-x-3 hover:opacity-40 transition no-underline">
+                    <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white">MATERIALS insider</h1>
+                </a>
+		</div>
+      <a href="articles.html" class="text-m text-gray-400 hover:text-indigo-400 transition">
+        ← All Articles
+      </a>
+    	    </div>
+  	</div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+
+    <h1 class="text-3xl md:text-4xl font-bold mb-2">Search Articles</h1>
+    <p class="text-gray-400 mb-8">Find what you need</p>
+
+    <!-- Search Box -->
+    <div class="flex flex-col sm:flex-row gap-3 mb-8">
+      <input 
+        type="text" 
+        id="searchBox" 
+        placeholder="Try: metamaterials, self healing, graphite, perovskite..."
+        class="flex-1 px-5 py-3.5 rounded-xl bg-gray-900 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 transition"
+        onkeypress="if(event.key === 'Enter') doSearch()"
+      >
+      <button 
+        onclick="doSearch()"
+        class="px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 rounded-xl font-medium transition flex items-center justify-center gap-2">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        Search
+      </button>
+    </div>
+
+    <div id="status" class="mb-6 text-gray-400"></div>
+    <div id="results"></div>
+
+  </main>
+
+  <script>
+    // ================== ARTICLE DATA ==================
+    var articles = [
+      {
+        title: "Atomic Magic: How 20-Something Scientists Are Hacking Solar Power with Perovskites",
+        date: "August 09, 2026",
+        category: "Research",
+        excerpt: "Picture this: a super-thin, bendy film that sucks up sunlight like a sponge and pumps out electricity almost as well as those heavy, expensive silicon panels—but costs way less and can stick on your backpack, car, or even windows.",
+        url: "articles/260809-solar-power-with-perovskites.html"
+      },
+      {
+        title: "Impossible Engineering for Stealth and Cloaking : Metamaterials",
+        date: "July 27, 2026",
+        category: "Facts",
+        excerpt: "Imagine slipping on a jacket that bends light around you so perfectly that you vanish from sight. Theese crazy properties come from structure, not chemistry. This isn’t just lab magic. Metamaterials are already showing up in serious tech.",
+        url: "articles/260727-invisible-cloak.html"
+      },
+      {
+        title: "Sri Lanka's Vein Graphite - Supercharging the Global EV Battery Revolution",
+        date: "July 19, 2026",
+        category: "Properties",
+        excerpt: "Sri Lanka's world-unique high-purity vein graphite is becoming a critical material for lithium-ion battery anodes",
+        url: "articles/260719-sri-lankan-graphite.html"
+      },
+      {
+        title: "The Shape Memory Alloy: The Magic Metal That Remembers Its Shape",
+        date: "July 13, 2026",
+        category: "Properties",
+        excerpt: "Imagine bending a thin metal wire into any shape you want — a zigzag, a loop, or even crumpling it — and then simply dipping it in hot water or warming it gently. Within seconds, it snaps back perfectly to its original straight form, as if it has a built-in memory.",
+        url: "articles/260713-shape-memory-alloy.html"
+      },
+      {
+        title: "Fermi Seas at the Atomic Scale: A Strange New Quantum State",
+        date: "July 12, 2026",
+        category: "Research",
+        excerpt: "Researchers have created an entirely new type of quantum matter called a fractional Fermi sea using ultracold cesium atoms confined to one dimension in June 2026.",
+        url: "articles/260712-fermi-sea.html"
+      },
+      {
+        title: "The Illusion of Touch at the Atomic Scale: Interatomic Distances and Forces in Materials Science",
+        date: "July 11, 2026",
+        category: "Facts",
+        excerpt: "Solids feel rigid and surfaces appear to make contact, yet atoms never truly touch in the classical sense. Instead, what we perceive as touch arises from the balance of attractive and repulsive forces between electron clouds.",
+        url: "articles/260711-atomic-bonds.html"
+      },
+      {
+        title: "Superconductors: China’s Record-Breaking Superconducting Magnet with Unlimited Clean Energy",
+        date: "June 29, 2026",
+        category: "Research",
+        excerpt: "On June 27, 2026, scientists and engineers in Hefei, Anhui Province, announced a historic milestone: the completion and successful testing of the world’s largest superconducting magnet ever built for a fusion reactor.",
+        url: "articles/260629-supercondutor.html"
+      },
+      {
+        title: "Self-Healing Materials : The Future of Sustainable & Self Sustainable Materials",
+        date: "June 10, 2026",
+        category: "Research",
+        excerpt: "A cracked smartphone screen that repairs itself overnight, or a bridge that can automatically fix tiny fractures before they become dangerous. This is not science fiction—these are examples of self-healing materials.",
+        url: "articles/260611-self-healing-materials.html"
+      },
+      {
+        title: "Next-Gen Self-Sustain Electrical Batteries",
+        date: "June 15, 2026",
+        category: "Research",
+        excerpt: "Use synthetic diamond to convert the beta decay of radioactive carbon-14 into a steady trickle of electricity",
+        url: "articles/260615-diamond-batteries.html"
+      },
+      {
+        title: "Non-Newtonian Fluid : A substance that does not follow Isaac Newton’s laws",
+        date: "June 22, 2026",
+        category: "Properties",
+        excerpt: "Most of us think of fluids like water or air as predictable: they flow easily, and their thickness (viscosity) stays constant no matter how fast you stir them. These are Newtonian fluids, but many real-world some substances break these rules.",
+        url: "articles/260622-non-newtonian-fluid.html"
+      },
+      {
+        title: "Rheopectic Fluids: Time-Dependent Thickening Under Stress",
+        date: "June 29, 2026",
+        category: "Properties",
+        excerpt: "These rare materials gradually increase in viscosity (become thicker) the longer they experience sustained shear stress. Unlike instantaneous shear-thickening behavior, rheopecty requires prolonged agitation.",
+        url: "articles/260629-rheopetic-fluids.html"
+      }
+    ];
+
+    // ================== HELPER FUNCTIONS ==================
+
+    // Remove ALL spaces and special characters
+    function clean(text) {
+      return text.toLowerCase().replace(/[^a-z0-9]/g, "");
+    }
+
+    // Highlight original words in the displayed text
+    function highlight(text, originalQuery) {
+      if (!originalQuery.trim()) return text;
+
+      // Get individual words from original query for highlighting
+      var words = originalQuery.toLowerCase().replace(/[^\w\s]/g, " ").split(/\s+/);
+      var result = text;
+
+      for (var i = 0; i < words.length; i++) {
+        var word = words[i];
+        if (word.length < 2) continue;
+        var regex = new RegExp("(" + word + ")", "gi");
+        result = result.replace(regex, "<mark>$1</mark>");
+      }
+      return result;
+    }
+
+    // ================== MAIN SEARCH ==================
+    function doSearch() {
+      var input = document.getElementById("searchBox").value.trim();
+      var status = document.getElementById("status");
+      var results = document.getElementById("results");
+
+      if (!input) {
+        status.innerHTML = "Please type something to search.";
+        results.innerHTML = "";
+        return;
+      }
+
+      // Clean the entire user input (remove spaces + special characters)
+      var cleanedQuery = clean(input);
+
+      if (cleanedQuery.length < 2) {
+        status.innerHTML = "Please enter a longer search term.";
+        results.innerHTML = "";
+        return;
+      }
+
+      // Find matching articles
+      var matched = [];
+
+      for (var i = 0; i < articles.length; i++) {
+        var a = articles[i];
+
+        // Clean both title and excerpt the same way
+        var cleanedTitle   = clean(a.title);
+        var cleanedExcerpt = clean(a.excerpt + " " + a.category);
+
+        // Check if cleaned query exists inside cleaned article text
+        var inTitle   = cleanedTitle.indexOf(cleanedQuery) !== -1;
+        var inContent = cleanedExcerpt.indexOf(cleanedQuery) !== -1;
+
+        if (inTitle || inContent) {
+          matched.push({
+            article: a,
+            inTitle: inTitle
+          });
+        }
+      }
+
+      // Sort: articles that matched in title come first
+      matched.sort(function(a, b) {
+        if (a.inTitle && !b.inTitle) return -1;
+        if (!a.inTitle && b.inTitle) return 1;
+        return 0;
+      });
+
+      // Status
+      status.innerHTML = "Found <b class='text-indigo-400'>" + matched.length + "</b> result(s) for “<span class='text-indigo-400'>" + input + "</span>”";
+
+      if (matched.length === 0) {
+        results.innerHTML = `
+          <div class="text-center py-16 text-gray-500">
+            <i class="fa-solid fa-magnifying-glass text-4xl mb-4 opacity-30"></i>
+            <p class="text-xl mb-2">No articles found</p>
+            <p class="text-sm">Try: metamaterials • self healing • graphite • perovskite • battery</p>
+          </div>`;
+        return;
+      }
+
+      // Build results (show ORIGINAL text)
+      var html = "";
+      for (var j = 0; j < matched.length; j++) {
+        var item = matched[j];
+        var a = item.article;
+        var delay = (j * 0.07) + "s";
+
+        html += `
+          <div class="result-card bg-gray-900 border border-gray-800 rounded-2xl p-6 mb-5" style="animation-delay:${delay}">
+            <div class="flex justify-between items-center text-xs text-gray-400 mb-3">
+              <span>${a.date}</span>
+              <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full">${a.category}</span>
+            </div>
+
+            <h2 class="text-xl font-bold mb-3 leading-snug">
+              <a href="${a.url}" class="hover:text-indigo-400 transition">
+                ${highlight(a.title, input)}
+              </a>
+            </h2>
+
+            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+              ${highlight(a.excerpt, input)}
+            </p>
+
+            <div class="flex justify-between items-center">
+              <span class="text-xs ${item.inTitle ? 'text-emerald-400' : 'text-gray-500'}">
+                ${item.inTitle ? '✓ Matched in title' : 'Matched in content'}
+              </span>
+              <a href="${a.url}" class="text-indigo-400 hover:text-indigo-300 text-sm font-medium transition">
+                Read Full Article →
+              </a>
+            </div>
+          </div>
+        `;
+      }
+
+      results.innerHTML = html;
+    }
+
+    // Auto search if URL contains ?q=
+    window.onload = function() {
+      var params = new URLSearchParams(window.location.search);
+      var q = params.get("q");
+      if (q) {
+        document.getElementById("searchBox").value = q;
+        doSearch();
+      }
+    };
+  </script>
+<!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
+                <span class="text-3xl font-bold text-white">MATERIALS insider</span>
+            </div>
+	    <p class="mb-4">Educational platform for Materials Science • Made for curious minds</p>
+            <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
