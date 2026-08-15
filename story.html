@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disclaimer | MATERIALS insider</title>
+    <title>The big Story - MATERIALS insider</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	<link rel="icon" href="images/logo2.jpeg" type="image/png">
@@ -12,6 +12,219 @@
             background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/AETHER.jpeg');
             background-size: cover;
             background-position: center;}
+    </style>
+
+    <style>
+        /* ===== AETHER Chatbot Styles ===== */
+        #aether-chat-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #000000, #000000);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 25px rgba(79, 70, 229, 1.3);
+            z-index: 9999;
+            opacity: 0;
+            transform: translateY(20px) scale(0.8);
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: none;
+        }
+        #aether-chat-btn.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        #aether-chat-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 30px rgba(79, 70, 229, 0.6);
+        }
+        #aether-chat-btn.open {
+            background: #1f2937;
+        }
+
+        #aether-chat-window {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            width: 370px;
+            max-width: calc(100vw - 40px);
+            height: 520px;
+            max-height: calc(100vh - 140px);
+            background: #111827;
+            border-radius: 18px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.55);
+            display: flex;
+            flex-direction: column;
+            z-index: 9998;
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            pointer-events: none;
+            transition: all 0.3s ease;
+            border: 1px solid #FFFFFF;
+            overflow: hidden;
+        }
+        #aether-chat-window.open {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .aether-header {
+            background: linear-gradient(90deg, #000000, #000000);
+            color: white;
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .aether-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .aether-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        .aether-header h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin: 0;
+        }
+        .aether-header p {
+            font-size: 12px;
+            opacity: 0.9;
+            margin: 0;
+        }
+        .aether-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+        }
+        .aether-close:hover { opacity: 1; }
+
+        .aether-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            background: #000000;
+        }
+        .aether-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+        .aether-messages::-webkit-scrollbar-thumb {
+            background: #4b5563;
+            border-radius: 3px;
+        }
+
+        .msg {
+            max-width: 85%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            font-size: 14.5px;
+            line-height: 1.45;
+            word-wrap: break-word;
+        }
+        .msg.bot {
+            background: #1e293b;
+            color: #e2e8f0;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+        .msg.user {
+            background: #4f46e5;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+        .msg.typing {
+            background: #1e293b;
+            color: #94a3b8;
+            font-style: italic;
+            align-self: flex-start;
+        }
+
+        .aether-input-area {
+            padding: 14px;
+            background: #111827;
+            border-top: 1px solid #374151;
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+        .aether-input-area input {
+            flex: 1;
+            background: #1f2937;
+            border: 1px solid #4b5563;
+            border-radius: 12px;
+            padding: 12px 16px;
+            color: white;
+            font-size: 14.5px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .aether-input-area input:focus {
+            border-color: #6366f1;
+        }
+        .aether-input-area input::placeholder {
+            color: #9ca3af;
+        }
+        .aether-send {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            background: #000000;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .aether-send:hover {
+            background: #4338ca;
+        }
+        .aether-send:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 480px) {
+            #aether-chat-window {
+                right: 12px;
+                left: 12px;
+                width: auto;
+                bottom: 90px;
+            }
+            #aether-chat-btn {
+                right: 16px;
+                bottom: 16px;
+            }
+        }
     </style>
 </head>
 
@@ -81,7 +294,6 @@
     </div>
 </nav>
 
-
 <section>
     <div class="hero-bg max-w-3xl mx-auto px-4 sm:px-6 py-16">
         <div class="text-center">
@@ -100,15 +312,12 @@
     	</video>
 	</div>
 
-        <div class="max-w-none text-white leading-relaxed space-y-6">
         <p style="margin-bottom:35px; font-size:20px; margin-top:65px; text-align: justify;">From a single point of infinite density — the singularity — the universe expanded and cooled. In those first moments, quarks and electrons condensed into the simplest atoms: hydrogen, then helium. Over billions of years, stars became the great forges of the cosmos. In their cores, hydrogen fused into helium, helium into carbon and oxygen, and in the violent deaths of massive stars, even heavier elements were scattered across space.</p>
 
-	<h2 style="margin-bottom:45px; font-size:30px;"><strong>Everything you have ever touched is made from these same atoms.</strong></h>
+	<h2 style="margin-bottom:45px; font-size:30px;"><strong>Everything you have ever touched is made from these same atoms.</strong></h2>
         <p style="margin-bottom:35px; font-size:20px; text-align: justify;">The calcium in your teeth, the iron in your blood, the carbon that forms both the graphite in your pencil and the diamond on a ring, the silicon in the glass of your phone, the lithium in its battery — all of it was forged in stars that lived and died long before the Earth existed. Your body, your house, the roads outside, the trees in the park, your pets, the food on your plate, the distant galaxies you see in the night sky… everything is assembled from the same handful of elements.</p>
 
-	
-
-<h2 style="margin-bottom:45px; font-size:30px;"><strong>This is materials science.</strong></h>
+	<h2 style="margin-bottom:45px; font-size:30px;"><strong>This is materials science.</strong></h2>
         <p style="margin-bottom:35px; font-size:20px; text-align: justify;">It explains why alkaline batteries eventually gave way to lithium-ion cells that store far more energy in less space. It explains how ordinary sand becomes the chemically strengthened Gorilla Glass on your screen — tough enough to survive daily drops. It explains why the exact same element, carbon, can be soft and black in ash or the hardest natural substance on Earth when its atoms are locked into the rigid lattice of diamond. And it explains how we learned to capture the Sun’s energy directly through solar panels — essentially miniaturizing a star’s power on our rooftops and in our devices.</p>
 
         <p style="margin-bottom:35px; font-size:20px; text-align: justify;">Every leap in technology, from the Bronze Age to semiconductors to advanced composites and quantum materials, has come from one thing: humans learning to understand and arrange atoms with intention. We stopped merely using what nature gave us and began designing materials that nature never made on its own.</p>
@@ -121,6 +330,7 @@
              alt="solar-power-with-perovskites?" 
              class="w-full rounded-2xl shadow-md mb-12">
 
+
     <div class="max-w-3xl mx-auto px-4 sm:px-6 py-16">
         <div class="text-center mb-12">
             <h2 class="text-4xl font-bold mb-4">I’m</h2>
@@ -130,9 +340,8 @@
         <p style="margin-bottom:35px">So don’t worry.</p>
         <p style="margin-bottom:35px">We’re going to dive deep together.</p>
         </div>
-
-        </div>
     </div>
+
 </section>
 
 
@@ -148,13 +357,48 @@
         </div>
     </footer>
 
-    <!-- Mobile Menu Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.getElementById('hamburger');
-            const mobileMenu = document.getElementById('mobile-menu');
-            let isOpen = false;
+    <!-- ========== AETHER Chatbot Widget ========== -->
+    <button id="aether-chat-btn" aria-label="Open AETHER chat">
+        <i class="fa-solid fa-comments"></i>
+    </button>
 
+    <div id="aether-chat-window" role="dialog" aria-label="AETHER Chat">
+        <div class="aether-header">
+            <div class="aether-header-left">
+                <div class="aether-avatar">
+                    <i class="fa-solid fa-atom"></i>
+                </div>
+                <div>
+                    <h3>AETHER</h3>
+                    <p>Your materials science guide</p>
+                </div>
+            </div>
+            <button class="aether-close" id="aether-close-btn" aria-label="Close chat">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="aether-messages" id="aether-messages">
+            <!-- Messages will be injected here -->
+        </div>
+
+        <div class="aether-input-area">
+            <input type="text" id="aether-input" placeholder="Ask me about materials..." autocomplete="off">
+            <button class="aether-send" id="aether-send-btn" aria-label="Send message">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+<!-- Mobile Menu Script + AETHER Chatbot Logic -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // ===== Existing Mobile Menu =====
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isOpen = false;
+
+        if (hamburger && mobileMenu) {
             hamburger.addEventListener('click', function() {
                 isOpen = !isOpen;
                 if (isOpen) {
@@ -165,7 +409,195 @@
                     hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
                 }
             });
+        }
+
+        // ===== AETHER Chatbot =====
+        const chatBtn = document.getElementById('aether-chat-btn');
+        const chatWindow = document.getElementById('aether-chat-window');
+        const closeBtn = document.getElementById('aether-close-btn');
+        const messagesEl = document.getElementById('aether-messages');
+        const inputEl = document.getElementById('aether-input');
+        const sendBtn = document.getElementById('aether-send-btn');
+
+        let chatOpenedOnce = false;
+        let isChatOpen = false;
+
+        // Show button only when user scrolls near the bottom
+        function checkScroll() {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+            const distanceFromBottom = docHeight - (scrollTop + windowHeight);
+            const threshold = docHeight * 0.35;
+
+            if (distanceFromBottom < threshold) {
+                chatBtn.classList.add('visible');
+            }
+        }
+
+        window.addEventListener('scroll', checkScroll, { passive: true });
+        checkScroll();
+
+        function openChat() {
+            isChatOpen = true;
+            chatWindow.classList.add('open');
+            chatBtn.classList.add('open');
+            chatBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+
+            if (!chatOpenedOnce) {
+                chatOpenedOnce = true;
+                addBotMessage("Hello! I'm <strong>AETHER</strong> — the Advanced Explorer of The Hidden Elements of Reality.<br><br>You've reached the end of the Big Story. What would you like to explore next?<br><br>Try asking me about:<br>• Carbon / Diamond / Graphite<br>• Lithium-ion batteries<br>• Metamaterials<br>• Superconductors<br>• Or anything materials-related!");
+            }
+            inputEl.focus();
+        }
+
+        function closeChat() {
+            isChatOpen = false;
+            chatWindow.classList.remove('open');
+            chatBtn.classList.remove('open');
+            chatBtn.innerHTML = '<i class="fa-solid fa-comments"></i>';
+        }
+
+        chatBtn.addEventListener('click', function() {
+            if (isChatOpen) {
+                closeChat();
+            } else {
+                openChat();
+            }
         });
-    </script>
+
+        closeBtn.addEventListener('click', closeChat);
+
+        // ===== Improved Knowledge Base =====
+        const knowledge = [
+            {
+                keywords: ['hello', 'hi', 'hey', 'greetings', 'good morning', 'good evening'],
+                reply: "Hello! Great to meet a curious mind. What materials mystery shall we unravel today?"
+            },
+            {
+                keywords: ['who are you', 'what are you', 'your name', 'aether'],
+                reply: "I'm <strong>AETHER</strong> — Advanced Explorer of The Hidden Elements of Reality. I guide people through the world of materials science, from atoms forged in stars to modern technologies."
+            },
+            {
+                keywords: ['carbon', 'diamond', 'graphite', 'graphene', 'allotrope'],
+                reply: "Carbon is incredibly versatile! The same atoms can form soft graphite (used in pencils), ultra-hard diamond, or the revolutionary 2D material graphene. The only difference is how the atoms are arranged — a perfect example of materials science."
+            },
+            {
+                keywords: ['battery', 'batteries', 'lithium', 'li-ion', 'lithium-ion', 'anode'],
+                reply: "Lithium-ion batteries transformed portable electronics. Lithium is the lightest metal and has a high electrochemical potential, giving much higher energy density than older alkaline batteries. High-purity graphite is also critical for the anodes."
+            },
+            {
+                keywords: ['metamaterial', 'metamaterials', 'stealth', 'cloaking', 'invisibility', 'cloak'],
+                reply: "Metamaterials get their special properties from structure, not chemistry. By carefully designing tiny patterns, scientists can bend light, sound, or electromagnetic waves in ways nature never intended — enabling things like cloaking and super-lenses."
+            },
+            {
+                keywords: ['superconductor', 'superconducting', 'superconductivity', 'magnet', 'fusion'],
+                reply: "Superconductors carry electricity with zero resistance when cooled below a critical temperature. Recent large superconducting magnets (like those built for fusion research) are bringing us closer to clean, almost unlimited energy."
+            },
+            {
+                keywords: ['silicon', 'sand', 'gorilla glass', 'glass', 'chip', 'semiconductor'],
+                reply: "Ordinary sand (silicon dioxide) is the starting material for both computer chips and the chemically strengthened Gorilla Glass on phones. Materials scientists control purity and structure to turn simple sand into high-tech products."
+            },
+            {
+                keywords: ['solar', 'photovoltaic', 'sun', 'solar panel', 'solar cell'],
+                reply: "Solar panels essentially miniaturize a star’s power. Semiconductor materials (usually silicon) absorb photons and free electrons, generating electricity. Continuous materials research keeps improving their efficiency."
+            },
+            {
+                keywords: ['story', 'universe', 'stars', 'atoms', 'big bang', 'singularity'],
+                reply: "Every atom in your body heavier than hydrogen or helium was forged inside stars. Materials science is the story of how humans learned to rearrange those star-forged atoms with intention — from the Bronze Age to quantum materials."
+            },
+            {
+                keywords: ['materials science', 'what is materials', 'material science'],
+                reply: "Materials science is the study of how the structure of materials at atomic and molecular scales determines their properties and performance. It sits at the intersection of physics, chemistry, and engineering."
+            },
+            {
+                keywords: ['thank', 'thanks', 'thank you'],
+                reply: "You're very welcome! Keep exploring — the universe of materials is infinite. Come back anytime."
+            },
+            {
+                keywords: ['bye', 'goodbye', 'see you', 'later', 'OK'],
+                reply: "Until next time. Remember: The atoms around you hold incredible stories. Stay curious!"
+            },
+            {
+                keywords: ['help', 'what can you do', 'topics'],
+                reply: "I can talk about carbon materials, batteries, metamaterials, superconductors, silicon & glass, solar energy, the origin of atoms, and general materials science. Just ask me anything related!"
+            }
+        ];
+
+        // Better matching function
+        function getReply(userText) {
+            const lower = userText.toLowerCase().trim();
+
+            // Check each knowledge entry
+            for (const item of knowledge) {
+                for (const kw of item.keywords) {
+                    if (lower.includes(kw)) {
+                        return item.reply;
+                    }
+                }
+            }
+
+            // Fallback replies (rotated so it doesn't feel repetitive)
+            const fallbacks = [
+                "Interesting question! Could you tell me a bit more? For example, are you curious about batteries, carbon materials, metamaterials, or something else?",
+                "That's a good one. Materials science is huge — try asking about carbon, lithium batteries, metamaterials, superconductors, or silicon.",
+                "I'd love to help with that. Can you give me a keyword? (e.g. diamond, battery, glass, solar, superconductor...)",
+                "Hmm, I didn't catch a specific topic. You can ask me about carbon, batteries, metamaterials, superconductors, or the Big Story itself."
+            ];
+
+            // Pick a different fallback each time
+            const index = Math.floor(Math.random() * fallbacks.length);
+            return fallbacks[index];
+        }
+
+        function addMessage(text, type) {
+            const div = document.createElement('div');
+            div.className = 'msg ' + type;
+            div.innerHTML = text;
+            messagesEl.appendChild(div);
+            messagesEl.scrollTop = messagesEl.scrollHeight;
+        }
+
+        function addBotMessage(text) {
+            const typing = document.createElement('div');
+            typing.className = 'msg typing';
+            typing.id = 'typing-indicator';
+            typing.textContent = 'AETHER is thinking...';
+            messagesEl.appendChild(typing);
+            messagesEl.scrollTop = messagesEl.scrollHeight;
+
+            setTimeout(() => {
+                const indicator = document.getElementById('typing-indicator');
+                if (indicator) indicator.remove();
+                addMessage(text, 'bot');
+            }, 500 + Math.random() * 600);
+        }
+
+        function sendMessage() {
+            const text = inputEl.value.trim();
+            if (!text) return;
+
+            addMessage(text, 'user');
+            inputEl.value = '';
+            sendBtn.disabled = true;
+
+            const reply = getReply(text);
+            addBotMessage(reply);
+
+            setTimeout(() => {
+                sendBtn.disabled = false;
+                inputEl.focus();
+            }, 700);
+        }
+
+        sendBtn.addEventListener('click', sendMessage);
+        inputEl.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+    });
+</script>
 </body>
 </html>
