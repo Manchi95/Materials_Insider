@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Power with Perovskites - MATERIALS insider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="icon" href="../images/logo2.jpeg" type="image/png">
+</head>
+
+<body class="bg-gray-900 font-sans text-gray-100 transition-colors">
+
+    <!-- Navigation -->
+    <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                
+<!-- Clickable Logo -->
+                <a href="https://www.materialinsider.com" 
+                   class="flex items-center space-x-3 hover:opacity-40 transition no-underline">
+                    <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white">MATERIALS insider</h1>
+                </a>
+		</div>
+
+                <!-- Desktop Menu -->
+		<div class="hidden md:flex space-x-12 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a></ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul><a href="../about-us.html" class="hover:text-indigo-600 font-medium">About Us</a></ul>
+                <ul><a href="../privacy-policy.html" class="hover:text-indigo-600 font-medium">Privacy Policy</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe Button (Desktop) -->
+            <div class="hidden md:block">
+                <button onclick="alert('Newsletter signup coming soon!')" 
+                        class="bg-indigo-600 hover:bg-red-800 text-white hover:text-black px-5 py-2 rounded-lg text-sm font-medium">
+                    SUBSCRIBE
+                </button>
+            </div>
+	    
+            <!-- Hamburger Button (Mobile) -->
+            <button id="hamburger"
+                    class="md:hidden text-3xl text-gray-400 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200">
+            <div class="flex flex-col space-y-5 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a></ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul><a href="../about-us.html" class="hover:text-indigo-600 font-medium">About Us</a></ul>
+                <ul><a href="../privacy-policy.html" class="hover:text-indigo-600 font-medium">Privacy Policy</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        <!-- Article Header -->
+        <header class="mb-12">
+	    <span class="text-indigo-600 font-medium">August 09, 2026 • Science </span>
+            <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">
+                Atomic Magic: How 20-Something Scientists Are Hacking Solar Power with Perovskites
+            </h1>
+            <p class="text-xl text-gray-400 mt-6">
+                Picture this: a super-thin, bendy film that sucks up sunlight like a sponge and pumps out electricity almost as well as those heavy, expensive silicon panels—but costs way less and can stick on your backpack, car, or even windows.
+            </p>
+            <div class="flex items-center gap-4 mt-8 text-sm text-white">
+                <span>By Arush</span>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <span>4 min read</span>
+            </div>
+
+<!-- Readers Count with Blinking Eye -->
+		<div class="flex justify-end mb-6">
+    		<span id="eye" class="text-xl animate-blink">👁️  </span>
+    		<span id="count" style="font-weight:700; color:#0d6efd; font-size:1.3rem;">—</span>
+		</div>
+
+    		<style>
+        		@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        		.animate-blink { animation: blink 1.5s infinite; }
+    		</style>
+    <!-- Count Script -->
+
+<script>
+    const COUNTER_KEY = 'materialinsider_Solar_Power_with_Perovskites'; // Change for each page
+
+    let timer = null;
+    let originalApiValue = 0;   // stored from the single API call
+    const countEl = document.getElementById('count');
+
+    async function initCounter() {
+        try {
+            // Single API call only
+            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materialinsider_Solar_Power_with_Perovskitessd");
+            if (res.ok) {
+                const data = await res.json();
+                originalApiValue = data.value || 0;
+
+                // Immediately show reduced by 1
+                countEl.textContent = Math.max(0, originalApiValue - 1);
+            } else {
+                countEl.textContent = "0";
+            }
+        } catch (e) {
+            countEl.textContent = "0";
+        }
+
+        // After 30 seconds: show original value (add 1 back locally)
+        timer = setTimeout(() => {
+            countEl.textContent = originalApiValue;
+        }, 30000);
+    }
+
+    window.addEventListener('load', initCounter);
+
+    // Safety: cancel if user leaves early
+    window.addEventListener('beforeunload', () => {
+        if (timer) clearTimeout(timer);
+    });
+</script>
+
+        </header>
+
+<!-- ========== Floating Ads System (with Images + Links + Reappear) ========== -->
+<style>
+    .desktop-ad {
+        position: fixed;
+        top: 20%;
+        transform: translateY(-20%);
+        width: 220px;
+        z-index: 9990;
+        display: none;
+        background: #1f2937;
+        border: 1px solid #374151;
+        border-radius: 12px;
+        padding: 12px 8px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    .desktop-ad:hover {
+        transform: translateY(-22%) scale(1.03);
+    }
+    /* Left side - two ads */
+    .desktop-ad.left-1  { left: 50px;  top: 20%; }
+    .desktop-ad.left-2  { left: 50px;  top: 65%; }
+
+    /* Right side - two ads */
+    .desktop-ad.right-1 { right: 50px; top: 20%; }
+    .desktop-ad.right-2 { right: 50px; top: 65%; }
+
+
+    .mobile-ad-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.78);
+        z-index: 9995;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    .mobile-ad-overlay.show {
+        display: flex;
+    }
+    .mobile-ad-box {
+        background: #111827;
+        border: 1px solid #4b5563;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 340px;
+        padding: 22px 16px 18px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.55);
+        cursor: pointer;
+    }
+    .mobile-ad-close {
+        position: absolute;
+        top: 8px;
+        right: 14px;
+        background: none;
+        border: none;
+        color: #9ca3af;
+        font-size: 24px;
+        cursor: pointer;
+        line-height: 1;
+        z-index: 20;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mobile-ad-close:hover { color: #fff; }
+
+    @media (min-width: 1280px) {
+        .desktop-ad.visible { display: block !important; }
+    }
+    @media (max-width: 1279px) {
+        .desktop-ad { display: none !important; }
+    }
+</style>
+
+<!-- Desktop Left 1 Ad -->
+<div class="desktop-ad left-1" id="desktop-ad-left-1">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement</p>
+    <div id="desktop-left-1-content" style="min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Desktop Left 2 Ad -->
+<div class="desktop-ad left-2" id="desktop-ad-left-2">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement</p>
+    <div id="desktop-left-2-content" style="min-height:160px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Desktop Right 1 Ad -->
+<div class="desktop-ad right-1" id="desktop-ad-right-1">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement</p>
+    <div id="desktop-right-1-content" style="min-height:100px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Desktop Right 2 Ad -->
+<div class="desktop-ad right-2" id="desktop-ad-right-2">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement</p>
+    <div id="desktop-right-2-content" style="min-height:100px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Mobile Center Popup Ad -->
+<div class="mobile-ad-overlay" id="mobile-ad-overlay">
+    <div class="mobile-ad-box" id="mobile-ad-box">
+        <button class="mobile-ad-close" id="mobile-ad-close" aria-label="Close ad">×</button>
+        <p style="font-size:12px; color:#9ca3af; margin-bottom:12px;">Advertisement</p>
+        <div id="mobile-ad-content" style="min-height:250px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:14px;">
+            <!-- Content injected by JS -->
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    // ========== SETTINGS ==========
+    const FIRST_DELAY = 10 * 1000;      // First appearance (change to 90*1000 for 1.5 min)
+    const REAPPEAR_DELAY = 30 * 1000;   // Reappear 30 seconds after closing
+
+    // ========== YOUR ADS WITH IMAGES ==========
+    // Replace the image URLs with your real client product images
+    const ads = [
+        {
+            link: "https://www.facebook.com/share/1SoWza42sh/",
+            desktop: `
+                <img src="../images/ads/bloom.jpeg" 
+                     style="width:100%; border-radius:8px; margin-bottom:10px;" 
+                     alt="Facebook">
+                <div style="font-size:12px; color:#d1d5db;">You will get more details of this site.</div>
+            `,
+            mobile: `
+                <img src="../images/ads/bloom.jpeg" 
+                     style="width:100%; border-radius:10px; margin-bottom:12px;" 
+                     alt="Facebook">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">You will get more details of this site.</div>
+            `
+        },
+        {
+            link: "https://www.client2.com",
+            desktop: `
+                <img src="../images/ads/bloom.jpeg" 
+                     style="width:100%; border-radius:8px; margin-bottom:10px;" 
+                     alt="Client 2 Product">
+                <div style="font-size:12px; color:#d1d5db;">Client 2 Product</div>
+            `,
+            mobile: `
+                <img src="../images/ads/bloom.jpeg" 
+                     style="width:100%; border-radius:10px; margin-bottom:12px;" 
+                     alt="Client 2 Product">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">Client 2 Product</div>
+            `
+        },
+        {
+            link: "https://www.client3.com",
+            desktop: `
+                <img src="../images/ads/bloom.jpeg" 
+                     style="width:100%; border-radius:8px; margin-bottom:10px;" 
+                     alt="Client 3 Product">
+                <div style="font-size:12px; color:#d1d5db;">Client 3 Product</div>
+            `,
+            mobile: `
+                <img src="../images/ads/bloom.jpeg" 
+                     style="width:100%; border-radius:10px; margin-bottom:12px;" 
+                     alt="Client 3 Product">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">Client 3 Product</div>
+            `
+        },
+        {
+            link: "https://www.client4.com",
+            desktop: `
+                <img src="https://via.placeholder.com/140x420?text=Client+4" 
+                     style="width:100%; border-radius:8px; margin-bottom:10px;" 
+                     alt="Client 4 Product">
+                <div style="font-size:12px; color:#d1d5db;">Client 4 Product</div>
+            `,
+            mobile: `
+                <img src="https://via.placeholder.com/280x180?text=Client+4" 
+                     style="width:100%; border-radius:10px; margin-bottom:12px;" 
+                     alt="Client 4 Product">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">Client 4 Product</div>
+            `
+        }
+    ];
+
+    let currentAdIndex = 0;
+    let reappearTimer = null;
+
+    function loadAdContent() {
+        const ad = ads[currentAdIndex];
+        document.getElementById('desktop-left-1-content').innerHTML  = ad.desktop;
+        document.getElementById('desktop-left-2-content').innerHTML  = ad.desktop;
+        document.getElementById('desktop-right-1-content').innerHTML = ad.desktop;
+        document.getElementById('desktop-right-2-content').innerHTML = ad.desktop;
+        document.getElementById('mobile-ad-content').innerHTML     = ad.mobile;
+    }
+
+    function showAds() {
+        loadAdContent();
+        document.getElementById('desktop-ad-left-1').classList.add('visible');
+        document.getElementById('desktop-ad-left-2').classList.add('visible');
+        document.getElementById('desktop-ad-right-1').classList.add('visible');
+        document.getElementById('desktop-ad-right-2').classList.add('visible');
+
+        if (window.innerWidth < 1280) {
+            document.getElementById('mobile-ad-overlay').classList.add('show');
+        }
+    }
+
+    function hideAds() {
+        document.getElementById('desktop-ad-left-1').classList.remove('visible');
+        document.getElementById('desktop-ad-left-2').classList.remove('visible');
+        document.getElementById('desktop-ad-right-1').classList.remove('visible');
+        document.getElementById('desktop-ad-right-2').classList.remove('visible');
+        document.getElementById('mobile-ad-overlay').classList.remove('show');
+    }
+
+    function scheduleReappear() {
+        if (reappearTimer) clearTimeout(reappearTimer);
+        currentAdIndex = (currentAdIndex + 1) % ads.length;
+        reappearTimer = setTimeout(showAds, REAPPEAR_DELAY);
+    }
+
+    function openClientLink() {
+        const link = ads[currentAdIndex].link;
+        window.open(link, '_blank');
+    }
+
+    // First appearance
+    setTimeout(showAds, FIRST_DELAY);
+
+    // Mobile: Click anywhere on the ad (except close button) → open link
+    document.getElementById('mobile-ad-box').addEventListener('click', function (e) {
+        if (e.target.closest('.mobile-ad-close')) return;
+        openClientLink();
+    });
+
+    // Mobile: Close button only closes the ad
+    document.getElementById('mobile-ad-close').addEventListener('click', function (e) {
+        e.stopPropagation();
+        hideAds();
+        scheduleReappear();
+    });
+
+    // Desktop: Clicking left or right ad opens the client link
+    document.getElementById('desktop-ad-left-1').addEventListener('click', openClientLink);
+    document.getElementById('desktop-ad-left-2').addEventListener('click', openClientLink);
+    document.getElementById('desktop-ad-right-1').addEventListener('click', openClientLink);
+    document.getElementById('desktop-ad-right-2').addEventListener('click', openClientLink);
+
+})();
+</script>
+<!-- ========== End Floating Ads System ========== -->
+
+<!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
+                <span class="text-3xl font-bold text-white">MATERIALS insider</span>
+            </div>
+	    <p class="mb-4">Educational platform for Materials Science • Made for curious minds</p>
+            <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
