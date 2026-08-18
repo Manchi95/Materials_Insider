@@ -286,13 +286,15 @@ class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center g
             </div>
         </div>
     </article>
+	
+<!-- ========== Floating Ads System (with Images + Links + Reappear) ========== -->
 <!-- ========== Floating Ads System (with Images + Links + Reappear) ========== -->
 <style>
     .desktop-ad {
         position: fixed;
         top: 20%;
         transform: translateY(-20%);
-        width: 265px;
+        width: 220px;
         z-index: 9990;
         display: none;
         background: #1f2937;
@@ -307,8 +309,14 @@ class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center g
     .desktop-ad:hover {
         transform: translateY(-22%) scale(1.03);
     }
-    .desktop-ad.left  { left: 18px; }
-    .desktop-ad.right { right: 18px; }
+    /* Left side - two ads */
+    .desktop-ad.left-1  { left: 50px;  top: 20%; }
+    .desktop-ad.left-2  { left: 50px;  top: 65%; }
+
+    /* Right side - two ads */
+    .desktop-ad.right-1 { right: 50px; top: 20%; }
+    .desktop-ad.right-2 { right: 50px; top: 65%; }
+
 
     .mobile-ad-overlay {
         position: fixed;
@@ -362,18 +370,34 @@ class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center g
     }
 </style>
 
-<!-- Desktop Left Ad -->
-<div class="desktop-ad left" id="desktop-ad-left">
+<!-- Desktop Left 1 Ad -->
+<div class="desktop-ad left-1" id="desktop-ad-left-1">
     <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement</p>
-    <div id="desktop-left-content" style="min-height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+    <div id="desktop-left-1-content" style="min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
         <!-- Content injected by JS -->
     </div>
 </div>
 
-<!-- Desktop Right Ad -->
-<div class="desktop-ad right" id="desktop-ad-right">
+<!-- Desktop Left 2 Ad -->
+<div class="desktop-ad left-2" id="desktop-ad-left-2">
     <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement</p>
-    <div id="desktop-right-content" style="min-height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+    <div id="desktop-left-2-content" style="min-height:160px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Desktop Right 1 Ad -->
+<div class="desktop-ad right-1" id="desktop-ad-right-1">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement</p>
+    <div id="desktop-right-1-content" style="min-height:100px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Desktop Right 2 Ad -->
+<div class="desktop-ad right-2" id="desktop-ad-right-2">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement</p>
+    <div id="desktop-right-2-content" style="min-height:100px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
         <!-- Content injected by JS -->
     </div>
 </div>
@@ -392,11 +416,11 @@ class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center g
 <script>
 (function () {
     // ========== SETTINGS ==========
-    const FIRST_DELAY = 10 * 1000;      // First appearance (change to 90*1000 for 1.5 min)
-    const REAPPEAR_DELAY = 30 * 1000;   // Reappear 30 seconds after closing
+    const FIRST_DELAY = 10 * 1000;        // First appearance after 10 seconds
+    const DESKTOP_ROTATE = 20 * 1000;     // Desktop ads change every 20 seconds
+    const REAPPEAR_DELAY = 30 * 1000;     // Mobile reappear after close
 
-    // ========== YOUR ADS WITH IMAGES ==========
-    // Replace the image URLs with your real client product images
+    // ========== YOUR ADS (keep your existing ads array) ==========
     const ads = [
         {
             link: "https://www.facebook.com/share/1SoWza42sh/",
@@ -414,108 +438,134 @@ class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center g
             `
         },
         {
-            link: "https://www.client2.com",
+            link: "https://materialinsider.com/articles/260809-solar-power-with-perovskites.html",
             desktop: `
-                <img src="https://via.placeholder.com/140x420?text=Client+2" 
+                <img src="../images/ads/solar.gif" 
                      style="width:100%; border-radius:8px; margin-bottom:10px;" 
-                     alt="Client 2 Product">
-                <div style="font-size:12px; color:#d1d5db;">Client 2 Product</div>
+                     alt="MATERIALS insider">
+                <div style="font-size:12px; color:#d1d5db;">Solar power with Perovskite</div>
             `,
             mobile: `
-                <img src="https://via.placeholder.com/280x180?text=Client+2" 
-                     style="width:100%; border-radius:10px; margin-bottom:12px;" 
-                     alt="Client 2 Product">
-                <div style="font-size:15px; color:#d1d5db; font-weight:500;">Client 2 Product</div>
+                <img src="../images/ads/solar.gif" 
+                     style="width:100%; border-radius:8px; margin-bottom:10px;" 
+                     alt="MATERIALS insider">
+                <div style="font-size:12px; color:#d1d5db;">Solar power with Perovskite</div>
             `
         },
         {
-            link: "https://www.client3.com",
+            link: "https://www.youtube.com/@PurrTwistStudio/shorts",
             desktop: `
-                <img src="https://via.placeholder.com/140x420?text=Client+3" 
-                     style="width:100%; border-radius:8px; margin-bottom:10px;" 
-                     alt="Client 3 Product">
-                <div style="font-size:12px; color:#d1d5db;">Client 3 Product</div>
+                <img src="../images/ads/purrtwist.jpg" 
+                     style="width:100%; border-radius:10px; margin-bottom:12px;" 
+                     alt="YouTube">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">PurrTwist - Subscribe</div>
             `,
             mobile: `
-                <img src="https://via.placeholder.com/280x180?text=Client+3" 
+                <img src="./images/ads/purrtwist.jpg" 
                      style="width:100%; border-radius:10px; margin-bottom:12px;" 
-                     alt="Client 3 Product">
-                <div style="font-size:15px; color:#d1d5db; font-weight:500;">Client 3 Product</div>
+                     alt="YouTube">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">PurrTwist - Subscribe</div>
             `
         },
         {
-            link: "https://www.client4.com",
+            link: "https://materialinsider.com/articles/260719-sri-lankan-graphite.html",
             desktop: `
-                <img src="https://via.placeholder.com/140x420?text=Client+4" 
+                <img src="../images/ads/graphite.gif" 
                      style="width:100%; border-radius:8px; margin-bottom:10px;" 
-                     alt="Client 4 Product">
-                <div style="font-size:12px; color:#d1d5db;">Client 4 Product</div>
+                     alt="Graphite">
+                <div style="font-size:12px; color:#d1d5db;">EV Battery Revolution with Graphite</div>
             `,
             mobile: `
-                <img src="https://via.placeholder.com/280x180?text=Client+4" 
-                     style="width:100%; border-radius:10px; margin-bottom:12px;" 
-                     alt="Client 4 Product">
-                <div style="font-size:15px; color:#d1d5db; font-weight:500;">Client 4 Product</div>
+                <img src="../images/ads/graphite.gif" 
+                     style="width:100%; border-radius:8px; margin-bottom:10px;" 
+                     alt="Graphite">
+                <div style="font-size:12px; color:#d1d5db;">EV Battery Revolution with Graphite</div>
             `
         }
     ];
 
-    let currentAdIndex = 0;
+    let desktopIndex = 0;
+    let mobileIndex = 0;
     let reappearTimer = null;
 
-    function loadAdContent() {
-        const ad = ads[currentAdIndex];
-        document.getElementById('desktop-left-content').innerHTML  = ad.desktop;
-        document.getElementById('desktop-right-content').innerHTML = ad.desktop;
-        document.getElementById('mobile-ad-content').innerHTML     = ad.mobile;
+    // ===== Desktop: Load 4 different ads =====
+    function loadDesktopAds() {
+        const slots = [
+            document.getElementById('desktop-left-1-content'),
+            document.getElementById('desktop-left-2-content'),
+            document.getElementById('desktop-right-1-content'),
+            document.getElementById('desktop-right-2-content')
+        ];
+
+        slots.forEach((slot, i) => {
+            const ad = ads[(desktopIndex + i) % ads.length];
+            slot.innerHTML = ad.desktop;
+
+            // Make the parent ad clickable
+            const parent = slot.closest('.desktop-ad');
+            if (parent) {
+                parent.onclick = function () {
+                    window.open(ad.link, '_blank');
+                };
+            }
+        });
     }
 
-    function showAds() {
-        loadAdContent();
-        document.getElementById('desktop-ad-left').classList.add('visible');
-        document.getElementById('desktop-ad-right').classList.add('visible');
-
-        if (window.innerWidth < 1280) {
-            document.getElementById('mobile-ad-overlay').classList.add('show');
-        }
+    function showDesktopAds() {
+        loadDesktopAds();
+        document.getElementById('desktop-ad-left-1').classList.add('visible');
+        document.getElementById('desktop-ad-left-2').classList.add('visible');
+        document.getElementById('desktop-ad-right-1').classList.add('visible');
+        document.getElementById('desktop-ad-right-2').classList.add('visible');
     }
 
-    function hideAds() {
-        document.getElementById('desktop-ad-left').classList.remove('visible');
-        document.getElementById('desktop-ad-right').classList.remove('visible');
+    // ===== Mobile =====
+    function loadMobileAd() {
+        const ad = ads[mobileIndex % ads.length];
+        document.getElementById('mobile-ad-content').innerHTML = ad.mobile;
+    }
+
+    function showMobileAd() {
+        if (window.innerWidth >= 1280) return;
+        loadMobileAd();
+        document.getElementById('mobile-ad-overlay').classList.add('show');
+    }
+
+    function hideMobileAd() {
         document.getElementById('mobile-ad-overlay').classList.remove('show');
     }
 
-    function scheduleReappear() {
+    function scheduleMobileReappear() {
         if (reappearTimer) clearTimeout(reappearTimer);
-        currentAdIndex = (currentAdIndex + 1) % ads.length;
-        reappearTimer = setTimeout(showAds, REAPPEAR_DELAY);
+        mobileIndex = (mobileIndex + 1) % ads.length;
+        reappearTimer = setTimeout(showMobileAd, REAPPEAR_DELAY);
     }
 
-    function openClientLink() {
-        const link = ads[currentAdIndex].link;
-        window.open(link, '_blank');
-    }
+    // ===== First appearance (after 10 seconds) =====
+    setTimeout(function () {
+        showDesktopAds();
+        showMobileAd();
 
-    // First appearance
-    setTimeout(showAds, FIRST_DELAY);
+        // Desktop rotation every 20 seconds
+        setInterval(function () {
+            desktopIndex = (desktopIndex + 1) % ads.length;
+            loadDesktopAds();
+        }, DESKTOP_ROTATE);
 
-    // Mobile: Click anywhere on the ad (except close button) → open link
+    }, FIRST_DELAY);
+
+    // ===== Mobile events =====
     document.getElementById('mobile-ad-box').addEventListener('click', function (e) {
         if (e.target.closest('.mobile-ad-close')) return;
-        openClientLink();
+        const ad = ads[mobileIndex % ads.length];
+        window.open(ad.link, '_blank');
     });
 
-    // Mobile: Close button only closes the ad
     document.getElementById('mobile-ad-close').addEventListener('click', function (e) {
         e.stopPropagation();
-        hideAds();
-        scheduleReappear();
+        hideMobileAd();
+        scheduleMobileReappear();
     });
-
-    // Desktop: Clicking left or right ad opens the client link
-    document.getElementById('desktop-ad-left').addEventListener('click', openClientLink);
-    document.getElementById('desktop-ad-right').addEventListener('click', openClientLink);
 
 })();
 </script>
