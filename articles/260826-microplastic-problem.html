@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Problem of Microplastics - MATERIALS insider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="icon" href="../images/logo2.jpeg" type="image/png">
+</head>
+
+<body class="bg-gray-900 font-sans text-gray-100 transition-colors">
+
+    <!-- Navigation -->
+    <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                
+<!-- Clickable Logo -->
+                <a href="https://www.materialinsider.com" 
+                   class="flex items-center space-x-3 hover:opacity-40 transition no-underline">
+                    <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white">MATERIALS insider</h1>
+                </a>
+		</div>
+
+                <!-- Desktop Menu -->
+		<div class="hidden md:flex space-x-12 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a></ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul><a href="../about-us.html" class="hover:text-indigo-600 font-medium">About Us</a></ul>
+                <ul><a href="../privacy-policy.html" class="hover:text-indigo-600 font-medium">Privacy Policy</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe Button (Desktop) -->
+            <div class="hidden md:block">
+                <button onclick="alert('Newsletter signup coming soon!')" 
+                        class="bg-indigo-600 hover:bg-red-800 text-white hover:text-black px-5 py-2 rounded-lg text-sm font-medium">
+                    SUBSCRIBE
+                </button>
+            </div>
+	    
+            <!-- Hamburger Button (Mobile) -->
+            <button id="hamburger"
+                    class="md:hidden text-3xl text-gray-400 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200">
+            <div class="flex flex-col space-y-5 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a></ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul><a href="../about-us.html" class="hover:text-indigo-600 font-medium">About Us</a></ul>
+                <ul><a href="../privacy-policy.html" class="hover:text-indigo-600 font-medium">Privacy Policy</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        <!-- Article Header -->
+        <header class="mb-12">
+	    <span class="text-indigo-600 font-medium">August 26, 2026 • Science </span>
+            <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">
+                Why Microplastics Are Becoming a Materials Science Problem
+            </h1>
+            <p class="text-xl text-gray-400 mt-6">
+                Microplastics are no longer just an environmental issue. Learn how polymer degradation, material failure mechanisms, and sustainable design are turning microplastics into one of the biggest challenges in modern materials science.
+            </p>
+            <div class="flex items-center gap-4 mt-8 text-sm text-white">
+                <span>By Arush</span>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <span>5 min read</span>
+            </div>
+
+<!-- Readers Count with Blinking Eye -->
+		<div class="flex justify-end mb-6">
+    		<span id="eye" class="text-xl animate-blink">👁️  </span>
+    		<span id="count" style="font-weight:700; color:#0d6efd; font-size:1.3rem;">—</span>
+		</div>
+
+    		<style>
+        		@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        		.animate-blink { animation: blink 1.5s infinite; }
+    		</style>
+    <!-- Count Script -->
+
+<script>
+    const COUNTER_KEY = 'materialinsider_Microplastics'; // Change for each page
+
+    let timer = null;
+    let originalApiValue = 0;   // stored from the single API call
+    const countEl = document.getElementById('count');
+
+    async function initCounter() {
+        try {
+            // Single API call only
+            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materialinsider_Microplastics");
+            if (res.ok) {
+                const data = await res.json();
+                originalApiValue = data.value || 0;
+
+                // Immediately show reduced by 1
+                countEl.textContent = Math.max(0, originalApiValue - 1);
+            } else {
+                countEl.textContent = "0";
+            }
+        } catch (e) {
+            countEl.textContent = "0";
+        }
+
+        // After 30 seconds: show original value (add 1 back locally)
+        timer = setTimeout(() => {
+            countEl.textContent = originalApiValue;
+        }, 30000);
+    }
+
+    window.addEventListener('load', initCounter);
+
+    // Safety: cancel if user leaves early
+    window.addEventListener('beforeunload', () => {
+        if (timer) clearTimeout(timer);
+    });
+</script>
+
+        </header>
+
+
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none text-gray-400 align-justify">
+            
+            <p style="margin-bottom:15px; margin-top:35px;font-size:18px;text-align: justify;">Microplastics are no longer just an environmental concern. They are increasingly recognized as a materials science challenge because they originate from polymer degradation, material aging, and product lifecycle failures. Understanding how plastics break down is essential for developing safer, more sustainable materials for the future. Microplastics are generally defined as plastic particles smaller than 5 mm and have become widespread in water, soil, air, and living organisms.</p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:20px;"><strong>Tiny Particles, Big Consequences !</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:1px;font-size:18px;text-align: justify;">Plastic is one of the most important engineering materials ever developed. Lightweight, durable, corrosion-resistant, and inexpensive, plastics have transformed industries ranging from packaging and healthcare to transportation and electronics. Yet the very characteristics that make plastics successful are also contributing to a growing global challenge.</p2>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">As plastic products age, weather, and wear out, they gradually break into smaller and smaller fragments known as microplastics. These particles, typically less than 5 millimeters in size, are now found in oceans, rivers, agricultural soils, drinking water, food supplies, and even human tissues. Scientists have identified microplastics in ecosystems across the planet, from tropical oceans to polar regions.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">For years, microplastics were viewed mainly as an environmental issue. Today, researchers increasingly recognize them as a materials science problem, one that involves polymer chemistry, degradation mechanisms, material durability, and sustainable design.</p>
+
+        <img src="../images/260826-microplastic-problem/microplastic-problem4.jpeg"
+             alt="microplastic-problem?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:20px;"><strong>How Do Microplastics Form? !</strong></h2>	
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Most microplastics do not begin as microscopic particles. They originate from larger plastic products that gradually deteriorate over time.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">A discarded water bottle exposed to sunlight does not simply disappear. Instead, ultraviolet radiation weakens the polymer structure. As the material becomes brittle, wind, waves, temperature fluctuations, and mechanical abrasion break it into smaller fragments. Similar processes occur in packaging materials, agricultural films, automotive components, and household products.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Other major sources include:</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li>Synthetic textile fibers released during washing</li>
+    		<li>Vehicle tire wear particles</li>
+    		<li>Industrial plastic pellets</li>
+    		<li>Packaging waste</li>
+    		<li>Cosmetic and personal care products</li>
+		</ul>
+
+            <p style="margin-bottom:15px; margin-top:35px;font-size:18px;text-align: justify;">The OECD identifies textile fibers and tire wear as significant contributors to microplastic emissions worldwide.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">From a materials science perspective, the formation of microplastics is fundamentally a <strong>material degradation process.</strong></p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:20px;"><strong>The Science Behind Plastic Breakdown!</strong></h2>	
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">All plastics consist of long molecular chains called polymers. These chains give plastics their strength, toughness, flexibility, and durability.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">However, polymers are not permanently stable. Over time they experience degradation through several mechanisms:</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li><strong>Photo-Oxidation: </strong>Ultraviolet radiation from sunlight breaks polymer chains and accelerates aging.</li>
+    		<li><strong>Thermal Degradation: </strong>Elevated temperatures cause molecular changes that reduce mechanical properties.</li>
+    		<li><strong>Hydrolysis: </strong>Moisture can chemically attack certain polymers, weakening their structure.</li>
+    		<li><strong>Mechanical Fatigue: </strong>Repeated stress and abrasion create cracks and fractures.</li>
+    		<li><strong>Chemical Degradation: </strong>Pollutants and reactive chemicals can alter polymer structures.</li>
+		</ul>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">As polymer chains become shorter and weaker, plastics lose their mechanical integrity and begin to fragment.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">From this perspective, microplastics are not merely pollution. They are the result of millions of individual material failures occurring on a microscopic scale.</p>
+
+        <img src="../images/260826-microplastic-problem/microplastic-problem3.jpeg"
+             alt="microplastic-problem?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:15px;font-size:20px;"><strong>Why Materials Scientists Are Concerned!</strong></h2>	
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Microplastics behave very differently from larger plastic objects.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">As plastics fragment into smaller particles, their <strong>surface-area-to-volume ratio increases dramatically.</strong> This means more surface is available to interact with surrounding chemicals, pollutants, microorganisms, and biological tissues.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Research shows that microplastics can:</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li>Transport environmental contaminants</li>
+    		<li>Absorb persistent pollutants</li>
+    		<li>Enter food chains</li>
+    		<li>Be inhaled or ingested by living organisms</li>
+    		<li>Continue degrading into even smaller nanoplastics</li>
+		</ul>
+
+            <p style="margin-bottom:15px; margin-top:35px;font-size:18px;text-align: justify;">Scientists have also found that polymer type plays a critical role. Polyethylene, polypropylene, polyester, nylon, PET, and polystyrene each degrade differently and produce particles with different characteristics. Understanding these differences is essential for predicting environmental behavior and developing mitigation strategies.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">For materials scientists, this raises important questions:</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li>Why do some polymers degrade faster?</li>
+    		<li>Which additives influence fragmentation?</li>
+    		<li>How can plastics be redesigned to reduce microplastic generation?</li>
+    		<li>Can sustainability be improved without sacrificing performance?</li>
+		</ul>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;"> </p>
+
+        <img src="../images/260826-microplastic-problem/microplastic-problem2.jpeg"
+             alt="microplastic-problem?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:15px;font-size:20px;"><strong>Can Better Materials Solve the Problem?</strong></h2>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">The microplastic challenge is accelerating innovation across the materials industry. Researchers are exploring multiple approaches:</p>
+
+            <p style="margin-bottom:10px; margin-top:15px;font-size:16px;text-align: justify;"><strong>Biodegradable Polymers: </strong>Specially designed polymers can break down under specific environmental conditions, reducing long-term persistence.</p>
+            <p style="margin-bottom:10px; margin-top:10px;font-size:16px;text-align: justify;"><strong>Improved Polymer Stabilization: </strong>Advanced additives and stabilizers can extend product life and minimize fragmentation during use.</p>
+            <p style="margin-bottom:10px; margin-top:10px;font-size:16px;text-align: justify;"><strong>Circular Material Design: </strong>Products designed for recycling and multiple life cycles reduce the amount of plastic entering the environment.</p>
+            <p style="margin-bottom:35px; margin-top:10px;font-size:16px;text-align: justify;"><strong>Bio-Based Materials: </strong>Renewable feedstocks provide alternatives to traditional petroleum-derived plastics.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">However, no single solution can eliminate microplastics entirely. Materials must still meet demanding requirements for strength, safety, durability, processability, and cost. This balancing act is exactly why microplastics have become a major materials science challenge.</p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:20px;"><strong>The Future of Plastic Design!</strong></h2>	
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Historically, engineers focused on making plastics stronger, cheaper, and longer-lasting.
+
+Today, new priorities are emerging.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Future materials must not only perform well during their service life but also behave responsibly at the end of that life cycle.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Modern materials scientists are increasingly asking:</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li>How does a polymer age?</li>
+    		<li>What degradation pathways occur?</li>
+    		<li>What particles are produced during failure?</li>
+    		<li>Can fragmentation be minimized?</li>
+    		<li>How can durability and sustainability coexist?</li>
+		</ul>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">The answers to these questions may define the next generation of materials engineering.</p>
+
+        <img src="../images/260826-microplastic-problem/microplastic-problem1.jpeg"
+             alt="microplastic-problem?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:15px;font-size:20px;"><strong>Final Thoughts!</strong></h2>	
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Microplastics are more than an environmental pollution issue. They represent a direct consequence of how materials interact with the real world long after they leave the factory.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Understanding polymer degradation, material failure mechanisms, environmental aging, and sustainable design principles is becoming increasingly important for engineers, researchers, and manufacturers alike.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">The future of plastics may not depend on making stronger materials alone. It may depend on creating smarter materials designed for their entire lifecycle, from manufacturing and use to recovery and disposal.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">As materials science continues to evolve, solving the microplastic challenge could become one of the defining engineering achievements of the twenty-first century.</p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:20px;"><strong>References:</strong></h2>	
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li><a href="https://www.unep.org/resources/report/microplastics" target="_blank" class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2">United Nations Environment Programme (UNEP). Microplastics Report. Definition, environmental prevalence, and emerging concerns regarding microplastics.</a></li>
+    		<li><a href="https://www.unep.org/news-and-stories/story/microplastics-long-legacy-left-behind-plastic-pollution" target="_blank" class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2">United Nations Environment Programme (UNEP). Microplastics: The Long Legacy Left Behind by Plastic Pollution (2023). Sources, pathways, and impacts of microplastics.</a></li>
+    		<li><a href="https://www.oecd.org/en/publications/policies-to-reduce-microplastics-pollution-in-water_7ec7e5ef-en.html" target="_blank" class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2"> OECD (2021). Policies to Reduce Microplastics Pollution in Water: Focus on Textiles and Tyres. Overview of sources, emissions, and mitigation strategies.</a></li>
+    		<li><a href="https://www.epa.gov/water-research/microplastics-research" target="_blank" class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2"> U.S. Environmental Protection Agency (EPA). Microplastics Research. Characterization, degradation mechanisms, environmental occurrence, and health-related research.</a></li>
+		</ul>
+
+            <p style="margin-bottom:10px; margin-top:55px;font-size:18px;text-align: justify;"><strong>Top viewed articles:</strong></p>
+
+
+        </div>
+
+
+    <!-- Articles Grid -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+<!-- Article  -->
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+                <img src="../gif/self-healing-materials.gif" 
+                     alt="Self-Healing Materials-grid" 
+                     class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between text-xs text-gray-300 mb-3">
+                        <span>June 10, 2026</span>
+                        <span class="bg-yellow-100 text-gray-700 px-3 py-1 rounded-full">Research</span>
+                    </div>
+                    <h3 class="font-bold text-xl leading-tight mb-3">
+                        Self-Healing Materials : The Future of Sustainable & Self Sustainable Materials
+                    </h3>
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6">
+                       A cracked smartphone screen that repairs itself overnight, or a bridge that can automatically fix tiny fractures before they become dangerous. This is not science fiction—these are examples of self-healing materials.
+                    </p>
+                    <a href="../articles/260611-self-healing-materials.html" 
+                       class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2">
+                        Read Full Article →
+                    </a>
+                </div>
+            </div>
+
+ <!-- Article -->
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+                <img src="../gif/rheopetic-fluids.gif" 
+                     alt="rheopetic-fluids" 
+                     class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between text-xs text-gray-300 mb-3">
+                        <span>June 29, 2026</span>
+                        <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full">Properties</span>
+                    </div>
+                    <h3 class="font-bold text-xl leading-tight mb-3">
+                        Rheopectic Fluids: Time-Dependent Thickening Under Stress
+                    </h3>
+                    <p class="text-gray-400 text-sm line-clamp-3 mb-6">
+			These rare materials gradually increase in viscosity (become thicker) the longer they experience sustained shear stress. Unlike instantaneous shear-thickening (dilatant) behavior, rheopecty requires prolonged agitation: the more you stir or shake (within limits), the more resistant to flow the fluid becomes.
+                    </p>
+                    <a href="../articles/260629-rheopetic-fluids.html" 
+                       class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2">
+                        Read Full Article →
+                    </a>
+                </div>
+            </div>
+</div>
+
+
+
+<!-- Share Buttons -->
+        <div class="mt-16 border-t border-gray-200 pt-8">
+            <p class="font-medium mb-4">Share this article:</p>
+            <div class="flex gap-4">
+
+		<div class="grid grid-cols-3 md:flex md:justify-center gap-3">
+                <button onclick="window.open('https://x.com/intent/tweet?url=https://materialinsider.com/articles/260826-microplastic-problem.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">X</button>
+
+                <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://materialinsider.com/articles/260826-microplastic-problem.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">LinkedIn</button>
+
+                <button onclick="window.open('https://wa.me/?text=Self-Healing%20Materials%20-%20Check%20this%20out:%20https://materialinsider.com/articles/260826-microplastic-problem.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">WhatsApp</button>
+
+                <button onclick="window.open('mailto:?subject=Self-Healing%20Materials&body=Check%20this%20interesting%20article%3A%20https://materialinsider.com/articles/260826-microplastic-problem.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">E-Mail</button>
+
+                <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://materialinsider.com/articles/260826-microplastic-problem.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">FaceBook</button>
+
+                <button onclick="copyArticleLink()" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">
+    		<span id="copy-text">Direct Link</span>
+		</button>
+
+		<script>
+    		function copyArticleLink() {
+        		const url = "https://materialinsider.com/articles/260826-microplastic-problem.html";  // article URL
+        
+        		navigator.clipboard.writeText(url).then(() => {
+            			const copyText = document.getElementById('copy-text');
+            			const originalText = copyText.textContent;
+            
+            			copyText.textContent = "✅ Copied!";
+            
+            			setTimeout(() => {
+                			copyText.textContent = originalText;
+            			}, 2000); // Back to "Copy Link" after 2 seconds
+        		});
+    			}
+		</script>
+		</div>
+            </div>
+        </div>
+    </article>
+
+
+<!-- ========== Floating Ads System (with Images + Links + Reappear) ========== -->
+<!-- ========== Floating Ads System (with Images + Links + Reappear) ========== -->
+<style>
+    .desktop-ad {
+        position: fixed;
+        top: 20%;
+        transform: translateY(-20%);
+        width: 220px;
+        z-index: 9990;
+        display: none;
+        background: #1f2937;
+        border: 1px solid #374151;
+        border-radius: 12px;
+        padding: 12px 8px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    .desktop-ad:hover {
+        transform: translateY(-22%) scale(1.03);
+    }
+    /* Left side - two ads */
+    .desktop-ad.left-1  { left: 50px;  top: 20%; }
+    .desktop-ad.left-2  { left: 50px;  top: 65%; }
+
+    /* Right side - two ads */
+    .desktop-ad.right-1 { right: 50px; top: 20%; }
+    .desktop-ad.right-2 { right: 50px; top: 65%; }
+
+
+    .mobile-ad-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.78);
+        z-index: 9995;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    .mobile-ad-overlay.show {
+        display: flex;
+    }
+    .mobile-ad-box {
+        background: #111827;
+        border: 1px solid #4b5563;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 340px;
+        padding: 22px 16px 18px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.55);
+        cursor: pointer;
+    }
+    .mobile-ad-close {
+        position: absolute;
+        top: 8px;
+        right: 14px;
+        background: none;
+        border: none;
+        color: #9ca3af;
+        font-size: 24px;
+        cursor: pointer;
+        line-height: 1;
+        z-index: 20;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mobile-ad-close:hover { color: #fff; }
+
+    @media (min-width: 1280px) {
+        .desktop-ad.visible { display: block !important; }
+    }
+    @media (max-width: 1279px) {
+        .desktop-ad { display: none !important; }
+    }
+</style>
+
+<!-- Desktop Left 1 Ad -->
+<div class="desktop-ad left-1" id="desktop-ad-left-1">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement 1/4</p>
+    <div id="desktop-left-1-content" style="min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Desktop Left 2 Ad -->
+<div class="desktop-ad left-2" id="desktop-ad-left-2">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement 2/4</p>
+    <div id="desktop-left-2-content" style="min-height:160px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Desktop Right 1 Ad -->
+<div class="desktop-ad right-1" id="desktop-ad-right-1">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement 3/4</p>
+    <div id="desktop-right-1-content" style="min-height:100px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Desktop Right 2 Ad -->
+<div class="desktop-ad right-2" id="desktop-ad-right-2">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement 4/4</p>
+    <div id="desktop-right-2-content" style="min-height:100px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Mobile Center Popup Ad -->
+<div class="mobile-ad-overlay" id="mobile-ad-overlay">
+    <div class="mobile-ad-box" id="mobile-ad-box">
+        <button class="mobile-ad-close" id="mobile-ad-close" aria-label="Close ad">×</button>
+        <p style="font-size:12px; color:#9ca3af; margin-bottom:12px;">Advertisement</p>
+        <div id="mobile-ad-content" style="min-height:250px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:14px;">
+            <!-- Content injected by JS -->
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    // ========== SETTINGS ==========
+    const FIRST_DELAY = 18 * 1000;        // First appearance after 10 seconds
+    const DESKTOP_ROTATE = 30 * 1000;     // Desktop ads change every 20 seconds
+    const REAPPEAR_DELAY = 35 * 1000;     // Mobile reappear after close
+
+    // ========== YOUR ADS (keep your existing ads array) ==========
+    const ads = [
+        {
+            link: "https://www.facebook.com/share/1SoWza42sh/",
+            desktop: `
+                <img src="../images/ads/bloom.jpeg" 
+                     style="width:100%; border-radius:8px; margin-bottom:10px;" 
+                     alt="Facebook">
+                <div style="font-size:12px; color:#d1d5db;">You will get more details of this site.</div>
+            `,
+            mobile: `
+                <img src="../images/ads/bloom.jpeg" 
+                     style="width:100%; border-radius:10px; margin-bottom:12px;" 
+                     alt="Facebook">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">You will get more details of this site.</div>
+            `
+        },
+        {
+            link: "https://materialinsider.com/articles/260629-supercondutor.html",
+            desktop: `
+                <img src="../images/ads/superconductor.gif" 
+                     style="width:100%; border-radius:8px; margin-bottom:10px;" 
+                     alt="MATERIALS insider">
+                <div style="font-size:12px; color:#d1d5db;">Superconductors: China’s Record-Break</div>
+            `,
+            mobile: `
+                <img src="../images/ads/superconductor.gif" 
+                     style="width:100%; border-radius:8px; margin-bottom:10px;" 
+                     alt="MATERIALS insider">
+                <div style="font-size:12px; color:#d1d5db;">Superconductors: China’s Record-Break</div>
+            `
+        },
+        {
+            link: "https://www.tiktok.com/@purrtwist.studio",
+            desktop: `
+                <img src="../images/ads/purrtwist.gif" 
+                     style="width:100%; border-radius:10px; margin-bottom:12px;" 
+                     alt="YouTube">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">PurrTwist - Subscribe</div>
+            `,
+            mobile: `
+                <img src="../images/ads/purrtwist.gif" 
+                     style="width:100%; border-radius:10px; margin-bottom:12px;" 
+                     alt="YouTube">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">PurrTwist - Subscribe</div>
+            `
+        },
+        {
+            link: "mailto:materials.insider.info@gmail.com?subject=Quotation for the Ads",
+            desktop: `
+                <img  
+                     style="width:100%; border-radius:8px; margin-bottom:10px;" 
+                     alt="Space available">
+                <div style="font-size:12px; color:#d1d5db;">Contact Us</div>
+            `,
+            mobile: `
+                <img 
+                     style="width:100%; border-radius:8px; margin-bottom:10px;" 
+                     alt="Space available">
+                <div style="font-size:12px; color:#d1d5db;">Contact Us</div>
+            `
+        }
+    ];
+
+    let desktopIndex = 0;
+    let mobileIndex = 0;
+    let reappearTimer = null;
+
+    // ===== Desktop: Load 4 different ads =====
+    function loadDesktopAds() {
+        const slots = [
+            document.getElementById('desktop-left-1-content'),
+            document.getElementById('desktop-left-2-content'),
+            document.getElementById('desktop-right-1-content'),
+            document.getElementById('desktop-right-2-content')
+        ];
+
+        slots.forEach((slot, i) => {
+            const ad = ads[(desktopIndex + i) % ads.length];
+            slot.innerHTML = ad.desktop;
+
+            // Make the parent ad clickable
+            const parent = slot.closest('.desktop-ad');
+            if (parent) {
+                parent.onclick = function () {
+                    window.open(ad.link, '_blank');
+                };
+            }
+        });
+    }
+
+    function showDesktopAds() {
+        loadDesktopAds();
+        document.getElementById('desktop-ad-left-1').classList.add('visible');
+        document.getElementById('desktop-ad-left-2').classList.add('visible');
+        document.getElementById('desktop-ad-right-1').classList.add('visible');
+        document.getElementById('desktop-ad-right-2').classList.add('visible');
+    }
+
+    // ===== Mobile =====
+    function loadMobileAd() {
+        const ad = ads[mobileIndex % ads.length];
+        document.getElementById('mobile-ad-content').innerHTML = ad.mobile;
+    }
+
+    function showMobileAd() {
+        if (window.innerWidth >= 1280) return;
+        loadMobileAd();
+        document.getElementById('mobile-ad-overlay').classList.add('show');
+    }
+
+    function hideMobileAd() {
+        document.getElementById('mobile-ad-overlay').classList.remove('show');
+    }
+
+    function scheduleMobileReappear() {
+        if (reappearTimer) clearTimeout(reappearTimer);
+        mobileIndex = (mobileIndex + 1) % ads.length;
+        reappearTimer = setTimeout(showMobileAd, REAPPEAR_DELAY);
+    }
+
+    // ===== First appearance (after 10 seconds) =====
+    setTimeout(function () {
+        showDesktopAds();
+        showMobileAd();
+
+        // Desktop rotation every 20 seconds
+        setInterval(function () {
+            desktopIndex = (desktopIndex + 1) % ads.length;
+            loadDesktopAds();
+        }, DESKTOP_ROTATE);
+
+    }, FIRST_DELAY);
+
+    // ===== Mobile events =====
+    document.getElementById('mobile-ad-box').addEventListener('click', function (e) {
+        if (e.target.closest('.mobile-ad-close')) return;
+        const ad = ads[mobileIndex % ads.length];
+        window.open(ad.link, '_blank');
+    });
+
+    document.getElementById('mobile-ad-close').addEventListener('click', function (e) {
+        e.stopPropagation();
+        hideMobileAd();
+        scheduleMobileReappear();
+    });
+
+})();
+</script>
+<!-- ========== End Floating Ads System ========== -->
+
+<!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
+                <span class="text-3xl font-bold text-white">MATERIALS insider</span>
+            </div>
+	    <p class="mb-4">Educational platform for Materials Science • Made for curious minds</p>
+            <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
