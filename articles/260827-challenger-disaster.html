@@ -109,7 +109,7 @@
     <!-- Count Script -->
 
 <script>
-    const COUNTER_KEY = 'materialinsider_Space_Shuttle_Challenger_Disasterz'; // Change for each page
+    const COUNTER_KEY = 'materialinsider_Space_Shuttle_Challenger_Disaster'; // Change for each page
 
     let timer = null;
     let originalApiValue = 0;   // stored from the single API call
@@ -118,7 +118,7 @@
     async function initCounter() {
         try {
             // Single API call only
-            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materialinsider_Space_Shuttle_Challenger_Disasterz");
+            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materialinsider_Space_Shuttle_Challenger_Disaster");
             if (res.ok) {
                 const data = await res.json();
                 originalApiValue = data.value || 0;
