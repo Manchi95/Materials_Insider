@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shuttle Challenger Disaster - MATERIALS insider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="icon" href="../images/logo2.jpeg" type="image/png">
+</head>
+
+<body class="bg-gray-900 font-sans text-gray-100 transition-colors">
+
+    <!-- Navigation -->
+    <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                
+<!-- Clickable Logo -->
+                <a href="https://www.materialinsider.com" 
+                   class="flex items-center space-x-3 hover:opacity-40 transition no-underline">
+                    <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white">MATERIALS insider</h1>
+                </a>
+		</div>
+
+                <!-- Desktop Menu -->
+		<div class="hidden md:flex space-x-12 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a></ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul><a href="../about-us.html" class="hover:text-indigo-600 font-medium">About Us</a></ul>
+                <ul><a href="../privacy-policy.html" class="hover:text-indigo-600 font-medium">Privacy Policy</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe Button (Desktop) -->
+            <div class="hidden md:block">
+                <button onclick="alert('Newsletter signup coming soon!')" 
+                        class="bg-indigo-600 hover:bg-red-800 text-white hover:text-black px-5 py-2 rounded-lg text-sm font-medium">
+                    SUBSCRIBE
+                </button>
+            </div>
+	    
+            <!-- Hamburger Button (Mobile) -->
+            <button id="hamburger"
+                    class="md:hidden text-3xl text-gray-400 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200">
+            <div class="flex flex-col space-y-5 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>                     
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a></ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul><a href="../about-us.html" class="hover:text-indigo-600 font-medium">About Us</a></ul>
+                <ul><a href="../privacy-policy.html" class="hover:text-indigo-600 font-medium">Privacy Policy</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        <!-- Article Header -->
+        <header class="mb-12">
+	    <span class="text-red-400 font-medium">August 27, 2026 • Failures </span>
+            <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight text-justify">
+                Space Shuttle Challenger Disaster (1986)
+            </h1>
+            <p class="text-xl text-gray-400 mt-6 text-justify">
+                The Space Shuttle Challenger disaster was not caused by a rocket engine failure, fuel tank rupture, or software malfunction. The root cause was the loss of sealing performance in rubber O-rings located within the Solid Rocket Booster (SRB) field joints.Extremely cold temperatures reduced the O-rings' elasticity and resilience, preventing them from sealing quickly enough during ignition. This allowed hot combustion gases to escape, initiating a chain of failures that destroyed the shuttle 73 seconds after liftoff.
+            </p>
+            <div class="flex items-center gap-4 mt-8 text-sm text-white">
+                <span>By Arush</span>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <span>5 min read</span>
+            </div>
+
+<!-- Readers Count with Blinking Eye -->
+		<div class="flex justify-end mb-6">
+    		<span id="eye" class="text-xl animate-blink">👁️  </span>
+    		<span id="count" style="font-weight:700; color:#0d6efd; font-size:1.3rem;">—</span>
+		</div>
+
+    		<style>
+        		@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        		.animate-blink { animation: blink 1.5s infinite; }
+    		</style>
+    <!-- Count Script -->
+
+<script>
+    const COUNTER_KEY = 'materialinsider_Space_Shuttle_Challenger_Disasterz'; // Change for each page
+
+    let timer = null;
+    let originalApiValue = 0;   // stored from the single API call
+    const countEl = document.getElementById('count');
+
+    async function initCounter() {
+        try {
+            // Single API call only
+            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materialinsider_Space_Shuttle_Challenger_Disasterz");
+            if (res.ok) {
+                const data = await res.json();
+                originalApiValue = data.value || 0;
+
+                // Immediately show reduced by 1
+                countEl.textContent = Math.max(0, originalApiValue - 1);
+            } else {
+                countEl.textContent = "0";
+            }
+        } catch (e) {
+            countEl.textContent = "0";
+        }
+
+        // After 30 seconds: show original value (add 1 back locally)
+        timer = setTimeout(() => {
+            countEl.textContent = originalApiValue;
+        }, 30000);
+    }
+
+    window.addEventListener('load', initCounter);
+
+    // Safety: cancel if user leaves early
+    window.addEventListener('beforeunload', () => {
+        if (timer) clearTimeout(timer);
+    });
+</script>
+
+        </header>
+
+
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none text-gray-400 align-justify">
+            
+            <p style="margin-bottom:15px; margin-top:35px;font-size:18px;text-align: justify;"><em>Why did the Space Shuttle Challenger explode in 1986? Explore the complete failure mode analysis of the O-ring seal failure, cold-temperature elastomer degradation, hot gas blow-by, and the materials science lessons learned from one of history's most significant engineering disasters.</em></p>
+
+        <img src="../images/260827-challenger-disaster/challenger-disaster1.png"
+             alt="challenger-disaster?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Introduction</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:1px;font-size:18px;text-align: justify;">On January 28, 1986, the Space Shuttle Challenger lifted off from Kennedy Space Center in Florida carrying seven crew members. Seventy-three seconds later, the shuttle broke apart in one of the most tragic engineering failures in history.</p>
+
+            <p style="margin-bottom:1px; margin-top:15px;font-size:18px;text-align: justify;">While many people remember the dramatic explosion, engineers remember Challenger for a different reason:</p>
+
+            <p style="margin-bottom:35px; margin-top:1px;font-size:16px;text-align: center;"><em>A catastrophic system failure originated from the performance degradation of a small rubber seal.</em></p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">The disaster remains one of the most important lessons in materials engineering because it demonstrated how environmental conditions can fundamentally alter material behavior and compromise critical safety systems.</p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Failure Component: The O-Ring Seal!</strong></h2>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">The Solid Rocket Boosters were assembled from multiple segments joined together using field joints. Each joint contained two synthetic rubber O-rings:</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li>Primary O-ring</li>
+    		<li>Secondary O-ring</li>
+		</ul>
+
+            <p style="margin-bottom:15px; margin-top:35px;font-size:18px;text-align: justify;">Their purpose was simple but critical: <strong>Prevent hot combustion gases from escaping during rocket operation.</strong></p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Under normal conditions, the O-rings deform elastically and immediately respond to pressure, creating a gas-tight seal between booster segments.</p>
+
+        <img src="../images/260827-challenger-disaster/challenger-disaster2.png"
+             alt="microplastic-problem?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Failure Mode Analysis (FMA):</strong></h2>	
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">This O-rings were made from an elastomer designed to compress and rebound quickly. But the problem was elastomers become stiffer as temperature decreases.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Morning of the launch day temperatures dropped to approximately 36°F (2°C), considerably below temperatures experienced during previous launches. Engineers had previously expressed concerns regarding O-ring performance at low temperatures.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">At low temperatures:</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li>Rubber stiffness increases</li>
+    		<li>Elastic recovery slows</li>
+    		<li>Compression set increases</li>
+    		<li>Resilience decreases</li>
+    		<li>Seal response time becomes longer</li>
+		</ul>
+
+            <p style="margin-bottom:15px; margin-top:35px;font-size:18px;text-align: justify;">In other words, the O-rings became too stiff to move and seal rapidly enough when ignition pressure was applied. This represents a classic environmental degradation failure.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">These are the steps happend at that point:</p>
+
+            <p style="margin-bottom:1px; margin-top:15px;font-size:16px;text-align: justify;">        1. Internal SRB pressure rapidly increased.</p>
+            <p style="margin-bottom:1px; margin-top:1px;font-size:16px;text-align: justify;">        2. Joint components flexed slightly under load.</p>
+            <p style="margin-bottom:1px; margin-top:1px;font-size:16px;text-align: justify;">        3. A temporary gap opened between booster segments.</p>
+            <p style="margin-bottom:1px; margin-top:1px;font-size:16px;text-align: justify;">        4. The primary O-ring failed to seal immediately.</p>
+            <p style="margin-bottom:35px; margin-top:1px;font-size:16px;text-align: justify;">        5. Hot combustion gases began passing the seal.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">The Rogers Commission later identified delayed O-ring activation caused by low temperature as a primary failure mechanism.</p>
+
+        <img src="../images/260827-challenger-disaster/challenger-disaster3.png"
+             alt="microplastic-problem?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:20px;"><strong>The Blow-By Phenomenon:</strong></h2>	
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">A critical piece of evidence came from the phenomenon known as <strong>blow-by.</strong> Blow-by occurs when hot combustion gases pass beyond the seal before it fully closes. Investigations showed that previous shuttle flights had already experienced O-ring erosion and blow-by events. In other words, warning signs existed long before Challenger launched.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">On Challenger:</p>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li>Hot gases escaped past the primary O-ring.</li>
+    		<li>The secondary O-ring failed to provide backup protection.</li>
+    		<li>A flame path developed through the joint.</li>
+		</ul>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">At this point, the system still had a chance of survival if the leakage self-sealed. But the cold conditions made the situation far worse. There was no second option.</p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Failure Progression Timeline:</strong></h2>
+
+            <p style="margin-bottom:1px; margin-top:1px;font-size:16px;text-align: justify;">    <strong>T = 0 Seconds :</strong> Rocket ignition. Cold O-rings fail to respond quickly.</p>
+            <p style="margin-bottom:1px; margin-top:1px;font-size:16px;text-align: justify;">    <strong>T = 0.6 Seconds :</strong> Combustion gases bypass sealing surfaces.</p>
+            <p style="margin-bottom:1px; margin-top:1px;font-size:16px;text-align: justify;">    <strong>T = Several Seconds :</strong> Temporary deposits partially block leakage.</p>
+            <p style="margin-bottom:1px; margin-top:1px;font-size:16px;text-align: justify;">    <strong>T = 58 Seconds :</strong> Increasing aerodynamic loads cause joint movement.</p>
+            <p style="margin-bottom:1px; margin-top:1px;font-size:16px;text-align: justify;">    <strong>T = 64 Seconds :</strong> Flame plume emerges from right SRB.</p>
+            <p style="margin-bottom:35px; margin-top:1px;font-size:16px;text-align: justify;">    <strong>T = 73 Seconds :</strong> Flame breaches the external fuel tank. Structural collapse and vehicle breakup occur.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Investigators concluded that hot gas escaping from the right booster eventually impinged on the external tank, leading to structural failure of the shuttle system.</p>
+
+        <img src="../images/260827-challenger-disaster/challenger-disaster4.png"
+             alt="microplastic-problem?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Root Cause Analysis:</strong></h2>	
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Using a Failure Mode and Effects Analysis (FMEA) approach:</p>
+
+            <p style="margin-bottom:1px; margin-top:1px;font-size:16px;text-align: justify;">    Failure Mode → O-ring sealing failure</p>
+            <p style="margin-bottom:1px; margin-top:1px;font-size:16px;text-align: justify;">    Physical Cause → Reduced elastomer resilience</p>
+            <p style="margin-bottom:1px; margin-top:1px;font-size:16px;text-align: justify;">    Trigger → Extremely low launch temperature</p>
+            <p style="margin-bottom:1px; margin-top:1px;font-size:16px;text-align: justify;">    Immediate Effect → Hot gas blow-by</p>
+            <p style="margin-bottom:1px; margin-top:1px;font-size:16px;text-align: justify;">    Secondary Effect → Joint erosion and flame leakage</p>
+            <p style="margin-bottom:1px; margin-top:1px;font-size:16px;text-align: justify;">    System Effect → External tank rupture</p>
+            <p style="margin-bottom:15px; margin-top:1px;font-size:16px;text-align: justify;">    Final Outcome → Vehicle destruction and crew loss</p>
+
+            <p style="margin-bottom:15px; margin-top:35px;font-size:18px;text-align: justify;">Theoretically, the O-ring design was sensitive to temperature variation, and its performance could be compromised under cold conditions. The Rogers Commission identified low temperature as a critical contributor to the seal failure.</p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Why Didn't the Backup O-Ring Work ?</strong></h2>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;"><strong>If there was a secondary O-ring, why didn't it prevent the accident ?</strong> The gap opening caused by joint rotation occurred so rapidly that both O-rings experienced delayed activation. The secondary seal could not engage quickly enough to stop the escaping gases.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;"><strong>As an vocabulary of a Materials Engineer </strong><em>The system suffered a common-cause failure where both protective barriers were degraded by the same environmental condition.</em></p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">This is one reason Challenger is frequently studied in reliability engineering and safety-critical design courses.</p>
+
+        <img src="../images/260827-challenger-disaster/challenger-disaster5.png"
+             alt="microplastic-problem?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Materials Science Lessons Learned:</strong></h2>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">The Challenger disaster fundamentally changed how engineers evaluate material performance.</p>
+
+            <p style="margin-bottom:1px; margin-top:15px;font-size:18px;text-align: justify;"><strong>Lesson 1: Material Properties Are Temperature Dependent</strong></p>
+            <p style="margin-bottom:35px; margin-top:1px;font-size:18px;text-align: center;"><em>A material that performs well at room temperature may fail under extreme environmental conditions.</em></p>
+
+            <p style="margin-bottom:1px; margin-top:15px;font-size:18px;text-align: justify;"><strong>Lesson 2: Small Components Can Cause Catastrophic Failures</strong></p>
+            <p style="margin-bottom:35px; margin-top:1px;font-size:18px;text-align: center;"><em>The failed O-ring measured only a fraction of an inch in diameter, yet it ultimately determined the fate of an entire spacecraft.</em></p>
+
+            <p style="margin-bottom:1px; margin-top:15px;font-size:18px;text-align: justify;"><strong>Lesson 3: Environmental Testing Must Cover Real Operating Conditions</strong></p>
+            <p style="margin-bottom:35px; margin-top:1px;font-size:18px;text-align: center;"><em>Components should be validated at actual service temperatures, not just standard laboratory conditions.</em></p>
+
+            <p style="margin-bottom:1px; margin-top:15px;font-size:18px;text-align: justify;"><strong>Lesson 4: Previous Minor Failures Are Warning Signs</strong></p>
+            <p style="margin-bottom:35px; margin-top:1px;font-size:18px;text-align: center;"><em>Earlier flights had already shown O-ring erosion and blow-by. The warning signs were visible long before Challenger launched. These events should have been treated as evidence of a developing failure mode rather than isolated anomalies. Nothing happened suddenly. Everything shows signs. But you must have the eyes to see them.</em></p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Final Thoughts:</strong></h2>	
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">The Challenger disaster remains one of the clearest examples of a materials-related failure in engineering history. The shuttle was not destroyed because the O-rings broke apart. It was destroyed because the O-rings lost the elasticity needed to perform their sealing function under unusually cold conditions.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">From a materials science perspective, this distinction matters enormously. The lesson is not simply that <strong>"the O-ring failed."</strong></p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">The lesson is that <strong>material performance under actual service conditions determines system reliability.</strong> A design may appear safe on paper, but if environmental conditions push materials beyond their functional limits, catastrophic failure can occur.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">For quality and reliability engineers, Challenger remains a powerful reminder that catastrophic failures often begin with small deviations that have already been observed but not fully understood. The disaster illustrates why material behavior, environmental conditions, and engineering decisions must always be evaluated together rather than in isolation.</p>
+
+        <img src="../images/260827-challenger-disaster/challenger-disaster6.webp"
+             alt="microplastic-problem?" 
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>References:</strong></h2>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li><a href="https://www.history.com/articles/how-the-challenger-disaster-changed-nasa" target="_blank" class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2"> History Channel,</a> <em>What Caused the Challenger Disaster?</em> Low launch temperatures affected O-ring performance and contributed directly to the catastrophe.</li>
+    		<li>NASA, <em>Failure Scenario 4D. </em><a href="https://www.nasa.gov/history/rogersrep/v5p1206.htm" target="_blank" class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2"> O-ring activation</a> was delayed due to low temperature, and resiliency decreased as temperature was reduced.</li>
+    		<li>NASA, Report of the <em>Presidential Commission on the Space Shuttle Challenger Accident,</em><a href="https://www.nasa.gov/history/rogersrep/v1ch4.htm" target="_blank" class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2"> Chapter IV: Cause of the Accident.</a> The Commission concluded that failure of the right Solid Rocket Booster field joint and its seals caused the disaster.</li>
+    		<li>Vaughan, Diane (1996). <a href="https://press.uchicago.edu/ucp/books/book/chicago/C/bo22781921.html" target="_blank" class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2"> The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA</a> </li>
+		</ul>
+        </div>
+
+
+    <!-- Articles Grid -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+<!-- Article  -->
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+                <img src="../gif/self-healing-materials.gif" 
+                     alt="Self-Healing Materials-grid" 
+                     class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between text-xs text-gray-300 mb-3">
+                        <span>June 10, 2026</span>
+                        <span class="bg-yellow-100 text-gray-700 px-3 py-1 rounded-full">Research</span>
+                    </div>
+                    <h3 class="font-bold text-xl leading-tight mb-3">
+                        Self-Healing Materials : The Future of Sustainable & Self Sustainable Materials
+                    </h3>
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6">
+                       A cracked smartphone screen that repairs itself overnight, or a bridge that can automatically fix tiny fractures before they become dangerous. This is not science fiction—these are examples of self-healing materials.
+                    </p>
+                    <a href="../articles/260611-self-healing-materials.html" 
+                       class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2">
+                        Read Full Article →
+                    </a>
+                </div>
+            </div>
+
+ <!-- Article -->
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+                <img src="../gif/rheopetic-fluids.gif" 
+                     alt="rheopetic-fluids" 
+                     class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between text-xs text-gray-300 mb-3">
+                        <span>June 29, 2026</span>
+                        <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full">Properties</span>
+                    </div>
+                    <h3 class="font-bold text-xl leading-tight mb-3">
+                        Rheopectic Fluids: Time-Dependent Thickening Under Stress
+                    </h3>
+                    <p class="text-gray-400 text-sm line-clamp-3 mb-6">
+			These rare materials gradually increase in viscosity (become thicker) the longer they experience sustained shear stress. Unlike instantaneous shear-thickening (dilatant) behavior, rheopecty requires prolonged agitation: the more you stir or shake (within limits), the more resistant to flow the fluid becomes.
+                    </p>
+                    <a href="../articles/260629-rheopetic-fluids.html" 
+                       class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2">
+                        Read Full Article →
+                    </a>
+                </div>
+            </div>
+</div>
+
+
+
+<!-- Share Buttons -->
+        <div class="mt-16 border-t border-gray-200 pt-8">
+            <p class="font-medium mb-4">Share this article:</p>
+            <div class="flex gap-4">
+
+		<div class="grid grid-cols-3 md:flex md:justify-center gap-3">
+                <button onclick="window.open('https://x.com/intent/tweet?url=https://materialinsider.com/articles/260826-microplastic-problem.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">X</button>
+
+                <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://materialinsider.com/articles/260826-microplastic-problem.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">LinkedIn</button>
+
+                <button onclick="window.open('https://wa.me/?text=Self-Healing%20Materials%20-%20Check%20this%20out:%20https://materialinsider.com/articles/260826-microplastic-problem.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">WhatsApp</button>
+
+                <button onclick="window.open('mailto:?subject=Self-Healing%20Materials&body=Check%20this%20interesting%20article%3A%20https://materialinsider.com/articles/260826-microplastic-problem.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">E-Mail</button>
+
+                <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://materialinsider.com/articles/260826-microplastic-problem.html','_blanks')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">FaceBook</button>
+
+                <button onclick="copyArticleLink()" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">
+    		<span id="copy-text">Direct Link</span>
+		</button>
+
+		<script>
+    		function copyArticleLink() {
+        		const url = "https://materialinsider.com/articles/260826-microplastic-problem.html";  // article URL
+        
+        		navigator.clipboard.writeText(url).then(() => {
+            			const copyText = document.getElementById('copy-text');
+            			const originalText = copyText.textContent;
+            
+            			copyText.textContent = "✅ Copied!";
+            
+            			setTimeout(() => {
+                			copyText.textContent = originalText;
+            			}, 2000); // Back to "Copy Link" after 2 seconds
+        		});
+    			}
+		</script>
+		</div>
+            </div>
+        </div>
+    </article>
+
+
+<!-- ========== Floating Ads System (with Images + Links + Reappear) ========== -->
+<!-- ========== Floating Ads System (with Images + Links + Reappear) ========== -->
+<style>
+    .desktop-ad {
+        position: fixed;
+        top: 20%;
+        transform: translateY(-20%);
+        width: 220px;
+        z-index: 9990;
+        display: none;
+        background: #1f2937;
+        border: 1px solid #374151;
+        border-radius: 12px;
+        padding: 12px 8px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    .desktop-ad:hover {
+        transform: translateY(-22%) scale(1.03);
+    }
+    /* Left side - two ads */
+    .desktop-ad.left-1  { left: 50px;  top: 20%; }
+    .desktop-ad.left-2  { left: 50px;  top: 65%; }
+
+    /* Right side - two ads */
+    .desktop-ad.right-1 { right: 50px; top: 20%; }
+    .desktop-ad.right-2 { right: 50px; top: 65%; }
+
+
+    .mobile-ad-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.78);
+        z-index: 9995;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    .mobile-ad-overlay.show {
+        display: flex;
+    }
+    .mobile-ad-box {
+        background: #111827;
+        border: 1px solid #4b5563;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 340px;
+        padding: 22px 16px 18px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.55);
+        cursor: pointer;
+    }
+    .mobile-ad-close {
+        position: absolute;
+        top: 8px;
+        right: 14px;
+        background: none;
+        border: none;
+        color: #9ca3af;
+        font-size: 24px;
+        cursor: pointer;
+        line-height: 1;
+        z-index: 20;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mobile-ad-close:hover { color: #fff; }
+
+    @media (min-width: 1280px) {
+        .desktop-ad.visible { display: block !important; }
+    }
+    @media (max-width: 1279px) {
+        .desktop-ad { display: none !important; }
+    }
+</style>
+
+<!-- Desktop Left 1 Ad -->
+<div class="desktop-ad left-1" id="desktop-ad-left-1">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement 1/4</p>
+    <div id="desktop-left-1-content" style="min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Desktop Left 2 Ad -->
+<div class="desktop-ad left-2" id="desktop-ad-left-2">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement 2/4</p>
+    <div id="desktop-left-2-content" style="min-height:160px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Desktop Right 1 Ad -->
+<div class="desktop-ad right-1" id="desktop-ad-right-1">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement 3/4</p>
+    <div id="desktop-right-1-content" style="min-height:100px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Desktop Right 2 Ad -->
+<div class="desktop-ad right-2" id="desktop-ad-right-2">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement 4/4</p>
+    <div id="desktop-right-2-content" style="min-height:100px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Mobile Center Popup Ad -->
+<div class="mobile-ad-overlay" id="mobile-ad-overlay">
+    <div class="mobile-ad-box" id="mobile-ad-box">
+        <button class="mobile-ad-close" id="mobile-ad-close" aria-label="Close ad">×</button>
+        <p style="font-size:12px; color:#9ca3af; margin-bottom:12px;">Advertisement</p>
+        <div id="mobile-ad-content" style="min-height:250px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:14px;">
+            <!-- Content injected by JS -->
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    // ========== SETTINGS ==========
+    const FIRST_DELAY = 18 * 1000;        // First appearance after 10 seconds
+    const DESKTOP_ROTATE = 30 * 1000;     // Desktop ads change every 20 seconds
+    const REAPPEAR_DELAY = 35 * 1000;     // Mobile reappear after close
+
+    // ========== YOUR ADS (keep your existing ads array) ==========
+    const ads = [
+        {
+            link: "https://www.facebook.com/share/1SoWza42sh/",
+            desktop: `
+                <img src="../images/ads/bloom.jpeg" 
+                     style="width:100%; border-radius:8px; margin-bottom:10px;" 
+                     alt="Facebook">
+                <div style="font-size:12px; color:#d1d5db;">You will get more details of this site.</div>
+            `,
+            mobile: `
+                <img src="../images/ads/bloom.jpeg" 
+                     style="width:100%; border-radius:10px; margin-bottom:12px;" 
+                     alt="Facebook">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">You will get more details of this site.</div>
+            `
+        },
+        {
+            link: "https://materialinsider.com/articles/260629-supercondutor.html",
+            desktop: `
+                <img src="../images/ads/superconductor.gif" 
+                     style="width:100%; border-radius:8px; margin-bottom:10px;" 
+                     alt="MATERIALS insider">
+                <div style="font-size:12px; color:#d1d5db;">Superconductors: China’s Record-Break</div>
+            `,
+            mobile: `
+                <img src="../images/ads/superconductor.gif" 
+                     style="width:100%; border-radius:8px; margin-bottom:10px;" 
+                     alt="MATERIALS insider">
+                <div style="font-size:12px; color:#d1d5db;">Superconductors: China’s Record-Break</div>
+            `
+        },
+        {
+            link: "https://www.tiktok.com/@purrtwist.studio",
+            desktop: `
+                <img src="../images/ads/purrtwist.gif" 
+                     style="width:100%; border-radius:10px; margin-bottom:12px;" 
+                     alt="YouTube">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">PurrTwist - Subscribe</div>
+            `,
+            mobile: `
+                <img src="../images/ads/purrtwist.gif" 
+                     style="width:100%; border-radius:10px; margin-bottom:12px;" 
+                     alt="YouTube">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">PurrTwist - Subscribe</div>
+            `
+        },
+        {
+            link: "mailto:materials.insider.info@gmail.com?subject=Quotation for the Ads",
+            desktop: `
+                <img  
+                     style="width:100%; border-radius:8px; margin-bottom:10px;" 
+                     alt="Space available">
+                <div style="font-size:12px; color:#d1d5db;">Contact Us</div>
+            `,
+            mobile: `
+                <img 
+                     style="width:100%; border-radius:8px; margin-bottom:10px;" 
+                     alt="Space available">
+                <div style="font-size:12px; color:#d1d5db;">Contact Us</div>
+            `
+        }
+    ];
+
+    let desktopIndex = 0;
+    let mobileIndex = 0;
+    let reappearTimer = null;
+
+    // ===== Desktop: Load 4 different ads =====
+    function loadDesktopAds() {
+        const slots = [
+            document.getElementById('desktop-left-1-content'),
+            document.getElementById('desktop-left-2-content'),
+            document.getElementById('desktop-right-1-content'),
+            document.getElementById('desktop-right-2-content')
+        ];
+
+        slots.forEach((slot, i) => {
+            const ad = ads[(desktopIndex + i) % ads.length];
+            slot.innerHTML = ad.desktop;
+
+            // Make the parent ad clickable
+            const parent = slot.closest('.desktop-ad');
+            if (parent) {
+                parent.onclick = function () {
+                    window.open(ad.link, '_blank');
+                };
+            }
+        });
+    }
+
+    function showDesktopAds() {
+        loadDesktopAds();
+        document.getElementById('desktop-ad-left-1').classList.add('visible');
+        document.getElementById('desktop-ad-left-2').classList.add('visible');
+        document.getElementById('desktop-ad-right-1').classList.add('visible');
+        document.getElementById('desktop-ad-right-2').classList.add('visible');
+    }
+
+    // ===== Mobile =====
+    function loadMobileAd() {
+        const ad = ads[mobileIndex % ads.length];
+        document.getElementById('mobile-ad-content').innerHTML = ad.mobile;
+    }
+
+    function showMobileAd() {
+        if (window.innerWidth >= 1280) return;
+        loadMobileAd();
+        document.getElementById('mobile-ad-overlay').classList.add('show');
+    }
+
+    function hideMobileAd() {
+        document.getElementById('mobile-ad-overlay').classList.remove('show');
+    }
+
+    function scheduleMobileReappear() {
+        if (reappearTimer) clearTimeout(reappearTimer);
+        mobileIndex = (mobileIndex + 1) % ads.length;
+        reappearTimer = setTimeout(showMobileAd, REAPPEAR_DELAY);
+    }
+
+    // ===== First appearance (after 10 seconds) =====
+    setTimeout(function () {
+        showDesktopAds();
+        showMobileAd();
+
+        // Desktop rotation every 20 seconds
+        setInterval(function () {
+            desktopIndex = (desktopIndex + 1) % ads.length;
+            loadDesktopAds();
+        }, DESKTOP_ROTATE);
+
+    }, FIRST_DELAY);
+
+    // ===== Mobile events =====
+    document.getElementById('mobile-ad-box').addEventListener('click', function (e) {
+        if (e.target.closest('.mobile-ad-close')) return;
+        const ad = ads[mobileIndex % ads.length];
+        window.open(ad.link, '_blank');
+    });
+
+    document.getElementById('mobile-ad-close').addEventListener('click', function (e) {
+        e.stopPropagation();
+        hideMobileAd();
+        scheduleMobileReappear();
+    });
+
+})();
+</script>
+<!-- ========== End Floating Ads System ========== -->
+
+<!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
+                <span class="text-3xl font-bold text-white">MATERIALS insider</span>
+            </div>
+	    <p class="mb-4">Educational platform for Materials Science • Made for curious minds</p>
+            <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
