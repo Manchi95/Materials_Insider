@@ -145,31 +145,6 @@
         if (timer) clearTimeout(timer);
     });
 </script>
-
-        		const countElement = document.getElementById('total-reads');
-        		let total = parseInt(localStorage.getItem('rheopecticfluid') || '0');
-        		countElement.textContent = total.toLocaleString();
-
-    // Count after 1 minute stay (Mobile-friendly)
-    if (!sessionStorage.getItem('totalReadCounted')) {
-        let timeSpent = 0;
-        
-        const timer = setInterval(() => {
-            timeSpent += 1;   // Check every 1 seconds
-
-            if (timeSpent >= 60) {   // 60 seconds = 1 minute
-                clearInterval(timer);
-                
-                total += 1;
-                localStorage.setItem('rheopecticfluid', total);
-                countElement.textContent = total.toLocaleString();
-                
-                sessionStorage.setItem('rheopecticfluid', 'true');
-            }
-        }, 1000); // Check every 1 seconds (better for mobile)
-    }
-</script>
-
         </header>
 
         <!-- Featured Image -->
