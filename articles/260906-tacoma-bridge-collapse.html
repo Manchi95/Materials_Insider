@@ -109,7 +109,7 @@ The Tacoma Narrows Bridge Collapse of 1940 remains one of the most important eng
     <!-- Count Script -->
 
 <script>
-    const COUNTER_KEY = 'materialinsider_Tacoma_Narrows_Bridge_Collapse1'; // Change for each page
+    const COUNTER_KEY = 'materialinsider_Tacoma_Narrows_Bridge_Collapse'; // Change for each page
 
     let timer = null;
     let originalApiValue = 0;   // stored from the single API call
@@ -118,7 +118,7 @@ The Tacoma Narrows Bridge Collapse of 1940 remains one of the most important eng
     async function initCounter() {
         try {
             // Single API call only
-            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materialinsider_Tacoma_Narrows_Bridge_Collapse1");
+            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materialinsider_Tacoma_Narrows_Bridge_Collapse");
             if (res.ok) {
                 const data = await res.json();
                 originalApiValue = data.value || 0;
