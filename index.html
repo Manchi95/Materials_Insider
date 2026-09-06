@@ -9,7 +9,7 @@
 	<link rel="icon" href="images/logo2.jpeg" type="image/png">
     <style>
         .hero-bg {
-            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../images/home/background-without-letters1.gif');
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('images/home/background-without-letters1.gif');
             background-size: cover;
             background-position: center;
         }
@@ -98,7 +98,7 @@
                 Unlock the World of Materials
             </h1>
             <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-10">
-                Educational insights into Materials Science — past failures, latest research, emerging technologies, and future innovations.
+                Learn materials science through real-world failures, breakthrough research, advanced polymers, metals, composites, nanomaterials and future technologies.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="#developments" 
@@ -126,6 +126,29 @@
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-12 text-white">Recent Developments in Materials Science</h2>
             <div class="grid md:grid-cols-3 gap-8">
+
+<!-- Article  -->
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+                <img src="gif/tacoma-bridge-collapse.jpeg" 
+                     alt="challenger-disaster" 
+                     class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between text-xs text-gray-300 mb-3">
+                        <span>September 06, 2026</span>
+                        <span class="bg-red-700 text-gray-300 px-3 py-1 rounded-full">Failures</span>
+                    </div>
+                    <h3 class="font-bold text-xl leading-tight mb-3">
+                        Tacoma Narrows Bridge Collapse (1940)
+                    </h3>
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                       The Tacoma Narrows Bridge Collapse of 1940 remains one of the most important engineering failures in history and a classic materials science case study which was caused by aeroelastic flutter rather than simple resonance.
+                    </p>
+                    <a href="articles/260906-tacoma-bridge-collapse.html" 
+                       class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2">
+                        Read Full Article →
+                    </a>
+                </div>
+            </div>
 
 <!-- Article  -->
             <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
@@ -173,29 +196,12 @@
                 </div>
             </div>
 
-<!-- Article  -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
-                <img src="gif/solar-power-with-perovskites.gif" 
-                     alt="solar-power-with-perovskites" 
-                     class="w-full h-52 object-cover">
-                <div class="p-6">
-                    <div class="flex justify-between text-xs text-gray-300 mb-3">
-                        <span>August 09, 2026</span>
-                        <span class="bg-yellow-100 text-gray-700 px-3 py-1 rounded-full">Research</span>
-                    </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
-                        Atomic Magic: How 20-Something Scientists Are Hacking Solar Power with Perovskites
-                    </h3>
-                    <p class="text-gray-400 text-sm line-clamp-4 mb-6">
-                       Picture this: a super-thin, bendy film that sucks up sunlight like a sponge and pumps out electricity almost as well as those heavy, expensive silicon panels—but costs way less and can stick on your backpack, car, or even windows.
-                    </p>
-                    <a href="articles/260809-solar-power-with-perovskites.html" 
-                       class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2">
-                        Read Full Article →
-                    </a>
-                </div>
-            </div>
 
+            <div class="flex justify-between items-center">
+      <a href="articles.html" class="text-m text-gray-400 hover:text-indigo-400 transition">
+                                            All Articles →
+      </a>
+            </div>
     </section>
 
     <!-- New Research -->
