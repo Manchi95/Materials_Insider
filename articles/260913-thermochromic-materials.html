@@ -109,7 +109,7 @@ Thermochromic materials change their optical properties — most often color, bu
     <!-- Count Script -->
 
 <script>
-    const COUNTER_KEY = 'materialinsider_Thermochromic_materialss'; // Change for each page
+    const COUNTER_KEY = 'materialinsider_Thermochromic_materials'; // Change for each page
 
     let timer = null;
     let originalApiValue = 0;   // stored from the single API call
@@ -118,7 +118,7 @@ Thermochromic materials change their optical properties — most often color, bu
     async function initCounter() {
         try {
             // Single API call only
-            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materialinsider_Thermochromic_materialss");
+            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materialinsider_Thermochromic_materials");
             if (res.ok) {
                 const data = await res.json();
                 originalApiValue = data.value || 0;
