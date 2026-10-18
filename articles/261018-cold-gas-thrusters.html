@@ -109,7 +109,7 @@ Cold gas thrusters use compressed inert gas to create thrust without combustion.
     <!-- Count Script -->
 
 <script>
-    const COUNTER_KEY = 'materialinsider_cold_gas_thrusters'; // Change for each page
+    const COUNTER_KEY = 'materialinsider_cold_gas_thrusterss'; // Change for each page
 
     let timer = null;
     let originalApiValue = 0;   // stored from the single API call
@@ -118,7 +118,7 @@ Cold gas thrusters use compressed inert gas to create thrust without combustion.
     async function initCounter() {
         try {
             // Single API call only
-            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materialinsider_cold_gas_thrusters");
+            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materialinsider_cold_gas_thrusterss");
             if (res.ok) {
                 const data = await res.json();
                 originalApiValue = data.value || 0;
@@ -262,13 +262,19 @@ Cold gas thrusters use compressed inert gas to create thrust without combustion.
 	    <p style="margin-bottom:15px; margin-top:1px;font-size:18px;text-align: justify;">Cold gas thrusters show that controlled movement does not always require fire. Sometimes the most elegant solution is simply the physics of compressed molecules escaping through a carefully engineered nozzle.</p>
 
 <!-- Video -->
+<!-- Fixed YouTube Embed - Centered + Error 153 safe -->
 <div class="flex justify-center my-10">
-    <video id="coldGasVideo2" 
-           class="w-full max-w-3xl rounded-2xl shadow-lg" 
-           controls autoplay muted loop playsinline>
-        <source src="../videos/cold-gas-thrusters/cold-gas-thrusters2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <div class="w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-lg">
+        <iframe 
+            class="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/jFe6o-lGZZ8?rel=0"
+            title="Cold Gas Thrusters"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
+    </div>
 </div>
 
 	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>References</strong></h2>
