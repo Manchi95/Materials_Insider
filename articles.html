@@ -8,13 +8,81 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	<link rel="icon" href="images/logo2.jpeg" type="image/png">
     <style>
-        .article-card {
-            transition: all 0.3s ease;
-        }
-        .article-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
+/* List View styles */
+#articles-grid.list-view {
+  display: flex !important;
+  flex-direction: column;
+  gap: 1rem;
+}
+#articles-grid.list-view .article-card {
+  display: block;
+  border-radius: 1rem;
+  transform: none !important;
+}
+#articles-grid.list-view .article-card:hover {
+  transform: none !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
+}
+#articles-grid.list-view .article-image,
+#articles-grid.list-view img {
+  display: none !important;
+}
+
+/* Never show a card that is marked hidden */
+#articles-grid .article-card.hidden {
+  display: none !important;
+}
+#articles-grid.list-view .article-card > div {
+  padding: 1.1rem 1.25rem;
+}
+#articles-grid.list-view .article-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+#articles-grid.list-view .article-desc {
+  margin-bottom: 0.75rem;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Active button states */
+.category-btn.active {
+  background-color: #4f46e5 !important;
+  color: white !important;
+}
+.view-btn.active,
+.view-btn-bottom.active {
+  background-color: #4f46e5 !important;
+  color: white !important;
+}
+.article-card {
+  transition: all 0.3s ease;
+}
+.article-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Mobile improvements */
+@media (max-width: 640px) {
+  #category-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+    gap: 0.5rem;
+  }
+  #category-tabs .category-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  #articles-grid.list-view .article-card > div {
+    padding: 1rem;
+  }
+}
     </style>
 </head>
 
@@ -99,22 +167,74 @@
 
 
 <!-- ========== SEARCH BAR ========== -->
-<div class="max-w-2xl mx-auto mb-14 mt-10 px-4">
+<div class="max-w-2xl mx-auto mb-10 mt-10 px-4">
   <form action="search.html" method="get" class="relative">
-    <input 
-      type="search" 
-      name="q" 
-      placeholder="Search materials science articles..."
-      required
-      class="w-full px-6 py-4 pr-32 rounded-2xl bg-gray-900 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30 transition text-lg"
-    >
-      <button 
-        onclick="doSearch()"
-        class="px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 rounded-xl font-medium transition flex items-center justify-center gap-2">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        Search
-      </button>
+    <input type="search" name="q" placeholder="Search materials science articles..." required
+           class="w-full px-6 py-4 pr-32 rounded-2xl bg-gray-900 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30 transition text-lg">
+    <button type="submit"
+            class="absolute right-2 top-1/2 -translate-y-1/2 px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 rounded-xl font-medium transition flex items-center justify-center gap-2">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      Search
+    </button>
   </form>
+</div>
+
+<!-- ========== CATEGORY TABS ========== -->
+<div class="max-w-7xl mx-auto px-6 mb-8">
+  <!-- Desktop / tablet tabs -->
+  <div id="category-tabs" class="hidden sm:flex flex-wrap justify-center gap-3">
+    <button data-category="all" class="category-btn active px-5 py-2.5 rounded-full text-sm font-medium transition bg-indigo-600 text-white">
+      All <span class="cat-count opacity-80">(0)</span>
+    </button>
+    <button data-category="Technology" class="category-btn px-5 py-2.5 rounded-full text-sm font-medium transition bg-gray-800 text-gray-300 hover:bg-gray-700">
+      Technology <span class="cat-count opacity-80">(0)</span>
+    </button>
+    <button data-category="Failures" class="category-btn px-5 py-2.5 rounded-full text-sm font-medium transition bg-gray-800 text-gray-300 hover:bg-gray-700">
+      Failures <span class="cat-count opacity-80">(0)</span>
+    </button>
+    <button data-category="Properties" class="category-btn px-5 py-2.5 rounded-full text-sm font-medium transition bg-gray-800 text-gray-300 hover:bg-gray-700">
+      Properties <span class="cat-count opacity-80">(0)</span>
+    </button>
+    <button data-category="Research" class="category-btn px-5 py-2.5 rounded-full text-sm font-medium transition bg-gray-800 text-gray-300 hover:bg-gray-700">
+      Research <span class="cat-count opacity-80">(0)</span>
+    </button>
+    <button data-category="Facts" class="category-btn px-5 py-2.5 rounded-full text-sm font-medium transition bg-gray-800 text-gray-300 hover:bg-gray-700">
+      Facts <span class="cat-count opacity-80">(0)</span>
+    </button>
+  </div>
+  <!-- Mobile dropdown -->
+  <div class="sm:hidden">
+    <label for="category-select" class="block text-sm text-gray-400 mb-2">Filter by category</label>
+    <select id="category-select" class="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-700 text-white focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30">
+      <option value="all">All Categories (0)</option>
+      <option value="Technology">Technology (0)</option>
+      <option value="Failures">Failures (0)</option>
+      <option value="Properties">Properties (0)</option>
+      <option value="Research">Research (0)</option>
+      <option value="Facts">Facts (0)</option>
+    </select>
+  </div>
+</div>
+
+<!-- ========== SORT + VIEW TOGGLE (TOP) ========== -->
+<div class="max-w-7xl mx-auto px-6 mb-6 flex flex-wrap items-center justify-end gap-3">
+  <!-- Sort by date -->
+  <div class="flex items-center gap-2">
+    <label for="sort-select" class="text-sm text-gray-400 hidden sm:inline">Sort:</label>
+    <select id="sort-select" class="px-4 py-2.5 rounded-xl bg-gray-900 border border-gray-700 text-white text-sm focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30">
+      <option value="newest">Newest first</option>
+      <option value="oldest">Oldest first</option>
+    </select>
+  </div>
+  <!-- Grid / List -->
+  <div class="inline-flex rounded-xl overflow-hidden border border-gray-700">
+    <button id="grid-view-btn" class="view-btn active px-4 py-2.5 bg-indigo-600 text-white text-sm font-medium flex items-center gap-2">
+      <i class="fa-solid fa-grip"></i> Grid
+    </button>
+    <button id="list-view-btn" class="view-btn px-4 py-2.5 bg-gray-800 text-gray-300 text-sm font-medium flex items-center gap-2 hover:bg-gray-700">
+      <i class="fa-solid fa-list"></i> List
+    </button>
+  </div>
 </div>
 
 
@@ -124,19 +244,19 @@
 
 
 <!-- Article  -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Technology" data-date="2026-10-18">
                 <img src="gif/cold-gas-thrusters.gif" 
                      alt="cold-gas-thrusters" 
-                     class="w-full h-52 object-cover" loading="lazy">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>October 18, 2026</span>
                         <span class="bg-green-500 text-indigo-900 px-3 py-1 rounded-full">Technology</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         Cold Gas Thrusters: How Tesla’s Roadster Uses Compressed Air Instead of Fire
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
                        Cold gas thrusters use compressed inert gas to create thrust without combustion. See how Tesla demonstrated this technology on the next-generation Roadster and what happens at the molecular level.
                     </p>
                     <a href="articles/261018-cold-gas-thrusters.html" 
@@ -147,19 +267,19 @@
             </div>
 
 <!-- Article  -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Technology" data-date="2026-10-11">
                 <img src="gif/ccd-chip.gif" 
                      alt="ccd-chip" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>October 11, 2026</span>
                         <span class="bg-green-500 text-indigo-900 px-3 py-1 rounded-full">Technology</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         CCD Chips: Silicons That Turned Photons into Perfect Digital Eyes
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
                        CCD chips convert photons into electrons via the photoelectric effect in silicon, powering digital cameras, space telescopes, and X-ray detectors with near-perfect quantum efficiency and ultra-low noise.
 
                     </p>
@@ -171,19 +291,19 @@
             </div>
 
 <!-- Article  -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Properties" data-date="2026-09-30">
                 <img src="gif/magnetism-for-recording-devices.gif" 
                      alt="magnetism-for-recording-devices" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>September 30, 2026</span>
                         <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full">Properties</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         Magnetism for Recording Devices
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
                        Magnetism in ferromagnetic materials is the hidden physics that lets hard disks & magnetic tapes store digital data for without power. Data storage is not an electronic process but a property of the materials.
 
                     </p>
@@ -195,19 +315,19 @@
             </div>
 
 <!-- Article  -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Properties" data-date="2026-09-13">
                 <img src="gif/thermochromic-materials.jpeg" 
                      alt="thermochromic-materials" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>September 13, 2026</span>
                         <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full">Properties</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         Thermochromic Materials: How Temperature Make changes in Colors
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
                        Thermochromic materials are temperature-responsive materials offering reversible thermochromism. Technologies including leuco dye thermochromism, VO₂ thermochromic smart windows, and microencapsulated thermochromic pigments enable innovative color-changing applications and energy-efficient passive solar regulation.
                     </p>
                     <a href="articles/260913-thermochromic-materials.html" 
@@ -218,19 +338,19 @@
             </div>
 
 <!-- Article  -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Failures" data-date="2026-09-06">
                 <img src="gif/tacoma-bridge-collapse.jpeg" 
                      alt="challenger-disaster" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>September 06, 2026</span>
                         <span class="bg-red-700 text-gray-300 px-3 py-1 rounded-full">Failures</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         Tacoma Narrows Bridge Collapse (1940)
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
                        The Tacoma Narrows Bridge Collapse of 1940 remains one of the most important engineering failures in history and a classic materials science case study which was caused by aeroelastic flutter rather than simple resonance.
                     </p>
                     <a href="articles/260906-tacoma-bridge-collapse.html" 
@@ -241,19 +361,19 @@
             </div>
 
 <!-- Article  -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Failures" data-date="2026-08-27">
                 <img src="gif/challenger-disaster.gif" 
                      alt="challenger-disaster" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>August 27, 2026</span>
                         <span class="bg-red-700 text-gray-300 px-3 py-1 rounded-full">Failures</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         Space Shuttle Challenger Disaster (1986)
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
                        The Space Shuttle Challenger disaster was <strong>NOT</strong> caused by a rocket engine failure or software malfunction. The root cause was the loss of sealing performance in rubber O-rings located within the Solid Rocket Booster.
                     </p>
                     <a href="articles/260827-challenger-disaster.html" 
@@ -264,19 +384,19 @@
             </div>
 
 <!-- Article  -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Facts" data-date="2026-08-26">
                 <img src="gif/microplastic-problem.gif" 
                      alt="microplastic-problem?" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>August 26, 2026</span>
                         <span class="bg-red-100 text-green-700 px-3 py-1 rounded-full">Facts</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3 text-justify">
+                    <h3 class="font-bold text-xl leading-tight mb-3 text-justify article-title">
                         Why Microplastics Are Becoming a Materials Science Problem
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-4 mb-6">
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 article-desc">
                        Microplastics are no longer just an environmental issue. Learn how polymer degradation, material failure mechanisms, and sustainable design are turning microplastics into one of the biggest challenges in modern materials science.
                     </p>
                     <a href="articles/260826-microplastic-problem.html" 
@@ -287,19 +407,19 @@
             </div>
 
 <!-- Article  -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Technology" data-date="2026-08-23">
                 <img src="gif/materials-powering-the-ai.gif" 
                      alt="materials-powering-the-ai?" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>August 23, 2026</span>
                         <span class="bg-green-500 text-indigo-900 px-3 py-1 rounded-full">Technology</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         The Hidden Materials Powering the AI Revolution
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
                        AI is booming, but few people understand the materials behind it. Every ChatGPT, GROK query, every image generation, every self-driving decision runs on physical chips built from carefully engineered atoms. The real race isn’t just algorithms.
                     </p>
                     <a href="articles/260823-materials-powering-the-ai.html" 
@@ -310,19 +430,19 @@
             </div>
 
 <!-- Article  -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Research" data-date="2026-08-09">
                 <img src="gif/solar-power-with-perovskites.gif" 
                      alt="solar-power-with-perovskites" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>August 09, 2026</span>
                         <span class="bg-yellow-100 text-gray-700 px-3 py-1 rounded-full">Research</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         Atomic Magic: How 20-Something Scientists Are Hacking Solar Power with Perovskites
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
                        Picture this: a super-thin, bendy film that sucks up sunlight like a sponge and pumps out electricity almost as well as those heavy, expensive silicon panels—but costs way less and can stick on your backpack, car, or even windows.
                     </p>
                     <a href="articles/260809-solar-power-with-perovskites.html" 
@@ -333,19 +453,19 @@
             </div>
 
 <!-- Article  -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Facts" data-date="2026-07-27">
                 <img src="gif/invisible-cloak.jpeg" 
                      alt="invisible-cloak" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>July 27, 2026</span>
                         <span class="bg-red-100 text-green-700 px-3 py-1 rounded-full">Facts</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         Impossible Engineering for Stealth and Cloaking : Metamaterials
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
                        Imagine slipping on a jacket that bends light around you so perfectly that you vanish from sight. Theese crazy properties come from structure, not chemistry. This isn’t just lab magic. Metamaterials are already showing up in serious tech.
                     </p>
                     <a href="articles/260727-invisible-cloak.html" 
@@ -356,19 +476,19 @@
             </div>
 
 <!-- Article  -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Properties" data-date="2026-07-19">
                 <img src="gif/sri-lankan-graphite.gif" 
                      alt="sri-lankan-graphite" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>July 19, 2026</span>
                         <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full">Properties</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         Sri Lanka's Vein Graphite - Supercharging the Global EV Battery Revolution
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
                        Sri Lanka's world-unique high-purity vein graphite is becoming a critical material for lithium-ion battery anodes
                     </p>
                     <a href="articles/260719-sri-lankan-graphite.html" 
@@ -380,19 +500,19 @@
 
 
 <!-- Article  -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Properties" data-date="2026-07-13">
                 <img src="gif/shape-memory-alloy.gif" 
                      alt="shape-memory-alloy" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>July 13, 2026</span>
                         <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full">Properties</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         The Shape Memory Alloy: The Magic Metal That Remembers Its Shape
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
                        Imagine bending a thin metal wire into any shape you want — a zigzag, a loop, or even crumpling it — and then simply dipping it in hot water or warming it gently. Within seconds, it snaps back perfectly to its original straight form, as if it has a built-in memory.
                     </p>
                     <a href="articles/260713-shape-memory-alloy.html" 
@@ -404,19 +524,19 @@
 
 
 <!-- Article  -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Research" data-date="2026-07-12">
                 <img src="gif/fermi-sea.gif" 
                      alt="fermi-sea" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>July 12, 2026</span>
                         <span class="bg-yellow-100 text-gray-700 px-3 py-1 rounded-full">Research</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3 ">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         Fermi Seas at the Atomic Scale: A Strange New Quantum State
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
                        Researchers have created an entirely new type of quantum matter called a <strong>fractional Fermi sea</strong> using ultracold cesium atoms confined to one dimension in June 2026.
                     </p>
                     <a href="articles/260712-fermi-sea.html" 
@@ -427,19 +547,19 @@
             </div>
 
 <!-- Article  -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Facts" data-date="2026-07-11">
                 <img src="gif/atomic-bonds.gif" 
                      alt="atomic-bonds" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>July 11, 2026</span>
                         <span class="bg-red-100 text-green-700 px-3 py-1 rounded-full">Facts</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         The Illusion of Touch at the Atomic Scale: Interatomic Distances and Forces in Materials Science
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
                        Solids feel rigid and surfaces appear to make contact, yet atoms never truly touch in the classical sense. Instead, what we perceive as touch arises from the balance of attractive and repulsive forces between electron clouds.
                     </p>
                     <a href="articles/260711-atomic-bonds.html" 
@@ -450,19 +570,19 @@
             </div>
 
 <!-- Article 1 -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Research" data-date="2026-06-29">
                 <img src="gif/superconductor.gif" 
                      alt="Superconductors.gif?" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>June 29, 2026</span>
 	    		<span class="bg-yellow-100 text-gray-700 px-3 py-1 rounded-full">Research</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         Superconductors: China’s Record-Breaking Superconducting Magnet with Unlimited Clean Energy
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-3 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-3 mb-6 text-justify article-desc">
 			On June 27, 2026, scientists and engineers in Hefei, Anhui Province, announced a historic milestone: the completion and successful testing of the <strong>world’s largest superconducting magnet</strong> ever built for a fusion reactor.
                     </p>
                     <a href="articles/260629-supercondutor.html" 
@@ -473,19 +593,19 @@
             </div>
 
 <!-- Article 2 -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Research" data-date="2026-06-10">
                 <img src="gif/self-healing-materials.gif" 
                      alt="Self-Healing Materials-grid" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>June 10, 2026</span>
                         <span class="bg-yellow-100 text-gray-700 px-3 py-1 rounded-full">Research</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         Self-Healing Materials : The Future of Sustainable & Self Sustainable Materials
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
                        A cracked smartphone screen that repairs itself overnight, or a bridge that can automatically fix tiny fractures before they become dangerous. This is not science fiction—these are examples of self-healing materials.
                     </p>
                     <a href="articles/260611-self-healing-materials.html" 
@@ -496,19 +616,19 @@
             </div>
 
 <!-- Article 3 -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Research" data-date="2026-06-15">
                 <img src="gif/diamond-battery.gif" 
                      alt="Diamond Batteries-grid" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>June 15, 2026</span>
                         <span class="bg-yellow-100 text-gray-700 px-3 py-1 rounded-full">Research</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         Next-Gen Self-Sustain Electrical Batteries
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-3 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-3 mb-6 text-justify article-desc">
                         Use synthetic diamond to convert the beta decay of radioactive carbon-14 (¹⁴C) into a steady trickle of electricity
                     </p>
                     <a href="articles/260615-diamond-batteries.html" 
@@ -519,19 +639,19 @@
             </div>
 
 <!-- Article 4 -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Properties" data-date="2026-06-22">
                 <img src="gif/non-newtonian-fluid.gif" 
                      alt="non-newtonian-fluid.gif?" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>June 22, 2026</span>
                         <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full">Properties</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         Non-Newtonian Fluid : A substance that does not follow Isaac Newton’s laws
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-3 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-3 mb-6 text-justify article-desc">
                         Most of us think of fluids like water or air as predictable: they flow easily, and their "thickness" (viscosity) stays constant no matter how fast you stir them. These are Newtonian fluids, but many real-world some substances break these rules.
                     </p>
                     <a href="articles/260622-non-newtonian-fluid.html" 
@@ -542,19 +662,19 @@
             </div>
 
  <!-- Article 5 -->
-            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Properties" data-date="2026-06-29">
                 <img src="gif/rheopetic-fluids.gif" 
                      alt="rheopetic-fluids" 
-                     class="w-full h-52 object-cover loading="lazy"">
+                     class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
                     <div class="flex justify-between text-xs text-gray-300 mb-3">
                         <span>June 29, 2026</span>
                         <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full">Properties</span>
                     </div>
-                    <h3 class="font-bold text-xl leading-tight mb-3">
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
                         Rheopectic Fluids: Time-Dependent Thickening Under Stress
                     </h3>
-                    <p class="text-gray-400 text-sm line-clamp-3 mb-6 text-justify">
+                    <p class="text-gray-400 text-sm line-clamp-3 mb-6 text-justify article-desc">
 			These rare materials gradually increase in viscosity (become thicker) the longer they experience sustained shear stress. Unlike instantaneous shear-thickening (dilatant) behavior, rheopecty requires prolonged agitation: the more you stir or shake (within limits), the more resistant to flow the fluid becomes.
                     </p>
                     <a href="articles/260629-rheopetic-fluids.html" 
@@ -565,14 +685,27 @@
             </div>
         </div>
     </div>
+
 <!-- Load More Button -->
-    <div class="flex justify-center mt-12">
-        <button id="load-more-btn" 
-                class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl transition flex items-center gap-2">
-            <i class="fa-solid fa-plus"></i>
-            Load More Articles
-        </button>
-    </div>
+  <div class="flex justify-center mt-12">
+    <button id="load-more-btn"
+            class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl transition flex items-center gap-2">
+      <i class="fa-solid fa-plus"></i>
+      Load More Articles
+    </button>
+  </div>
+
+<!-- ========== VIEW TOGGLE (BOTTOM) ========== -->
+<div class="max-w-7xl mx-auto px-6 mb-16 flex justify-end">
+  <div class="inline-flex rounded-xl overflow-hidden border border-gray-700">
+    <button class="view-btn-bottom grid-view-btn px-4 py-2.5 bg-indigo-600 text-white text-sm font-medium flex items-center gap-2">
+      <i class="fa-solid fa-grip"></i> Grid
+    </button>
+    <button class="view-btn-bottom list-view-btn px-4 py-2.5 bg-gray-800 text-gray-300 text-sm font-medium flex items-center gap-2 hover:bg-gray-700">
+      <i class="fa-solid fa-list"></i> List
+    </button>
+  </div>
+</div>
 </section>
 
     <!-- Call to Action -->
@@ -619,37 +752,192 @@
             });
         });
     </script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const cards = document.querySelectorAll('#articles-grid .article-card');
-    const loadMoreBtn = document.getElementById('load-more-btn');
-    const articlesPerLoad = 6;
-    let currentlyVisible = 0;
+  const grid = document.getElementById('articles-grid');
+  const cards = Array.from(document.querySelectorAll('.article-card'));
+  const loadMoreBtn = document.getElementById('load-more-btn');
+  const categoryBtns = document.querySelectorAll('.category-btn');
+  const categorySelect = document.getElementById('category-select');
+  const sortSelect = document.getElementById('sort-select');
+  const topGridBtn = document.getElementById('grid-view-btn');
+  const topListBtn = document.getElementById('list-view-btn');
+  const bottomGridBtns = document.querySelectorAll('.grid-view-btn');
+  const bottomListBtns = document.querySelectorAll('.list-view-btn');
 
-    // Hide all cards first
-    cards.forEach(card => card.classList.add('hidden'));
+  let currentCategory = 'all';
+  let currentView = 'grid';
+  let currentSort = 'newest';   // 'newest' | 'oldest'
+  let visibleCount = 0;
+  const PER_PAGE = 6;
 
-    // Function to show next batch
-    function showNextBatch() {
-        const nextBatch = Array.from(cards).slice(currentlyVisible, currentlyVisible + articlesPerLoad);
-        
-        nextBatch.forEach(card => {
-            card.classList.remove('hidden');
-        });
+  function getFiltered() {
+    var list = cards.slice();
 
-        currentlyVisible += nextBatch.length;
-
-        // Hide button if no more articles
-        if (currentlyVisible >= cards.length) {
-            loadMoreBtn.style.display = 'none';
-        }
+    // Category filter
+    if (currentCategory !== 'all') {
+      list = list.filter(function (card) {
+        return (card.getAttribute('data-category') || '') === currentCategory;
+      });
     }
 
-    // Show first 6 on page load
-    showNextBatch();
+    // Date sort
+    list.sort(function (a, b) {
+      var da = a.getAttribute('data-date') || '1970-01-01';
+      var db = b.getAttribute('data-date') || '1970-01-01';
+      if (currentSort === 'newest') {
+        return da < db ? 1 : da > db ? -1 : 0;  // newest first
+      } else {
+        return da < db ? -1 : da > db ? 1 : 0;  // oldest first
+      }
+    });
 
-    // Load More click handler
-    loadMoreBtn.addEventListener('click', showNextBatch);
+    return list;
+  }
+
+  function updateCategoryUI() {
+    categoryBtns.forEach(function (btn) {
+      var active = btn.getAttribute('data-category') === currentCategory;
+      btn.classList.toggle('active', active);
+      btn.classList.toggle('bg-indigo-600', active);
+      btn.classList.toggle('text-white', active);
+      btn.classList.toggle('bg-gray-800', !active);
+      btn.classList.toggle('text-gray-300', !active);
+    });
+    if (categorySelect) categorySelect.value = currentCategory;
+  }
+
+  function updateViewUI() {
+    var isGrid = currentView === 'grid';
+    function styleBtn(btn, active) {
+      btn.classList.toggle('active', active);
+      btn.classList.toggle('bg-indigo-600', active);
+      btn.classList.toggle('text-white', active);
+      btn.classList.toggle('bg-gray-800', !active);
+      btn.classList.toggle('text-gray-300', !active);
+    }
+    styleBtn(topGridBtn, isGrid);
+    styleBtn(topListBtn, !isGrid);
+    bottomGridBtns.forEach(function (b) { styleBtn(b, isGrid); });
+    bottomListBtns.forEach(function (b) { styleBtn(b, !isGrid); });
+  }
+
+  function applyView() {
+    if (currentView === 'list') {
+      grid.classList.add('list-view');
+      grid.classList.remove('grid', 'md:grid-cols-2', 'lg:grid-cols-3');
+    } else {
+      grid.classList.remove('list-view');
+      grid.classList.add('grid', 'md:grid-cols-2', 'lg:grid-cols-3');
+    }
+    updateViewUI();
+  }
+
+  function render(reset) {
+    if (reset) visibleCount = 0;
+
+    var filtered = getFiltered();
+    var nextCount = Math.min(visibleCount + PER_PAGE, filtered.length);
+
+    // Hide all
+    cards.forEach(function (card) {
+      card.classList.add('hidden');
+      card.style.display = '';
+    });
+
+    // Show next batch (already sorted)
+    for (var i = 0; i < nextCount; i++) {
+      filtered[i].classList.remove('hidden');
+    }
+
+    // Keep DOM order matching sort: move visible cards to the front in sorted order
+    // (helps list view look correct)
+    filtered.forEach(function (card) {
+      grid.appendChild(card);
+    });
+
+    visibleCount = nextCount;
+
+    loadMoreBtn.style.display = visibleCount >= filtered.length ? 'none' : 'inline-flex';
+  }
+
+  // ---- Category ----
+  function setCategory(cat) {
+    currentCategory = cat || 'all';
+    updateCategoryUI();
+    render(true);
+  }
+
+  categoryBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setCategory(btn.getAttribute('data-category'));
+    });
+  });
+
+  if (categorySelect) {
+    categorySelect.addEventListener('change', function () {
+      setCategory(categorySelect.value);
+    });
+  }
+
+  // ---- Sort ----
+  if (sortSelect) {
+    sortSelect.addEventListener('change', function () {
+      currentSort = sortSelect.value;
+      render(true);
+    });
+  }
+
+  // ---- View toggle ----
+  function setView(view) {
+    currentView = view;
+    applyView();
+    render(false);
+  }
+
+  topGridBtn.addEventListener('click', function () { setView('grid'); });
+  topListBtn.addEventListener('click', function () { setView('list'); });
+  bottomGridBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () { setView('grid'); });
+  });
+  bottomListBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () { setView('list'); });
+  });
+
+  // ---- Load More ----
+  loadMoreBtn.addEventListener('click', function () {
+    render(false);
+  });
+
+  // ---- Counts ----
+  function updateCounts() {
+    var counts = { all: cards.length };
+    cards.forEach(function (card) {
+      var cat = card.getAttribute('data-category') || '';
+      counts[cat] = (counts[cat] || 0) + 1;
+    });
+
+    categoryBtns.forEach(function (btn) {
+      var cat = btn.getAttribute('data-category');
+      var span = btn.querySelector('.cat-count');
+      if (span) span.textContent = '(' + (counts[cat] || 0) + ')';
+    });
+
+    if (categorySelect) {
+      Array.from(categorySelect.options).forEach(function (opt) {
+        var cat = opt.value;
+        var label = cat === 'all' ? 'All Categories' : cat;
+        opt.textContent = label + ' (' + (counts[cat] || 0) + ')';
+      });
+    }
+  }
+
+  // ---- Init ----
+  applyView();
+  updateCounts();
+  updateCategoryUI();
+  render(true);
 });
 </script>
 
