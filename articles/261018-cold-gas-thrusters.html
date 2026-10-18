@@ -109,7 +109,7 @@ Cold gas thrusters use compressed inert gas to create thrust without combustion.
     <!-- Count Script -->
 
 <script>
-    const COUNTER_KEY = 'materialinsider_cold_gas_thrusterss'; // Change for each page
+    const COUNTER_KEY = 'materialinsider_cold_gas_thrusters'; // Change for each page
 
     let timer = null;
     let originalApiValue = 0;   // stored from the single API call
@@ -118,7 +118,7 @@ Cold gas thrusters use compressed inert gas to create thrust without combustion.
     async function initCounter() {
         try {
             // Single API call only
-            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materialinsider_cold_gas_thrusterss");
+            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/materialinsider_cold_gas_thrusters");
             if (res.ok) {
                 const data = await res.json();
                 originalApiValue = data.value || 0;
