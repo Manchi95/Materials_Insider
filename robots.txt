@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block common junk paths (optional safety)
+Disallow: /images/ads/
+Disallow: /*.json$
+
+Sitemap: https://materialinsider.com/sitemap.xml
