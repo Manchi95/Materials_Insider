@@ -135,7 +135,7 @@ Silicon carbide (SiC) and gallium nitride (GaN) are wide-bandgap semiconductors 
     async function initCounter() {
         try {
             // Single API call only
-            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/" + COUNTER_KEY);
+            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/wide_bandgap_semiconductors");
             if (res.ok) {
                 const data = await res.json();
                 originalApiValue = data.value || 0;
