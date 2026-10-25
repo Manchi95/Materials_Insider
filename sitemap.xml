@@ -54,6 +54,12 @@
   </url>
 
   <!-- Articles (newest first) -->
+    <url>
+    <loc>https://materialinsider.com/articles/261025-wide-bandgap-semiconductors.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://materialinsider.com/articles/261018-cold-gas-thrusters.html</loc>
     <lastmod>2026-10-18</lastmod>
