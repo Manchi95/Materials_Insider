@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wide-Bandgap Semiconductors: SiC and GaN - MATERIALS insider</title>
+    <meta name="description" content="Silicon carbide (SiC) and gallium nitride (GaN) explained: how wide-bandgap semiconductors work and why they power EV inverters, fast chargers, solar and 5G.">
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MATERIALS insider">
+    <meta property="og:title" content="Wide-Bandgap Semiconductors: SiC and GaN">
+    <meta property="og:description" content="Silicon carbide (SiC) and gallium nitride (GaN) are wide-bandgap semiconductors, often called third-generation semiconductors, that are taking over the most demanding jobs in power electronics. With bandgaps of about 3.3 eV for 4H-SiC and 3.4 eV for GaN, compared with silicon’s 1.1 eV, they withstand much stronger electric fields, leak less current at high temperature and waste less energy as heat. SiC MOSFETs and diodes are used in electric vehicle traction inverters, 800 V powertrains and solar inverters. GaN transistors, built on an AlGaN/GaN heterostructure with a two-dimensional electron gas, switch so fast that they enable compact fast chargers, data center power supplies and 5G base station amplifiers. This article explains what happens inside the crystal, how SiC and GaN compare with silicon, where they are used today, and the crystal defect and substrate challenges that engineers are still working to solve.">
+    <meta property="og:url" content="https://materialinsider.com/articles/261025-wide-bandgap-semiconductors.html">
+    <meta property="og:image" content="../images/261025-wide-bandgap-semiconductors/wide-bandgap-semiconductors.png">
+    <meta property="og:image:alt" content="MATERIALS insider">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Wide-Bandgap Semiconductors: SiC and GaN - MATERIALS insider">
+    <meta name="twitter:description" content="Silicon carbide (SiC) and gallium nitride (GaN) are wide-bandgap semiconductors reshaping electric vehicles, fast chargers and power electronics. See what happens inside the crystal and where they are used.">
+    <meta name="twitter:image" content="../images/261025-wide-bandgap-semiconductors/wide-bandgap-semiconductors.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="../images/logo2.jpeg" type="image/png">
+</head>
+
+<body class="bg-gray-900 font-sans text-gray-100 transition-colors">
+
+    <!-- Navigation -->
+    <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+
+<!-- Clickable Logo -->
+                <a href="https://www.materialinsider.com"
+                   class="flex items-center space-x-3 hover:opacity-40 transition no-underline">
+                    <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white">MATERIALS insider</h1>
+                </a>
+		</div>
+
+                <!-- Desktop Menu -->
+		<div class="hidden md:flex space-x-12 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a></ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul><a href="../about-us.html" class="hover:text-indigo-600 font-medium">About Us</a></ul>
+                <ul><a href="../privacy-policy.html" class="hover:text-indigo-600 font-medium">Privacy Policy</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe Button (Desktop) -->
+            <div class="hidden md:block">
+                <button onclick="alert('Newsletter signup coming soon!')"
+                        class="bg-indigo-600 hover:bg-red-800 text-white hover:text-black px-5 py-2 rounded-lg text-sm font-medium">
+                    SUBSCRIBE
+                </button>
+            </div>
+
+            <!-- Hamburger Button (Mobile) -->
+            <button id="hamburger"
+                    class="md:hidden text-3xl text-gray-400 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200">
+            <div class="flex flex-col space-y-5 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a></ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul><a href="../about-us.html" class="hover:text-indigo-600 font-medium">About Us</a></ul>
+                <ul><a href="../privacy-policy.html" class="hover:text-indigo-600 font-medium">Privacy Policy</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        <!-- Article Header -->
+        <header class="mb-12">
+	    <span class="text-indigo-600 font-medium">October 25, 2026 • Technology </span>
+            <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">
+                Silicon Carbide and Gallium Nitride: The Materials Powering the Next Generation of Electric Vehicles and Fast Chargers
+            </h1>
+            <p class="text-xl text-gray-400 mt-6 text-justify">
+Silicon carbide (SiC) and gallium nitride (GaN) are wide-bandgap semiconductors that waste less energy as heat than silicon. See what happens inside the crystal and where these materials are used in electric vehicles, chargers, solar inverters and 5G.
+            </p>
+            <div class="flex items-center gap-4 mt-8 text-sm text-white">
+                <span>By Arush</span>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <span>5 min read</span>
+            </div>
+
+<!-- Readers Count with Blinking Eye -->
+		<div class="flex justify-end mb-6">
+    		<span id="eye" class="text-xl animate-blink">👁️  </span>
+    		<span id="count" style="font-weight:700; color:#0d6efd; font-size:1.3rem;">—</span>
+		</div>
+
+    		<style>
+        		@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        		.animate-blink { animation: blink 1.5s infinite; }
+    		</style>
+    <!-- Count Script -->
+
+<script>
+    const COUNTER_KEY = 'materialinsider_wide_bandgap_semiconductors'; // Change for each page
+
+    let timer = null;
+    let originalApiValue = 0;   // stored from the single API call
+    const countEl = document.getElementById('count');
+
+    async function initCounter() {
+        try {
+            // Single API call only
+            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/" + COUNTER_KEY);
+            if (res.ok) {
+                const data = await res.json();
+                originalApiValue = data.value || 0;
+
+                // Immediately show reduced by 1
+                countEl.textContent = Math.max(0, originalApiValue - 1);
+            } else {
+                countEl.textContent = "0";
+            }
+        } catch (e) {
+            countEl.textContent = "0";
+        }
+
+        // After 30 seconds: show original value (add 1 back locally)
+        timer = setTimeout(() => {
+            countEl.textContent = originalApiValue;
+        }, 30000);
+    }
+
+    window.addEventListener('load', initCounter);
+
+    // Safety: cancel if user leaves early
+    window.addEventListener('beforeunload', () => {
+        if (timer) clearTimeout(timer);
+    });
+</script>
+
+        </header>
+
+
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none text-gray-400 align-justify">
+
+            <p style="margin-bottom:35px; margin-top:15px;font-size:18px;text-align: justify;">Every electric car hides a small act of translation. Between the battery and the motor sits an inverter, which chops direct current into the alternating current a motor needs, thousands of times a second. Each time a transistor switches, a little energy escapes as heat.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">For decades, silicon handled that job. Now two newer semiconductors, Silicon Carbide (SiC) and Gallium Nitride (GaN), are taking over the hardest roles. Known as wide-bandgap semiconductors, and often called third-generation semiconductors, they are reshaping power electronics from electric vehicles to laptop chargers.</p>
+
+        <img src="../images/261025-wide-bandgap-semiconductors/wide-bandgap-semiconductors1.png"
+             alt="Electric vehicle charging at a fast charger at dusk, representing SiC and GaN power electronics"
+             class="w-full rounded-2xl shadow-md mb-12">
+        <img src="../images/261025-wide-bandgap-semiconductors/wide-bandgap-semiconductors2.jpg"
+             alt="Electric vehicle charging at a fast charger at dusk, representing SiC and GaN power electronics"
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>What “Wide-Bandgap” Means</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">The bandgap is the energy an electron needs to jump from the valence band, where it is bound to atoms, into the conduction band, where it can carry current. Silicon’s is about 1.1 electron volts (eV). Anything above 2 eV counts as wide-bandgap. 4H-SiC sits near 3.3 eV and GaN at 3.4 eV [1].</p>
+
+	    <p style="margin-bottom:15px; margin-top:1px;font-size:18px;text-align: justify;">A wider gap helps twice. Heat knocks fewer electrons loose, so leakage stays low even in a hot device [1]. The crystal also survives a much stronger electric field before breaking down: about 2.2 MV/cm for 4H-SiC and 2.0 for GaN, against 0.29 for silicon [1]. That allows a thinner voltage-blocking layer, which means less resistance and less wasted energy [1].</p>
+
+        <img src="../images/261025-wide-bandgap-semiconductors/wide-bandgap-semiconductors3.png"
+             alt="Diagram comparing the bandgaps of silicon, silicon carbide and gallium nitride"
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Inside Silicon Carbide (SiC)</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">In SiC, each silicon atom shares electrons with four carbon atoms in a tetrahedral crystal. The layers can stack in different sequences, producing more than 250 polytypes. The 4H version is the one most used in power devices [1].</p>
+
+	    <p style="margin-bottom:15px; margin-top:1px;font-size:18px;text-align: justify;">Its thermal conductivity, about 3.8 W/cm·K, is roughly two and a half times silicon’s, so heat escapes more easily [1]. The SiC MOSFET also keeps its on-resistance low at high voltage and has no tail current at turn-off, which lets it compete with silicon IGBTs [1]. By 2015, SiC diodes and MOSFETs rated from 600 to 1,700 V were in production [2].</p>
+
+        <img src="../images/261025-wide-bandgap-semiconductors/wide-bandgap-semiconductors4.png"
+             alt="Cutaway of an electric vehicle showing the SiC inverter between the battery and the motor"
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Inside Gallium Nitride (GaN)</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">GaN pairs gallium with nitrogen, a light element that forms strong bonds [1]. Its signature feature is a heterostructure. Grow a thin layer of aluminum gallium nitride (AlGaN) on GaN, and the mismatch in conduction bands plus built-in polarization fields gather electrons into a sheet called a two-dimensional electron gas (2DEG) [1]. Electrons there meet few impurities, and their mobility reaches 1,200 to 2,000 cm²/V·s [1].</p>
+
+	    <p style="margin-bottom:15px; margin-top:1px;font-size:18px;text-align: justify;">The resulting GaN transistor switches extremely fast. That lets designers shrink the inductors and capacitors that dominate a power supply, which is why compact chargers became possible.</p>
+
+	    <p style="margin-bottom:15px; margin-top:1px;font-size:18px;text-align: justify;">There are catches. The 2DEG conducts with no gate voltage, so the bare device is “normally-on,” which is unsafe in converters. Makers add a p-type GaN layer under the gate to fix this [3][4]. Most GaN devices are also lateral, which limits blocking voltage compared with vertical designs [1]. So GaN tends to serve lower voltages and higher frequencies, while SiC covers the high-voltage end.</p>
+
+        <img src="../images/261025-wide-bandgap-semiconductors/wide-bandgap-semiconductors5.jpg"
+             alt="Exploded view of a compact GaN USB-C charger beside a larger traditional adapter"
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Where They Are Used</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;"><strong>Electric vehicles.</strong> The traction inverter is SiC’s showcase. 800 V systems allow charging power up to 350 kW, and engineers have benchmarked 800 V inverters built with SiC MOSFETs directly against silicon IGBTs [5]. One 300 kW, 800 V SiC design reported a 2.85% reduction in power losses at 32 kW/L [6]. Even circuit layout matters. A modeling study found three-level SiC inverters cut vehicle energy use by 0.6 to 1.2% compared with a two-level layout [7]. These are small percentages, but in a car every percent is range.</p>
+
+	    <p style="margin-bottom:15px; margin-top:1px;font-size:18px;text-align: justify;"><strong>Chargers and data centers.</strong> GaN’s speed suits compact power supplies. A paper from Virginia Tech and Efficient Power Conversion describes GaN-based 48 V converters for data centers with efficiency of 98% or more [8].</p>
+
+	    <p style="margin-bottom:15px; margin-top:1px;font-size:18px;text-align: justify;"><strong>Solar.</strong> In a simulation of a residential inverter, SiC MOSFETs reduced total losses compared with silicon IGBTs [9].</p>
+
+	    <p style="margin-bottom:15px; margin-top:1px;font-size:18px;text-align: justify;"><strong>5G.</strong> For base-station amplifiers, GaN is considered the best candidate for combining high output power, efficiency and back-off performance [10].</p>
+
+        <img src="../images/261025-wide-bandgap-semiconductors/wide-bandgap-semiconductors6.jpg"
+             alt="Solar farm, data center, EV charger and telecom tower connected by glowing energy lines"
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Challenges and Progress</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">SiC crystals are grown from vapor at very high temperatures, and defects are the enemy. Micropipes, once a major problem, have been largely solved. Stacking faults still cause degradation in bipolar devices, so industry favors unipolar designs [1]. Basal plane dislocations also degrade diodes and raise leakage in MOSFETs [11]. In one study of 100 mm 4H-SiC crystals, a longer cooldown (70 hours versus 40) produced more of them, because stress builds as the crystal cools [11].</p>
+
+	    <p style="margin-bottom:15px; margin-top:1px;font-size:18px;text-align: justify;">GaN lacks affordable bulk crystals, so it is grown on silicon, SiC or sapphire [3]. On silicon, mismatched lattice spacing and thermal expansion nucleate defects and can crack the film. Buffer layers relax the strain [3]. Progress has been real. As of 2021, GaN-on-silicon was mainstream for power electronics, devices above 1,200 V had been demonstrated, and engineered substrates were improving crystal quality [3]. The reliability of p-GaN gates still needs intensive research [3].</p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Looking Ahead</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:1px;font-size:18px;text-align: justify;">Silicon will not vanish. SiC and GaN will take the jobs where their physics wins, while open questions remain, such as channel mobility in SiC MOSFETs and normally-off GaN designs [12]. As these mature, expect them to sit unseen inside more cars, chargers and servers.</p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Key Takeaways</strong></h2>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li>Wide-bandgap semiconductors tolerate stronger electric fields and higher temperatures than silicon.</li>
+    		<li>SiC suits high-voltage, high-power uses such as EV inverters.</li>
+    		<li>GaN suits fast-switching, compact designs such as chargers and RF amplifiers.</li>
+    		<li>Crystal defects and substrate mismatch remain the main manufacturing hurdles.</li>
+    		<li>Both materials are likely to complement silicon, not replace it.</li>
+		</ul>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>References</strong></h2>
+
+		<ul class="list-none pl-0 space-y-2 text-gray-400">
+    		<li>[1] Garrido-Diez, D., & Baraia, I. (2017). Review of wide bandgap materials and their impact in new power devices. <em>2017 IEEE International Workshop of Electronics, Control, Measurement, Signals and their Application to Mechatronics (ECMSM)</em>, 1–6. <a href="https://doi.org/10.1109/ECMSM.2017.7945876" target="_blank" class="text-indigo-500 hover:text-red-900">doi:10.1109/ECMSM.2017.7945876</a></li>
+    		<li>[2] Kimoto, T. (2015). Material science and device physics in SiC technology for high-voltage power devices. <em>Japanese Journal of Applied Physics</em>, 54, 040103. <a href="https://doi.org/10.7567/JJAP.54.040103" target="_blank" class="text-indigo-500 hover:text-red-900">doi:10.7567/JJAP.54.040103</a></li>
+    		<li>[3] Hsu, L.-H., Lai, Y.-Y., Tu, P.-T., Langpoklakpam, C., Chang, Y.-T., Huang, Y.-W., Lee, W.-C., Tzou, A.-J., Cheng, Y.-J., Lin, C.-H., Kuo, H.-C., & Chang, E. Y. (2021). Development of GaN HEMTs fabricated on silicon, silicon-on-insulator, and engineered substrates and the heterogeneous integration. <em>Micromachines</em>, 12(10), 1159. <a href="https://doi.org/10.3390/mi12101159" target="_blank" class="text-indigo-500 hover:text-red-900">doi:10.3390/mi12101159</a></li>
+    		<li>[4] Greco, G., Iucolano, F., & Roccaforte, F. (2018). Review of technology for normally-off HEMTs with p-GaN gate. <em>Materials Science in Semiconductor Processing</em>, 96–106.</li>
+    		<li>[5] Hain, S., Meiler, M., & Denk, M. (2019). Evaluation of 800V traction inverter with SiC-MOSFET versus Si-IGBT power semiconductor technology. <em>PCIM Europe 2019</em>, Nuremberg.</li>
+    		<li>[6] Gong, X. (2023). 800-V SiC traction inverter: key design considerations for improved efficiency and power density. <em>PCIM Europe 2023</em>. <a href="https://doi.org/10.30420/566091066" target="_blank" class="text-indigo-500 hover:text-red-900">doi:10.30420/566091066</a></li>
+    		<li>[7] Taha, W., Nahid-Mobarakeh, B., & Bauman, J. (2021). Efficiency evaluation of 2L and 3L SiC-based traction inverters for 400V and 800V electric vehicle powertrains. <em>2021 IEEE Transportation Electrification Conference & Expo (ITEC)</em>, 625–632. <a href="https://doi.org/10.1109/ITEC51675.2021.9490082" target="_blank" class="text-indigo-500 hover:text-red-900">doi:10.1109/ITEC51675.2021.9490082</a></li>
+    		<li>[8] Ahmed, M. H., Lee, F. C., Li, Q., de Rooij, M., & Reusch, D. (2019). GaN based high-density unregulated 48 V to x V LLC converters with ≥ 98% efficiency for future data centers. <em>PCIM Europe 2019</em>.</li>
+    		<li>[9] Alharbi, S. S., Alharbi, S. S., Bubshait, A., Alharbi, H., & Alateeq, A. (2025). Effects of wide bandgap devices on the inverter performance and efficiency for residential PV applications. <em>Electronics</em>, 14(6), 1061. <a href="https://doi.org/10.3390/electronics14061061" target="_blank" class="text-indigo-500 hover:text-red-900">doi:10.3390/electronics14061061</a></li>
+    		<li>[10] Gorre, P., Vignesh, R., Arya, R., & Kumar, S. (2020). A review of mm-wave power amplifiers for next-generation 5G communication. <em>Advances in Intelligent Systems and Computing</em>, 1154, 173–184. <a href="https://doi.org/10.1007/978-981-15-4032-5_18" target="_blank" class="text-indigo-500 hover:text-red-900">doi:10.1007/978-981-15-4032-5_18</a></li>
+    		<li>[11] Steiner, J., Roder, M., Nguyen, B. D., Sandfeld, S., Danilewsky, A., & Wellmann, P. J. (2019). Analysis of the basal plane dislocation density and thermomechanical stress during 100 mm PVT growth of 4H-SiC. <em>Materials</em>, 12(13), 2207. <a href="https://doi.org/10.3390/ma12132207" target="_blank" class="text-indigo-500 hover:text-red-900">doi:10.3390/ma12132207</a></li>
+    		<li>[12] Roccaforte, F., Fiorenza, P., Lo Nigro, R., Giannazzo, F., & Greco, G. (2018). Emerging trends in wide band gap semiconductors (SiC and GaN) technology for power devices. <em>Microelectronic Engineering</em>, 187, 66–77.</li>
+		</ul>
+
+        </div>
+
+    <!-- Articles Grid -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+<!-- Article  -->
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+                <img src="../images/261018-cold-gas-thrusters/cold-gas-thrusters.png"
+                     alt="cold-gas-thrusters"
+                     class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between text-xs text-gray-300 mb-3">
+                        <span>October 18, 2026</span>
+                        <span class="bg-green-500 text-indigo-900 px-3 py-1 rounded-full">Technology</span>
+                    </div>
+                    <h3 class="font-bold text-xl leading-tight mb-3">
+                        Cold Gas Thrusters: How Tesla’s Roadster Uses Compressed Air Instead of Fire
+                    </h3>
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                       Cold gas thrusters use compressed inert gas to create thrust without combustion. See how Tesla demonstrated this technology on the next-generation Roadster and what happens at the molecular level.
+
+                    </p>
+                    <a href="../articles/261018-cold-gas-thrusters.html"
+                       class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2">
+                        Read Full Article →
+                    </a>
+                </div>
+            </div>
+
+<!-- Article  -->
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+                <img src="../gif/ccd-chip.gif"
+                     alt="ccd-chip"
+                     class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between text-xs text-gray-300 mb-3">
+                        <span>October 11, 2026</span>
+                        <span class="bg-green-500 text-indigo-900 px-3 py-1 rounded-full">Technology</span>
+                    </div>
+                    <h3 class="font-bold text-xl leading-tight mb-3">
+                        CCD Chips: Silicons That Turned Photons into Perfect Digital Eyes
+                    </h3>
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                       CCD chips convert photons into electrons via the photoelectric effect in silicon, powering digital cameras, space telescopes, and X-ray detectors with near-perfect quantum efficiency and ultra-low noise.
+
+                    </p>
+                    <a href="../articles/261011-ccd-chips.html"
+                       class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2">
+                        Read Full Article →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Share Buttons -->
+        <div class="mt-16 border-t border-gray-200 pt-8">
+            <p class="font-medium mb-4">Share this article:</p>
+            <div class="flex gap-4">
+
+		<div class="grid grid-cols-3 md:flex md:justify-center gap-3">
+                <button onclick="window.open('https://x.com/intent/tweet?url=https://materialinsider.com/articles/261025-wide-bandgap-semiconductors.html','_blank')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">X</button>
+
+                <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://materialinsider.com/articles/261025-wide-bandgap-semiconductors.html','_blank')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">LinkedIn</button>
+
+                <button onclick="window.open('https://wa.me/?text=Wide-Bandgap%20Semiconductors%20SiC%20and%20GaN%20-%20Check%20this%20out:%20https://materialinsider.com/articles/261025-wide-bandgap-semiconductors.html','_blank')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">WhatsApp</button>
+
+                <button onclick="window.open('mailto:?subject=Wide-Bandgap%20Semiconductors%20SiC%20and%20GaN&body=Check%20this%20interesting%20article%3A%20https://materialinsider.com/articles/261025-wide-bandgap-semiconductors.html','_blank')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">E-Mail</button>
+
+                <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://materialinsider.com/articles/261025-wide-bandgap-semiconductors.html','_blank')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">FaceBook</button>
+
+                <button onclick="copyArticleLink()" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">
+    		<span id="copy-text">Direct Link</span>
+		</button>
+
+		<script>
+    		function copyArticleLink() {
+        		const url = "https://materialinsider.com/articles/261025-wide-bandgap-semiconductors.html";  // article URL
+
+        		navigator.clipboard.writeText(url).then(() => {
+            			const copyText = document.getElementById('copy-text');
+            			const originalText = copyText.textContent;
+
+            			copyText.textContent = "✅ Copied!";
+
+            			setTimeout(() => {
+                			copyText.textContent = originalText;
+            			}, 2000); // Back to "Direct Link" after 2 seconds
+        		});
+    			}
+		</script>
+		</div>
+            </div>
+        </div>
+    </article>
+
+
+<!-- ========== Floating Ads System (with Images + Links + Reappear) ========== -->
+<style>
+    .desktop-ad {
+        position: fixed;
+        top: 20%;
+        transform: translateY(-20%);
+        width: 220px;
+        z-index: 9990;
+        display: none;
+        background: #1f2937;
+        border: 1px solid #374151;
+        border-radius: 12px;
+        padding: 12px 8px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    .desktop-ad:hover {
+        transform: translateY(-22%) scale(1.03);
+    }
+    /* Left side - two ads */
+    .desktop-ad.left-1  { left: 50px;  top: 20%; }
+    .desktop-ad.left-2  { left: 50px;  top: 65%; }
+
+    /* Right side - two ads */
+    .desktop-ad.right-1 { right: 50px; top: 20%; }
+    .desktop-ad.right-2 { right: 50px; top: 65%; }
+
+
+    .mobile-ad-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.78);
+        z-index: 9995;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    .mobile-ad-overlay.show {
+        display: flex;
+    }
+    .mobile-ad-box {
+        background: #111827;
+        border: 1px solid #4b5563;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 340px;
+        padding: 22px 16px 18px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.55);
+        cursor: pointer;
+    }
+    .mobile-ad-close {
+        position: absolute;
+        top: 8px;
+        right: 14px;
+        background: none;
+        border: none;
+        color: #9ca3af;
+        font-size: 24px;
+        cursor: pointer;
+        line-height: 1;
+        z-index: 20;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mobile-ad-close:hover { color: #fff; }
+
+    @media (min-width: 1280px) {
+        .desktop-ad.visible { display: block !important; }
+    }
+    @media (max-width: 1279px) {
+        .desktop-ad { display: none !important; }
+    }
+</style>
+
+<!-- Desktop Left 1 Ad -->
+<div class="desktop-ad left-1" id="desktop-ad-left-1">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement 1/4</p>
+    <div id="desktop-left-1-content" style="min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Desktop Left 2 Ad -->
+<div class="desktop-ad left-2" id="desktop-ad-left-2">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement 2/4</p>
+    <div id="desktop-left-2-content" style="min-height:160px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Desktop Right 1 Ad -->
+<div class="desktop-ad right-1" id="desktop-ad-right-1">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement 3/4</p>
+    <div id="desktop-right-1-content" style="min-height:100px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Desktop Right 2 Ad -->
+<div class="desktop-ad right-2" id="desktop-ad-right-2">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement 4/4</p>
+    <div id="desktop-right-2-content" style="min-height:100px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Mobile Center Popup Ad -->
+<div class="mobile-ad-overlay" id="mobile-ad-overlay">
+    <div class="mobile-ad-box" id="mobile-ad-box">
+        <button class="mobile-ad-close" id="mobile-ad-close" aria-label="Close ad">×</button>
+        <p style="font-size:12px; color:#9ca3af; margin-bottom:12px;">Advertisement</p>
+        <div id="mobile-ad-content" style="min-height:250px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:14px;">
+            <!-- Content injected by JS -->
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    // ========== SETTINGS ==========
+    const FIRST_DELAY = 18 * 1000;        // First appearance after 18 seconds
+    const DESKTOP_ROTATE = 30 * 1000;     // Desktop ads change every 30 seconds
+    const REAPPEAR_DELAY = 35 * 1000;     // Mobile reappear after close
+
+    // ========== YOUR ADS (keep your existing ads array) ==========
+    const ads = [
+        {
+            link: "https://www.facebook.com/share/1SoWza42sh/",
+            desktop: `
+                <img src="../images/ads/bloom.jpeg"
+                     style="width:100%; border-radius:8px; margin-bottom:10px;"
+                     alt="Facebook">
+                <div style="font-size:12px; color:#d1d5db;">You will get more details of this site.</div>
+            `,
+            mobile: `
+                <img src="../images/ads/bloom.jpeg"
+                     style="width:100%; border-radius:10px; margin-bottom:12px;"
+                     alt="Facebook">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">You will get more details of this site.</div>
+            `
+        },
+        {
+            link: "https://materialinsider.com/articles/260827-challenger-disaster.html",
+            desktop: `
+                <img src="../images/ads/challenger-disaster.gif"
+                     style="width:100%; border-radius:8px; margin-bottom:10px;"
+                     alt="MATERIALS insider">
+                <div style="font-size:12px; color:#d1d5db;">Space Shuttle Challenger Disaster (1986)</div>
+            `,
+            mobile: `
+                <img src="../images/ads/challenger-disaster.gif"
+                     style="width:100%; border-radius:8px; margin-bottom:10px;"
+                     alt="MATERIALS insider">
+                <div style="font-size:12px; color:#d1d5db;">Space Shuttle Challenger Disaster (1986)</div>
+            `
+        },
+        {
+            link: "https://www.tiktok.com/@purrtwist.studio",
+            desktop: `
+                <img src="../images/ads/purrtwist.gif"
+                     style="width:100%; border-radius:10px; margin-bottom:12px;"
+                     alt="YouTube">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">PurrTwist - Subscribe</div>
+            `,
+            mobile: `
+                <img src="../images/ads/purrtwist.gif"
+                     style="width:100%; border-radius:10px; margin-bottom:12px;"
+                     alt="YouTube">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">PurrTwist - Subscribe</div>
+            `
+        },
+        {
+            link: "mailto:materials.insider.info@gmail.com?subject=Quotation for the Ads",
+            desktop: `
+                <img
+                     style="width:100%; border-radius:8px; margin-bottom:10px;"
+                     alt="Space available">
+                <div style="font-size:12px; color:#d1d5db;">Contact Us</div>
+            `,
+            mobile: `
+                <img
+                     style="width:100%; border-radius:8px; margin-bottom:10px;"
+                     alt="Space available">
+                <div style="font-size:12px; color:#d1d5db;">Contact Us</div>
+            `
+        }
+    ];
+
+    let desktopIndex = 0;
+    let mobileIndex = 0;
+    let reappearTimer = null;
+
+    // ===== Desktop: Load 4 different ads =====
+    function loadDesktopAds() {
+        const slots = [
+            document.getElementById('desktop-left-1-content'),
+            document.getElementById('desktop-left-2-content'),
+            document.getElementById('desktop-right-1-content'),
+            document.getElementById('desktop-right-2-content')
+        ];
+
+        slots.forEach((slot, i) => {
+            const ad = ads[(desktopIndex + i) % ads.length];
+            slot.innerHTML = ad.desktop;
+
+            // Make the parent ad clickable
+            const parent = slot.closest('.desktop-ad');
+            if (parent) {
+                parent.onclick = function () {
+                    window.open(ad.link, '_blank');
+                };
+            }
+        });
+    }
+
+    function showDesktopAds() {
+        loadDesktopAds();
+        document.getElementById('desktop-ad-left-1').classList.add('visible');
+        document.getElementById('desktop-ad-left-2').classList.add('visible');
+        document.getElementById('desktop-ad-right-1').classList.add('visible');
+        document.getElementById('desktop-ad-right-2').classList.add('visible');
+    }
+
+    // ===== Mobile =====
+    function loadMobileAd() {
+        const ad = ads[mobileIndex % ads.length];
+        document.getElementById('mobile-ad-content').innerHTML = ad.mobile;
+    }
+
+    function showMobileAd() {
+        if (window.innerWidth >= 1280) return;
+        loadMobileAd();
+        document.getElementById('mobile-ad-overlay').classList.add('show');
+    }
+
+    function hideMobileAd() {
+        document.getElementById('mobile-ad-overlay').classList.remove('show');
+    }
+
+    function scheduleMobileReappear() {
+        if (reappearTimer) clearTimeout(reappearTimer);
+        mobileIndex = (mobileIndex + 1) % ads.length;
+        reappearTimer = setTimeout(showMobileAd, REAPPEAR_DELAY);
+    }
+
+    // ===== First appearance =====
+    setTimeout(function () {
+        showDesktopAds();
+        showMobileAd();
+
+        // Desktop rotation
+        setInterval(function () {
+            desktopIndex = (desktopIndex + 1) % ads.length;
+            loadDesktopAds();
+        }, DESKTOP_ROTATE);
+
+    }, FIRST_DELAY);
+
+    // ===== Mobile events =====
+    document.getElementById('mobile-ad-box').addEventListener('click', function (e) {
+        if (e.target.closest('.mobile-ad-close')) return;
+        const ad = ads[mobileIndex % ads.length];
+        window.open(ad.link, '_blank');
+    });
+
+    document.getElementById('mobile-ad-close').addEventListener('click', function (e) {
+        e.stopPropagation();
+        hideMobileAd();
+        scheduleMobileReappear();
+    });
+
+})();
+</script>
+
+<!-- ========== End Floating Ads System ========== -->
+
+<!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
+                <span class="text-3xl font-bold text-white">MATERIALS insider</span>
+            </div>
+	    <p class="mb-4">Educational platform for Materials Science • Made for curious minds</p>
+            <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
