@@ -19,11 +19,109 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Wide-Bandgap Semiconductors: SiC and GaN - MATERIALS insider">
     <meta name="twitter:description" content="Silicon carbide (SiC) and gallium nitride (GaN) are wide-bandgap semiconductors reshaping electric vehicles, fast chargers and power electronics. See what happens inside the crystal and where they are used.">
-    <meta name="twitter:image" content="../images/261025-wide-bandgap-semiconductors/wide-bandgap-semiconductors.png">
+    <meta name="twitter:image" content="https://materialinsider.com/images/261025-wide-bandgap-semiconductors/wide-bandgap-semiconductors.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" href="../images/logo2.jpeg" type="image/png">
+<style>
+/* ========== Normal State ========== */
+.article-audio-normal {
+  margin: 1.8rem 0;
+  padding: 1.2rem 1.4rem;
+  background: #1f2937;
+  border-radius: 12px;
+  border-left: 4px solid #6366f1;
+  transition: all 0.3s ease;
+  color: #e5e7eb;
+}
+
+.article-audio-normal .audio-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  color: #f3f4f6;
+}
+
+.article-audio-normal audio {
+  width: 100%;
+  height: 42px;
+  margin-bottom: 10px;
+}
+
+.article-audio-normal .audio-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.article-audio-normal .download-link {
+  color: #818cf8;
+  text-decoration: none;
+  font-weight: 500;
+}
+.article-audio-normal .download-link:hover {
+  color: #a5b4fc;
+  text-decoration: underline;
+}
+
+/* ========== Floating (Playing) State ========== */
+.article-audio-floating {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 480px;
+  background: #111827;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: slideUp 0.35s ease;
+  border: 1px solid #374151;
+}
+
+.article-audio-floating .audio-header,
+.article-audio-floating .audio-footer {
+  display: none;
+}
+
+.article-audio-floating audio {
+  width: 100%;
+  height: 36px;
+}
+
+/* Animation */
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 80px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .article-audio-floating {
+    width: 94%;
+    bottom: 14px;
+    padding: 10px 14px;
+  }
+}
+</style>
+
 </head>
 
 <body class="bg-gray-900 font-sans text-gray-100 transition-colors">
@@ -164,6 +262,26 @@ Silicon carbide (SiC) and gallium nitride (GaN) are wide-bandgap semiconductors 
 </script>
 
         </header>
+
+<!-- ========== Audio player ==========  -->
+<div id="article-audio-wrapper" class="article-audio-normal">
+  <div class="audio-header">
+    <span class="audio-icon">🎧</span>
+    <strong>Listen to this article</strong>
+  </div>
+
+  <audio id="article-audio" controls preload="none">
+    <source src="../audio/wide-bandgap-semiconductors.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="audio-footer">
+    <span class="audio-meta">Narrated by the author • ~5 min</span>
+    <a href="#" id="download-audio-btn" class="download-link">
+      Download Audio
+    </a>
+  </div>
+</div>
 
 
         <!-- Article Content -->
@@ -677,6 +795,50 @@ Silicon carbide (SiC) and gallium nitride (GaN) are wide-bandgap semiconductors 
             });
         });
     </script>
+
+<script>
+  // ===== Floating Player =====
+  const audio = document.getElementById('article-audio');
+  const wrapper = document.getElementById('article-audio-wrapper');
+
+  if (audio && wrapper) {
+    audio.addEventListener('play', () => {
+      wrapper.classList.remove('article-audio-normal');
+      wrapper.classList.add('article-audio-floating');
+    });
+
+    audio.addEventListener('pause', () => {
+      if (audio.paused) {
+        wrapper.classList.remove('article-audio-floating');
+        wrapper.classList.add('article-audio-normal');
+      }
+    });
+
+    audio.addEventListener('ended', () => {
+      wrapper.classList.remove('article-audio-floating');
+      wrapper.classList.add('article-audio-normal');
+    });
+  }
+
+  // ===== Force Download =====
+  const downloadBtn = document.getElementById('download-audio-btn');
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      const audioUrl = '../audio/wide-bandgap-semiconductors.mp3';
+      const fileName = 'Wide-Bandgap-Semiconductors-SiC-GaN.mp3';
+
+      // Create temporary link to force download
+      const link = document.createElement('a');
+      link.href = audioUrl;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  }
+</script>
 
 </body>
 </html>
