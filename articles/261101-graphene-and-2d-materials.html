@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphene and 2D Materials - MATERIALS insider</title>
+    <meta name="description" content="Discover how graphene enables ultra-fast charging aluminium-ion cells and voltage-controlled magnetism in multilayer stacks. Atomic-level insights into intercalation, layer sliding, and practical advances for batteries and spintronics.">
+    <link rel="canonical" href="https://materialinsider.com/articles/261101-graphene-and-2d-materials.html">
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MATERIALS insider">
+    <meta property="og:title" content="Graphene and 2D Materials">
+    <meta property="og:description" content="Discover how graphene enables ultra-fast charging aluminium-ion cells and voltage-controlled magnetism in multilayer stacks. Atomic-level insights into intercalation, layer sliding, and practical advances for batteries and spintronics.">
+    <meta property="og:url" content="https://materialinsider.com/articles/261101-graphene-and-2d-materials.html">
+    <meta property="og:image" content="https://materialinsider.com/images/261101-graphene-and-2d-materials/graphene-and-2d-materials.png">
+    <meta property="og:image:alt" content="MATERIALS insider">
+    <meta property="article:published_time" content="2026-11-01">
+    <meta property="article:section" content="Technology">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Graphene and 2D Materials - MATERIALS insider">
+    <meta name="twitter:description" content="Discover how graphene enables ultra-fast charging aluminium-ion cells and voltage-controlled magnetism in multilayer stacks. Atomic-level insights into intercalation, layer sliding, and practical advances for batteries and spintronics.">
+    <meta name="twitter:image" content="https://materialinsider.com/images/261101-graphene-and-2d-materials/graphene-and-2d-materials.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="https://materialinsider.com/images/logo2.jpeg" type="image/png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Graphene and 2D Materials Powering Ultra-Fast Aluminium-Ion Batteries and Electrically Switchable Magnetism",
+  "description": "Discover how graphene enables ultra-fast charging aluminium-ion cells and voltage-controlled magnetism in multilayer stacks. Atomic-level insights into intercalation, layer sliding, and practical advances for batteries and spintronics.",
+  "image": "https://materialinsider.com/images/261101-graphene-and-2d-materials/graphene-and-2d-materials.png",
+  "datePublished": "2026-11-01",
+  "author": {"@type": "Person", "name": "Arush"},
+  "publisher": {"@type": "Organization", "name": "MATERIALS insider", "url": "https://www.materialinsider.com"},
+  "mainEntityOfPage": "https://materialinsider.com/articles/261101-graphene-and-2d-materials.html",
+  "articleSection": "Technology",
+  "timeRequired": "PT3M",
+  "keywords": "graphene battery", "aluminium-ion battery", "2D materials", "rhombohedral graphene", "switchable magnetism,","graphene aluminium-ion battery", "rhombohedral graphene", "switchable magnetism", "2D materials batteries",
+}
+</script>
+
+<style>
+/* ========== Normal State ========== */
+.article-audio-normal {
+  margin: 1.8rem 0;
+  padding: 1.2rem 1.4rem;
+  background: #1f2937;
+  border-radius: 12px;
+  border-left: 4px solid #6366f1;
+  transition: all 0.3s ease;
+  color: #e5e7eb;
+}
+
+.article-audio-normal .audio-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  color: #f3f4f6;
+}
+
+.article-audio-normal audio {
+  width: 100%;
+  height: 42px;
+  margin-bottom: 10px;
+}
+
+.article-audio-normal .audio-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.article-audio-normal .download-link {
+  color: #818cf8;
+  text-decoration: none;
+  font-weight: 500;
+}
+.article-audio-normal .download-link:hover {
+  color: #a5b4fc;
+  text-decoration: underline;
+}
+
+/* ========== Floating (Playing) State ========== */
+.article-audio-floating {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 480px;
+  background: #111827;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: slideUp 0.35s ease;
+  border: 1px solid #374151;
+}
+
+.article-audio-floating .audio-header,
+.article-audio-floating .audio-footer {
+  display: none;
+}
+
+.article-audio-floating audio {
+  width: 100%;
+  height: 36px;
+}
+
+/* Animation */
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 80px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .article-audio-floating {
+    width: 94%;
+    bottom: 14px;
+    padding: 10px 14px;
+  }
+}
+</style>
+
+</head>
+
+<body class="bg-gray-900 font-sans text-gray-100 transition-colors">
+
+    <!-- Navigation -->
+    <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+
+<!-- Clickable Logo -->
+                <a href="https://www.materialinsider.com"
+                   class="flex items-center space-x-3 hover:opacity-40 transition no-underline">
+                    <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white">MATERIALS insider</h1>
+                </a>
+		</div>
+
+                <!-- Desktop Menu -->
+		<div class="hidden md:flex space-x-12 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a></ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul><a href="../about-us.html" class="hover:text-indigo-600 font-medium">About Us</a></ul>
+                <ul><a href="../privacy-policy.html" class="hover:text-indigo-600 font-medium">Privacy Policy</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe Button (Desktop) -->
+            <div class="hidden md:block">
+                <button onclick="alert('Newsletter signup coming soon!')"
+                        class="bg-indigo-600 hover:bg-red-800 text-white hover:text-black px-5 py-2 rounded-lg text-sm font-medium">
+                    SUBSCRIBE
+                </button>
+            </div>
+
+            <!-- Hamburger Button (Mobile) -->
+            <button id="hamburger"
+                    class="md:hidden text-3xl text-gray-400 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200">
+            <div class="flex flex-col space-y-5 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a></ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul><a href="../about-us.html" class="hover:text-indigo-600 font-medium">About Us</a></ul>
+                <ul><a href="../privacy-policy.html" class="hover:text-indigo-600 font-medium">Privacy Policy</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        <!-- Article Header -->
+        <header class="mb-12">
+	    <span class="text-indigo-600 font-medium">November 01, 2026 • Technology </span>
+            <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">
+                Graphene and 2D Materials: Ultra-Fast Aluminium-Ion Batteries and Electrically Switchable Magnetism
+            </h1>
+            <p class="text-xl text-gray-400 mt-6 text-justify">
+		Graphene’s single-atom carbon lattice and stacked multilayer forms deliver record charging speeds in aluminium-ion cells and voltage-tunable magnetism. See the atomic mechanisms of ion intercalation and layer sliding that make these advances practical for batteries and electronics.
+            </p>
+            <div class="flex items-center gap-4 mt-8 text-sm text-white">
+                <span>By Arush</span>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <span>3 min read</span>
+            </div>
+
+<!-- Readers Count with Blinking Eye -->
+		<div class="flex justify-end mb-6">
+    		<span id="eye" class="text-xl animate-blink">👁️  </span>
+    		<span id="count" style="font-weight:700; color:#0d6efd; font-size:1.3rem;">—</span>
+		</div>
+
+    		<style>
+        		@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        		.animate-blink { animation: blink 1.5s infinite; }
+    		</style>
+    <!-- Count Script -->
+
+<script>
+    const COUNTER_KEY = 'materialinsider_Graphene-and-2D-Materials'; // Change for each page
+
+    let timer = null;
+    let originalApiValue = 0;   // stored from the single API call
+    const countEl = document.getElementById('count');
+
+    async function initCounter() {
+        try {
+            // Single API call only
+            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/Graphene-and-2D-Materials");
+            if (res.ok) {
+                const data = await res.json();
+                originalApiValue = data.value || 0;
+
+                // Immediately show reduced by 1
+                countEl.textContent = Math.max(0, originalApiValue - 1);
+            } else {
+                countEl.textContent = "0";
+            }
+        } catch (e) {
+            countEl.textContent = "0";
+        }
+
+        // After 30 seconds: show original value (add 1 back locally)
+        timer = setTimeout(() => {
+            countEl.textContent = originalApiValue;
+        }, 30000);
+    }
+
+    window.addEventListener('load', initCounter);
+
+    // Safety: cancel if user leaves early
+    window.addEventListener('beforeunload', () => {
+        if (timer) clearTimeout(timer);
+    });
+</script>
+
+        </header>
+
+
+
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none text-gray-400 align-justify">
+
+<!-- Video -->
+<!-- Fixed YouTube Embed - Centered + Error 153 safe -->
+<div class="flex justify-center my-10">
+    <div class="w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-lg">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OZh9xu7dhlM?si=Ct799Q72SSYbJDV2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+
+
+            <p style="margin-bottom:35px; margin-top:15px;font-size:18px;text-align: justify;">Graphene is a honeycomb lattice of carbon atoms one atom thick. When stacked or engineered into few-layer films, it combines extreme conductivity, mechanical strength, and tunable electronic states. Two recent peer-reviewed advances stand out: aluminium-ion batteries that charge in seconds using graphene cathodes, and electrically driven sliding of graphene layers that switches magnetism on and off without continuous power.</p>
+
+        <img src="../images/261101-graphene-and-2d-materials/graphene-and-2d-materials1.jpg"
+             alt="graphene-atomic-structure"
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Graphene’s Atomic Advantage</strong></h2>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Each carbon atom in graphene bonds to three neighbours via strong sp² hybrids, leaving a delocalised π-electron cloud that conducts electricity with near-zero resistance in the plane. In few-layer graphene the weak van der Waals forces between sheets allow ions or entire layers to move under modest external forces—exactly the behaviours exploited in the devices below.</p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Fast-Charging Graphene Aluminium-Ion Cells</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">In a typical aluminium-ion battery an aluminium anode oxidises while AlCl₄⁻ anions intercalate between graphene layers at the cathode. Because the graphene sheets are only a few atoms thick and highly conductive, the anions slide in and out rapidly with minimal structural damage.</p>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Researchers using three-dimensional graphene networks or high-quality few-layer graphene films have reported specific capacities around 170–200 mAh g⁻¹ and charging rates exceeding 100 C (full charge in under a minute). One design reached 10⁴ C rates (full capacity in ~0.35 s) when liquid-metal interfaces lowered the anode energy barrier. Long-term cycling remains stable for thousands of cycles because the graphene lattice expands and contracts elastically rather than fracturing.</p>
+
+        <img src="../images/261101-graphene-and-2d-materials/graphene-and-2d-materials2.jpg"
+             alt="aluminium-ion-intercalation"
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">These cells are inherently safer than lithium-ion systems: the ionic-liquid electrolytes are non-flammable and aluminium is abundant. Commercial development is already under way with pouch cells demonstrating high energy efficiency under six-minute charge–discharge cycles.</p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Electrically Switchable Magnetism in Multilayer Graphene</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">In tetralayer graphene the stacking order can be switched between the common Bernal (ABAB) arrangement and the metastable rhombohedral (ABCA) arrangement. A gate voltage applies an out-of-plane electric field that drives interlayer sliding. The weaker van der Waals bonds allow the layers to shift by a fraction of a nanometre; once shifted, the new stacking remains stable even after the voltage is removed—non-volatile switching.</p>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Only the rhombohedral configuration hosts a ferromagnetic state that produces an anomalous Hall effect. Transport measurements show clear bistable switching between non-magnetic (Bernal-dominant) and magnetic (mixed or rhombohedral) phases across a wide range of carrier densities. The magnetism is orbital in origin and can be toggled repeatedly by simply reversing the gate polarity.</p>
+
+        <img src="../images/261101-graphene-and-2d-materials/graphene-and-2d-materials3.jpg"
+             alt="tetralayer-graphene-sliding"
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <p style="margin-bottom:15px; margin-top:5px;font-size:18px;text-align: justify;">This mechanism opens a route to reconfigurable spintronic devices and non-volatile magnetic memory written by pure electric fields.</p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Other Practical Advances</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:1px;font-size:18px;text-align: justify;">Graphene continues to improve conventional lithium-ion electrodes by coating cathodes to suppress transition-metal dissolution and by forming conductive scaffolds that accommodate volume changes. Few-layer graphene films also serve as high-rate cathodes in other multivalent systems and as transparent, flexible electrodes for flexible electronics. Layer-number control and clean interfaces remain active research frontiers, yet the material is already moving from laboratory to pilot production.</p>
+
+        <img src="../images/261101-graphene-and-2d-materials/graphene-and-2d-materials4.jpg"
+             alt="practical-graphene-applications"
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Looking Ahead</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">The same atomic features—π-electron conductivity and weak interlayer forces—underpin both ultra-fast ion transport and electrically driven structural phase transitions. As defect densities fall and scalable film-growth methods mature, graphene-based aluminium-ion cells and voltage-switchable magnetic multilayers are poised to complement, rather than replace, existing technologies in high-power storage and low-power spintronics.</p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Key Takeaways</strong></h2>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li>Graphene’s honeycomb lattice and weak interlayer bonds enable rapid AlCl₄⁻ intercalation for ultra-fast aluminium-ion batteries.</li>
+    		<li>Gate-voltage-driven sliding switches tetralayer graphene between Bernal and rhombohedral stacking, turning magnetism on and off non-volatily.</li>
+    		<li>Capacities of 170–200 mAh g⁻¹ and multi-thousand-cycle stability have been demonstrated in peer-reviewed cells.</li>
+    		<li>The same material improves lithium-ion electrodes and flexible electronics.</li>
+    		<li>Scalability and defect control remain the main engineering challenges.</li>
+		</ul>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>References</strong></h2>
+
+		<ul class="list-none pl-0 space-y-2 text-gray-400">
+    		<li>1. Lin, M.-C. et al. An ultrafast rechargeable aluminium-ion battery. <em>Nature</em> 520, 324–328 (2015).</li>
+    		<li>2. Chen, H. et al. A defect-free principle for advanced graphene cathode of aluminum-ion battery. <em>Adv. Mater.</em> 29, 1605958 (2017).</li>
+    		<li>3. Huang, H. et al. Design and construction of few-layer graphene cathode for ultrafast and high-capacity aluminum-ion batteries. <em>Energy Storage Mater.</em> 27, 396–404 (2020).</li>
+    		<li>4. Wang, D.-Y. et al. Ultra-fast charging in aluminum-ion batteries: electric double layers on active anode. <em>Nat. Commun.</em> 12, 820 (2021).</li>
+    		<li>5. Brandon, D. et al. Gate-induced layer sliding drives non-volatile switching of magnetism in tetralayer graphene. <em>Nat. Nanotechnol.</em> (2026). <a href="https://www.nature.com/articles/s41565-026-02306-x" target="_blank" class="text-indigo-500 hover:text-red-900">https://doi.org/10.1038/s41565-026-02306-x</a></li>
+    		<li>6. Related reviews on carbon cathodes and graphene in multivalent batteries: ACS Appl. Energy Mater. (2024–2025).</li>
+		</ul>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;"> </p>
+
+        <img src="../images/261101-graphene-and-2d-materials/graphene-and-2d-materials5.jpg"
+             alt="Graphene enables ultra-fast charging aluminium-ion cells and voltage-controlled magnetism in multilayer stacks."
+             class="w-full rounded-2xl shadow-md mb-12">
+
+        </div>
+
+
+
+    <!-- Articles Grid -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+<!-- Article  -->
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+                <img src="../images/261018-cold-gas-thrusters/cold-gas-thrusters.png"
+                     alt="cold-gas-thrusters"
+                     class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between text-xs text-gray-300 mb-3">
+                        <span>October 18, 2026</span>
+                        <span class="bg-green-500 text-indigo-900 px-3 py-1 rounded-full">Technology</span>
+                    </div>
+                    <h3 class="font-bold text-xl leading-tight mb-3">
+                        Cold Gas Thrusters: How Tesla’s Roadster Uses Compressed Air Instead of Fire
+                    </h3>
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                       Cold gas thrusters use compressed inert gas to create thrust without combustion. See how Tesla demonstrated this technology on the next-generation Roadster and what happens at the molecular level.
+
+                    </p>
+                    <a href="../articles/261018-cold-gas-thrusters.html"
+                       class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2">
+                        Read Full Article →
+                    </a>
+                </div>
+            </div>
+
+<!-- Article  -->
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm">
+                <img src="../gif/ccd-chip.gif"
+                     alt="ccd-chip"
+                     class="w-full h-52 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between text-xs text-gray-300 mb-3">
+                        <span>October 11, 2026</span>
+                        <span class="bg-green-500 text-indigo-900 px-3 py-1 rounded-full">Technology</span>
+                    </div>
+                    <h3 class="font-bold text-xl leading-tight mb-3">
+                        CCD Chips: Silicons That Turned Photons into Perfect Digital Eyes
+                    </h3>
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify">
+                       CCD chips convert photons into electrons via the photoelectric effect in silicon, powering digital cameras, space telescopes, and X-ray detectors with near-perfect quantum efficiency and ultra-low noise.
+
+                    </p>
+                    <a href="../articles/261011-ccd-chips.html"
+                       class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2">
+                        Read Full Article →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Share Buttons -->
+        <div class="mt-16 border-t border-gray-200 pt-8">
+            <p class="font-medium mb-4">Share this article:</p>
+            <div class="flex gap-4">
+
+		<div class="grid grid-cols-3 md:flex md:justify-center gap-3">
+                <button onclick="window.open('https://x.com/intent/tweet?url=https://materialinsider.com/articles/261101-graphene-and-2d-materials.html','_blank')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">X</button>
+
+                <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://materialinsider.com/articles/261101-graphene-and-2d-materials.html','_blank')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">LinkedIn</button>
+
+                <button onclick="window.open('https://wa.me/?text=Wide-Bandgap%20Semiconductors%20SiC%20and%20GaN%20-%20Check%20this%20out:%20https://materialinsider.com/articles/261101-graphene-and-2d-materials.html','_blank')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">WhatsApp</button>
+
+                <button onclick="window.open('mailto:?subject=Wide-Bandgap%20Semiconductors%20SiC%20and%20GaN&body=Check%20this%20interesting%20article%3A%20https://materialinsider.com/articles/261101-graphene-and-2d-materials.html','_blank')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">E-Mail</button>
+
+                <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://materialinsider.com/articles/261101-graphene-and-2d-materials.html','_blank')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">FaceBook</button>
+
+                <button onclick="copyArticleLink()" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">
+    		<span id="copy-text">Direct Link</span>
+		</button>
+
+		<script>
+    		function copyArticleLink() {
+        		const url = "https://materialinsider.com/articles/261101-graphene-and-2d-materials.html";  // article URL
+
+        		navigator.clipboard.writeText(url).then(() => {
+            			const copyText = document.getElementById('copy-text');
+            			const originalText = copyText.textContent;
+
+            			copyText.textContent = "✅ Copied!";
+
+            			setTimeout(() => {
+                			copyText.textContent = originalText;
+            			}, 2000); // Back to "Direct Link" after 2 seconds
+        		});
+    			}
+		</script>
+		</div>
+            </div>
+        </div>
+    </article>
+
+
+<!-- ========== Floating Ads System (with Images + Links + Reappear) ========== -->
+<style>
+    .desktop-ad {
+        position: fixed;
+        top: 20%;
+        transform: translateY(-20%);
+        width: 220px;
+        z-index: 9990;
+        display: none;
+        background: #1f2937;
+        border: 1px solid #374151;
+        border-radius: 12px;
+        padding: 12px 8px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    .desktop-ad:hover {
+        transform: translateY(-22%) scale(1.03);
+    }
+    /* Left side - two ads */
+    .desktop-ad.left-1  { left: 50px;  top: 20%; }
+    .desktop-ad.left-2  { left: 50px;  top: 65%; }
+
+    /* Right side - two ads */
+    .desktop-ad.right-1 { right: 50px; top: 20%; }
+    .desktop-ad.right-2 { right: 50px; top: 65%; }
+
+
+    .mobile-ad-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.78);
+        z-index: 9995;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    .mobile-ad-overlay.show {
+        display: flex;
+    }
+    .mobile-ad-box {
+        background: #111827;
+        border: 1px solid #4b5563;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 340px;
+        padding: 22px 16px 18px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.55);
+        cursor: pointer;
+    }
+    .mobile-ad-close {
+        position: absolute;
+        top: 8px;
+        right: 14px;
+        background: none;
+        border: none;
+        color: #9ca3af;
+        font-size: 24px;
+        cursor: pointer;
+        line-height: 1;
+        z-index: 20;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mobile-ad-close:hover { color: #fff; }
+
+    @media (min-width: 1280px) {
+        .desktop-ad.visible { display: block !important; }
+    }
+    @media (max-width: 1279px) {
+        .desktop-ad { display: none !important; }
+    }
+</style>
+
+<!-- Desktop Left 1 Ad -->
+<div class="desktop-ad left-1" id="desktop-ad-left-1">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement 1/4</p>
+    <div id="desktop-left-1-content" style="min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Desktop Left 2 Ad -->
+<div class="desktop-ad left-2" id="desktop-ad-left-2">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement 2/4</p>
+    <div id="desktop-left-2-content" style="min-height:160px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Desktop Right 1 Ad -->
+<div class="desktop-ad right-1" id="desktop-ad-right-1">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement 3/4</p>
+    <div id="desktop-right-1-content" style="min-height:100px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Desktop Right 2 Ad -->
+<div class="desktop-ad right-2" id="desktop-ad-right-2">
+    <p style="font-size:11px; color:#9ca3af; margin-bottom:8px;">Advertisement 4/4</p>
+    <div id="desktop-right-2-content" style="min-height:100px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:13px; line-height:1.4;">
+        <!-- Content injected by JS -->
+    </div>
+</div>
+
+<!-- Mobile Center Popup Ad -->
+<div class="mobile-ad-overlay" id="mobile-ad-overlay">
+    <div class="mobile-ad-box" id="mobile-ad-box">
+        <button class="mobile-ad-close" id="mobile-ad-close" aria-label="Close ad">×</button>
+        <p style="font-size:12px; color:#9ca3af; margin-bottom:12px;">Advertisement</p>
+        <div id="mobile-ad-content" style="min-height:250px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#6b7280; font-size:14px;">
+            <!-- Content injected by JS -->
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    // ========== SETTINGS ==========
+    const FIRST_DELAY = 18 * 1000;        // First appearance after 18 seconds
+    const DESKTOP_ROTATE = 30 * 1000;     // Desktop ads change every 30 seconds
+    const REAPPEAR_DELAY = 35 * 1000;     // Mobile reappear after close
+
+    // ========== YOUR ADS (keep your existing ads array) ==========
+    const ads = [
+        {
+            link: "https://www.facebook.com/share/1SoWza42sh/",
+            desktop: `
+                <img src="../images/ads/bloom.jpeg"
+                     style="width:100%; border-radius:8px; margin-bottom:10px;"
+                     alt="Facebook">
+                <div style="font-size:12px; color:#d1d5db;">You will get more details of this site.</div>
+            `,
+            mobile: `
+                <img src="../images/ads/bloom.jpeg"
+                     style="width:100%; border-radius:10px; margin-bottom:12px;"
+                     alt="Facebook">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">You will get more details of this site.</div>
+            `
+        },
+        {
+            link: "https://materialinsider.com/articles/260827-challenger-disaster.html",
+            desktop: `
+                <img src="../images/ads/challenger-disaster.gif"
+                     style="width:100%; border-radius:8px; margin-bottom:10px;"
+                     alt="MATERIALS insider">
+                <div style="font-size:12px; color:#d1d5db;">Space Shuttle Challenger Disaster (1986)</div>
+            `,
+            mobile: `
+                <img src="../images/ads/challenger-disaster.gif"
+                     style="width:100%; border-radius:8px; margin-bottom:10px;"
+                     alt="MATERIALS insider">
+                <div style="font-size:12px; color:#d1d5db;">Space Shuttle Challenger Disaster (1986)</div>
+            `
+        },
+        {
+            link: "https://www.tiktok.com/@purrtwist.studio",
+            desktop: `
+                <img src="../images/ads/purrtwist.gif"
+                     style="width:100%; border-radius:10px; margin-bottom:12px;"
+                     alt="YouTube">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">PurrTwist - Subscribe</div>
+            `,
+            mobile: `
+                <img src="../images/ads/purrtwist.gif"
+                     style="width:100%; border-radius:10px; margin-bottom:12px;"
+                     alt="YouTube">
+                <div style="font-size:15px; color:#d1d5db; font-weight:500;">PurrTwist - Subscribe</div>
+            `
+        },
+        {
+            link: "mailto:materials.insider.info@gmail.com?subject=Quotation for the Ads",
+            desktop: `
+                <img
+                     style="width:100%; border-radius:8px; margin-bottom:10px;"
+                     alt="Space available">
+                <div style="font-size:12px; color:#d1d5db;">Contact Us</div>
+            `,
+            mobile: `
+                <img
+                     style="width:100%; border-radius:8px; margin-bottom:10px;"
+                     alt="Space available">
+                <div style="font-size:12px; color:#d1d5db;">Contact Us</div>
+            `
+        }
+    ];
+
+    let desktopIndex = 0;
+    let mobileIndex = 0;
+    let reappearTimer = null;
+
+    // ===== Desktop: Load 4 different ads =====
+    function loadDesktopAds() {
+        const slots = [
+            document.getElementById('desktop-left-1-content'),
+            document.getElementById('desktop-left-2-content'),
+            document.getElementById('desktop-right-1-content'),
+            document.getElementById('desktop-right-2-content')
+        ];
+
+        slots.forEach((slot, i) => {
+            const ad = ads[(desktopIndex + i) % ads.length];
+            slot.innerHTML = ad.desktop;
+
+            // Make the parent ad clickable
+            const parent = slot.closest('.desktop-ad');
+            if (parent) {
+                parent.onclick = function () {
+                    window.open(ad.link, '_blank');
+                };
+            }
+        });
+    }
+
+    function showDesktopAds() {
+        loadDesktopAds();
+        document.getElementById('desktop-ad-left-1').classList.add('visible');
+        document.getElementById('desktop-ad-left-2').classList.add('visible');
+        document.getElementById('desktop-ad-right-1').classList.add('visible');
+        document.getElementById('desktop-ad-right-2').classList.add('visible');
+    }
+
+    // ===== Mobile =====
+    function loadMobileAd() {
+        const ad = ads[mobileIndex % ads.length];
+        document.getElementById('mobile-ad-content').innerHTML = ad.mobile;
+    }
+
+    function showMobileAd() {
+        if (window.innerWidth >= 1280) return;
+        loadMobileAd();
+        document.getElementById('mobile-ad-overlay').classList.add('show');
+    }
+
+    function hideMobileAd() {
+        document.getElementById('mobile-ad-overlay').classList.remove('show');
+    }
+
+    function scheduleMobileReappear() {
+        if (reappearTimer) clearTimeout(reappearTimer);
+        mobileIndex = (mobileIndex + 1) % ads.length;
+        reappearTimer = setTimeout(showMobileAd, REAPPEAR_DELAY);
+    }
+
+    // ===== First appearance =====
+    setTimeout(function () {
+        showDesktopAds();
+        showMobileAd();
+
+        // Desktop rotation
+        setInterval(function () {
+            desktopIndex = (desktopIndex + 1) % ads.length;
+            loadDesktopAds();
+        }, DESKTOP_ROTATE);
+
+    }, FIRST_DELAY);
+
+    // ===== Mobile events =====
+    document.getElementById('mobile-ad-box').addEventListener('click', function (e) {
+        if (e.target.closest('.mobile-ad-close')) return;
+        const ad = ads[mobileIndex % ads.length];
+        window.open(ad.link, '_blank');
+    });
+
+    document.getElementById('mobile-ad-close').addEventListener('click', function (e) {
+        e.stopPropagation();
+        hideMobileAd();
+        scheduleMobileReappear();
+    });
+
+})();
+</script>
+
+<!-- ========== End Floating Ads System ========== -->
+
+<!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
+                <span class="text-3xl font-bold text-white">MATERIALS insider</span>
+            </div>
+	    <p class="mb-4">Educational platform for Materials Science • Made for curious minds</p>
+            <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+
+<script>
+  // ===== Floating Player =====
+  const audio = document.getElementById('article-audio');
+  const wrapper = document.getElementById('article-audio-wrapper');
+
+  if (audio && wrapper) {
+    audio.addEventListener('play', () => {
+      wrapper.classList.remove('article-audio-normal');
+      wrapper.classList.add('article-audio-floating');
+    });
+
+    audio.addEventListener('pause', () => {
+      if (audio.paused) {
+        wrapper.classList.remove('article-audio-floating');
+        wrapper.classList.add('article-audio-normal');
+      }
+    });
+
+    audio.addEventListener('ended', () => {
+      wrapper.classList.remove('article-audio-floating');
+      wrapper.classList.add('article-audio-normal');
+    });
+  }
+
+  // ===== Force Download =====
+  const downloadBtn = document.getElementById('download-audio-btn');
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      const audioUrl = '../audio/graphene-and-2d-materials.mp3';
+      const fileName = 'Graphene-And-2D-Materials.mp3';
+
+      // Create temporary link to force download
+      const link = document.createElement('a');
+      link.href = audioUrl;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  }
+</script>
+
+</body>
+</html>
