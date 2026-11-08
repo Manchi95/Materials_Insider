@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberty Ships: The Brittle Fracture Crisis That Changed Steel Forever | MATERIALS insider</title>
+    <meta name="description" content="During WWII hundreds of Liberty Ships cracked or broke completely in half in calm cold water. Discover how low-toughness steel, high DBTT, welding residual stresses and notch sensitivity caused the crisis — and how it created modern fracture mechanics.">
+    <meta name="keywords" content="Liberty Ships brittle fracture, SS Schenectady, ductile to brittle transition temperature, DBTT steel, wartime mild steel, Charpy impact test, Constance Tipper, fracture mechanics history, welded ship failures, BCC iron cleavage, manganese sulfur steel, crack arrestors, materials science failure analysis, brittle fracture WWII ships">
+    <link rel="canonical" href="https://materialinsider.com/articles/261108-liberty-ships-the-brittle-fracture.html">
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn, etc.) -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="MATERIALS insider">
+    <meta property="og:title" content="Liberty Ships: The Brittle Fracture Crisis That Changed Steel Forever">
+    <meta property="og:description" content="Hundreds of WWII Liberty Ships cracked or broke completely in half — some while still in port. The cause was brittle fracture of low-toughness steel combined with welding. This disaster taught the world critical lessons about toughness, temperature and fracture mechanics.">
+    <meta property="og:url" content="https://materialinsider.com/articles/261108-liberty-ships-the-brittle-fracture.html">
+    <meta property="og:image" content="https://materialinsider.com/images/261108-liberty-ships-the-brittle-fracture/liberty-ships.jpg">
+    <meta property="og:image:alt" content="Liberty ship broken in half in cold harbor - brittle fracture crisis">
+    <meta property="article:published_time" content="2026-11-08">
+    <meta property="article:section" content="Failures">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Liberty Ships: The Brittle Fracture Crisis That Changed Steel Forever">
+    <meta name="twitter:description" content="Hundreds of WWII Liberty Ships cracked or broke completely in half. The cause was brittle fracture of low-toughness steel combined with welding.">
+    <meta name="twitter:image" content="https://materialinsider.com/images/261108-liberty-ships-the-brittle-fracture/liberty-ships.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="https://materialinsider.com/images/logo2.jpeg" type="image/png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Liberty Ships: The Brittle Fracture Crisis That Changed Steel Forever",
+  "description": "During WWII hundreds of Liberty Ships cracked or broke completely in half in calm cold water. Discover how low-toughness steel, high DBTT, welding residual stresses and notch sensitivity caused the crisis — and how it created modern fracture mechanics.",
+  "image": "https://materialinsider.com/images/261108-liberty-ships-the-brittle-fracture/liberty-ships-the-brittle-fracture.png",
+  "datePublished": "2026-11-08",
+  "author": {"@type": "Person", "name": "Arush"},
+  "publisher": {"@type": "Organization", "name": "MATERIALS insider", "url": "https://www.materialinsider.com"},
+  "mainEntityOfPage": "https://materialinsider.com/articles/261108-liberty-ships-the-brittle-fracture.html",
+  "articleSection": "Failures",
+  "timeRequired": "PT8M",
+  "keywords": "Liberty Ships brittle fracture, SS Schenectady, ductile to brittle transition temperature, DBTT steel, wartime mild steel, Charpy impact test, Constance Tipper, fracture mechanics, welded ship failures, BCC iron cleavage, materials science failure analysis"
+}
+</script>
+
+<style>
+/* ========== Normal State ========== */
+.article-audio-normal {
+  margin: 1.8rem 0;
+  padding: 1.2rem 1.4rem;
+  background: #1f2937;
+  border-radius: 12px;
+  border-left: 4px solid #6366f1;
+  transition: all 0.3s ease;
+  color: #e5e7eb;
+}
+
+.article-audio-normal .audio-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  color: #f3f4f6;
+}
+
+.article-audio-normal audio {
+  width: 100%;
+  height: 42px;
+  margin-bottom: 10px;
+}
+
+.article-audio-normal .audio-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.article-audio-normal .download-link {
+  color: #818cf8;
+  text-decoration: none;
+  font-weight: 500;
+}
+.article-audio-normal .download-link:hover {
+  color: #a5b4fc;
+  text-decoration: underline;
+}
+
+/* ========== Floating (Playing) State ========== */
+.article-audio-floating {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 480px;
+  background: #111827;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: slideUp 0.35s ease;
+  border: 1px solid #374151;
+}
+
+.article-audio-floating .audio-header,
+.article-audio-floating .audio-footer {
+  display: none;
+}
+
+.article-audio-floating audio {
+  width: 100%;
+  height: 36px;
+}
+
+/* Animation */
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 80px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .article-audio-floating {
+    width: 94%;
+    bottom: 14px;
+    padding: 10px 14px;
+  }
+}
+</style>
+
+</head>
+
+<body class="bg-gray-900 font-sans text-gray-100 transition-colors">
+
+    <!-- Navigation -->
+    <nav class="bg-black shadow-md sticky top-0 z-40 transition-colors">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+
+<!-- Clickable Logo -->
+                <a href="https://www.materialinsider.com"
+                   class="flex items-center space-x-3 hover:opacity-40 transition no-underline">
+                    <i class="fa-solid fa-atom text-3xl text-indigo-600"></i>
+                    <h1 class="text-3xl font-bold text-gray-800 dark:text-white">MATERIALS insider</h1>
+                </a>
+		</div>
+
+                <!-- Desktop Menu -->
+		<div class="hidden md:flex space-x-12 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a></ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul><a href="../about-us.html" class="hover:text-indigo-600 font-medium">About Us</a></ul>
+                <ul><a href="../privacy-policy.html" class="hover:text-indigo-600 font-medium">Privacy Policy</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe Button (Desktop) -->
+            <div class="hidden md:block">
+                <button onclick="alert('Newsletter signup coming soon!')"
+                        class="bg-indigo-600 hover:bg-red-800 text-white hover:text-black px-5 py-2 rounded-lg text-sm font-medium">
+                    SUBSCRIBE
+                </button>
+            </div>
+
+            <!-- Hamburger Button (Mobile) -->
+            <button id="hamburger"
+                    class="md:hidden text-3xl text-gray-400 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-6 pt-6 border-t border--gray-200">
+            <div class="flex flex-col space-y-5 text-white">
+                <ul>
+                    <li><a href="https://www.materialinsider.com" class="hover:text-indigo-600 font-medium">Home</a></li>
+                </ul>
+                <ul><a href="../story.html" class="hover:text-indigo-600 font-medium">Story</a></ul>
+                <ul><a href="../events.html" class="hover:text-indigo-600 font-medium">Events</a></ul>
+                <ul><a href="../resources.html" class="hover:text-indigo-600 font-medium">Resources</a></ul>
+                <ul><a href="../disclaimer.html" class="hover:text-indigo-600 font-medium">Disclaimer</a></ul>
+                <ul><a href="../articles.html" class="hover:text-indigo-600 font-medium">Articles</a></ul>
+                <ul><a href="../about-us.html" class="hover:text-indigo-600 font-medium">About Us</a></ul>
+                <ul><a href="../privacy-policy.html" class="hover:text-indigo-600 font-medium">Privacy Policy</a></ul>
+                <ul>
+                    <li><a href="../contacts.html" class="hover:text-indigo-600 font-medium">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+    <article class="max-w-4xl mx-auto px-6 py-12">
+        <!-- Article Header -->
+        <header class="mb-12">
+	    <span class="text-indigo-600 font-medium">November 08, 2026 • Failures</span>
+            <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">
+                Liberty Ships: The Brittle Fracture Crisis That Changed Steel Forever
+            </h1>
+            <p class="text-xl text-gray-400 mt-6 text-justify">
+		During World War II, hundreds of Liberty Ships cracked or broke completely in half — some while still in port. The cause was not enemy action, but brittle fracture of low-toughness steel combined with welding. This disaster taught the world critical lessons about toughness, temperature, and fracture mechanics.
+            </p>
+            <div class="flex items-center gap-4 mt-8 text-sm text-white">
+                <span>By Arush</span>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <span>8 min read</span>
+            </div>
+
+<!-- Readers Count with Blinking Eye -->
+		<div class="flex justify-end mb-6">
+    		<span id="eye" class="text-xl animate-blink">👁️  </span>
+    		<span id="count" style="font-weight:700; color:#0d6efd; font-size:1.3rem;">—</span>
+		</div>
+
+    		<style>
+        		@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        		.animate-blink { animation: blink 1.5s infinite; }
+    		</style>
+    <!-- Count Script -->
+
+<script>
+    const COUNTER_KEY = 'materialinsider_Liberty-Ships-Brittle-Fracturess'; // Unique for this page
+
+    let timer = null;
+    let originalApiValue = 0;
+    const countEl = document.getElementById('count');
+
+    async function initCounter() {
+        try {
+            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/Liberty-Ships-Brittle-Fracturess");
+            if (res.ok) {
+                const data = await res.json();
+                originalApiValue = data.value || 0;
+                countEl.textContent = Math.max(0, originalApiValue - 1);
+            } else {
+                countEl.textContent = "0";
+            }
+        } catch (e) {
+            countEl.textContent = "0";
+        }
+
+        timer = setTimeout(() => {
+            countEl.textContent = originalApiValue;
+        }, 30000);
+    }
+
+    window.addEventListener('load', initCounter);
+
+    window.addEventListener('beforeunload', () => {
+        if (timer) clearTimeout(timer);
+    });
+</script>
+
+        </header>
+
+
+
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none text-gray-400 align-justify">
+
+            <p style="margin-bottom:35px; margin-top:15px;font-size:18px;text-align: justify;">On 16 January 1943 the newly completed T2 tanker SS <em>Schenectady</em> lay quietly at the outfitting dock in Portland, Oregon. Air temperature was about –3 °C and the harbor water roughly 4 °C. Conditions were still. Without warning, a report heard for at least a mile accompanied the near-instantaneous fracture of the deck, side shell, longitudinal bulkheads and bottom girders just aft of the bridge. Only the bottom plating held. The vessel jack-knifed; the mid-body rose clear of the water while the bow and stern settled into the river silt.</p>
+
+            <p style="margin-bottom:35px; margin-top:15px;font-size:18px;text-align: justify;">The ship was repaired and later served, but the event became the most dramatic public illustration of a problem already appearing across the emergency-built fleet.</p>
+
+        <img src="../images/261108-liberty-ships-the-brittle-fracture/liberty-ships1.jpg"
+             alt="SS Schenectady broken in half in cold harbor - brittle fracture"
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>What Were Liberty Ships?</strong></h2>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Facing catastrophic merchant-tonnage losses to U-boats, the United States launched an emergency shipbuilding program that produced roughly 2,710 Liberty (EC2-S-C1) cargo ships, plus related T2 tankers, between 1941 and 1945. The design was deliberately simple and standardized so it could be mass-produced by relatively inexperienced yards using assembly-line methods. Average construction time fell to weeks.</p>
+
+            <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">A decisive process change was the extensive use of welding in place of riveting. Welding was faster and required less steel, but it produced a continuous, monolithic hull. Riveted seams had acted as natural crack-arrestors; a crack that reached a plate edge stopped. In a fully welded hull a crack, once started, could run uninterrupted for tens of meters.</p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>The Materials Problem</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">The steels available under wartime constraints were ordinary low-carbon mild steels whose chemistry and processing left them with high ductile-to-brittle transition temperatures (DBTT). Typical features included relatively low manganese, elevated sulfur and phosphorus, and coarse ferrite–pearlite microstructures containing elongated MnS and oxide inclusions.</p>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Charpy data later extracted from fractured ships showed 15 ft-lb (≈20 J) transition temperatures commonly in the range –4 °C to +66 °C, with averages near or above 0–25 °C — well within North Atlantic and winter harbor service temperatures. Manganese improves toughness by refining microstructure and scavenging sulfur; sulfur and phosphorus promote intergranular weakness and raise the transition temperature. The resulting plates were notch-sensitive: small geometric discontinuities or weld defects could initiate cleavage at stresses far below the macroscopic yield strength once the temperature dropped below the DBTT.</p>
+
+        <img src="../images/261108-liberty-ships-the-brittle-fracture/liberty-ships2.jpg"
+             alt="Riveted vs welded hull crack propagation comparison"
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Why Welding Made It Worse</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Welding introduced two additional aggravating factors. First, residual tensile stresses locked into the structure after cooling acted as a constant preload. Second, weld toes, incomplete fusion, and design details (especially the sharp square corners of hatch openings) provided ready-made crack starters of high local stress concentration. Once a cleavage crack formed, the continuous welded path allowed it to propagate at near-sonic speeds with little plastic work.</p>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Contemporary investigations initially blamed “poor workmanship.” Later metallurgical work, including that of Constance Tipper at Cambridge, showed that the cracks frequently initiated in the base plate itself and that the fundamental limitation was the steel’s low toughness at service temperature rather than weld metal alone.</p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Atomic and Microstructural Explanation</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Ferritic steels are body-centered cubic (BCC). Plasticity occurs by the motion of dislocations, predominantly screw dislocations whose cores are non-planar and must overcome a substantial Peierls barrier. At elevated temperature, thermal activation assists kink-pair nucleation and the dislocations move relatively freely; the material can blunt a crack tip by extensive plastic flow (ductile rupture).</p>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">As temperature falls, the thermal energy available for kink-pair formation decreases rapidly. The critical stress for dislocation glide rises sharply while the stress required for cleavage on {100} planes remains comparatively temperature-insensitive. When the local stress intensity ahead of a notch exceeds the cleavage stress before widespread plasticity can occur, the crack advances by successive bond rupture on cleavage planes, producing the classic shiny, crystalline fracture surface with little macroscopic ductility.</p>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Inclusions and grain-boundary carbides act as preferred cleavage nucleation sites. Coarse ferrite grains increase the effective cleavage facet size and lower the toughness. The DBTT is therefore a kinetic competition between thermally activated dislocation motion and athermal cleavage; composition, grain size, and inclusion morphology shift the temperature at which the competition is lost.</p>
+
+        <img src="../images/261108-liberty-ships-the-brittle-fracture/liberty-ships3.jpg"
+             alt="BCC iron lattice showing dislocation mobility vs cleavage at low temperature"
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>The Scale of the Problem</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">Of the roughly 4,700 emergency-program merchant vessels examined after the war, nearly 1,000 sustained fractures of structural significance. Approximately 1,500 brittle cracks of various lengths were recorded; on the order of 20 vessels broke completely in two or were abandoned as constructive total losses. Most serious incidents occurred in cold weather. Later design modifications (crack-arrestor straps, rounded hatch corners, improved steel selection) reduced the rate dramatically.</p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Key Lessons Learned</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">The crisis catalyzed the modern understanding of fracture mechanics. Systematic Charpy V-notch testing became a standard acceptance criterion for structural steels. Steelmakers raised manganese, lowered sulfur and phosphorus, controlled grain size, and introduced normalized or controlled-rolled microstructures that depressed the DBTT well below service temperatures. Design codes began to require crack-arrest considerations and to limit geometric stress concentrators.</p>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">The work of Tipper, the U.S. investigation boards, and subsequent researchers established that toughness is a temperature- and rate-dependent material property that must be measured and specified for fracture-critical applications.</p>
+
+        <img src="../images/261108-liberty-ships-the-brittle-fracture/liberty-ships4.jpg"
+             alt="Charpy impact energy vs temperature curve wartime vs modern ship steel"
+             class="w-full rounded-2xl shadow-md mb-12">
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Key Takeaways</strong></h2>
+
+		<ul class="list-disc pl-10 space-y-2 text-gray-400">
+    		<li>BCC ferrite exhibits a sharp DBTT because dislocation mobility is thermally activated while cleavage is not.</li>
+    		<li>Low-Mn, high-S/P steels of the early 1940s had transition temperatures that overlapped ordinary winter service conditions.</li>
+    		<li>Continuous welding removed natural crack-arrest features and introduced residual stresses and notches, allowing brittle cracks to run to catastrophic length.</li>
+    		<li>The failures drove the adoption of Charpy testing, cleaner steel chemistry, and fracture-mechanics thinking that still underpins ship, pressure-vessel, and structural-steel specifications today.</li>
+		</ul>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>Final Thoughts</strong></h2>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;">The Liberty Ships did not fail because the steel was “weak” in the ordinary tensile sense. They failed because the combination of chemistry, microstructure, temperature, residual stress, and continuous geometry pushed the material across the ductile-to-brittle transition. Strength calculations alone were never enough. Toughness, temperature dependence, and the ability to stop a running crack decide whether a structure survives.</p>
+
+	    <h2 style="margin-bottom:15px; margin-top:35px;font-size:22px;"><strong>References</strong></h2>
+
+		<ul class="list-none pl-0 space-y-2 text-gray-400">
+    		<li>1. Harris, M.D., Grogg, W.J., Akoma, A., Hayes, B.J., Reidy, R.F., Imhoff, E.F. & Collins, P.C. (2015). Revisiting (Some of) the Lasting Impacts of the Liberty Ships via a Metallurgical Analysis of Rivets from the SS “John W. Brown”. <em>JOM</em>, 67, 2965–2975.</li>
+    		<li>2. Sumpter, J.D.G. & Kent, J.S. (2004). Prediction of ship brittle fracture casualty rates by a probabilistic method. <em>Marine Structures</em>, 17(8), 575–589.</li>
+    		<li>3. Sumpter, J.D.G. & Kent, J.S. (2006). Fracture toughness of grade D ship steel. <em>Engineering Fracture Mechanics</em>, 73(10), 1396–1413.</li>
+    		<li>4. Knott, J. (2015). Brittle fracture in structural steels: perspectives at different size-scales. <em>Philosophical Transactions of the Royal Society A</em>, 373(2038), 20140126.</li>
+		</ul>
+
+	    <p style="margin-bottom:15px; margin-top:15px;font-size:18px;text-align: justify;"> </p>
+
+        <img src="../images/261108-liberty-ships-the-brittle-fracture/liberty-ships5.jpg"
+             alt="Liberty ship steel microstructure comparison wartime vs modern"
+             class="w-full rounded-2xl shadow-md mb-12">
+
+        </div>
+
+
+
+    <!-- Articles Grid -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+<!-- Article  -->
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Technology" data-date="2026-11-01">
+                <img src="gif/graphene-and-2d-materials.gif" 
+                     alt="graphene-and-2d-materials" 
+                     class="w-full h-52 object-cover article-image" loading="lazy">
+                <div class="p-6">
+                    <div class="flex justify-between text-xs text-gray-300 mb-3">
+                        <span>November 01, 2026</span>
+                        <span class="bg-green-500 text-indigo-900 px-3 py-1 rounded-full">Technology</span>
+                    </div>
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
+                        Graphene and 2D Materials: Ultra-Fast Aluminium-Ion Batteries and Electrically Switchable Magnetism
+                    </h3>
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
+                       How graphene enables ultra-fast charging Al-ion cells and voltage-controlled magnetism in multilayer stacks. Atomic-level insights into intercalation, layer sliding, and practical advances for batteries and spintronics.
+                    </p>
+                    <a href="articles/261101-graphene-and-2d-materials.html" 
+                       class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2">
+                        Read Full Article →
+                    </a>
+                </div>
+            </div>
+
+<!-- Article  -->
+            <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Technology" data-date="2026-10-18">
+                <img src="gif/cold-gas-thrusters.gif" 
+                     alt="cold-gas-thrusters" 
+                     class="w-full h-52 object-cover article-image" loading="lazy">
+                <div class="p-6">
+                    <div class="flex justify-between text-xs text-gray-300 mb-3">
+                        <span>October 18, 2026</span>
+                        <span class="bg-green-500 text-indigo-900 px-3 py-1 rounded-full">Technology</span>
+                    </div>
+                    <h3 class="font-bold text-xl leading-tight mb-3 article-title">
+                        Cold Gas Thrusters: How Tesla’s Roadster Uses Compressed Air Instead of Fire
+                    </h3>
+                    <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
+                       Cold gas thrusters use compressed inert gas to create thrust without combustion. See how Tesla demonstrated this technology on the next-generation Roadster and what happens at the molecular level.
+                    </p>
+                    <a href="articles/261018-cold-gas-thrusters.html" 
+                       class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2">
+                        Read Full Article →
+                    </a>
+                </div>
+            </div>
+    </section>
+
+
+<!-- Share Buttons -->
+        <div class="mt-16 border-t border-gray-200 pt-8">
+            <p class="font-medium mb-4">Share this article:</p>
+            <div class="flex gap-4">
+
+		<div class="grid grid-cols-3 md:flex md:justify-center gap-3">
+                <button onclick="window.open('https://x.com/intent/tweet?url=https://materialinsider.com/articles/261108-liberty-ships-the-brittle-fracture.html','_blank')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">X</button>
+
+                <button onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://materialinsider.com/articles/261108-liberty-ships-the-brittle-fracture.html','_blank')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">LinkedIn</button>
+
+                <button onclick="window.open('https://wa.me/?text=Liberty%20Ships%20Brittle%20Fracture%20Crisis%20-%20Check%20this%20out:%20https://materialinsider.com/articles/261108-liberty-ships-the-brittle-fracture.html','_blank')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">WhatsApp</button>
+
+                <button onclick="window.open('mailto:?subject=Liberty%20Ships%20Brittle%20Fracture%20Crisis&body=Check%20this%20interesting%20article%3A%20https://materialinsider.com/articles/261108-liberty-ships-the-brittle-fracture.html','_blank')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">E-Mail</button>
+
+                <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://materialinsider.com/articles/261108-liberty-ships-the-brittle-fracture.html','_blank')" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">FaceBook</button>
+
+                <button onclick="copyArticleLink()" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl">
+    		<span id="copy-text">Direct Link</span>
+		</button>
+
+		<script>
+    		function copyArticleLink() {
+        		const url = "https://materialinsider.com/articles/261108-liberty-ships-the-brittle-fracture.html";
+
+        		navigator.clipboard.writeText(url).then(() => {
+            			const copyText = document.getElementById('copy-text');
+            			const originalText = copyText.textContent;
+
+            			copyText.textContent = "✅ Copied!";
+
+            			setTimeout(() => {
+                			copyText.textContent = originalText;
+            			}, 2000);
+        		});
+    			}
+		</script>
+		</div>
+            </div>
+        </div>
+    </article>
+
+
+<!-- Footer -->
+    <footer class="bg-black text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <i class="fa-solid fa-atom text-4xl text-indigo-500"></i>
+                <span class="text-3xl font-bold text-white">MATERIALS insider</span>
+            </div>
+	    <p class="mb-4">Educational platform for Materials Science • Made for curious minds</p>
+            <p class="text-sm">© 2026 MATERIALS insider. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isOpen = false;
+
+            hamburger.addEventListener('click', function() {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+
+
+<!-- ========== AETHER guide character (bottom-right) ========== -->
+<script>
+(function () {
+  if (window.__aetherLoaded) return;
+  window.__aetherLoaded = true;
+
+  /* ---------- settings ---------- */
+  var REMEMBER = false;   // true = if a reader sends him away, the black hole stays on the next article (same tab session)
+  var SHOW_MS = 3000;     // every speech bubble hides itself after this many milliseconds
+  var HELLO = "<b>Hi, I'm AETHER!</b> Your guide to the hidden elements of reality.";
+  var RETURN_LINES = [    // one is picked at random when he comes back
+    "<b>You came back…</b> I missed you.",
+    "<b>I knew you would.</b> Thank you for coming back.",
+    "<b>It was so dark in there.</b> I'm glad you're here."
+  ];
+
+  /* ---------- styles ---------- */
+  var CSS = '\
+#aeth-root,#aeth-root *{box-sizing:border-box}\
+#aeth-root{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:99999;display:flex;flex-direction:column;align-items:flex-end;gap:6px;font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#e8f1ff;text-align:left}\
+#aeth-root .aeth-bubble{position:relative;max-width:230px;padding:11px 14px;background:#121a38;border:1px solid #4de3ff55;border-radius:14px 14px 4px 14px;box-shadow:0 8px 30px #0008,0 0 18px #4de3ff22;transform-origin:bottom right;transition:opacity .3s,transform .3s;pointer-events:none}\
+#aeth-root .aeth-bubble.aeth-hide{opacity:0;transform:scale(.85)}\
+#aeth-root .aeth-bubble b{color:#4de3ff}\
+\
+#aeth-root .aeth-stage{position:relative;width:120px;height:120px}\
+#aeth-root .aeth-fx{position:absolute;left:50%;top:50%;width:360px;height:360px;transform:translate(-50%,-50%);pointer-events:none;z-index:3}\
+#aeth-root .aeth-body{position:absolute;inset:0;z-index:2;cursor:pointer;touch-action:manipulation;user-select:none;-webkit-tap-highlight-color:transparent;outline-offset:4px;border-radius:50%}\
+#aeth-root .aeth-body.aeth-gone{display:none}\
+#aeth-root .aeth-char{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 14px #4de3ff66);animation:aeth-enter 1s cubic-bezier(.2,.9,.3,1.1) 1.3s backwards,aeth-float 4s ease-in-out 2.3s infinite}\
+#aeth-root .aeth-char.aeth-noenter{animation:aeth-float 4s ease-in-out infinite}\
+#aeth-root .aeth-body:hover .aeth-char{filter:drop-shadow(0 0 20px #8b6bffaa)}\
+@keyframes aeth-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}\
+@keyframes aeth-enter{0%{opacity:0;transform:scale(.15);filter:blur(14px) brightness(3) drop-shadow(0 0 14px #4de3ff66)}55%{opacity:1;transform:scale(1.12);filter:blur(2px) brightness(1.6) drop-shadow(0 0 30px #4de3ffcc)}100%{opacity:1;transform:scale(1);filter:blur(0) brightness(1) drop-shadow(0 0 14px #4de3ff66)}}\
+\
+/* exit: he resists, then is yanked in, stretched and spun */\
+#aeth-root .aeth-body.aeth-sucking{animation:aeth-suck 1.1s forwards;pointer-events:none}\
+@keyframes aeth-suck{\
+0%{transform:translate(0,0) scale(1) rotate(0);opacity:1;filter:brightness(1);animation-timing-function:ease-out}\
+14%{transform:translate(6px,-3px) scale(1.07,.95) rotate(-6deg);animation-timing-function:ease-in-out}\
+24%{transform:translate(-5px,2px) scale(1.05,.97) rotate(5deg);animation-timing-function:cubic-bezier(.7,0,1,.6)}\
+55%{transform:translate(0,0) scale(1.4,.42) rotate(380deg);opacity:1;filter:brightness(1.6) blur(.6px);animation-timing-function:cubic-bezier(.85,0,1,.5)}\
+82%{transform:scale(.55,.1) rotate(1150deg);opacity:1;filter:brightness(2.2) blur(2px)}\
+100%{transform:scale(0,0) rotate(1900deg);opacity:0;filter:brightness(.2) blur(6px)}}\
+\
+/* return: he drifts out of the dark, glowing and happy */\
+#aeth-root .aeth-body.aeth-reunion{animation:aeth-reunion 2s both;pointer-events:none}\
+@keyframes aeth-reunion{\
+0%{transform:translateY(8px) scale(0);opacity:0;filter:brightness(2.2) blur(6px);animation-timing-function:ease-out}\
+22%{transform:translateY(-4px) scale(.45);opacity:1;filter:brightness(1.8) blur(2px);animation-timing-function:ease-in-out}\
+48%{transform:translateY(-16px) scale(.85) rotate(-4deg);filter:brightness(1.3) blur(0)}\
+62%{transform:translateY(-12px) scale(.9) rotate(4deg)}\
+78%{transform:translateY(2px) scale(1.06,.94) rotate(-2deg)}\
+90%{transform:translateY(-4px) scale(.98,1.04) rotate(1deg)}\
+100%{transform:translateY(0) scale(1) rotate(0);opacity:1;filter:brightness(1)}}\
+#aeth-root .aeth-happy{display:none}\
+#aeth-root .aeth-joy .aeth-eyes{display:none}\
+#aeth-root .aeth-joy .aeth-happy{display:inline}\
+#aeth-root .aeth-blush{transition:opacity .5s}\
+#aeth-root .aeth-joy .aeth-blush{opacity:.95}\
+#aeth-root .aeth-joy .aeth-mouth{transform-box:fill-box;transform-origin:50% 0;transform:scale(1.2,1.7)}\
+\
+/* black hole: small core, thin glowing ring */\
+#aeth-root .aeth-hole{position:absolute;inset:14%;z-index:1;cursor:pointer;border-radius:50%;outline-offset:6px;-webkit-tap-highlight-color:transparent}\
+#aeth-root .aeth-hole.aeth-off{display:none}\
+#aeth-root .aeth-hole.aeth-open{animation:aeth-open .4s cubic-bezier(.2,.8,.3,1) backwards}\
+#aeth-root .aeth-hole.aeth-feed{animation:aeth-feed .22s ease-in-out infinite alternate}\
+#aeth-root .aeth-hole.aeth-feed .aeth-disk{animation-duration:.7s}\
+#aeth-root .aeth-hole.aeth-feed .aeth-disk2{animation-duration:1.6s}\
+#aeth-root .aeth-hole.aeth-gulp{animation:aeth-gulp .35s ease-out}\
+#aeth-root .aeth-hole.aeth-breathe{animation:aeth-breathe .6s ease-in-out forwards}\
+#aeth-root .aeth-hole.aeth-fade{animation:aeth-fade 1.4s ease-in-out forwards;pointer-events:none}\
+#aeth-root .aeth-hole.aeth-breathe .aeth-disk,#aeth-root .aeth-hole.aeth-fade .aeth-disk{filter:brightness(1.5)}\
+#aeth-root .aeth-disk,#aeth-root .aeth-disk2{position:absolute;border-radius:50%;background:conic-gradient(#ffb347,#ff6b6b 22%,#8b6bff 45%,#4de3ff 62%,#0000 75%,#ffb347);-webkit-mask:radial-gradient(circle closest-side,transparent 58%,#000 62%,#000 72%,transparent 84%);mask:radial-gradient(circle closest-side,transparent 58%,#000 62%,#000 72%,transparent 84%)}\
+#aeth-root .aeth-disk{inset:0;animation:aeth-spin 2.4s linear infinite}\
+#aeth-root .aeth-disk2{inset:-4%;opacity:.4;filter:blur(3px);animation:aeth-spin 5s linear infinite reverse}\
+#aeth-root .aeth-core{position:absolute;inset:22%;border-radius:50%;background:#000;box-shadow:0 0 10px 3px #000,0 0 0 1px #ffd1664d,0 0 16px 4px #8b6bff55}\
+#aeth-root .aeth-hole:hover .aeth-core{box-shadow:0 0 10px 3px #000,0 0 0 1px #ffd166aa,0 0 20px 6px #8b6bff99}\
+@keyframes aeth-spin{to{transform:rotate(360deg)}}\
+@keyframes aeth-open{0%{transform:scale(0) rotate(-180deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}\
+@keyframes aeth-feed{0%{transform:scale(1)}100%{transform:scale(1.08)}}\
+@keyframes aeth-gulp{0%{transform:scale(1.3)}100%{transform:scale(1)}}\
+@keyframes aeth-breathe{0%{transform:scale(1)}100%{transform:scale(1.12)}}\
+@keyframes aeth-fade{0%{transform:scale(1.12);opacity:1}100%{transform:scale(0);opacity:0}}\
+\
+/* reading styles: book or magnifying glass, swapped at random */\
+#aeth-root .aeth-prop{opacity:0;transform:translateY(12px) scale(.6);transform-box:fill-box;transform-origin:50% 100%;transition:opacity .4s,transform .5s cubic-bezier(.2,.9,.3,1.3);pointer-events:none}\
+#aeth-root .aeth-r-book .aeth-book,#aeth-root .aeth-r-lens .aeth-lens{opacity:1;transform:none}\
+#aeth-root .aeth-page{transform-box:fill-box;transform-origin:0% 50%}\
+#aeth-root .aeth-r-book .aeth-page{animation:aeth-flip 3.2s ease-in-out infinite}\
+#aeth-root .aeth-r-book .aeth-pl,#aeth-root .aeth-r-book .aeth-pr{animation:aeth-scan 1.8s linear infinite}\
+#aeth-root .aeth-r-lens .aeth-sweep{animation:aeth-sweep 4s ease-in-out infinite}\
+@keyframes aeth-scan{0%{transform:translate(-2.6px,2.5px)}40%{transform:translate(2.6px,2.5px)}45%{transform:translate(-2.6px,4px)}85%{transform:translate(2.6px,4px)}100%{transform:translate(-2.6px,2.5px)}}\
+@keyframes aeth-flip{0%{transform:scaleX(1);opacity:0}8%{transform:scaleX(1);opacity:1}35%{transform:scaleX(1)}52%{transform:scaleX(0)}68%{transform:scaleX(-1);opacity:1}78%{transform:scaleX(-1);opacity:0}100%{transform:scaleX(-1);opacity:0}}\
+@keyframes aeth-sweep{0%,10%{transform:translate(0,0)}40%,55%{transform:translate(-22px,1px)}90%,100%{transform:translate(0,0)}}\
+\
+/* more idle styles: cap, sleep, shades, kisses, rocket */\
+#aeth-root .aeth-wink,#aeth-root .aeth-lips,#aeth-root .aeth-moan,#aeth-root .aeth-sleepeyes{display:none}\
+#aeth-root .aeth-prop.aeth-shades{transform:translateY(-30px)}\
+#aeth-root .aeth-r-shades .aeth-shades{opacity:1;transform:none}\
+#aeth-root .aeth-r-shades .aeth-mouth{transform-box:fill-box;transform-origin:50% 50%;transform:rotate(-8deg)}\
+#aeth-root .aeth-r-shades .aeth-glint{animation:aeth-glint 2.6s ease-in-out infinite}\
+#aeth-root .aeth-r-rocket .aeth-rocket{opacity:1;transform:none}\
+\
+#aeth-root .aeth-hat-b,#aeth-root .aeth-hat-f{opacity:0;transform-box:fill-box;transform-origin:50% 60%}\
+#aeth-root .aeth-r-hat .aeth-hat-b{animation:aeth-hatb 2.4s ease-in-out forwards}\
+#aeth-root .aeth-r-hat .aeth-hat-f{animation:aeth-hatf 2.4s ease-in-out forwards}\
+#aeth-root .aeth-r-hat .aeth-hat-f .aeth-hat-hand{animation:aeth-handout .4s 1.7s forwards}\
+#aeth-root .aeth-end.aeth-r-hat .aeth-hat-f{animation:aeth-hatout .45s ease-in forwards}\
+\
+#aeth-root .aeth-r-sleep .aeth-eyes,#aeth-root .aeth-r-sleep .aeth-mouth{display:none}\
+#aeth-root .aeth-r-sleep .aeth-sleepeyes{display:inline}\
+#aeth-root .aeth-r-sleep .aeth-moan{display:inline;transform-box:fill-box;transform-origin:50% 50%;animation:aeth-moan 2.4s ease-in-out infinite}\
+#aeth-root .aeth-zz text{opacity:0;transform-box:fill-box;transform-origin:50% 50%}\
+#aeth-root .aeth-r-sleep .aeth-z1{animation:aeth-zfloat 2.4s ease-out infinite}\
+#aeth-root .aeth-r-sleep .aeth-z2{animation:aeth-zfloat 2.4s ease-out .8s infinite}\
+#aeth-root .aeth-r-sleep .aeth-z3{animation:aeth-zfloat 2.4s ease-out 1.6s infinite}\
+\
+#aeth-root .aeth-r-kiss .aeth-wink{display:inline}\
+#aeth-root .aeth-r-kiss .aeth-eyes [cx="91"],#aeth-root .aeth-r-kiss .aeth-eyes [cx="93.6"],#aeth-root .aeth-r-kiss .aeth-eyes .aeth-pr,#aeth-root .aeth-r-kiss .aeth-mouth{display:none}\
+#aeth-root .aeth-r-kiss .aeth-lips{display:inline;transform-box:fill-box;transform-origin:50% 50%;animation:aeth-pucker 1.1s ease-out infinite}\
+#aeth-root .aeth-r-kiss .aeth-blush{opacity:.95}\
+#aeth-root .aeth-kheart{opacity:0}\
+#aeth-root .aeth-r-kiss .aeth-kheart{animation:aeth-kiss 1.1s ease-out infinite}\
+#aeth-root .aeth-r-kiss .aeth-kh2{animation-delay:.37s}\
+#aeth-root .aeth-r-kiss .aeth-kh3{animation-delay:.74s}\
+\
+#aeth-root .aeth-rocket .aeth-flame{transform-box:fill-box;transform-origin:0% 50%}\
+#aeth-root .aeth-r-rocket .aeth-flame{animation:aeth-flick .1s ease-in-out infinite alternate}\
+#aeth-root .aeth-r-rocket .aeth-flame2{animation:aeth-flick .13s ease-in-out infinite alternate-reverse}\
+#aeth-root .aeth-r-rocket .aeth-shake{animation:aeth-rumble .09s linear infinite}\
+#aeth-root .aeth-r-rocket .aeth-pl,#aeth-root .aeth-r-rocket .aeth-pr{transform:translate(-2.6px,-.5px)}\
+#aeth-root .aeth-r-rocket .aeth-mouth{transform-box:fill-box;transform-origin:50% 0;transform:scale(1.2,1.7)}\
+#aeth-root .aeth-notrans .aeth-prop{transition:none}\
+#aeth-root .aeth-body.aeth-pop{animation:aeth-pop .8s cubic-bezier(.2,.9,.3,1.3) both}\
+#aeth-root .aeth-sky{position:absolute;left:-12.5%;top:-12.5%;width:125%;height:125%;z-index:0;border-radius:50%;pointer-events:none;opacity:0;transform:scale(.6);transition:opacity .4s,transform .5s cubic-bezier(.2,.9,.3,1.2);box-shadow:0 0 0 1.5px #4de3ff55,0 0 22px #8b6bff44}\
+#aeth-root .aeth-sky.aeth-on{opacity:1;transform:none}\
+\
+@keyframes aeth-glint{0%,60%{transform:translateX(-4px);opacity:0}75%{opacity:1}100%{transform:translateX(10px);opacity:0}}\
+@keyframes aeth-hatb{0%{opacity:1;transform:translate(0,46px) scale(.8)}40%{opacity:1;transform:translate(0,-34px) scale(1) rotate(-8deg)}40.1%,100%{opacity:0;transform:translate(0,-34px) rotate(-8deg)}}\
+@keyframes aeth-hatf{0%,40%{opacity:0;transform:translate(0,-34px) rotate(-8deg)}40.1%{opacity:1}55%{opacity:1;transform:translate(0,-38px) rotate(8deg)}70%{opacity:1;transform:translate(0,2px) scale(1.05,.92) rotate(0)}82%{opacity:1;transform:translate(0,-3px) scale(.98,1.04)}100%{opacity:1;transform:translate(0,0) scale(1) rotate(0)}}\
+@keyframes aeth-hatout{0%{opacity:1;transform:translate(0,0)}100%{opacity:0;transform:translate(0,-26px) rotate(14deg)}}\
+@keyframes aeth-handout{to{opacity:0}}\
+@keyframes aeth-moan{0%,100%{transform:scale(.7,.5)}35%{transform:scale(1.2,1.5)}60%{transform:scale(1,1.1)}}\
+@keyframes aeth-zfloat{0%{opacity:0;transform:translate(0,6px) scale(.6)}20%{opacity:1}100%{opacity:0;transform:translate(14px,-22px) scale(1.2)}}\
+@keyframes aeth-pucker{0%{transform:scale(.7)}25%{transform:scale(1.25)}60%,100%{transform:scale(1)}}\
+@keyframes aeth-kiss{0%{opacity:0;transform:translate(80px,97px) scale(.3)}15%{opacity:1}100%{opacity:0;transform:translate(calc(80px + var(--dx)),calc(97px + var(--dy))) scale(1.7) rotate(-18deg)}}\
+@keyframes aeth-flick{0%{transform:scale(.8,.9)}100%{transform:scale(1.2,1.1)}}\
+@keyframes aeth-rumble{0%{transform:translate(0,0)}33%{transform:translate(.8px,-.7px)}66%{transform:translate(-.8px,.6px)}100%{transform:translate(0,0)}}\
+@keyframes aeth-pop{0%{transform:scale(.2) translate(40px,-20px);opacity:0;filter:brightness(2.5) blur(4px)}60%{transform:scale(1.12);opacity:1;filter:brightness(1.4)}100%{transform:none;opacity:1;filter:brightness(1)}}\
+\
+/* tiny helpers */\
+#aeth-root .aeth-eyes{animation:aeth-blink 5s infinite;transform-box:fill-box;transform-origin:center}\
+@keyframes aeth-blink{0%,94%,100%{transform:scaleY(1)}96%{transform:scaleY(.08)}}\
+#aeth-root .aeth-core-g{animation:aeth-pulse 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}\
+@keyframes aeth-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}\
+#aeth-root .aeth-halo{animation:aeth-halo 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}\
+@keyframes aeth-halo{0%,100%{opacity:.5}50%{opacity:.9}}\
+\
+@media (prefers-reduced-motion:reduce){#aeth-root .aeth-char,#aeth-root .aeth-eyes,#aeth-root .aeth-core-g,#aeth-root .aeth-halo,#aeth-root .aeth-disk,#aeth-root .aeth-disk2{animation:none}#aeth-root .aeth-body.aeth-sucking,#aeth-root .aeth-body.aeth-reunion,#aeth-root .aeth-hole.aeth-open,#aeth-root .aeth-hole.aeth-feed,#aeth-root .aeth-hole.aeth-gulp,#aeth-root .aeth-hole.aeth-breathe,#aeth-root .aeth-hole.aeth-fade{animation-duration:.01s;animation-iteration-count:1}}\
+@media (max-width:480px){#aeth-root{right:calc(10px + env(safe-area-inset-right,0px));bottom:calc(10px + env(safe-area-inset-bottom,0px))}#aeth-root .aeth-stage{width:92px;height:92px}#aeth-root .aeth-bubble{max-width:200px}}\
+@media print{#aeth-root,#aeth-sky{display:none!important}}';
+
+  /* ---------- markup ---------- */
+  var HATART = '\
+<path d="M62,50 L62,64 Q80,72 98,64 L98,50 Z" fill="#2b2f77"/>\
+<path d="M80,30 L118,44 L80,58 L42,44 Z" fill="#3a3fa0" stroke="#1d2055" stroke-width="1.4" stroke-linejoin="round"/>\
+<circle cx="80" cy="44" r="2.4" fill="#ffd166"/>\
+<path d="M80,44 L112,47 L112,64" fill="none" stroke="#ffd166" stroke-width="1.8" stroke-linecap="round"/>\
+<circle cx="112" cy="66" r="2.6" fill="#ffd166"/>\
+<circle class="aeth-hat-hand" cx="119" cy="44" r="4.5" fill="#4de3ff" stroke="#2a3a8f" stroke-width="1.2"/>';
+
+  var SVG = '\
+<svg class="aeth-char" viewBox="0 0 160 160" role="img" aria-label="AETHER">\
+<defs>\
+<radialGradient id="aeth-gbody" cx="38%" cy="32%" r="75%"><stop offset="0%" stop-color="#d9fbff"/><stop offset="35%" stop-color="#4de3ff"/><stop offset="100%" stop-color="#5b3fd6"/></radialGradient>\
+<radialGradient id="aeth-ghalo" cx="50%" cy="50%" r="50%"><stop offset="55%" stop-color="#4de3ff" stop-opacity="0"/><stop offset="80%" stop-color="#4de3ff" stop-opacity=".35"/><stop offset="100%" stop-color="#8b6bff" stop-opacity="0"/></radialGradient>\
+<path id="aeth-orbit" d="M10,80 a70,24 0 1,0 140,0 a70,24 0 1,0 -140,0"/>\
+<linearGradient id="aeth-gshade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2f6b"/><stop offset="1" stop-color="#0b0e24"/></linearGradient>\
+</defs>\
+<circle class="aeth-halo" cx="80" cy="80" r="62" fill="url(#aeth-ghalo)"/>\
+<g class="aeth-hat-b">' + HATART + '</g>\
+<g fill="none" stroke="#4de3ff" stroke-opacity=".55" stroke-width="1.4">\
+<ellipse cx="80" cy="80" rx="70" ry="24"/>\
+<ellipse cx="80" cy="80" rx="70" ry="24" transform="rotate(60 80 80)"/>\
+<ellipse cx="80" cy="80" rx="70" ry="24" transform="rotate(120 80 80)"/>\
+</g>\
+<g>\
+<circle r="4.5" fill="#ffd166"><animateMotion dur="3.6s" repeatCount="indefinite"><mpath href="#aeth-orbit"/></animateMotion></circle>\
+<g transform="rotate(60 80 80)"><circle r="4.5" fill="#ff8fb3"><animateMotion dur="4.4s" repeatCount="indefinite" begin="-1.5s"><mpath href="#aeth-orbit"/></animateMotion></circle></g>\
+<g transform="rotate(120 80 80)"><circle r="4.5" fill="#9dffb0"><animateMotion dur="5.2s" repeatCount="indefinite" begin="-3s"><mpath href="#aeth-orbit"/></animateMotion></circle></g>\
+</g>\
+<g class="aeth-core-g"><circle cx="80" cy="80" r="34" fill="url(#aeth-gbody)"/><ellipse cx="68" cy="62" rx="11" ry="6" fill="#fff" opacity=".45" transform="rotate(-25 68 62)"/></g>\
+<g class="aeth-eyes">\
+<ellipse cx="69" cy="80" rx="8" ry="9.5" fill="#fff"/><ellipse cx="91" cy="80" rx="8" ry="9.5" fill="#fff"/>\
+<circle class="aeth-pl" cx="70" cy="81" r="4.2" fill="#10183a"/><circle class="aeth-pr" cx="92" cy="81" r="4.2" fill="#10183a"/>\
+<circle cx="71.6" cy="78.6" r="1.4" fill="#fff"/><circle cx="93.6" cy="78.6" r="1.4" fill="#fff"/>\
+</g>\
+<g class="aeth-happy" fill="none" stroke="#10183a" stroke-width="3.2" stroke-linecap="round"><path d="M61,83 Q69,72 77,83"/><path d="M83,83 Q91,72 99,83"/></g>\
+<path class="aeth-mouth" d="M72,94 Q80,101 88,94" fill="none" stroke="#10183a" stroke-width="2.4" stroke-linecap="round"/>\
+<ellipse class="aeth-blush" cx="60" cy="92" rx="4.5" ry="2.8" fill="#ff8fb3" opacity=".5"/><ellipse class="aeth-blush" cx="100" cy="92" rx="4.5" ry="2.8" fill="#ff8fb3" opacity=".5"/>\
+<g class="aeth-prop aeth-book">\
+<path d="M47,107 Q65,103 80,108 Q95,103 113,107 L113,127 Q95,123 80,127 Q65,123 47,127 Z" fill="#6b4fe0"/>\
+<path d="M80,106 Q65,101 49,105 L49,125 Q65,121 80,125 Z" fill="#fdf6e3" stroke="#8a5a2b" stroke-width="1.4"/>\
+<path d="M54,110 Q65,107 76,110 M54,114 Q65,111 76,114 M54,118 Q65,115 76,118" fill="none" stroke="#b9a98a" stroke-width="1"/>\
+<path d="M80,106 Q95,101 111,105 L111,125 Q95,121 80,125 Z" fill="#fdf6e3" stroke="#8a5a2b" stroke-width="1.4"/>\
+<path d="M84,110 Q95,107 106,110 M84,114 Q95,111 106,114 M84,118 Q95,115 106,118" fill="none" stroke="#b9a98a" stroke-width="1"/>\
+<path class="aeth-page" d="M80,106 Q95,101 111,105 L111,125 Q95,121 80,125 Z" fill="#f1e6c9" stroke="#8a5a2b" stroke-width="1.4"/>\
+<path d="M80,106 L80,125" stroke="#8a5a2b" stroke-width="2"/>\
+<circle cx="50" cy="122" r="4.5" fill="#4de3ff" stroke="#2a3a8f" stroke-width="1.2"/><circle cx="110" cy="122" r="4.5" fill="#4de3ff" stroke="#2a3a8f" stroke-width="1.2"/>\
+</g>\
+<g class="aeth-prop aeth-lens"><g class="aeth-sweep">\
+<line x1="101.6" y1="90.6" x2="116" y2="105" stroke="#c98a2b" stroke-width="4.5" stroke-linecap="round"/>\
+<circle cx="114" cy="103" r="5" fill="#4de3ff" stroke="#2a3a8f" stroke-width="1.2"/>\
+<circle cx="91" cy="80" r="15" fill="#d2f5ff" fill-opacity=".22"/>\
+<ellipse cx="91" cy="80" rx="11" ry="13" fill="#fff"/><circle cx="91" cy="81" r="5.6" fill="#10183a"/><circle cx="93.6" cy="77.6" r="1.9" fill="#fff"/>\
+<circle cx="91" cy="80" r="15" fill="none" stroke="#ffd166" stroke-width="3"/>\
+<path d="M82,72 Q86,67 92,66" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="2" stroke-linecap="round"/>\
+</g></g>\
+<g class="aeth-hat-f">' + HATART + '</g>\
+<g class="aeth-prop aeth-shades">\
+<line x1="56.5" y1="78" x2="49" y2="73" stroke="#0b0e24" stroke-width="2.4" stroke-linecap="round"/><line x1="103.5" y1="78" x2="111" y2="73" stroke="#0b0e24" stroke-width="2.4" stroke-linecap="round"/>\
+<ellipse cx="68" cy="81" rx="11.5" ry="10" fill="url(#aeth-gshade)" stroke="#c9d3ff" stroke-width="1.4"/><ellipse cx="92" cy="81" rx="11.5" ry="10" fill="url(#aeth-gshade)" stroke="#c9d3ff" stroke-width="1.4"/>\
+<path class="aeth-glint" d="M63,73 L68,73 L61,88 L56,88 Z" fill="#fff" fill-opacity=".35"/><path class="aeth-glint" d="M87,73 L92,73 L85,88 L80,88 Z" fill="#fff" fill-opacity=".35"/>\
+</g>\
+<g class="aeth-sleepfx">\
+<g class="aeth-sleepeyes" fill="none" stroke="#10183a" stroke-width="3" stroke-linecap="round"><path d="M61,81 Q69,87 77,81"/><path d="M83,81 Q91,87 99,81"/></g>\
+<ellipse class="aeth-moan" cx="80" cy="97" rx="4.2" ry="3.2" fill="#10183a"/>\
+<g class="aeth-zz" fill="#cfe9ff" stroke="#5b3fd6" stroke-width=".8" font-family="system-ui,sans-serif" font-weight="700" style="paint-order:stroke"><text class="aeth-z1" x="104" y="52" font-size="14">Z</text><text class="aeth-z2" x="112" y="40" font-size="11">z</text><text class="aeth-z3" x="119" y="30" font-size="8">z</text></g>\
+</g>\
+<g class="aeth-kissfx">\
+<path class="aeth-wink" d="M83,81 Q91,74 99,81" fill="none" stroke="#10183a" stroke-width="3" stroke-linecap="round"/>\
+<g class="aeth-lips"><ellipse cx="80" cy="97" rx="5.5" ry="4" fill="#ff5c8a"/><path d="M75,97 Q80,94 85,97" fill="none" stroke="#c93a63" stroke-width="1.2"/></g>\
+<path class="aeth-kheart aeth-kh1" style="--dx:-55px;--dy:-48px" d="M0,4 C-8,-2 -5,-9 0,-4 C5,-9 8,-2 0,4Z" fill="#ff6b8f"/>\
+<path class="aeth-kheart aeth-kh2" style="--dx:-35px;--dy:-62px" d="M0,4 C-8,-2 -5,-9 0,-4 C5,-9 8,-2 0,4Z" fill="#ff8fb3"/>\
+<path class="aeth-kheart aeth-kh3" style="--dx:-70px;--dy:-30px" d="M0,4 C-8,-2 -5,-9 0,-4 C5,-9 8,-2 0,4Z" fill="#ffb3c8"/>\
+</g>\
+<g class="aeth-prop aeth-rocket"><g class="aeth-shake">\
+<path class="aeth-flame" d="M122,121 Q142,110 160,121 Q142,132 122,121 Z" fill="#ffb347"/>\
+<path class="aeth-flame2" d="M122,121 Q138,115 152,121 Q138,127 122,121 Z" fill="#fff3b0"/>\
+<path d="M104,114 L126,98 L120,121 Z" fill="#ff6b6b"/><path d="M104,128 L126,144 L120,121 Z" fill="#ff6b6b"/>\
+<path d="M14,121 Q30,110 56,110 L118,110 Q126,121 118,132 L56,132 Q30,132 14,121 Z" fill="#e8f1ff" stroke="#8b6bff" stroke-width="1.6"/>\
+<path d="M14,121 Q30,110 50,110 L50,132 Q30,132 14,121 Z" fill="#ff6b6b"/>\
+<rect x="92" y="110" width="8" height="22" fill="#8b6bff" opacity=".7"/>\
+<circle cx="76" cy="121" r="6" fill="#4de3ff" stroke="#5b3fd6" stroke-width="1.6"/><circle cx="74" cy="119" r="1.8" fill="#fff"/>\
+<circle cx="64" cy="111" r="4.5" fill="#4de3ff" stroke="#2a3a8f" stroke-width="1.2"/><circle cx="100" cy="111" r="4.5" fill="#4de3ff" stroke="#2a3a8f" stroke-width="1.2"/>\
+</g></g>\
+</svg>';
+
+  var HTML = '\
+<div class="aeth-bubble aeth-hide" role="status"><div class="aeth-text"></div></div>\
+<div class="aeth-stage">\
+<canvas class="aeth-sky" aria-hidden="true"></canvas>\
+<div class="aeth-hole aeth-off" role="button" tabindex="0" aria-label="Black hole. Activate to bring AETHER back" title="Click to bring AETHER back"><div class="aeth-disk"></div><div class="aeth-disk2"></div><div class="aeth-core"></div></div>\
+<div class="aeth-body" role="button" tabindex="0" aria-label="AETHER, the materials science guide. Activate to send him away" title="Click to send AETHER away">' + SVG + '</div>\
+<canvas class="aeth-fx" aria-hidden="true"></canvas>\
+</div>';
+
+  function init() {
+    var st = document.createElement('style');
+    st.id = 'aeth-style';
+    st.textContent = CSS;
+    document.head.appendChild(st);
+
+    var root = document.createElement('div');
+    root.id = 'aeth-root';
+    root.innerHTML = HTML;
+    document.body.appendChild(root);
+
+    var $ = function (s) { return root.querySelector(s); };
+    var bubble = $('.aeth-bubble'), text = $('.aeth-text'), body = $('.aeth-body'),
+        hole = $('.aeth-hole'), cv = $('.aeth-fx'), svg = $('.aeth-char'),
+        pl = $('.aeth-pl'), pr = $('.aeth-pr');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var state = 'entering', hideTimer = null, fxId = 0;
+
+    function T(fn, ms) { return setTimeout(fn, reduce ? 0 : ms); }
+    function hide() { clearTimeout(hideTimer); bubble.classList.add('aeth-hide'); }
+    function show(html) {
+      text.innerHTML = html;
+      bubble.classList.remove('aeth-hide');
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(hide, SHOW_MS);
+    }
+    function remember(v) { if (REMEMBER) { try { sessionStorage.setItem('aether-gone', v ? '1' : '0'); } catch (e) {} } }
+
+    /* ---------- canvas effects ---------- */
+    var S = 360, ctx = cv.getContext('2d'), dpr = Math.min(window.devicePixelRatio || 1, 2);
+    cv.width = S * dpr; cv.height = S * dpr; ctx.scale(dpr, dpr);
+    var cols = ['#4de3ff', '#8b6bff', '#ffd166', '#ffffff', '#ff8fb3'];
+    var K = {
+      gather: { n: 90, span: 1200, end: 2500, r: function () { return 150 + Math.random() * 30; },  d: 600, rmin: 30, turn: 1.8, tail: .07, ring: 1800 },
+      suck:   { n: 80, span: 850,  end: 1700, r: function () { return 40 + Math.random() * 120; }, d: 450, rmin: 4,  turn: 2.8, tail: .18, gulp: 1250 }
+    };
+    function pos(k, p, u) {
+      var v = u * u, rad = k.rmin + (p.r - k.rmin) * (1 - v), ang = p.a + p.w * v * k.turn;
+      return [S / 2 + Math.cos(ang) * rad, S / 2 + Math.sin(ang) * rad];
+    }
+    function heart(x, y, s) {
+      ctx.beginPath();
+      ctx.moveTo(x, y + s * .35);
+      ctx.bezierCurveTo(x - s, y - s * .3, x - s * .6, y - s * 1.1, x, y - s * .45);
+      ctx.bezierCurveTo(x + s * .6, y - s * 1.1, x + s, y - s * .3, x, y + s * .35);
+      ctx.closePath(); ctx.fill();
+    }
+    function finish(id) { if (id === fxId) { ctx.clearRect(0, 0, S, S); cv.style.display = 'none'; } }
+
+    function runFx(kind) {
+      if (reduce) return;
+      var id = ++fxId, T0 = null;
+      cv.style.display = 'block';
+      if (kind === 'reunion') return runReunion(id);
+      var k = K[kind], ps = [], n;
+      for (n = 0; n < k.n; n++) ps.push({
+        a: Math.random() * 6.283, r: k.r(), d: Math.random() * k.d, c: cols[n % cols.length],
+        z: 1 + Math.random() * 1.7, w: (Math.random() < .5 ? -1 : 1) * (1.2 + Math.random())
+      });
+      function frame(t) {
+        if (id !== fxId) return;
+        if (T0 === null) T0 = t;
+        var e = t - T0;
+        ctx.clearRect(0, 0, S, S);
+        ps.forEach(function (p) {
+          var u = (e - p.d) / k.span;
+          if (u <= 0 || u >= 1) return;
+          var al = Math.min(1, u * 5) * (1 - Math.max(0, (u - .85) / .15));
+          var q = pos(k, p, u), q0 = pos(k, p, Math.max(0, u - k.tail));
+          ctx.globalAlpha = al; ctx.strokeStyle = p.c; ctx.fillStyle = p.c; ctx.lineWidth = p.z * .8;
+          ctx.beginPath(); ctx.moveTo(q0[0], q0[1]); ctx.lineTo(q[0], q[1]); ctx.stroke();
+          ctx.beginPath(); ctx.arc(q[0], q[1], p.z, 0, 6.283); ctx.fill();
+        });
+        if (k.ring && e > k.ring) {
+          var g = (e - k.ring) / 700;
+          if (g < 1) {
+            ctx.globalAlpha = 1 - g; ctx.strokeStyle = '#4de3ff'; ctx.lineWidth = 3 * (1 - g);
+            ctx.beginPath(); ctx.arc(S / 2, S / 2, 36 + g * 90, 0, 6.283); ctx.stroke();
+          }
+        }
+        if (k.gulp && e > k.gulp) {            // a ring snaps shut into the hole
+          var h = (e - k.gulp) / 380;
+          if (h < 1) {
+            ctx.globalAlpha = .9 * (1 - h * .4); ctx.strokeStyle = '#ffb347'; ctx.lineWidth = 2.5 * (1 - h) + .5;
+            ctx.beginPath(); ctx.arc(S / 2, S / 2, 70 * (1 - h * h) + 4, 0, 6.283); ctx.stroke();
+          }
+        }
+        ctx.globalAlpha = 1;
+        if (e < k.end) requestAnimationFrame(frame); else finish(id);
+      }
+      requestAnimationFrame(frame);
+    }
+
+    /* warm golden glow and little hearts floating up */
+    function runReunion(id) {
+      var hs = [], n, T0 = null, END = 3800, hc = ['#ff8fb3', '#ffd166', '#ffb3c8', '#fff0b3'];
+      for (n = 0; n < 16; n++) hs.push({
+        x: S / 2 + (Math.random() - .5) * 50, d: 900 + Math.random() * 1500, life: 1700 + Math.random() * 600,
+        s: 5 + Math.random() * 6, sw: 6 + Math.random() * 10, ph: Math.random() * 6.283,
+        c: hc[n % 4], rise: 80 + Math.random() * 60
+      });
+      function frame(t) {
+        if (id !== fxId) return;
+        if (T0 === null) T0 = t;
+        var e = t - T0;
+        ctx.clearRect(0, 0, S, S);
+        var au = e / 2600;
+        if (au < 1) {
+          var a = .35 * Math.sin(Math.PI * au);
+          var gr = ctx.createRadialGradient(S / 2, S / 2, 10, S / 2, S / 2, 85);
+          gr.addColorStop(0, 'rgba(255,209,102,' + a + ')');
+          gr.addColorStop(.6, 'rgba(255,143,179,' + a * .5 + ')');
+          gr.addColorStop(1, 'rgba(255,143,179,0)');
+          ctx.globalAlpha = 1; ctx.fillStyle = gr; ctx.fillRect(0, 0, S, S);
+        }
+        hs.forEach(function (h) {
+          var u = (e - h.d) / h.life;
+          if (u <= 0 || u >= 1) return;
+          ctx.globalAlpha = Math.min(1, u * 6) * (1 - u * u);
+          ctx.fillStyle = h.c;
+          heart(h.x + Math.sin(h.ph + u * 5) * h.sw, S / 2 - 25 - h.rise * u, h.s * (.6 + .4 * Math.min(1, u * 4)));
+        });
+        ctx.globalAlpha = 1;
+        if (e < END) requestAnimationFrame(frame); else finish(id);
+      }
+      requestAnimationFrame(frame);
+    }
+
+    /* ---------- reading styles: book / magnifying glass, random, periodic ---------- */
+    var readTimer = null, endTimer = null, reading = null, lastStyle = null;
+    var STYLES = ['book', 'lens', 'hat', 'sleep', 'shades', 'kiss'];
+    function rnd(a, b) { return a + Math.random() * (b - a); }
+    function resetPupils() { bases.forEach(function (b) { b[2].setAttribute('cx', b[0]); b[2].setAttribute('cy', b[1]); }); }
+    function schedule() {
+      if (reduce) return;
+      clearTimeout(readTimer);
+      readTimer = setTimeout(startReading, rnd(6000, 11000));
+    }
+    function pickStyle() {
+      if (Math.random() < .12 && lastStyle !== 'rocket') return 'rocket';   // the big one is rare
+      var pool = STYLES.filter(function (s) { return s !== lastStyle; });  // never the same style twice in a row
+      return pool[Math.floor(Math.random() * pool.length)];
+    }
+    function startReading() {
+      if (state !== 'here') { schedule(); return; }
+      var s = pickStyle();
+      lastStyle = s;
+      reading = s;
+      resetPupils();
+      svg.classList.add('aeth-r-' + s);
+      if (s === 'rocket') runSky();
+      readTimer = setTimeout(function () { endReading(); schedule(); }, s === 'rocket' ? 6000 : rnd(5500, 7500));
+    }
+    function endReading() {
+      clearTimeout(readTimer);
+      if (!reading) return;
+      var r = reading; reading = null;
+      if (r === 'rocket') $('.aeth-sky').classList.remove('aeth-on');
+      if (r === 'hat') {                         // the cap hops off before the props disappear
+        svg.classList.add('aeth-end');
+        clearTimeout(endTimer);
+        endTimer = setTimeout(function () { svg.classList.remove('aeth-r-hat', 'aeth-end'); }, 480);
+      } else svg.classList.remove('aeth-r-' + r);
+    }
+
+    /* ---------- rocket ride through the solar system ---------- */
+    function drawPlanet(c, k, x, y, r) {
+      function sph(c1, c2) {
+        var g = c.createRadialGradient(x - r * .35, y - r * .35, r * .1, x, y, r);
+        g.addColorStop(0, c1); g.addColorStop(1, c2);
+        c.fillStyle = g; c.beginPath(); c.arc(x, y, r, 0, 6.283); c.fill();
+      }
+      function clip() { c.save(); c.beginPath(); c.arc(x, y, r, 0, 6.283); c.clip(); }
+      function ell(ex, ey, rx, ry, rot) { c.beginPath(); c.ellipse(ex, ey, rx, ry, rot, 0, 6.283); c.fill(); }
+      function ring(a0, a1) {
+        c.save(); c.translate(x, y); c.rotate(-.35); c.scale(1, .3);
+        c.strokeStyle = 'rgba(230,200,140,.85)'; c.lineWidth = r * .28;
+        c.beginPath(); c.arc(0, 0, r * 1.7, a0, a1); c.stroke(); c.restore();
+      }
+      if (k === 'saturn') { ring(Math.PI, 6.283); sph('#fbe3a6', '#b58b3b'); ring(0, Math.PI); }
+      else if (k === 'earth') {
+        sph('#8fdcff', '#1b4fd6'); clip();
+        c.fillStyle = 'rgba(70,170,90,.9)'; ell(x - r * .25, y - r * .1, r * .35, r * .25, .5); ell(x + r * .3, y + r * .3, r * .25, r * .18, -.4);
+        c.fillStyle = 'rgba(255,255,255,.55)'; ell(x, y - r * .45, r * .6, r * .1, .2); c.restore();
+      }
+      else if (k === 'mars') {
+        sph('#ff9a6b', '#a3321a'); clip();
+        c.fillStyle = 'rgba(120,30,15,.35)'; ell(x + r * .2, y + r * .1, r * .3, r * .2, .3); c.restore();
+      }
+      else if (k === 'jupiter') {
+        sph('#f6dcb0', '#b0743a'); clip();
+        for (var i = -3; i <= 3; i++) { c.fillStyle = (i % 2) ? 'rgba(160,90,45,.45)' : 'rgba(255,235,200,.25)'; c.fillRect(x - r, y + i * r * .26 - r * .09, 2 * r, r * .18); }
+        c.fillStyle = 'rgba(190,70,40,.8)'; ell(x + r * .3, y + r * .28, r * .18, r * .1, 0); c.restore();
+      }
+      else if (k === 'uranus') sph('#dffcff', '#4fbfd0');
+      else { sph('#8fb0ff', '#1f2fa8'); clip(); c.fillStyle = 'rgba(20,30,110,.5)'; ell(x - r * .2, y + r * .15, r * .22, r * .12, 0); c.restore(); }
+    }
+
+    function runSky() {                       // a tiny round "space window" behind him, nothing leaves the corner
+      var sky = $('.aeth-sky'), c = sky.getContext('2d');
+      var S = 150, dp = Math.min(window.devicePixelRatio || 1, 2);
+      sky.width = S * dp; sky.height = S * dp; c.setTransform(dp, 0, 0, dp, 0, 0);
+      sky.classList.add('aeth-on');
+      var stars = [], n;
+      for (n = 0; n < 36; n++) stars.push({ x: Math.random() * S, y: Math.random() * S, l: 6 + Math.random() * 16, v: .04 + Math.random() * .1, a: .35 + Math.random() * .6 });
+      var planets = [
+        { k: 'earth',   ts: 700,  r: 7,  y: .30 }, { k: 'mars',    ts: 1400, r: 5,  y: .66 },
+        { k: 'jupiter', ts: 2100, r: 15, y: .30 }, { k: 'saturn',  ts: 2900, r: 11, y: .64 },
+        { k: 'uranus',  ts: 3700, r: 8,  y: .36 }, { k: 'neptune', ts: 4400, r: 8,  y: .62 }
+      ];
+      var T0 = null, last = 0, END = 6400;
+      function frame(t) {
+        if (T0 === null) { T0 = t; last = t; }
+        var e = t - T0, dt = t - last; last = t;
+        var sf = e < 500 ? 0 : e < 1100 ? (e - 500) / 600 : e < 5500 ? 1 : Math.max(.3, 1 - (e - 5500) / 900);
+        var g = c.createRadialGradient(S / 2, S / 2, 10, S / 2, S / 2, S / 2);
+        g.addColorStop(0, '#141a4a'); g.addColorStop(1, '#05071a');
+        c.globalAlpha = 1; c.fillStyle = g; c.fillRect(0, 0, S, S);
+        c.strokeStyle = '#dff6ff'; c.lineWidth = 1;
+        stars.forEach(function (s) {
+          s.x += s.v * dt * sf;
+          if (s.x > S + 20) { s.x = -20; s.y = Math.random() * S; }
+          c.globalAlpha = s.a;
+          c.beginPath(); c.moveTo(s.x - s.l * Math.max(.2, sf), s.y); c.lineTo(s.x, s.y); c.stroke();
+        });
+        c.globalAlpha = 1;
+        planets.forEach(function (p) {
+          if (e < p.ts) return;
+          var u = (e - p.ts) / 1700;
+          if (u > 1) return;
+          drawPlanet(c, p.k, -p.r * 2 + u * (S + 4 * p.r), p.y * S, p.r);
+        });
+        if (e < END) requestAnimationFrame(frame); else c.clearRect(0, 0, S, S);
+      }
+      requestAnimationFrame(frame);
+    }
+
+    /* ---------- exit: yanked into the black hole ---------- */
+    function exit() {
+      if (state !== 'here') return;
+      state = 'exiting';
+      endReading();
+      hide();
+      remember(true);
+      hole.className = 'aeth-hole aeth-open';
+      runFx('suck');
+      T(function () {
+        hole.className = 'aeth-hole aeth-feed';
+        body.classList.add('aeth-sucking');
+      }, 400);
+      T(function () {
+        body.classList.remove('aeth-sucking');
+        body.classList.add('aeth-gone');
+        hole.className = 'aeth-hole aeth-gulp';
+        state = 'hole';
+      }, 1500);
+      T(function () { if (state === 'hole') hole.className = 'aeth-hole'; }, 1850);
+    }
+
+    /* ---------- return: a gentle, emotional reunion ---------- */
+    function back() {
+      if (state !== 'hole') return;
+      state = 'returning';
+      remember(false);
+      hole.className = 'aeth-hole aeth-breathe';
+      T(function () {
+        runFx('reunion');
+        body.classList.remove('aeth-gone');
+        body.classList.add('aeth-reunion');
+        svg.classList.add('aeth-joy');
+      }, 500);
+      T(function () { hole.className = 'aeth-hole aeth-fade'; }, 800);
+      T(function () {
+        hole.className = 'aeth-hole aeth-off';
+        body.classList.remove('aeth-reunion');
+        state = 'here';
+        show(RETURN_LINES[Math.floor(Math.random() * RETURN_LINES.length)]);
+        schedule();
+      }, 2500);
+      T(function () { svg.classList.remove('aeth-joy'); }, 3600);
+    }
+
+    body.addEventListener('click', exit);
+    hole.addEventListener('click', back);
+    [body, hole].forEach(function (el) {
+      el.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
+      });
+    });
+
+    /* ---------- eyes follow the pointer ---------- */
+    var bases = [[70, 81, pl], [92, 81, pr]];
+    window.addEventListener('pointermove', function (e) {
+      if (state === 'hole' || reading === 'book' || reading === 'rocket') return;
+      var r = svg.getBoundingClientRect();
+      var dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+      var d = Math.hypot(dx, dy) || 1, m = Math.min(3.2, d / 60);
+      bases.forEach(function (b) { b[2].setAttribute('cx', b[0] + dx / d * m); b[2].setAttribute('cy', b[1] + dy / d * m); });
+    });
+
+    /* ---------- start ---------- */
+    var gone = false;
+    if (REMEMBER) { try { gone = sessionStorage.getItem('aether-gone') === '1'; } catch (e) {} }
+    if (gone) {
+      svg.classList.add('aeth-noenter');
+      body.classList.add('aeth-gone');
+      hole.className = 'aeth-hole aeth-open';
+      cv.style.display = 'none';
+      state = 'hole';
+    } else {
+      runFx('gather');
+      T(function () { state = 'here'; show(HELLO); schedule(); }, 2700);
+    }
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+</body>
+</html>
