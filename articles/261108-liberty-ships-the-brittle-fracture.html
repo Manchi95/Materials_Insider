@@ -246,7 +246,7 @@
     <!-- Count Script -->
 
 <script>
-    const COUNTER_KEY = 'materialinsider_Liberty-Ships-Brittle-Fracturess'; // Unique for this page
+    const COUNTER_KEY = 'materialinsider_Liberty-Ships-Brittle-Fracture'; // Unique for this page
 
     let timer = null;
     let originalApiValue = 0;
@@ -254,7 +254,7 @@
 
     async function initCounter() {
         try {
-            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/Liberty-Ships-Brittle-Fracturess");
+            const res = await fetch("https://countapi.mileshilliard.com/api/v1/hit/Liberty-Ships-Brittle-Fracture");
             if (res.ok) {
                 const data = await res.json();
                 originalApiValue = data.value || 0;
