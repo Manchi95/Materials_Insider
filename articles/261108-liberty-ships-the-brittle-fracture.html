@@ -379,7 +379,7 @@
 
 <!-- Article  -->
             <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Technology" data-date="2026-11-01">
-                <img src="gif/graphene-and-2d-materials.gif" 
+                <img src="../gif/graphene-and-2d-materials.gif" 
                      alt="graphene-and-2d-materials" 
                      class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
@@ -393,7 +393,7 @@
                     <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
                        How graphene enables ultra-fast charging Al-ion cells and voltage-controlled magnetism in multilayer stacks. Atomic-level insights into intercalation, layer sliding, and practical advances for batteries and spintronics.
                     </p>
-                    <a href="articles/261101-graphene-and-2d-materials.html" 
+                    <a href="../articles/261101-graphene-and-2d-materials.html" 
                        class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2">
                         Read Full Article →
                     </a>
@@ -402,7 +402,7 @@
 
 <!-- Article  -->
             <div class="article-card bg-gray-800 rounded-3xl overflow-hidden shadow-sm" data-category="Technology" data-date="2026-10-18">
-                <img src="gif/cold-gas-thrusters.gif" 
+                <img src="../gif/cold-gas-thrusters.gif" 
                      alt="cold-gas-thrusters" 
                      class="w-full h-52 object-cover article-image" loading="lazy">
                 <div class="p-6">
@@ -416,7 +416,7 @@
                     <p class="text-gray-400 text-sm line-clamp-4 mb-6 text-justify article-desc">
                        Cold gas thrusters use compressed inert gas to create thrust without combustion. See how Tesla demonstrated this technology on the next-generation Roadster and what happens at the molecular level.
                     </p>
-                    <a href="articles/261018-cold-gas-thrusters.html" 
+                    <a href="../articles/261018-cold-gas-thrusters.html" 
                        class="text-indigo-500 hover:text-red-900 font-medium inline-flex items-center gap-2">
                         Read Full Article →
                     </a>
@@ -519,14 +519,14 @@
   /* ---------- styles ---------- */
   var CSS = '\
 #aeth-root,#aeth-root *{box-sizing:border-box}\
-#aeth-root{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:99999;display:flex;flex-direction:column;align-items:flex-end;gap:6px;font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#e8f1ff;text-align:left}\
+#aeth-root{position:fixed;right:18px;bottom:18px;z-index:99999;display:flex;flex-direction:column;align-items:flex-end;gap:6px;font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#e8f1ff;text-align:left}\
 #aeth-root .aeth-bubble{position:relative;max-width:230px;padding:11px 14px;background:#121a38;border:1px solid #4de3ff55;border-radius:14px 14px 4px 14px;box-shadow:0 8px 30px #0008,0 0 18px #4de3ff22;transform-origin:bottom right;transition:opacity .3s,transform .3s;pointer-events:none}\
 #aeth-root .aeth-bubble.aeth-hide{opacity:0;transform:scale(.85)}\
 #aeth-root .aeth-bubble b{color:#4de3ff}\
 \
 #aeth-root .aeth-stage{position:relative;width:120px;height:120px}\
 #aeth-root .aeth-fx{position:absolute;left:50%;top:50%;width:360px;height:360px;transform:translate(-50%,-50%);pointer-events:none;z-index:3}\
-#aeth-root .aeth-body{position:absolute;inset:0;z-index:2;cursor:pointer;touch-action:manipulation;user-select:none;-webkit-tap-highlight-color:transparent;outline-offset:4px;border-radius:50%}\
+#aeth-root .aeth-body{position:absolute;inset:0;z-index:2;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;outline-offset:4px;border-radius:50%}\
 #aeth-root .aeth-body.aeth-gone{display:none}\
 #aeth-root .aeth-char{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 14px #4de3ff66);animation:aeth-enter 1s cubic-bezier(.2,.9,.3,1.1) 1.3s backwards,aeth-float 4s ease-in-out 2.3s infinite}\
 #aeth-root .aeth-char.aeth-noenter{animation:aeth-float 4s ease-in-out infinite}\
@@ -659,7 +659,7 @@
 @keyframes aeth-halo{0%,100%{opacity:.5}50%{opacity:.9}}\
 \
 @media (prefers-reduced-motion:reduce){#aeth-root .aeth-char,#aeth-root .aeth-eyes,#aeth-root .aeth-core-g,#aeth-root .aeth-halo,#aeth-root .aeth-disk,#aeth-root .aeth-disk2{animation:none}#aeth-root .aeth-body.aeth-sucking,#aeth-root .aeth-body.aeth-reunion,#aeth-root .aeth-hole.aeth-open,#aeth-root .aeth-hole.aeth-feed,#aeth-root .aeth-hole.aeth-gulp,#aeth-root .aeth-hole.aeth-breathe,#aeth-root .aeth-hole.aeth-fade{animation-duration:.01s;animation-iteration-count:1}}\
-@media (max-width:480px){#aeth-root{right:calc(10px + env(safe-area-inset-right,0px));bottom:calc(10px + env(safe-area-inset-bottom,0px))}#aeth-root .aeth-stage{width:92px;height:92px}#aeth-root .aeth-bubble{max-width:200px}}\
+@media (max-width:480px){#aeth-root{right:10px;bottom:10px}#aeth-root .aeth-stage{width:92px;height:92px}#aeth-root .aeth-bubble{max-width:200px}}\
 @media print{#aeth-root,#aeth-sky{display:none!important}}';
 
   /* ---------- markup ---------- */
