@@ -1,0 +1,45 @@
+1. Non-newtoniun fluid - done
+2. Superconductor - done
+3. Ferro Fluid
+4. Magnetorheological fluid
+5. Photocromic glasses
+6. Electrochromic glasses
+6. Polarize glasses
+7. Acryle glasses
+8. Recording cloths
+9. Fuel cells
+10.Spintronics
+11.Cryonics
+12.Graphene layers
+13.Time crystals
+14.Entangaled atoms
+15.Birefringence
+16.Nicol Prism
+17.Hydrographics - Water Transfer Printing
+18.Thermochromics
+19.Hydrophobics
+20.Magnetic shielding
+21.Magnetic recordings - done
+22.Pizoelectric sensors
+23.CCD chip - Done
+24.LED light
+25.Gass sensors
+26.Capacitors
+27.Metal detectors
+28.self pouring liquid
+29.luminesons
+30.How Compact Disk (CD) work
+31.AI-designed materials
+How machine learning and generative AI are discovering new alloys, electrolytes, catalysts, and 2D materials far faster than traditional lab work.
+32.Metamaterials for light, heat, and communication
+Engineered structures that bend light, control heat, or improve antennas/night vision. Moving from lab demos toward real devices.
+33.Wide-bandgap semiconductors (SiC & GaN)
+Third-generation semiconductors for EVs, fast chargers, 6G, and AI power supplies. Cost and larger wafer production are the current story.  - Done
+34.Graphene and 2D materials in batteries & electronics
+Fast-charging graphene aluminium-ion cells, electrically switchable magnetism in multilayer graphene, and other practical graphene advances. - Done
+35.Materials for carbon capture & green hydrogen
+Metal-organic frameworks (MOFs), catalysts, and membranes designed (often with AI) to capture CO₂ or enable cleaner hydrogen production.
+36.High-performance carbon fiber & lightweight composites
+T1200-class fibers, hydrogen tanks, eVTOL aircraft, and wind-turbine blades — driven by the low-altitude economy and clean energy.
+37.Quantum materials & altermagnets
+New magnetic states, materials for qubits (e.g. low-loss tantalum), and exotic quantum phases that could enable future computing and sensing.
