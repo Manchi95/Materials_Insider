@@ -55,6 +55,12 @@
 
   <!-- Articles (newest first) -->
     <url>
+    <loc>https://materialinsider.com/articles/261115-hydrogen-embrittlement-high-strength-steels.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+    <url>
     <loc>https://www.materialinsider.com/articles/261108-liberty-ships-the-brittle-fracture.html</loc>
     <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
